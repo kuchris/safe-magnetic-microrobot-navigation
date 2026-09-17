@@ -1,11 +1,12 @@
 """Simple 3D Y-shaped vessel geometry for simulation.
 
-The vessel is represented as the union of finite cylindrical segments.
+The vessel is represented as a union of capsules (rounded-end tubes).
 Simulation/education only; not anatomical or clinical geometry.
 """
 
 from dataclasses import dataclass
 import numpy as np
+from src.validation import nonnegative, vector
 
 
 @dataclass(frozen=True)
@@ -14,8 +15,15 @@ class VesselSegment:
     end_m: np.ndarray
     radius_m: float
 
+    def __post_init__(self):
+        object.__setattr__(self, "start_m", vector(self.start_m))
+        object.__setattr__(self, "end_m", vector(self.end_m))
+        nonnegative(self.radius_m, "radius_m", positive=True)
+        if np.linalg.norm(self.end_m - self.start_m) == 0:
+            raise ValueError("Vessel segment must have nonzero length")
+
     def closest_centerline_point(self, point_m):
-        p = np.asarray(point_m, dtype=float)
+        p = vector(point_m)
         a = np.asarray(self.start_m, dtype=float)
         b = np.asarray(self.end_m, dtype=float)
         ab = b - a
@@ -26,17 +34,18 @@ class VesselSegment:
         return a + t * ab
 
     def wall_clearance(self, point_m, particle_radius_m=0.0):
-        """Signed clearance from particle surface to cylindrical wall.
+        """Exact signed clearance for one capsule, eroded by particle radius.
 
         Positive: inside with clearance. Zero: touching. Negative: violation.
         """
+        nonnegative(particle_radius_m, "particle_radius_m")
         center = self.closest_centerline_point(point_m)
         radial_distance = np.linalg.norm(np.asarray(point_m) - center)
         return self.radius_m - particle_radius_m - radial_distance
 
 
 class YVessel:
-    """Three finite cylinders forming a toy 3D Y bifurcation."""
+    """Three capsules forming a toy 3D Y bifurcation."""
 
     def __init__(self, radius_m=1.5e-3):
         origin = np.array([0.0, 0.0, 0.0])
@@ -50,7 +59,12 @@ class YVessel:
         )
 
     def clearance(self, point_m, particle_radius_m=0.0):
-        """Best signed wall clearance among the union of segments."""
+        """Conservative signed clearance proxy: max of capsule clearances.
+
+        Exact for an isolated capsule. At overlaps it is a lower bound on
+        union interior clearance, not the exact union signed distance. For
+        finite particles a negative value can be a conservative false alarm.
+        """
         return max(
             segment.wall_clearance(point_m, particle_radius_m)
             for segment in self.segments

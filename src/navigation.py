@@ -1,0 +1,87 @@
+"""Feedback boundary: time and image observations in; bounded force out.
+
+No particle/plant reference, true position, true velocity, or true flow enters
+this module. Geometry and robot radius are configured model information.
+"""
+
+from dataclasses import dataclass
+import numpy as np
+
+from src.controller import bounded_target_force
+from src.localization import BiplaneTriangulator, DelayedStateEstimator
+from src.planner import YWaypointPlanner
+from src.safety import SafetySupervisor
+
+
+@dataclass(frozen=True)
+class ControlOutput:
+    force_n: np.ndarray
+    estimate: object
+    reason: str
+    estimated_clearance_m: float
+    robust_clearance_m: float
+    measurement_age_s: float
+    actuation_limited: bool
+
+
+class BiplaneNavigation:
+    def __init__(self, vessel, particle_radius_m, branch="upper", views=None,
+                 noise_sigma_px=1.0, calibration_sigma_px=0.25,
+                 gain_n_per_m=2e-6, max_force_n=3e-9,
+                 max_measurement_age_s=0.15, max_sigma_m=0.35e-3,
+                 safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7):
+        self.vessel = vessel
+        self.particle_radius_m = particle_radius_m
+        self.triangulator = BiplaneTriangulator(views, noise_sigma_px, calibration_sigma_px)
+        self.estimator = DelayedStateEstimator(
+            acceleration_spectral_density=acceleration_spectral_density)
+        self.planner = YWaypointPlanner(vessel, branch)
+        self.supervisor = SafetySupervisor(max_sigma_m, safety_margin_m,
+            max_measurement_age_s=max_measurement_age_s, max_force_n=max_force_n)
+        self.gain = gain_n_per_m
+        self.max_force_n = max_force_n
+        self.tracking_valid = False
+        self.last_frame_s = -np.inf
+        self.last_step_s = -np.inf
+
+    def step(self, now_s, frames):
+        if not np.isfinite(now_s) or now_s < 0 or now_s <= self.last_step_s:
+            raise ValueError("control time must increase strictly")
+        self.last_step_s = now_s
+        for frame in frames:
+            if (not np.isfinite(frame.captured_at_s) or
+                    not np.isfinite(frame.available_at_s) or
+                    frame.captured_at_s < 0 or
+                    frame.available_at_s < frame.captured_at_s or
+                    frame.available_at_s > now_s + 1e-12):
+                raise ValueError("invalid or not-yet-delivered frame")
+            if frame.captured_at_s <= self.last_frame_s:
+                continue  # never let stale/duplicate frames re-enable tracking
+            self.last_frame_s = frame.captured_at_s
+            self.tracking_valid = frame.detector_px is not None
+            if self.tracking_valid:
+                try:
+                    reconstruction = self.triangulator.reconstruct(frame.detector_px)
+                except ValueError:
+                    self.tracking_valid = False
+                else:
+                    self.estimator.observe(reconstruction, frame.captured_at_s, now_s)
+        estimate = self.estimator.estimate(now_s)
+        if estimate is None:
+            return ControlOutput(np.zeros(3), None, "tracking_lost", np.nan, np.nan, np.inf, False)
+        age = now_s - self.estimator.last_capture_s
+        allowed, reason, _ = self.supervisor.evaluate(
+            estimate.estimated_position, estimate.position_uncertainty,
+            self.vessel, self.particle_radius_m, self.tracking_valid, age)
+        clearance = self.vessel.clearance(estimate.estimated_position, self.particle_radius_m)
+        robust = clearance - self.supervisor.k_sigma * estimate.position_uncertainty
+        force = np.zeros(3)
+        limited = False
+        if allowed:
+            target = self.planner.target(estimate.estimated_position)
+            limited = np.linalg.norm(self.gain * (target - estimate.estimated_position)) > self.max_force_n
+            force = bounded_target_force(estimate.estimated_position, target, self.gain, self.max_force_n)
+            if limited:
+                reason = "actuation_limit"
+        return ControlOutput(self.supervisor.filter_force(force, allowed), estimate,
+                             reason, clearance, robust, age, limited)
