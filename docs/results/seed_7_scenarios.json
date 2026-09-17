@@ -1,0 +1,240 @@
+{
+  "parameter_provenance": "All defaults are toy; not clinical validation.",
+  "scenarios": {
+    "dropout_burst": {
+      "config": {
+        "seed": 7,
+        "duration_s": 40.0,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [
+          [
+            8.0,
+            8.75
+          ]
+        ],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper"
+      },
+      "summary": {
+        "seed": 7,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.0013691176303521932,
+        "navigation_time_s": 27.835,
+        "elapsed_time_s": 27.835,
+        "safety_stop_rate": 0.028735632183908046,
+        "safety_stop_events": 2,
+        "localization_RMSE_m": 7.707977061431436e-05,
+        "localized_sample_count": 5558,
+        "sample_count": 5568,
+        "maximum_force_n": 1.6218120228832475e-09,
+        "reason_counts": {
+          "tracking_lost": 160,
+          "safe": 5408
+        }
+      }
+    },
+    "high_noise": {
+      "config": {
+        "seed": 7,
+        "duration_s": 40.0,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 12.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper"
+      },
+      "summary": {
+        "seed": 7,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.0012406196019050892,
+        "navigation_time_s": 28.295,
+        "elapsed_time_s": 28.295,
+        "safety_stop_rate": 0.03939929328621908,
+        "safety_stop_events": 8,
+        "localization_RMSE_m": 0.00032705501713320727,
+        "localized_sample_count": 5650,
+        "sample_count": 5660,
+        "maximum_force_n": 2.0040653230524742e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "localization_uncertain": 30,
+          "wall_margin_low": 183,
+          "safe": 5437
+        }
+      }
+    },
+    "nominal": {
+      "config": {
+        "seed": 7,
+        "duration_s": 40.0,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper"
+      },
+      "summary": {
+        "seed": 7,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.001373210568217249,
+        "navigation_time_s": 27.66,
+        "elapsed_time_s": 27.66,
+        "safety_stop_rate": 0.0018073377914332189,
+        "safety_stop_events": 1,
+        "localization_RMSE_m": 6.0103242579879934e-05,
+        "localized_sample_count": 5523,
+        "sample_count": 5533,
+        "maximum_force_n": 1.6084136525888379e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "safe": 5523
+        }
+      }
+    },
+    "stale_imaging": {
+      "config": {
+        "seed": 7,
+        "duration_s": 40.0,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.25,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper"
+      },
+      "summary": {
+        "seed": 7,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.0013994429139846008,
+        "navigation_time_s": 35.24,
+        "elapsed_time_s": 35.24,
+        "safety_stop_rate": 1.0,
+        "safety_stop_events": 1,
+        "localization_RMSE_m": 8.474676999135737e-05,
+        "localized_sample_count": 6999,
+        "sample_count": 7049,
+        "maximum_force_n": 0.0,
+        "reason_counts": {
+          "tracking_lost": 7049
+        }
+      }
+    },
+    "stale_lower_target": {
+      "config": {
+        "seed": 7,
+        "duration_s": 40.0,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.25,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower"
+      },
+      "summary": {
+        "seed": 7,
+        "target_success": false,
+        "wall_collision": true,
+        "wrong_branch": true,
+        "minimum_wall_clearance_m": -2.2359866668454024e-06,
+        "navigation_time_s": null,
+        "elapsed_time_s": 38.24,
+        "safety_stop_rate": 1.0,
+        "safety_stop_events": 1,
+        "localization_RMSE_m": 8.430669594473408e-05,
+        "localized_sample_count": 7599,
+        "sample_count": 7649,
+        "maximum_force_n": 0.0,
+        "reason_counts": {
+          "tracking_lost": 7649
+        }
+      }
+    }
+  }
+}

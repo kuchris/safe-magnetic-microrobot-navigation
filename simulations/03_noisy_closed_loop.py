@@ -21,7 +21,7 @@ def main():
     )
     target = vessel.upper_target
     sensor = NoisyPositionSensor(sigma_m=0.15e-3, rng=rng)
-    kf = PositionKalmanFilter(particle.position_m)
+    kf = PositionKalmanFilter(sensor.measure(particle.position_m))
     safety = SafetySupervisor(max_sigma_m=0.35e-3, min_clearance_m=0.20e-3)
 
     dt = 0.005
@@ -31,11 +31,9 @@ def main():
     min_true_clearance = float("inf")
 
     for _ in range(6000):
-        # Predict using the previous model only; the measurement corrects drift/noise.
+        # Use only the current estimate to choose the next action.
         flow_est = centerline_flow(kf.x)
-        kf.predict(displacement_m=flow_est * dt)
-        measurement = sensor.measure(particle.position_m)
-        estimate = kf.update(measurement)
+        estimate = kf.x.copy()
 
         requested_force = bounded_target_force(estimate, target)
         allowed, reason, _ = safety.evaluate(
@@ -47,6 +45,9 @@ def main():
 
         true_flow = centerline_flow(particle.position_m)
         particle.step(dt, true_flow, force)
+        # Predict including commanded magnetic drift; update at the new time.
+        kf.predict(displacement_m=(flow_est + force / particle.drag_coefficient) * dt)
+        estimate = kf.update(sensor.measure(particle.position_m))
         true_path.append(particle.position_m.copy())
         estimated_path.append(estimate.copy())
 
