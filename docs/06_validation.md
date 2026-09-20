@@ -159,6 +159,18 @@ archived-trial reproduction. A 360-trial study covers two fields, three mean
 speeds, three disturbance amplitudes, two routes, both branches and seeds
 10-14. Early guidance rescued 11 piecewise and seven continuous-field cases,
 with no success regressions; substantial strong-disturbance failures remain.
-All 95 tests passed, including process statistics and interval-aligned flow
+All 95 tests passed at this milestone, including process statistics and interval-aligned flow
 logging. See [flow sensitivity](10_flow_sensitivity.md) for conditional rates,
 holding-capacity diagnostics, raw records and model limitations.
+
+## Short-horizon correction milestone
+
+All 109 tests passed. The optional 0.5 s force correction uses estimated state
+and previous commands, preserves the original stop gates and force limit, and
+remains disabled by default. The fixed 160-trial comparison on seeds 15-19
+rescued one piecewise-field failure; continuous-field success counts were
+unchanged. No pair acquired a new wall violation, wrong-branch event or
+success-to-failure change. Anticipatory correction, infeasible predictions,
+velocity uncertainty, intermediate path checks and original-policy regression
+are covered by tests. All executed trials respected the 3 nN cap and zero-force
+stop invariants. See the [method and replay report](11_predictive_control.md).

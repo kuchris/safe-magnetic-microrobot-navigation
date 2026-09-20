@@ -10,7 +10,9 @@ import numpy as np
 from src.controller import bounded_target_force
 from src.localization import BiplaneTriangulator, DelayedStateEstimator
 from src.planner import YWaypointPlanner
+from src.prediction import ShortHorizonCorrection
 from src.safety import SafetySupervisor
+from src.validation import nonnegative
 
 
 @dataclass(frozen=True)
@@ -21,7 +23,10 @@ class ControlOutput:
     estimated_clearance_m: float
     robust_clearance_m: float
     measurement_age_s: float
-    actuation_limited: bool
+    actuation_limited: bool  # Nominal waypoint request exceeded the force cap.
+    predicted_nominal_clearance_m: float = np.nan
+    predicted_selected_clearance_m: float = np.nan
+    prediction_adjusted: bool = False
 
 
 class BiplaneNavigation:
@@ -30,7 +35,8 @@ class BiplaneNavigation:
                  gain_n_per_m=2e-6, max_force_n=3e-9,
                  max_measurement_age_s=0.15, max_sigma_m=0.35e-3,
                  safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7,
-                 control_mode="gated", approach_offset_m=0.0):
+                 control_mode="gated", approach_offset_m=0.0,
+                 prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3):
         if control_mode not in ("passive", "ungated", "gated"):
             raise ValueError("control_mode must be passive, ungated, or gated")
         self.control_mode = control_mode
@@ -44,6 +50,15 @@ class BiplaneNavigation:
             max_measurement_age_s=max_measurement_age_s, max_force_n=max_force_n)
         self.gain = gain_n_per_m
         self.max_force_n = max_force_n
+        nonnegative(prediction_horizon_s, "prediction_horizon_s")
+        nonnegative(model_viscosity_pa_s, "model_viscosity_pa_s", positive=True)
+        if prediction_horizon_s > 0 and control_mode != "gated":
+            raise ValueError("prediction requires gated control")
+        self.predictor = ShortHorizonCorrection(vessel, particle_radius_m, branch,
+            prediction_horizon_s, 6 * np.pi * model_viscosity_pa_s * particle_radius_m,
+            max_force_n, safety_margin_m, self.supervisor.k_sigma,
+            acceleration_spectral_density) if prediction_horizon_s > 0 else None
+        self.previous_force_n = np.zeros(3)
         self.tracking_valid = False
         self.last_frame_s = -np.inf
         self.last_step_s = -np.inf
@@ -72,6 +87,7 @@ class BiplaneNavigation:
                     self.estimator.observe(reconstruction, frame.captured_at_s, now_s)
         estimate = self.estimator.estimate(now_s)
         if estimate is None:
+            self.previous_force_n = np.zeros(3)
             reason = "passive" if self.control_mode == "passive" else "tracking_lost"
             return ControlOutput(np.zeros(3), None, reason, np.nan, np.nan, np.inf, False)
         age = now_s - self.estimator.last_capture_s
@@ -88,11 +104,21 @@ class BiplaneNavigation:
             allowed, reason = True, "ungated"
         force = np.zeros(3)
         limited = False
+        prediction = None
         if allowed:
             target = self.planner.target(estimate.estimated_position)
             limited = np.linalg.norm(self.gain * (target - estimate.estimated_position)) > self.max_force_n
             force = bounded_target_force(estimate.estimated_position, target, self.gain, self.max_force_n)
             if limited:
                 reason = "actuation_limit"
-        return ControlOutput(self.supervisor.filter_force(force, allowed), estimate,
-                             reason, clearance, robust, age, limited)
+            if self.predictor is not None:
+                prediction = self.predictor.select(estimate, force, self.previous_force_n)
+                force = prediction.force_n
+                if prediction.adjusted:
+                    reason = "prediction_adjustment"
+        self.previous_force_n = self.supervisor.filter_force(force, allowed)
+        return ControlOutput(self.previous_force_n.copy(), estimate,
+                             reason, clearance, robust, age, limited,
+                             np.nan if prediction is None else prediction.nominal_clearance_m,
+                             np.nan if prediction is None else prediction.selected_clearance_m,
+                             prediction is not None and prediction.adjusted)

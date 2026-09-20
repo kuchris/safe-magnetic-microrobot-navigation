@@ -49,7 +49,8 @@ def plot_pair(cases, labels, output_path, title,
         axes[1, 1].plot(t, h["force_n"][:, 1] * 1e9, color=color, label=label)
         axes[1, 1].plot(t, np.linalg.norm(h["force_n"], axis=1) * 1e9, color=color, linestyle=":", alpha=0.7)
         reasons = {"safe": 0, "ungated": 0, "passive": 0, "actuation_limit": 1,
-                   "tracking_lost": 2, "localization_uncertain": 3, "wall_margin_low": 4}
+                   "tracking_lost": 2, "localization_uncertain": 3, "wall_margin_low": 4,
+                   "prediction_adjustment": 5}
         axes[1, 2].step(t, [reasons[r] + (index - 0.5) * 0.12 for r in h["reason"]],
                         where="post", color=color, label=label, linewidth=1)
     axes[0, 0].set_title("True trajectories (XY projection)")
@@ -62,8 +63,8 @@ def plot_pair(cases, labels, output_path, title,
     axes[1, 0].axhline(0, color="black", linewidth=0.7)
     axes[1, 0].axhline(0.2, color="#8A8A8A", linewidth=0.7, linestyle="--")
     axes[1, 1].set(title="Applied force: Fy / dotted magnitude", xlabel="Time [s]", ylabel="Force [nN]")
-    axes[1, 2].set(title="Controller state", xlabel="Time [s]", yticks=range(5),
-                   yticklabels=["Steering", "Force cap", "Tracking lost", "Uncertain", "Wall margin"])
+    axes[1, 2].set(title="Controller state", xlabel="Time [s]", yticks=range(6),
+                   yticklabels=["Steering", "Force cap", "Tracking lost", "Uncertain", "Wall margin", "Prediction"])
     for ax in axes.flat:
         ax.spines[["top", "right"]].set_visible(False)
     fig.suptitle(title + "\n" + comparison_note + " Capsule proxy / toy flow only.", fontsize=14)

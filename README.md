@@ -33,7 +33,10 @@ flowchart TD
     L --> E["Six-state estimator at current time"]
     E --> C
     E --> S
-    C --> S
+    C --> H["Optional short-horizon force correction"]
+    E --> H
+    G --> H
+    H --> S
     S --> A["Bounded ideal force and optional gain error"]
     A --> D["Overdamped particle and prescribed flow"]
     D --> I
@@ -227,7 +230,7 @@ That run enters the upper branch and eventually violates the artificial
 rounded outlet boundary at 38.24 s, with zero active force throughout.
 
 The free-space example ends at [2, 1, 0] mm. The baseline suite had eight tests;
-the expanded suite passes 95 tests covering imaging, uncertainty, timing,
+the expanded suite passes 109 tests covering imaging, uncertainty, timing,
 safety, both branches, policy ablations, benchmark statistics, replay diagnostics,
 pre-junction route guidance, continuous flow and correlated disturbances.
 See [inspection and verification record](docs/06_validation.md) for measured
@@ -254,7 +257,7 @@ scenarios; the separate paired-seed benchmark reports conditional trial rates.
   Large uncertainty, lost tracking, stale images or low robust clearance
   produce zero active force. This does **not** stop flow-driven motion.
 - Logged reasons are `tracking_lost`, `localization_uncertain`,
-  `wall_margin_low`, `actuation_limit` and `safe`. Saturation is distinct
+  `wall_margin_low`, `actuation_limit`, `prediction_adjustment` and `safe`. Saturation is distinct
   from stopping. A three-sigma margin is not a proven 3D collision-risk bound.
 
 See [biplane imaging](docs/03_biplane_localization.md),
@@ -288,6 +291,26 @@ Programmatic experiment configuration lives in `TrialConfig`; view geometry
 and filter options can also be configured through their component APIs.
 Legacy demos retain their original toy parameter choices.
 
+### Optional short-horizon correction
+
+An experimental correction predicts motion for 0.5 s using estimated position,
+velocity, covariance and previous commanded force. It can redirect force before
+the current wall-margin gate stops actuation. The existing gate and 3 nN cap
+still apply; prediction is disabled by default (`prediction_horizon_s=0`).
+
+```bash
+python -m simulations.13_predictive_control --model piecewise
+python -m simulations.13_predictive_control --model smooth
+python -m simulations.14_predictive_figures
+```
+
+The fixed 160-trial comparison uses new seeds 15-19, both fields and branches,
+0.6/1.2 mm/s flow and 0/0.3 mm/s per-axis disturbance. Both controllers use early
+guidance. One failure became a success in the piecewise field; continuous-field
+success counts were unchanged, with no success regressions in either field.
+This limited result does not establish a reliable general improvement.
+See [the method, paired results and failure replays](docs/11_predictive_control.md).
+
 ## Repository structure
 
 ```text
@@ -300,6 +323,7 @@ src/
   localization.py       Legacy sensor/filter, triangulation, six-state filter
   planner.py            Selected Y-branch waypoints and branch evaluation
   controller.py         Proportional control and force cap
+  prediction.py         Optional sampled short-horizon force correction
   safety.py             Uncertainty, freshness and wall-margin gate
   navigation.py         Observation-only feedback boundary
   experiment.py         Seeded trial, histories and metrics
@@ -321,6 +345,8 @@ simulations/
   10_guidance_figures.py
   11_flow_sensitivity.py
   12_flow_sensitivity_figures.py
+  13_predictive_control.py
+  14_predictive_figures.py
 docs/                    Physics, imaging, estimation, safety, verification
 tests/                   Deterministic physics, numerical and integration tests
 ```
@@ -337,6 +363,7 @@ tests/                   Deterministic physics, numerical and integration tests
 - [x] Logged stop reasons, wrong-branch flag, seeded trials and diagnostic plots
 - [x] Deterministic latency/dropout/noise stress scenarios and regression tests
 - [x] Optional pre-junction lateral guidance with matched original/new-seed evaluation
+- [x] Optional short-horizon correction with unchanged gates and held-out comparison
 - [ ] General vascular graph routing and branch-crossing surfaces
 - [ ] Exact union/mesh wall distance and swept collision checking
 - [ ] Perspective/raster imaging, segmentation, outliers and single-view handling
@@ -344,7 +371,7 @@ tests/                   Deterministic physics, numerical and integration tests
 - [ ] Abstract coil matrix A(x), bounded current allocation, unreachable-force diagnostics
 - [x] Paired-seed policy benchmark, trial distributions and conditional outcome-rate intervals
 - [ ] Control-input-aware estimation and flow disturbance estimation
-- [ ] Predictive safety constraints, then MPC / Control Barrier Functions
+- [ ] Formal predictive safety constraints, MPC / Control Barrier Functions
 - [ ] Synthetic/public mesh import and improved fluid/near-wall physics
 
 No RL, coil-current solver, general vascular graph or mesh loader is claimed

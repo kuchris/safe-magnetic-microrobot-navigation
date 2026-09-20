@@ -93,3 +93,28 @@ with conditional Wilson intervals. Experiment 09 additionally compares
 matched route outcomes and terminal capsule feature counts. These estimates
 describe the configured toy scenarios, not broad physical parameter
 distributions or a calibrated safety guarantee.
+
+## Optional predictive correction
+
+`TrialConfig(prediction_horizon_s=0.5)` enables a sampled, observation-based
+force correction for gated control. The default zero horizon preserves the
+original policy. A positive horizon with passive or ungated control is rejected
+to keep the current safety gates mandatory for this experiment.
+
+The correction uses current estimated position, velocity and covariance,
+previous commanded force, known geometry and a configured nominal Stokes drag.
+No true flow, particle state or disturbance sample enters this calculation.
+It considers bounded constant-force candidates at five future times and the
+current time, preferring the smallest force change that meets the predicted
+robust margin. If none meet it, the candidate with greatest minimum predicted
+clearance is selected; that is a best-effort correction, not a feasible safety
+solution. Current tracking, uncertainty and wall-margin stops still output zero.
+
+Histories include `predicted_nominal_clearance_m`,
+`predicted_selected_clearance_m` and `prediction_adjusted`. Prediction values
+are NaN when disabled or inhibited by the current gate. The reason
+`prediction_adjustment` means active steering, not a safety stop. The
+`actuation_limited` output continues to describe saturation of the nominal
+waypoint request, before any predictive correction.
+
+See [the equations, assumptions and executed comparison](11_predictive_control.md).

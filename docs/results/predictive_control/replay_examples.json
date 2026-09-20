@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "piecewise_1.2_0.3_lower_15",
+    "baseline": "piecewise_1.2_0.3_lower_15_0",
+    "predictive": "piecewise_1.2_0.3_lower_15_0.5",
+    "change": "rescued"
+  },
+  {
+    "case_id": "piecewise_0.6_0.3_upper_15",
+    "baseline": "piecewise_0.6_0.3_upper_15_0",
+    "predictive": "piecewise_0.6_0.3_upper_15_0.5",
+    "change": "unchanged"
+  }
+]
