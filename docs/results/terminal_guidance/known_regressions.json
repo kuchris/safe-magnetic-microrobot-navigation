@@ -1,0 +1,491 @@
+[
+  {
+    "case_id": "piecewise_0.6_0.3_lower_20",
+    "baseline": {
+      "config": {
+        "seed": 20,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "piecewise",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5,
+        "estimator_mode": "command_aware"
+      },
+      "summary": {
+        "seed": 20,
+        "target_success": false,
+        "wall_collision": true,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": -4.525931913601858e-06,
+        "navigation_time_s": null,
+        "elapsed_time_s": 32.005,
+        "safety_stop_rate": 0.011871290221805686,
+        "safety_stop_events": 2,
+        "localization_RMSE_m": 7.939423846181028e-05,
+        "localized_sample_count": 6392,
+        "sample_count": 6402,
+        "position_3sigma_coverage": 0.9200563204005007,
+        "localization_availability": 0.9984379881287098,
+        "maximum_force_n": 3e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "prediction_adjustment": 522,
+          "safe": 5804,
+          "wall_margin_low": 66
+        }
+      },
+      "timeout": false,
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "flow_holding_limit_exceeded_fraction": 0.8792376191220124,
+      "force_saturation_fraction": 0.06358381502890158,
+      "forecast_metrics": [
+        {
+          "horizon_s": 0.1,
+          "subset": "all",
+          "samples": 619,
+          "held_command_RMSE_m": 0.0001093463081970117,
+          "recorded_command_RMSE_m": 0.00010947150812893969,
+          "flow_RMSE_m_s": 0.0005180266825018844
+        },
+        {
+          "horizon_s": 0.1,
+          "subset": "recent_command_change",
+          "samples": 110,
+          "held_command_RMSE_m": 0.00010836014564518551,
+          "recorded_command_RMSE_m": 0.00010874657377165019,
+          "flow_RMSE_m_s": 0.0005049390070325817
+        },
+        {
+          "horizon_s": 0.5,
+          "subset": "all",
+          "samples": 611,
+          "held_command_RMSE_m": 0.0002863313035660697,
+          "recorded_command_RMSE_m": 0.00029189773299197674,
+          "flow_RMSE_m_s": 0.0005171379600748272
+        },
+        {
+          "horizon_s": 0.5,
+          "subset": "recent_command_change",
+          "samples": 108,
+          "held_command_RMSE_m": 0.00027187984054413656,
+          "recorded_command_RMSE_m": 0.0002799298482581364,
+          "flow_RMSE_m_s": 0.000504853714766881
+        }
+      ],
+      "prediction_adjusted_fraction": 0.08153701968134958,
+      "trace_id": "piecewise_0.6_0.3_lower_20_command_aware"
+    },
+    "terminal": {
+      "config": {
+        "seed": 20,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "piecewise",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5,
+        "estimator_mode": "command_aware",
+        "terminal_guidance_distance_m": 0.002
+      },
+      "summary": {
+        "seed": 20,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.0009200583818343691,
+        "navigation_time_s": 27.955000000000002,
+        "elapsed_time_s": 27.955000000000002,
+        "safety_stop_rate": 0.00178826895565093,
+        "safety_stop_events": 1,
+        "localization_RMSE_m": 7.862567932356517e-05,
+        "localized_sample_count": 5582,
+        "sample_count": 5592,
+        "position_3sigma_coverage": 0.9258330347545682,
+        "localization_availability": 0.998211731044349,
+        "maximum_force_n": 3e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "prediction_adjustment": 362,
+          "safe": 5220
+        }
+      },
+      "timeout": false,
+      "terminal_wall_feature": "none",
+      "flow_holding_limit_exceeded_fraction": 0.8731890538365233,
+      "force_saturation_fraction": 0.0609908781971025
+    }
+  },
+  {
+    "case_id": "piecewise_0.6_0.3_lower_21",
+    "baseline": {
+      "config": {
+        "seed": 21,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "piecewise",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5,
+        "estimator_mode": "command_aware"
+      },
+      "summary": {
+        "seed": 21,
+        "target_success": false,
+        "wall_collision": true,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": -3.024845836763386e-06,
+        "navigation_time_s": null,
+        "elapsed_time_s": 33.745,
+        "safety_stop_rate": 0.015851851851851853,
+        "safety_stop_events": 2,
+        "localization_RMSE_m": 8.118530806980417e-05,
+        "localized_sample_count": 6740,
+        "sample_count": 6750,
+        "position_3sigma_coverage": 0.9051928783382789,
+        "localization_availability": 0.9985185185185185,
+        "maximum_force_n": 3e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "prediction_adjustment": 700,
+          "safe": 5943,
+          "wall_margin_low": 97
+        }
+      },
+      "timeout": false,
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "flow_holding_limit_exceeded_fraction": 0.8390872721884719,
+      "force_saturation_fraction": 0.04696992146984719,
+      "forecast_metrics": [
+        {
+          "horizon_s": 0.1,
+          "subset": "all",
+          "samples": 653,
+          "held_command_RMSE_m": 0.00010918596191371416,
+          "recorded_command_RMSE_m": 0.00010938699247196954,
+          "flow_RMSE_m_s": 0.0005138039982373249
+        },
+        {
+          "horizon_s": 0.1,
+          "subset": "recent_command_change",
+          "samples": 138,
+          "held_command_RMSE_m": 0.0001172424578995889,
+          "recorded_command_RMSE_m": 0.00011696060158587528,
+          "flow_RMSE_m_s": 0.0005251824041442875
+        },
+        {
+          "horizon_s": 0.5,
+          "subset": "all",
+          "samples": 645,
+          "held_command_RMSE_m": 0.0002763795263099949,
+          "recorded_command_RMSE_m": 0.0002864981514733796,
+          "flow_RMSE_m_s": 0.0005143996302379202
+        },
+        {
+          "horizon_s": 0.5,
+          "subset": "recent_command_change",
+          "samples": 136,
+          "held_command_RMSE_m": 0.0002928104611211041,
+          "recorded_command_RMSE_m": 0.00030346756552157713,
+          "flow_RMSE_m_s": 0.0005266067515014483
+        }
+      ],
+      "prediction_adjusted_fraction": 0.1037037037037037,
+      "trace_id": "piecewise_0.6_0.3_lower_21_command_aware"
+    },
+    "terminal": {
+      "config": {
+        "seed": 21,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "piecewise",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5,
+        "estimator_mode": "command_aware",
+        "terminal_guidance_distance_m": 0.002
+      },
+      "summary": {
+        "seed": 21,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.0006445992441662231,
+        "navigation_time_s": 30.98,
+        "elapsed_time_s": 30.98,
+        "safety_stop_rate": 0.0016136840406648378,
+        "safety_stop_events": 1,
+        "localization_RMSE_m": 8.213395387910977e-05,
+        "localized_sample_count": 6187,
+        "sample_count": 6197,
+        "position_3sigma_coverage": 0.8967189267819622,
+        "localization_availability": 0.9983863159593351,
+        "maximum_force_n": 3.0000000000000004e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "prediction_adjustment": 739,
+          "safe": 5448
+        }
+      },
+      "timeout": false,
+      "terminal_wall_feature": "none",
+      "flow_holding_limit_exceeded_fraction": 0.8258553905745637,
+      "force_saturation_fraction": 0.06956100710135561
+    }
+  },
+  {
+    "case_id": "smooth_0.6_0.3_lower_20",
+    "baseline": {
+      "config": {
+        "seed": 20,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5,
+        "estimator_mode": "command_aware"
+      },
+      "summary": {
+        "seed": 20,
+        "target_success": false,
+        "wall_collision": true,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": -1.33617561192019e-06,
+        "navigation_time_s": null,
+        "elapsed_time_s": 31.985,
+        "safety_stop_rate": 0.011722413254141919,
+        "safety_stop_events": 2,
+        "localization_RMSE_m": 7.940462465097451e-05,
+        "localized_sample_count": 6388,
+        "sample_count": 6398,
+        "position_3sigma_coverage": 0.922041327489042,
+        "localization_availability": 0.9984370115661144,
+        "maximum_force_n": 3e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "prediction_adjustment": 528,
+          "safe": 5795,
+          "wall_margin_low": 65
+        }
+      },
+      "timeout": false,
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "flow_holding_limit_exceeded_fraction": 0.8790057839612319,
+      "force_saturation_fraction": 0.0637798968266373,
+      "forecast_metrics": [
+        {
+          "horizon_s": 0.1,
+          "subset": "all",
+          "samples": 618,
+          "held_command_RMSE_m": 0.00010936447148014173,
+          "recorded_command_RMSE_m": 0.00010945962263852986,
+          "flow_RMSE_m_s": 0.0005167965573665967
+        },
+        {
+          "horizon_s": 0.1,
+          "subset": "recent_command_change",
+          "samples": 110,
+          "held_command_RMSE_m": 0.00010999924566222814,
+          "recorded_command_RMSE_m": 0.00011022028344190837,
+          "flow_RMSE_m_s": 0.000516295378655475
+        },
+        {
+          "horizon_s": 0.5,
+          "subset": "all",
+          "samples": 610,
+          "held_command_RMSE_m": 0.0002855299892443215,
+          "recorded_command_RMSE_m": 0.0002914985907842845,
+          "flow_RMSE_m_s": 0.0005159742252255973
+        },
+        {
+          "horizon_s": 0.5,
+          "subset": "recent_command_change",
+          "samples": 108,
+          "held_command_RMSE_m": 0.00027952995147208324,
+          "recorded_command_RMSE_m": 0.0002869501323317136,
+          "flow_RMSE_m_s": 0.0005164199447628678
+        }
+      ],
+      "prediction_adjusted_fraction": 0.08252578930915912,
+      "trace_id": "smooth_0.6_0.3_lower_20_command_aware"
+    },
+    "terminal": {
+      "config": {
+        "seed": 20,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5,
+        "estimator_mode": "command_aware",
+        "terminal_guidance_distance_m": 0.002
+      },
+      "summary": {
+        "seed": 20,
+        "target_success": true,
+        "wall_collision": false,
+        "wrong_branch": false,
+        "minimum_wall_clearance_m": 0.000897645275802131,
+        "navigation_time_s": 27.87,
+        "elapsed_time_s": 27.87,
+        "safety_stop_rate": 0.0017937219730941704,
+        "safety_stop_events": 1,
+        "localization_RMSE_m": 7.86982862190398e-05,
+        "localized_sample_count": 5565,
+        "sample_count": 5575,
+        "position_3sigma_coverage": 0.9279424977538185,
+        "localization_availability": 0.9982062780269059,
+        "maximum_force_n": 3e-09,
+        "reason_counts": {
+          "tracking_lost": 10,
+          "prediction_adjustment": 359,
+          "safe": 5206
+        }
+      },
+      "timeout": false,
+      "terminal_wall_feature": "none",
+      "flow_holding_limit_exceeded_fraction": 0.872622891998565,
+      "force_saturation_fraction": 0.05866523143164694
+    }
+  }
+]

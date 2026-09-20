@@ -186,3 +186,16 @@ unchanged target sphere. The original estimator remains the default. All
 executed force bounds and gate-stop invariants held; paired configurations,
 terminal accounting and regression closest approaches were checked. See the
 [forecast audit and regression report](12_flow_estimation.md).
+
+## Terminal target-guidance milestone
+
+All 129 tests passed. The optional 2 mm terminal policy adds bounded target
+intercept candidates to 0.5 s prediction while retaining the existing gates,
+wall margin and success criterion. On 320 held-out runs (seeds 25-29), it
+rescued 21 matched failures with no success regressions, new wall violations
+or decreases in per-trial minimum true clearance. Three previously identified
+target-miss regressions also succeeded in separate replays. Every remaining
+guided failure had a wrong-branch event and never activated terminal guidance.
+All 160 pairs had identical state and commands before activation; force, gate
+and terminal-accounting invariants were verified. See the
+[method and outcome report](13_terminal_guidance.md).

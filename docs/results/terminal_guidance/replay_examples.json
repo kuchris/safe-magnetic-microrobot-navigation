@@ -1,0 +1,16 @@
+[
+  {
+    "case_id": "piecewise_kinematic_0.6_0.3_lower_26",
+    "estimator_mode": "kinematic",
+    "baseline": "piecewise_kinematic_0.6_0.3_lower_26_off",
+    "terminal": "piecewise_kinematic_0.6_0.3_lower_26_on",
+    "change": "rescued"
+  },
+  {
+    "case_id": "piecewise_kinematic_0.6_0.3_upper_26",
+    "estimator_mode": "kinematic",
+    "baseline": "piecewise_kinematic_0.6_0.3_upper_26_off",
+    "terminal": "piecewise_kinematic_0.6_0.3_upper_26_on",
+    "change": "unchanged"
+  }
+]

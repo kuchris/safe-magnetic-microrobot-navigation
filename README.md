@@ -230,7 +230,7 @@ That run enters the upper branch and eventually violates the artificial
 rounded outlet boundary at 38.24 s, with zero active force throughout.
 
 The free-space example ends at [2, 1, 0] mm. The baseline suite had eight tests;
-the expanded suite passes 116 tests covering imaging, uncertainty, timing,
+the expanded suite passes 129 tests covering imaging, uncertainty, timing,
 safety, both branches, policy ablations, benchmark statistics, replay diagnostics,
 pre-junction route guidance, continuous flow and correlated disturbances.
 See [inspection and verification record](docs/06_validation.md) for measured
@@ -332,6 +332,28 @@ python -m simulations.17_estimation_figures
 
 See [the forecast audit, method and regression analysis](docs/12_flow_estimation.md).
 
+### Optional terminal target guidance
+
+`TrialConfig(prediction_horizon_s=0.5, terminal_guidance_distance_m=0.002)` adds
+target-intercept candidates when the estimated particle position is within
+2 mm of the selected target.
+Selection prioritizes the existing sampled wall margin, then predicted closest
+target approach. The 0.4 mm success radius, current safety gates and 3 nN cap
+remain unchanged. A zero terminal-guidance distance disables the option.
+
+```bash
+python -m simulations.18_terminal_guidance --model piecewise
+python -m simulations.18_terminal_guidance --model smooth
+python -m simulations.19_terminal_figures
+```
+
+This fixed 320-run comparison uses seeds 25-29 with both estimator baselines.
+Terminal guidance rescued 21 matched failures, with no success regressions,
+new wall violations or reductions in per-trial minimum true clearance. The
+17 remaining guided failures all had wrong-branch events. The option remains
+disabled by default pending broader validation.
+See [the method, held-out outcomes and known-regression replays](docs/13_terminal_guidance.md).
+
 ## Repository structure
 
 ```text
@@ -373,6 +395,8 @@ simulations/
   15_estimation_audit.py
   16_flow_estimator_comparison.py
   17_estimation_figures.py
+  18_terminal_guidance.py
+  19_terminal_figures.py
 docs/                    Physics, imaging, estimation, safety, verification
 tests/                   Deterministic physics, numerical and integration tests
 ```
@@ -390,6 +414,7 @@ tests/                   Deterministic physics, numerical and integration tests
 - [x] Deterministic latency/dropout/noise stress scenarios and regression tests
 - [x] Optional pre-junction lateral guidance with matched original/new-seed evaluation
 - [x] Optional short-horizon correction with unchanged gates and held-out comparison
+- [x] Optional terminal target-intercept selection with paired estimator baselines
 - [ ] General vascular graph routing and branch-crossing surfaces
 - [ ] Exact union/mesh wall distance and swept collision checking
 - [ ] Perspective/raster imaging, segmentation, outliers and single-view handling

@@ -1,0 +1,162 @@
+[
+  {
+    "flow_model": "piecewise",
+    "estimator_mode": "kinematic",
+    "pair_changes": {
+      "unchanged": 36,
+      "rescued": 4
+    },
+    "off": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 30,
+        "wall_collision": 10,
+        "wrong_branch": 6
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 30,
+        "capsule_sidewall_proxy": 4,
+        "closed_outlet_cap_proxy": 6
+      }
+    },
+    "on": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 34,
+        "wall_collision": 6,
+        "wrong_branch": 6
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 34,
+        "capsule_sidewall_proxy": 4,
+        "closed_outlet_cap_proxy": 2
+      }
+    },
+    "new_wall_collision": 0,
+    "new_wrong_branch": 0,
+    "clearance_decreased_over_1um": 0,
+    "worst_clearance_change_m": 0.0
+  },
+  {
+    "flow_model": "piecewise",
+    "estimator_mode": "command_aware",
+    "pair_changes": {
+      "unchanged": 33,
+      "rescued": 7
+    },
+    "off": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 28,
+        "wall_collision": 12,
+        "wrong_branch": 5
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 28,
+        "closed_outlet_cap_proxy": 9,
+        "capsule_sidewall_proxy": 3
+      }
+    },
+    "on": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 35,
+        "wall_collision": 5,
+        "wrong_branch": 5
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 35,
+        "capsule_sidewall_proxy": 3,
+        "closed_outlet_cap_proxy": 2
+      }
+    },
+    "new_wall_collision": 0,
+    "new_wrong_branch": 0,
+    "clearance_decreased_over_1um": 0,
+    "worst_clearance_change_m": 0.0
+  },
+  {
+    "flow_model": "smooth",
+    "estimator_mode": "kinematic",
+    "pair_changes": {
+      "unchanged": 36,
+      "rescued": 4
+    },
+    "off": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 33,
+        "wall_collision": 7,
+        "wrong_branch": 3
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 33,
+        "closed_outlet_cap_proxy": 5,
+        "capsule_sidewall_proxy": 2
+      }
+    },
+    "on": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 37,
+        "wall_collision": 3,
+        "wrong_branch": 3
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 37,
+        "capsule_sidewall_proxy": 2,
+        "closed_outlet_cap_proxy": 1
+      }
+    },
+    "new_wall_collision": 0,
+    "new_wrong_branch": 0,
+    "clearance_decreased_over_1um": 0,
+    "worst_clearance_change_m": 0.0
+  },
+  {
+    "flow_model": "smooth",
+    "estimator_mode": "command_aware",
+    "pair_changes": {
+      "unchanged": 34,
+      "rescued": 6
+    },
+    "off": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 31,
+        "wall_collision": 9,
+        "wrong_branch": 3
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 31,
+        "closed_outlet_cap_proxy": 7,
+        "capsule_sidewall_proxy": 2
+      }
+    },
+    "on": {
+      "trials": 40,
+      "outcomes": {
+        "target_success": 37,
+        "wall_collision": 3,
+        "wrong_branch": 3
+      },
+      "timeouts": 0,
+      "terminal_features": {
+        "none": 37,
+        "capsule_sidewall_proxy": 2,
+        "closed_outlet_cap_proxy": 1
+      }
+    },
+    "new_wall_collision": 0,
+    "new_wrong_branch": 0,
+    "clearance_decreased_over_1um": 0,
+    "worst_clearance_change_m": 0.0
+  }
+]

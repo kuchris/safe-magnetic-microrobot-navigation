@@ -118,3 +118,26 @@ are NaN when disabled or inhibited by the current gate. The reason
 waypoint request, before any predictive correction.
 
 See [the equations, assumptions and executed comparison](11_predictive_control.md).
+
+## Optional terminal target guidance
+
+With a positive prediction horizon, `terminal_guidance_distance_m=0.002`
+changes candidate selection only when the estimated position is within 2 mm
+of the selected endpoint. Four bounded blends toward an estimated-flow-aware
+target intercept join the original six candidates. The controller minimizes
+predicted closest target distance among candidates satisfying the same sampled
+robust wall margin. If none satisfy it, maximum minimum clearance remains the
+selection rule. The current gate still runs first and the force cap is unchanged.
+
+The option defaults to zero (disabled). It neither changes the 0.4 mm true-state
+success criterion nor declares success inside the controller. It is a finite
+candidate heuristic, not a guaranteed target-reaching or collision-free policy.
+
+Histories additionally expose `terminal_active` and `terminal_adjusted` (relative
+to the original wall-only selection at the same current estimate), plus
+`baseline_target_miss_m` and `selected_target_miss_m`. The miss values describe
+closest approach under a constant force over the prediction horizon; they are
+NaN when terminal mode is inactive or the gate inhibits actuation. They are not
+measured target distances or uncertainty-calibrated arrival guarantees.
+
+See [the fixed comparison and replays](13_terminal_guidance.md).

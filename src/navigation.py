@@ -28,6 +28,10 @@ class ControlOutput:
     predicted_nominal_clearance_m: float = np.nan
     predicted_selected_clearance_m: float = np.nan
     prediction_adjusted: bool = False
+    terminal_active: bool = False
+    terminal_adjusted: bool = False
+    baseline_target_miss_m: float = np.nan
+    selected_target_miss_m: float = np.nan
 
 
 class BiplaneNavigation:
@@ -38,7 +42,7 @@ class BiplaneNavigation:
                  safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7,
                  control_mode="gated", approach_offset_m=0.0,
                  prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3,
-                 estimator_mode="kinematic"):
+                 estimator_mode="kinematic", terminal_guidance_distance_m=0.0):
         if control_mode not in ("passive", "ungated", "gated"):
             raise ValueError("control_mode must be passive, ungated, or gated")
         self.control_mode = control_mode
@@ -59,12 +63,15 @@ class BiplaneNavigation:
         self.gain = gain_n_per_m
         self.max_force_n = max_force_n
         nonnegative(prediction_horizon_s, "prediction_horizon_s")
+        nonnegative(terminal_guidance_distance_m, "terminal_guidance_distance_m")
+        if terminal_guidance_distance_m > 0 and prediction_horizon_s == 0:
+            raise ValueError("terminal guidance requires a positive prediction horizon")
         if prediction_horizon_s > 0 and control_mode != "gated":
             raise ValueError("prediction requires gated control")
         self.predictor = ShortHorizonCorrection(vessel, particle_radius_m, branch,
             prediction_horizon_s, model_drag,
             max_force_n, safety_margin_m, self.supervisor.k_sigma,
-            acceleration_spectral_density) if prediction_horizon_s > 0 else None
+            acceleration_spectral_density, terminal_guidance_distance_m) if prediction_horizon_s > 0 else None
         self.previous_force_n = np.zeros(3)
         self.tracking_valid = False
         self.last_frame_s = -np.inf
@@ -132,4 +139,8 @@ class BiplaneNavigation:
                              reason, clearance, robust, age, limited,
                              np.nan if prediction is None else prediction.nominal_clearance_m,
                              np.nan if prediction is None else prediction.selected_clearance_m,
-                             prediction is not None and prediction.adjusted)
+                             prediction is not None and prediction.adjusted,
+                             prediction is not None and prediction.terminal_active,
+                             prediction is not None and prediction.terminal_adjusted,
+                             np.nan if prediction is None else prediction.baseline_target_miss_m,
+                             np.nan if prediction is None else prediction.selected_target_miss_m)
