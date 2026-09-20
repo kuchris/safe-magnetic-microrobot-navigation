@@ -1,0 +1,6 @@
+{
+  "case_id": "piecewise_0.6_0.3_lower_20",
+  "baseline": "piecewise_0.6_0.3_lower_20_kinematic",
+  "command_aware": "piecewise_0.6_0.3_lower_20_command_aware",
+  "change": "regressed"
+}

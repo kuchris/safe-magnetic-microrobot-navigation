@@ -8,6 +8,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from src.controller import bounded_target_force
+from src.flow_estimation import CommandAwareEstimator
 from src.localization import BiplaneTriangulator, DelayedStateEstimator
 from src.planner import YWaypointPlanner
 from src.prediction import ShortHorizonCorrection
@@ -36,26 +37,32 @@ class BiplaneNavigation:
                  max_measurement_age_s=0.15, max_sigma_m=0.35e-3,
                  safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7,
                  control_mode="gated", approach_offset_m=0.0,
-                 prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3):
+                 prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3,
+                 estimator_mode="kinematic"):
         if control_mode not in ("passive", "ungated", "gated"):
             raise ValueError("control_mode must be passive, ungated, or gated")
         self.control_mode = control_mode
         self.vessel = vessel
         self.particle_radius_m = particle_radius_m
         self.triangulator = BiplaneTriangulator(views, noise_sigma_px, calibration_sigma_px)
-        self.estimator = DelayedStateEstimator(
+        if estimator_mode not in ("kinematic", "command_aware"):
+            raise ValueError("estimator_mode must be kinematic or command_aware")
+        nonnegative(model_viscosity_pa_s, "model_viscosity_pa_s", positive=True)
+        model_drag = 6 * np.pi * model_viscosity_pa_s * particle_radius_m
+        self.estimator = (CommandAwareEstimator(model_drag,
             acceleration_spectral_density=acceleration_spectral_density)
+            if estimator_mode == "command_aware" else DelayedStateEstimator(
+            acceleration_spectral_density=acceleration_spectral_density))
         self.planner = YWaypointPlanner(vessel, branch, approach_offset_m=approach_offset_m)
         self.supervisor = SafetySupervisor(max_sigma_m, safety_margin_m,
             max_measurement_age_s=max_measurement_age_s, max_force_n=max_force_n)
         self.gain = gain_n_per_m
         self.max_force_n = max_force_n
         nonnegative(prediction_horizon_s, "prediction_horizon_s")
-        nonnegative(model_viscosity_pa_s, "model_viscosity_pa_s", positive=True)
         if prediction_horizon_s > 0 and control_mode != "gated":
             raise ValueError("prediction requires gated control")
         self.predictor = ShortHorizonCorrection(vessel, particle_radius_m, branch,
-            prediction_horizon_s, 6 * np.pi * model_viscosity_pa_s * particle_radius_m,
+            prediction_horizon_s, model_drag,
             max_force_n, safety_margin_m, self.supervisor.k_sigma,
             acceleration_spectral_density) if prediction_horizon_s > 0 else None
         self.previous_force_n = np.zeros(3)
@@ -88,6 +95,8 @@ class BiplaneNavigation:
         estimate = self.estimator.estimate(now_s)
         if estimate is None:
             self.previous_force_n = np.zeros(3)
+            if isinstance(self.estimator, CommandAwareEstimator):
+                self.estimator.command(now_s, self.previous_force_n)
             reason = "passive" if self.control_mode == "passive" else "tracking_lost"
             return ControlOutput(np.zeros(3), None, reason, np.nan, np.nan, np.inf, False)
         age = now_s - self.estimator.last_capture_s
@@ -117,6 +126,8 @@ class BiplaneNavigation:
                 if prediction.adjusted:
                     reason = "prediction_adjustment"
         self.previous_force_n = self.supervisor.filter_force(force, allowed)
+        if isinstance(self.estimator, CommandAwareEstimator):
+            self.estimator.command(now_s, self.previous_force_n)
         return ControlOutput(self.previous_force_n.copy(), estimate,
                              reason, clearance, robust, age, limited,
                              np.nan if prediction is None else prediction.nominal_clearance_m,

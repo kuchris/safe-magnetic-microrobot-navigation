@@ -1,0 +1,4212 @@
+{
+  "source": "outputs/13_predictive_control",
+  "seeds": [
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "trials": [
+    {
+      "source_trace_id": "smooth_0.6_0_upper_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.155159857028417e-05,
+            "recorded_command_RMSE_m": 6.169477091989306e-05,
+            "flow_RMSE_m_s": 0.00015196240352165774
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 87,
+            "held_command_RMSE_m": 6.346250672975375e-05,
+            "recorded_command_RMSE_m": 6.347253338006302e-05,
+            "flow_RMSE_m_s": 0.0001663878327816044
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011563255466330722,
+            "recorded_command_RMSE_m": 0.00011910134291385055,
+            "flow_RMSE_m_s": 0.00015265249076516692
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 0.0001240796320002885,
+            "recorded_command_RMSE_m": 0.0001259865841012956,
+            "flow_RMSE_m_s": 0.00016743452185308835
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.0164848416664406e-05,
+            "recorded_command_RMSE_m": 6.0127906525540434e-05,
+            "flow_RMSE_m_s": 0.00013858317082531078
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 87,
+            "held_command_RMSE_m": 6.0864316065333674e-05,
+            "recorded_command_RMSE_m": 6.079011480609736e-05,
+            "flow_RMSE_m_s": 0.00014115419022360466
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011420942339499181,
+            "recorded_command_RMSE_m": 0.000112643131365711,
+            "flow_RMSE_m_s": 0.0001390979182916697
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 0.00011889379926390152,
+            "recorded_command_RMSE_m": 0.00011436247896475788,
+            "flow_RMSE_m_s": 0.00014144046173235252
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_upper_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.124869761809686e-05,
+            "recorded_command_RMSE_m": 6.149320435982235e-05,
+            "flow_RMSE_m_s": 0.00015562432475138815
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 6.173040562791001e-05,
+            "recorded_command_RMSE_m": 6.213007021331077e-05,
+            "flow_RMSE_m_s": 0.00016005483787900727
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.0001140693601527874,
+            "recorded_command_RMSE_m": 0.00012024805852866823,
+            "flow_RMSE_m_s": 0.0001556465168456379
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.00011191959842168984,
+            "recorded_command_RMSE_m": 0.00012293534570875436,
+            "flow_RMSE_m_s": 0.00016087983208663893
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 5.933770651319031e-05,
+            "recorded_command_RMSE_m": 5.9388036772092344e-05,
+            "flow_RMSE_m_s": 0.00013826151447711595
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 5.8234132231596155e-05,
+            "recorded_command_RMSE_m": 5.855402384744522e-05,
+            "flow_RMSE_m_s": 0.00013118729084910847
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011118625055283877,
+            "recorded_command_RMSE_m": 0.00011186819174544376,
+            "flow_RMSE_m_s": 0.00013843859769601134
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.00010427333791447472,
+            "recorded_command_RMSE_m": 0.00010753452034939544,
+            "flow_RMSE_m_s": 0.0001321903917464053
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_upper_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.233380311058264e-05,
+            "recorded_command_RMSE_m": 6.244065968834916e-05,
+            "flow_RMSE_m_s": 0.00015522415618441363
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 6.370458915323737e-05,
+            "recorded_command_RMSE_m": 6.352255195530791e-05,
+            "flow_RMSE_m_s": 0.00016865013360651908
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011368859104717188,
+            "recorded_command_RMSE_m": 0.00012028933077734779,
+            "flow_RMSE_m_s": 0.00015495932083706458
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.00012148309871839822,
+            "recorded_command_RMSE_m": 0.00012389783994844192,
+            "flow_RMSE_m_s": 0.000169071753181428
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.036774867158051e-05,
+            "recorded_command_RMSE_m": 6.0284852298622236e-05,
+            "flow_RMSE_m_s": 0.00013747090111053818
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 6.28099353124482e-05,
+            "recorded_command_RMSE_m": 6.253686522657665e-05,
+            "flow_RMSE_m_s": 0.00014153765898066348
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.0001105175080916122,
+            "recorded_command_RMSE_m": 0.0001115055377425261,
+            "flow_RMSE_m_s": 0.00013720340359916352
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.00012152312936336093,
+            "recorded_command_RMSE_m": 0.00011630570490582378,
+            "flow_RMSE_m_s": 0.0001416656078490471
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_upper_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 532,
+            "held_command_RMSE_m": 5.9881623038130234e-05,
+            "recorded_command_RMSE_m": 6.00543749719491e-05,
+            "flow_RMSE_m_s": 0.00014991565072050458
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 88,
+            "held_command_RMSE_m": 5.847212419521954e-05,
+            "recorded_command_RMSE_m": 5.874586209444221e-05,
+            "flow_RMSE_m_s": 0.00015244448720585135
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 524,
+            "held_command_RMSE_m": 0.00011039386123431925,
+            "recorded_command_RMSE_m": 0.00011559279692732974,
+            "flow_RMSE_m_s": 0.00014969408743764525
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 0.0001092100142550164,
+            "recorded_command_RMSE_m": 0.00011600578294361008,
+            "flow_RMSE_m_s": 0.00015314248210321436
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 532,
+            "held_command_RMSE_m": 5.82519213760927e-05,
+            "recorded_command_RMSE_m": 5.82364966345534e-05,
+            "flow_RMSE_m_s": 0.00013421510648131655
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 88,
+            "held_command_RMSE_m": 5.589012613712389e-05,
+            "recorded_command_RMSE_m": 5.6078979962322885e-05,
+            "flow_RMSE_m_s": 0.00012713326986622833
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 524,
+            "held_command_RMSE_m": 0.00010833413401650607,
+            "recorded_command_RMSE_m": 0.0001080330347092957,
+            "flow_RMSE_m_s": 0.00013396093461751898
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 0.00010408929280507672,
+            "recorded_command_RMSE_m": 0.00010362278577486578,
+            "flow_RMSE_m_s": 0.00012782003075323615
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_upper_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 5.802329640881605e-05,
+            "recorded_command_RMSE_m": 5.838154626881558e-05,
+            "flow_RMSE_m_s": 0.00014449697074103257
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 6.0050934897863575e-05,
+            "recorded_command_RMSE_m": 5.998545325452108e-05,
+            "flow_RMSE_m_s": 0.0001620791312996052
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00010570159930547006,
+            "recorded_command_RMSE_m": 0.00011108789316722696,
+            "flow_RMSE_m_s": 0.0001442650729112606
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 83,
+            "held_command_RMSE_m": 0.00011457245430951946,
+            "recorded_command_RMSE_m": 0.00011658667708774039,
+            "flow_RMSE_m_s": 0.0001610705696954867
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 5.670505840805799e-05,
+            "recorded_command_RMSE_m": 5.686215500664073e-05,
+            "flow_RMSE_m_s": 0.00012947312723563933
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 5.923022698162255e-05,
+            "recorded_command_RMSE_m": 5.906943132168469e-05,
+            "flow_RMSE_m_s": 0.00013767287112378986
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00010462868686824406,
+            "recorded_command_RMSE_m": 0.00010430782573314712,
+            "flow_RMSE_m_s": 0.00012958059303781253
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 83,
+            "held_command_RMSE_m": 0.00011534721916687058,
+            "recorded_command_RMSE_m": 0.00010982357750455893,
+            "flow_RMSE_m_s": 0.0001381160530480222
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_lower_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.191090662411135e-05,
+            "recorded_command_RMSE_m": 6.21342798153845e-05,
+            "flow_RMSE_m_s": 0.00015477295903150424
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 87,
+            "held_command_RMSE_m": 6.678806852897739e-05,
+            "recorded_command_RMSE_m": 6.677814083209118e-05,
+            "flow_RMSE_m_s": 0.0001685821077183437
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011492284006171398,
+            "recorded_command_RMSE_m": 0.00012064822003665739,
+            "flow_RMSE_m_s": 0.00015534313209369114
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.0001260525589574495,
+            "recorded_command_RMSE_m": 0.00013011267860509984,
+            "flow_RMSE_m_s": 0.00016949934662380687
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.011560679386539e-05,
+            "recorded_command_RMSE_m": 6.014241460438974e-05,
+            "flow_RMSE_m_s": 0.00013851982554697316
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 87,
+            "held_command_RMSE_m": 6.502268578779525e-05,
+            "recorded_command_RMSE_m": 6.492205423607951e-05,
+            "flow_RMSE_m_s": 0.00014502549473044258
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011246863746289002,
+            "recorded_command_RMSE_m": 0.00011269515727849568,
+            "flow_RMSE_m_s": 0.00013903384009758126
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.0001250385069739822,
+            "recorded_command_RMSE_m": 0.00012166108173640207,
+            "flow_RMSE_m_s": 0.0001462075318613973
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_lower_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.115261867640389e-05,
+            "recorded_command_RMSE_m": 6.149368279018826e-05,
+            "flow_RMSE_m_s": 0.0001561425413930857
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 6.258420202498182e-05,
+            "recorded_command_RMSE_m": 6.281468720300721e-05,
+            "flow_RMSE_m_s": 0.0001612001072589552
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011313050521262858,
+            "recorded_command_RMSE_m": 0.00012028456602424083,
+            "flow_RMSE_m_s": 0.00015631599497311868
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.00011608783825229326,
+            "recorded_command_RMSE_m": 0.0001242538688246526,
+            "flow_RMSE_m_s": 0.00016184168328690562
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 5.9043840064786706e-05,
+            "recorded_command_RMSE_m": 5.9193796453617014e-05,
+            "flow_RMSE_m_s": 0.00013777759854286233
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 5.975200929507057e-05,
+            "recorded_command_RMSE_m": 5.990370160117813e-05,
+            "flow_RMSE_m_s": 0.00013651319589328808
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.0001096532665379949,
+            "recorded_command_RMSE_m": 0.00011125623442377985,
+            "flow_RMSE_m_s": 0.00013794788294228336
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.0001113809422999851,
+            "recorded_command_RMSE_m": 0.00011209180309733282,
+            "flow_RMSE_m_s": 0.00013760385666003285
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_lower_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.267131331794369e-05,
+            "recorded_command_RMSE_m": 6.292349184896121e-05,
+            "flow_RMSE_m_s": 0.0001572425137556094
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 6.032349536090666e-05,
+            "recorded_command_RMSE_m": 6.0283661314842804e-05,
+            "flow_RMSE_m_s": 0.0001669236518258405
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011519813592059988,
+            "recorded_command_RMSE_m": 0.00012169673192316584,
+            "flow_RMSE_m_s": 0.00015692440118566912
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.00011530652297962817,
+            "recorded_command_RMSE_m": 0.00011988681258314363,
+            "flow_RMSE_m_s": 0.0001670515638676049
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 6.047157831464847e-05,
+            "recorded_command_RMSE_m": 6.0524114668752966e-05,
+            "flow_RMSE_m_s": 0.00013792710295133743
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 5.847316073526681e-05,
+            "recorded_command_RMSE_m": 5.83281018511765e-05,
+            "flow_RMSE_m_s": 0.00013176237948985512
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00011118590138521785,
+            "recorded_command_RMSE_m": 0.00011211434360708806,
+            "flow_RMSE_m_s": 0.00013766748529133986
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.0001115455772958882,
+            "recorded_command_RMSE_m": 0.00010792119704473978,
+            "flow_RMSE_m_s": 0.00013209219511798532
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_lower_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 531,
+            "held_command_RMSE_m": 6.047835331580563e-05,
+            "recorded_command_RMSE_m": 6.064723054853765e-05,
+            "flow_RMSE_m_s": 0.0001500503622297535
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 5.9531247034558564e-05,
+            "recorded_command_RMSE_m": 5.988767351669977e-05,
+            "flow_RMSE_m_s": 0.00015323919122327173
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 523,
+            "held_command_RMSE_m": 0.00011143485755016581,
+            "recorded_command_RMSE_m": 0.00011682567461229224,
+            "flow_RMSE_m_s": 0.00015007095645249804
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.00010956086223532822,
+            "recorded_command_RMSE_m": 0.00011795059754859671,
+            "flow_RMSE_m_s": 0.00015413496132621421
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 531,
+            "held_command_RMSE_m": 5.8636895708631674e-05,
+            "recorded_command_RMSE_m": 5.862356264744748e-05,
+            "flow_RMSE_m_s": 0.00013371191495400688
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 5.65725949432949e-05,
+            "recorded_command_RMSE_m": 5.685343533992287e-05,
+            "flow_RMSE_m_s": 0.00012603185242744474
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 523,
+            "held_command_RMSE_m": 0.00010902748619193273,
+            "recorded_command_RMSE_m": 0.00010889167277264858,
+            "flow_RMSE_m_s": 0.0001337377411574644
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.0001030015812822083,
+            "recorded_command_RMSE_m": 0.00010385264107627954,
+            "flow_RMSE_m_s": 0.00012671483567046858
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0_lower_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 5.921170243131864e-05,
+            "recorded_command_RMSE_m": 5.943148060432996e-05,
+            "flow_RMSE_m_s": 0.00014260977519510635
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 5.932694965157393e-05,
+            "recorded_command_RMSE_m": 5.938824598653567e-05,
+            "flow_RMSE_m_s": 0.00015753414489476516
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00010838486214035578,
+            "recorded_command_RMSE_m": 0.00011292927508932815,
+            "flow_RMSE_m_s": 0.00014275251362332118
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 83,
+            "held_command_RMSE_m": 0.00011297479361962655,
+            "recorded_command_RMSE_m": 0.00011719271171906018,
+            "flow_RMSE_m_s": 0.00015745955863686865
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 530,
+            "held_command_RMSE_m": 5.792346491213205e-05,
+            "recorded_command_RMSE_m": 5.794712794013094e-05,
+            "flow_RMSE_m_s": 0.00012929603036275858
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 5.792803848420038e-05,
+            "recorded_command_RMSE_m": 5.78794524448994e-05,
+            "flow_RMSE_m_s": 0.00013762253163301772
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 522,
+            "held_command_RMSE_m": 0.00010789749912485817,
+            "recorded_command_RMSE_m": 0.00010675484911171775,
+            "flow_RMSE_m_s": 0.0001294009294818107
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 83,
+            "held_command_RMSE_m": 0.0001134592234363694,
+            "recorded_command_RMSE_m": 0.00010946995360816726,
+            "flow_RMSE_m_s": 0.0001376413291274171
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_upper_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 587,
+            "held_command_RMSE_m": 0.00011949492002458663,
+            "recorded_command_RMSE_m": 0.00011990585663729335,
+            "flow_RMSE_m_s": 0.0005567147552149204
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 131,
+            "held_command_RMSE_m": 0.00012286626413764973,
+            "recorded_command_RMSE_m": 0.0001242488002326215,
+            "flow_RMSE_m_s": 0.0005892866788025147
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 579,
+            "held_command_RMSE_m": 0.00031225703296449434,
+            "recorded_command_RMSE_m": 0.0003256998226229814,
+            "flow_RMSE_m_s": 0.0005571005658524697
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 128,
+            "held_command_RMSE_m": 0.00031801349048649416,
+            "recorded_command_RMSE_m": 0.00034099184449256606,
+            "flow_RMSE_m_s": 0.0005907188577322703
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 587,
+            "held_command_RMSE_m": 0.00011315784042775191,
+            "recorded_command_RMSE_m": 0.00011346520355489778,
+            "flow_RMSE_m_s": 0.0005233059712180567
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 131,
+            "held_command_RMSE_m": 0.00011422905105925134,
+            "recorded_command_RMSE_m": 0.00011522191436876685,
+            "flow_RMSE_m_s": 0.0005338619674892568
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 579,
+            "held_command_RMSE_m": 0.0002919929380290663,
+            "recorded_command_RMSE_m": 0.0003034208875793032,
+            "flow_RMSE_m_s": 0.0005237143524801053
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 128,
+            "held_command_RMSE_m": 0.0002859853442414438,
+            "recorded_command_RMSE_m": 0.00030436023084552016,
+            "flow_RMSE_m_s": 0.000535626926847747
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_upper_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 562,
+            "held_command_RMSE_m": 0.00011805206106459781,
+            "recorded_command_RMSE_m": 0.00011829562189658674,
+            "flow_RMSE_m_s": 0.0005406116348713202
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 97,
+            "held_command_RMSE_m": 0.00012552352497035625,
+            "recorded_command_RMSE_m": 0.000126589268600974,
+            "flow_RMSE_m_s": 0.0005546310316477005
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 554,
+            "held_command_RMSE_m": 0.00030584044047313186,
+            "recorded_command_RMSE_m": 0.00031342203714908144,
+            "flow_RMSE_m_s": 0.0005413868426312669
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 95,
+            "held_command_RMSE_m": 0.0003245286272807905,
+            "recorded_command_RMSE_m": 0.000340525438519767,
+            "flow_RMSE_m_s": 0.0005562901305841676
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 562,
+            "held_command_RMSE_m": 0.00011273237756643941,
+            "recorded_command_RMSE_m": 0.00011290818827216766,
+            "flow_RMSE_m_s": 0.0005153803199494743
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 97,
+            "held_command_RMSE_m": 0.00011688034039083626,
+            "recorded_command_RMSE_m": 0.00011771271540837727,
+            "flow_RMSE_m_s": 0.0005141988702167472
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 554,
+            "held_command_RMSE_m": 0.0002880067843534139,
+            "recorded_command_RMSE_m": 0.0002941132449680422,
+            "flow_RMSE_m_s": 0.0005161379348454032
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 95,
+            "held_command_RMSE_m": 0.0002983833714692713,
+            "recorded_command_RMSE_m": 0.0003097132637416205,
+            "flow_RMSE_m_s": 0.000514732032392828
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_upper_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 514,
+            "held_command_RMSE_m": 0.00011850103891956977,
+            "recorded_command_RMSE_m": 0.00011897591333493372,
+            "flow_RMSE_m_s": 0.0005665421145100059
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00011506553630872162,
+            "recorded_command_RMSE_m": 0.00011617729464418886,
+            "flow_RMSE_m_s": 0.0005588077040534193
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 506,
+            "held_command_RMSE_m": 0.0003170448404826225,
+            "recorded_command_RMSE_m": 0.0003304381200168306,
+            "flow_RMSE_m_s": 0.0005689404386781818
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 102,
+            "held_command_RMSE_m": 0.00031379002658487735,
+            "recorded_command_RMSE_m": 0.00033329150811695416,
+            "flow_RMSE_m_s": 0.0005602421905055531
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 514,
+            "held_command_RMSE_m": 0.00011393920395035629,
+            "recorded_command_RMSE_m": 0.00011430164851605468,
+            "flow_RMSE_m_s": 0.0005448619053143874
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00010911455951867704,
+            "recorded_command_RMSE_m": 0.0001098183314026477,
+            "flow_RMSE_m_s": 0.0005250686723616697
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 506,
+            "held_command_RMSE_m": 0.00030119276799898134,
+            "recorded_command_RMSE_m": 0.0003122604992682311,
+            "flow_RMSE_m_s": 0.0005469366639134645
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 102,
+            "held_command_RMSE_m": 0.00029147939156685466,
+            "recorded_command_RMSE_m": 0.00030431973063708447,
+            "flow_RMSE_m_s": 0.0005264334263821777
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_upper_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 543,
+            "held_command_RMSE_m": 0.00011149406839136897,
+            "recorded_command_RMSE_m": 0.00011179497108866512,
+            "flow_RMSE_m_s": 0.0005288534630825714
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 103,
+            "held_command_RMSE_m": 0.00011827240515190292,
+            "recorded_command_RMSE_m": 0.00011958960588287661,
+            "flow_RMSE_m_s": 0.0005597820094368805
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 535,
+            "held_command_RMSE_m": 0.00028971780015636824,
+            "recorded_command_RMSE_m": 0.0002995789555337279,
+            "flow_RMSE_m_s": 0.0005260350823836727
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 101,
+            "held_command_RMSE_m": 0.0002914764186883245,
+            "recorded_command_RMSE_m": 0.0003134329897641957,
+            "flow_RMSE_m_s": 0.0005606212341458339
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 543,
+            "held_command_RMSE_m": 0.00010829395107973854,
+            "recorded_command_RMSE_m": 0.00010844786196176286,
+            "flow_RMSE_m_s": 0.0005136517237872345
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 103,
+            "held_command_RMSE_m": 0.00011044956621693677,
+            "recorded_command_RMSE_m": 0.00011123038687693972,
+            "flow_RMSE_m_s": 0.0005169050422161605
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 535,
+            "held_command_RMSE_m": 0.00027535720249346264,
+            "recorded_command_RMSE_m": 0.0002832442699140227,
+            "flow_RMSE_m_s": 0.0005103123275908392
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 101,
+            "held_command_RMSE_m": 0.00026328365942758486,
+            "recorded_command_RMSE_m": 0.000278353091467484,
+            "flow_RMSE_m_s": 0.0005154653082882134
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_upper_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 613,
+            "held_command_RMSE_m": 0.00010949669966007159,
+            "recorded_command_RMSE_m": 0.00010975357501645934,
+            "flow_RMSE_m_s": 0.000525317682206287
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 108,
+            "held_command_RMSE_m": 0.00011194763419192915,
+            "recorded_command_RMSE_m": 0.00011303470666750606,
+            "flow_RMSE_m_s": 0.0005431924951876981
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 605,
+            "held_command_RMSE_m": 0.0002992071408479536,
+            "recorded_command_RMSE_m": 0.00030624729362866375,
+            "flow_RMSE_m_s": 0.0005267848314862238
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 108,
+            "held_command_RMSE_m": 0.00032253899553078507,
+            "recorded_command_RMSE_m": 0.0003382224281407257,
+            "flow_RMSE_m_s": 0.0005431924951876981
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 613,
+            "held_command_RMSE_m": 0.0001061139859957527,
+            "recorded_command_RMSE_m": 0.00010627662616842454,
+            "flow_RMSE_m_s": 0.0005086786017577878
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 108,
+            "held_command_RMSE_m": 0.00010502209992068486,
+            "recorded_command_RMSE_m": 0.00010568554428789251,
+            "flow_RMSE_m_s": 0.0005046517756716534
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 605,
+            "held_command_RMSE_m": 0.0002867109636222909,
+            "recorded_command_RMSE_m": 0.000292446789107316,
+            "flow_RMSE_m_s": 0.0005101074678249344
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 108,
+            "held_command_RMSE_m": 0.0003001968476027383,
+            "recorded_command_RMSE_m": 0.0003099574084982719,
+            "flow_RMSE_m_s": 0.0005046517756716534
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_lower_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 535,
+            "held_command_RMSE_m": 0.00011864927150136361,
+            "recorded_command_RMSE_m": 0.00011904302750775308,
+            "flow_RMSE_m_s": 0.0005531715832080942
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 113,
+            "held_command_RMSE_m": 0.00012867818050224338,
+            "recorded_command_RMSE_m": 0.0001297633756990902,
+            "flow_RMSE_m_s": 0.0006163208991792755
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 527,
+            "held_command_RMSE_m": 0.0003080314447111864,
+            "recorded_command_RMSE_m": 0.00031988118534752985,
+            "flow_RMSE_m_s": 0.0005542221195224919
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 110,
+            "held_command_RMSE_m": 0.0003321481633590297,
+            "recorded_command_RMSE_m": 0.0003529774236098573,
+            "flow_RMSE_m_s": 0.0006166863826547248
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 535,
+            "held_command_RMSE_m": 0.00011221657713249633,
+            "recorded_command_RMSE_m": 0.00011245681169857234,
+            "flow_RMSE_m_s": 0.0005188056581679857
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 113,
+            "held_command_RMSE_m": 0.00012060007783566732,
+            "recorded_command_RMSE_m": 0.00012125343077283358,
+            "flow_RMSE_m_s": 0.0005626524824567515
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 527,
+            "held_command_RMSE_m": 0.0002886350652860698,
+            "recorded_command_RMSE_m": 0.00029772143891888673,
+            "flow_RMSE_m_s": 0.0005196819373391008
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 110,
+            "held_command_RMSE_m": 0.00029978339288305554,
+            "recorded_command_RMSE_m": 0.00031421556996896467,
+            "flow_RMSE_m_s": 0.0005631501888006921
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_lower_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 545,
+            "held_command_RMSE_m": 0.00011834921026675289,
+            "recorded_command_RMSE_m": 0.00011873730176594367,
+            "flow_RMSE_m_s": 0.0005407003092333918
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00012218552778845438,
+            "recorded_command_RMSE_m": 0.00012268463668374752,
+            "flow_RMSE_m_s": 0.0005755185485599485
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 537,
+            "held_command_RMSE_m": 0.00030341877373236064,
+            "recorded_command_RMSE_m": 0.0003169081996596485,
+            "flow_RMSE_m_s": 0.000540696901847217
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.0003057442442209892,
+            "recorded_command_RMSE_m": 0.00032933929646724826,
+            "flow_RMSE_m_s": 0.0005755185485599485
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 545,
+            "held_command_RMSE_m": 0.0001127423677020648,
+            "recorded_command_RMSE_m": 0.00011304539776356566,
+            "flow_RMSE_m_s": 0.0005159228430199742
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00011490979898966093,
+            "recorded_command_RMSE_m": 0.00011525059907583862,
+            "flow_RMSE_m_s": 0.0005426409783654058
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 537,
+            "held_command_RMSE_m": 0.00028304512567729425,
+            "recorded_command_RMSE_m": 0.0002942682141349378,
+            "flow_RMSE_m_s": 0.0005164358150234642
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00027771909904773464,
+            "recorded_command_RMSE_m": 0.0002956891069294756,
+            "flow_RMSE_m_s": 0.0005426409783654058
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_lower_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 559,
+            "held_command_RMSE_m": 0.00011616198258716037,
+            "recorded_command_RMSE_m": 0.00011634153193563098,
+            "flow_RMSE_m_s": 0.0005563147047054578
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 98,
+            "held_command_RMSE_m": 0.00010979258007418206,
+            "recorded_command_RMSE_m": 0.0001103996326178708,
+            "flow_RMSE_m_s": 0.000544050033358283
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 551,
+            "held_command_RMSE_m": 0.00031527759764678225,
+            "recorded_command_RMSE_m": 0.0003227103870315065,
+            "flow_RMSE_m_s": 0.0005577759214249389
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 98,
+            "held_command_RMSE_m": 0.0003141686229876798,
+            "recorded_command_RMSE_m": 0.0003230626058567776,
+            "flow_RMSE_m_s": 0.000544050033358283
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 559,
+            "held_command_RMSE_m": 0.00011217345223821604,
+            "recorded_command_RMSE_m": 0.00011227003310438728,
+            "flow_RMSE_m_s": 0.0005369820810973957
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 98,
+            "held_command_RMSE_m": 0.00010481730607944122,
+            "recorded_command_RMSE_m": 0.00010523681279308004,
+            "flow_RMSE_m_s": 0.0005140383547109269
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 551,
+            "held_command_RMSE_m": 0.00030169454678055044,
+            "recorded_command_RMSE_m": 0.000307600999786876,
+            "flow_RMSE_m_s": 0.0005383890728943673
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 98,
+            "held_command_RMSE_m": 0.0002996051851721302,
+            "recorded_command_RMSE_m": 0.0003035108752995008,
+            "flow_RMSE_m_s": 0.0005140383547109269
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_lower_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 572,
+            "held_command_RMSE_m": 0.00011329937255801059,
+            "recorded_command_RMSE_m": 0.00011354722809486507,
+            "flow_RMSE_m_s": 0.0005367633775398142
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 105,
+            "held_command_RMSE_m": 0.00011947551732374201,
+            "recorded_command_RMSE_m": 0.00012042963235686449,
+            "flow_RMSE_m_s": 0.0005691209865606882
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 564,
+            "held_command_RMSE_m": 0.0002967949454161416,
+            "recorded_command_RMSE_m": 0.0003043662067735082,
+            "flow_RMSE_m_s": 0.0005335260932727898
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 105,
+            "held_command_RMSE_m": 0.00029352633586177313,
+            "recorded_command_RMSE_m": 0.0003113377586529839,
+            "flow_RMSE_m_s": 0.0005691209865606882
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 572,
+            "held_command_RMSE_m": 0.00010952958051268946,
+            "recorded_command_RMSE_m": 0.00010966473929027329,
+            "flow_RMSE_m_s": 0.0005185755080407827
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 105,
+            "held_command_RMSE_m": 0.00011203552843854305,
+            "recorded_command_RMSE_m": 0.00011258828195573796,
+            "flow_RMSE_m_s": 0.0005290539599740238
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 564,
+            "held_command_RMSE_m": 0.0002823936772509161,
+            "recorded_command_RMSE_m": 0.00028825959000604133,
+            "flow_RMSE_m_s": 0.0005155087381091356
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 105,
+            "held_command_RMSE_m": 0.00027112996077484163,
+            "recorded_command_RMSE_m": 0.0002829353572913649,
+            "flow_RMSE_m_s": 0.0005290539599740238
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_0.6_0.3_lower_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 683,
+            "held_command_RMSE_m": 0.00011219339817647419,
+            "recorded_command_RMSE_m": 0.00011264213034372871,
+            "flow_RMSE_m_s": 0.000538799620250345
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 156,
+            "held_command_RMSE_m": 0.0001095432403695472,
+            "recorded_command_RMSE_m": 0.00011081382527454334,
+            "flow_RMSE_m_s": 0.0005475848099014886
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 675,
+            "held_command_RMSE_m": 0.0003060634875147533,
+            "recorded_command_RMSE_m": 0.0003201082620925751,
+            "flow_RMSE_m_s": 0.0005396989779117562
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 154,
+            "held_command_RMSE_m": 0.000330386079609103,
+            "recorded_command_RMSE_m": 0.00035612042914022794,
+            "flow_RMSE_m_s": 0.0005479641393810735
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 683,
+            "held_command_RMSE_m": 0.0001082177058633557,
+            "recorded_command_RMSE_m": 0.00010854263309152452,
+            "flow_RMSE_m_s": 0.000518334368408623
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 156,
+            "held_command_RMSE_m": 0.00010025889147256123,
+            "recorded_command_RMSE_m": 0.00010109267593604596,
+            "flow_RMSE_m_s": 0.0004962303628774383
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 675,
+            "held_command_RMSE_m": 0.0002904101173305837,
+            "recorded_command_RMSE_m": 0.00030222828126697275,
+            "flow_RMSE_m_s": 0.0005203063294284224
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 154,
+            "held_command_RMSE_m": 0.0002976267989872717,
+            "recorded_command_RMSE_m": 0.0003166232192087822,
+            "flow_RMSE_m_s": 0.000498040743410816
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_upper_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.296250140794336e-05,
+            "recorded_command_RMSE_m": 6.314683300914247e-05,
+            "flow_RMSE_m_s": 0.0001584926140047674
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.339311451036549e-05,
+            "recorded_command_RMSE_m": 6.342469316314435e-05,
+            "flow_RMSE_m_s": 0.00017083728544250564
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00012244597968011334,
+            "recorded_command_RMSE_m": 0.0001266601016747425,
+            "flow_RMSE_m_s": 0.00015910065908684848
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012897913526520817,
+            "recorded_command_RMSE_m": 0.0001319735853199419,
+            "flow_RMSE_m_s": 0.000172056575306699
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.101146629017652e-05,
+            "recorded_command_RMSE_m": 6.0895778389123745e-05,
+            "flow_RMSE_m_s": 0.00014152813928475832
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.0907279192117394e-05,
+            "recorded_command_RMSE_m": 6.0802913019078213e-05,
+            "flow_RMSE_m_s": 0.0001452305859167895
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00011732608633522446,
+            "recorded_command_RMSE_m": 0.00011791182468686998,
+            "flow_RMSE_m_s": 0.00014193550533628274
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012157122401919736,
+            "recorded_command_RMSE_m": 0.00012049619806490033,
+            "flow_RMSE_m_s": 0.00014656888136579374
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_upper_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.184577335790553e-05,
+            "recorded_command_RMSE_m": 6.235125192473724e-05,
+            "flow_RMSE_m_s": 0.0001637116091699401
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.928561557346642e-05,
+            "recorded_command_RMSE_m": 5.978909681986949e-05,
+            "flow_RMSE_m_s": 0.00016697002717770487
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00012155408166951343,
+            "recorded_command_RMSE_m": 0.00012760541207817,
+            "flow_RMSE_m_s": 0.00016368540884739932
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.0001195046264742283,
+            "recorded_command_RMSE_m": 0.00012649118182298574,
+            "flow_RMSE_m_s": 0.00016692342238200673
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 5.98525186880227e-05,
+            "recorded_command_RMSE_m": 6.010201269497346e-05,
+            "flow_RMSE_m_s": 0.00014521926101533083
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.6620276489704047e-05,
+            "recorded_command_RMSE_m": 5.703525307391488e-05,
+            "flow_RMSE_m_s": 0.00014277610274628818
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.0001156748578116586,
+            "recorded_command_RMSE_m": 0.00011836492399171206,
+            "flow_RMSE_m_s": 0.00014493980811577055
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00010970279961752713,
+            "recorded_command_RMSE_m": 0.0001129630552359874,
+            "flow_RMSE_m_s": 0.00014079681944923823
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_upper_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 6.2562468817583e-05,
+            "recorded_command_RMSE_m": 6.27295435815783e-05,
+            "flow_RMSE_m_s": 0.00015540812787314155
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.175724299585484e-05,
+            "recorded_command_RMSE_m": 6.127236152341642e-05,
+            "flow_RMSE_m_s": 0.00014673821374634337
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00012269642306633172,
+            "recorded_command_RMSE_m": 0.00012570029126713348,
+            "flow_RMSE_m_s": 0.00015548663093257667
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012198109336397096,
+            "recorded_command_RMSE_m": 0.00011882873365990763,
+            "flow_RMSE_m_s": 0.00014714865940429586
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 6.115602251185437e-05,
+            "recorded_command_RMSE_m": 6.107488477653416e-05,
+            "flow_RMSE_m_s": 0.0001422002588506955
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.071338326568463e-05,
+            "recorded_command_RMSE_m": 6.013100362569903e-05,
+            "flow_RMSE_m_s": 0.0001288311784364364
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00011921865139019756,
+            "recorded_command_RMSE_m": 0.00011910500635040721,
+            "flow_RMSE_m_s": 0.0001420562791034038
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012005020696111236,
+            "recorded_command_RMSE_m": 0.0001137027170110823,
+            "flow_RMSE_m_s": 0.0001298078957624893
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_upper_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 6.283655717461617e-05,
+            "recorded_command_RMSE_m": 6.303641225287693e-05,
+            "flow_RMSE_m_s": 0.0001591456801500878
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 6.325116454386483e-05,
+            "recorded_command_RMSE_m": 6.338739217457888e-05,
+            "flow_RMSE_m_s": 0.00016121351831057933
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00012259536331279936,
+            "recorded_command_RMSE_m": 0.00012613809531306953,
+            "flow_RMSE_m_s": 0.00016028961478076152
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.0001220776227913177,
+            "recorded_command_RMSE_m": 0.00012537408027740938,
+            "flow_RMSE_m_s": 0.0001613786097689465
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 6.122244882674277e-05,
+            "recorded_command_RMSE_m": 6.117230412444743e-05,
+            "flow_RMSE_m_s": 0.00014450963033802193
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 6.135660333853058e-05,
+            "recorded_command_RMSE_m": 6.138458562957025e-05,
+            "flow_RMSE_m_s": 0.0001439509053130282
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00011844152291537265,
+            "recorded_command_RMSE_m": 0.00011863299920873172,
+            "flow_RMSE_m_s": 0.00014542731403262347
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00011746947114650161,
+            "recorded_command_RMSE_m": 0.00011675197156348924,
+            "flow_RMSE_m_s": 0.00014450948852462486
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_upper_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 5.924902066373811e-05,
+            "recorded_command_RMSE_m": 5.9513709267302006e-05,
+            "flow_RMSE_m_s": 0.00014686650519024267
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.819300885514135e-05,
+            "recorded_command_RMSE_m": 5.781918934418761e-05,
+            "flow_RMSE_m_s": 0.00014467882279960834
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00011253474871484447,
+            "recorded_command_RMSE_m": 0.00011666741172612189,
+            "flow_RMSE_m_s": 0.00014715670777491234
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00010910845627095289,
+            "recorded_command_RMSE_m": 0.00010985453751983701,
+            "flow_RMSE_m_s": 0.00014476485785025158
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 5.8438911946189217e-05,
+            "recorded_command_RMSE_m": 5.841587250960188e-05,
+            "flow_RMSE_m_s": 0.00013447492456958364
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.845660187272579e-05,
+            "recorded_command_RMSE_m": 5.7949131642282867e-05,
+            "flow_RMSE_m_s": 0.0001295953346918261
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00011056824091073795,
+            "recorded_command_RMSE_m": 0.00011095575548877535,
+            "flow_RMSE_m_s": 0.0001348394011798721
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.0001108797180272328,
+            "recorded_command_RMSE_m": 0.00010679320118834762,
+            "flow_RMSE_m_s": 0.00012932098489671503
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_lower_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 6.395233420472574e-05,
+            "recorded_command_RMSE_m": 6.412877874700484e-05,
+            "flow_RMSE_m_s": 0.00016253346771210746
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.326780810541828e-05,
+            "recorded_command_RMSE_m": 6.332600518098662e-05,
+            "flow_RMSE_m_s": 0.00016731884282213198
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00012573687006354206,
+            "recorded_command_RMSE_m": 0.00012996238695965511,
+            "flow_RMSE_m_s": 0.0001635736706410441
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012602259012506342,
+            "recorded_command_RMSE_m": 0.0001295616435968448,
+            "flow_RMSE_m_s": 0.0001685835449144548
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 6.194224185770305e-05,
+            "recorded_command_RMSE_m": 6.185651706332759e-05,
+            "flow_RMSE_m_s": 0.00014442020502168708
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.090979398369649e-05,
+            "recorded_command_RMSE_m": 6.0845245378948596e-05,
+            "flow_RMSE_m_s": 0.00014027983383377806
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00011968389760176845,
+            "recorded_command_RMSE_m": 0.00012062353230848359,
+            "flow_RMSE_m_s": 0.0001449526916010656
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00011812704996022154,
+            "recorded_command_RMSE_m": 0.00011794506837761502,
+            "flow_RMSE_m_s": 0.000141573376034797
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_lower_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.259431867527008e-05,
+            "recorded_command_RMSE_m": 6.298621460787243e-05,
+            "flow_RMSE_m_s": 0.00016253730177321393
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.9269979123400635e-05,
+            "recorded_command_RMSE_m": 5.980644740035133e-05,
+            "flow_RMSE_m_s": 0.00016691750059046127
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00012326232269338423,
+            "recorded_command_RMSE_m": 0.0001289789803617699,
+            "flow_RMSE_m_s": 0.00016210516118971013
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00011988791979007322,
+            "recorded_command_RMSE_m": 0.0001265272847180124,
+            "flow_RMSE_m_s": 0.0001653220780710625
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.055875577362298e-05,
+            "recorded_command_RMSE_m": 6.068768409218366e-05,
+            "flow_RMSE_m_s": 0.0001436965742563182
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.6796653849817974e-05,
+            "recorded_command_RMSE_m": 5.722421705660069e-05,
+            "flow_RMSE_m_s": 0.00014421417881475433
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00011764691103423926,
+            "recorded_command_RMSE_m": 0.00011993331362731252,
+            "flow_RMSE_m_s": 0.00014337032554470402
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.0001122102618851884,
+            "recorded_command_RMSE_m": 0.00011481703087989732,
+            "flow_RMSE_m_s": 0.0001422920960245391
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_lower_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.252644146975736e-05,
+            "recorded_command_RMSE_m": 6.296218265229273e-05,
+            "flow_RMSE_m_s": 0.0001588959393568932
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.502123584676547e-05,
+            "recorded_command_RMSE_m": 6.466624591197312e-05,
+            "flow_RMSE_m_s": 0.0001568477325814723
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00012165682287276002,
+            "recorded_command_RMSE_m": 0.00012620524282980097,
+            "flow_RMSE_m_s": 0.0001584062619166631
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012181645450235333,
+            "recorded_command_RMSE_m": 0.00012242861762911487,
+            "flow_RMSE_m_s": 0.00015441351172459382
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.060476627001118e-05,
+            "recorded_command_RMSE_m": 6.076542656563206e-05,
+            "flow_RMSE_m_s": 0.00014298137266156077
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 6.406689155179924e-05,
+            "recorded_command_RMSE_m": 6.359063026612403e-05,
+            "flow_RMSE_m_s": 0.0001382949460396146
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00011699320813419272,
+            "recorded_command_RMSE_m": 0.00011807193077790394,
+            "flow_RMSE_m_s": 0.00014265405666166612
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.00012001282692147794,
+            "recorded_command_RMSE_m": 0.0001166230171707585,
+            "flow_RMSE_m_s": 0.0001356198358941523
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_lower_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.336464980935449e-05,
+            "recorded_command_RMSE_m": 6.352167768476742e-05,
+            "flow_RMSE_m_s": 0.00015439049938346174
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 6.380063527671546e-05,
+            "recorded_command_RMSE_m": 6.412154551507417e-05,
+            "flow_RMSE_m_s": 0.00016191658640039971
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00012372669614700265,
+            "recorded_command_RMSE_m": 0.00012654181971218694,
+            "flow_RMSE_m_s": 0.000155453793458972
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.000127346942504533,
+            "recorded_command_RMSE_m": 0.000130546421222657,
+            "flow_RMSE_m_s": 0.00016196422861335024
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.182405034577762e-05,
+            "recorded_command_RMSE_m": 6.173528002753387e-05,
+            "flow_RMSE_m_s": 0.0001410548324976952
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 6.116138014894666e-05,
+            "recorded_command_RMSE_m": 6.13775732516526e-05,
+            "flow_RMSE_m_s": 0.0001425229057109161
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00012028444535171555,
+            "recorded_command_RMSE_m": 0.0001197604624858821,
+            "flow_RMSE_m_s": 0.00014188628568618058
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00012048838410378155,
+            "recorded_command_RMSE_m": 0.00011979654492901648,
+            "flow_RMSE_m_s": 0.0001430504051660415
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0_lower_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.156397549895376e-05,
+            "recorded_command_RMSE_m": 6.168166880126497e-05,
+            "flow_RMSE_m_s": 0.00014440669424802807
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.81560102580992e-05,
+            "recorded_command_RMSE_m": 5.81939365410634e-05,
+            "flow_RMSE_m_s": 0.0001432830059185958
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00011757986306328158,
+            "recorded_command_RMSE_m": 0.00012057146986790898,
+            "flow_RMSE_m_s": 0.00014480423216728982
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00011278036086095367,
+            "recorded_command_RMSE_m": 0.00011574860775058958,
+            "flow_RMSE_m_s": 0.00014443810529047948
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 6.0731859668621125e-05,
+            "recorded_command_RMSE_m": 6.0582126546208676e-05,
+            "flow_RMSE_m_s": 0.0001332223948000589
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 80,
+            "held_command_RMSE_m": 5.7269877223269e-05,
+            "recorded_command_RMSE_m": 5.715795464651118e-05,
+            "flow_RMSE_m_s": 0.00012635316251597906
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 280,
+            "held_command_RMSE_m": 0.00011617593828780798,
+            "recorded_command_RMSE_m": 0.00011540347237881513,
+            "flow_RMSE_m_s": 0.00013356438111067435
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 78,
+            "held_command_RMSE_m": 0.00011095107037438576,
+            "recorded_command_RMSE_m": 0.00010868553709103071,
+            "flow_RMSE_m_s": 0.00012647760642195934
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_upper_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 0.00012857937043157363,
+            "recorded_command_RMSE_m": 0.00012919412240214212,
+            "flow_RMSE_m_s": 0.0005863149484835852
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 0.00013310563795758545,
+            "recorded_command_RMSE_m": 0.00013430262231360724,
+            "flow_RMSE_m_s": 0.0006067508862031433
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00032848552763476693,
+            "recorded_command_RMSE_m": 0.0003426573059935531,
+            "flow_RMSE_m_s": 0.0005898038235563566
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.00033012925801750246,
+            "recorded_command_RMSE_m": 0.0003528634790589126,
+            "flow_RMSE_m_s": 0.0006125918940093025
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 0.00012085011774878958,
+            "recorded_command_RMSE_m": 0.00012128919575242544,
+            "flow_RMSE_m_s": 0.0005454019322914967
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 0.00012359452371267927,
+            "recorded_command_RMSE_m": 0.000124455608618384,
+            "flow_RMSE_m_s": 0.0005479593261943339
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.0003042870682384059,
+            "recorded_command_RMSE_m": 0.00031600733229719127,
+            "flow_RMSE_m_s": 0.0005475981610865943
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.0002995925219680506,
+            "recorded_command_RMSE_m": 0.000316653818789545,
+            "flow_RMSE_m_s": 0.0005522349382258388
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_upper_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 0.0001247599530972096,
+            "recorded_command_RMSE_m": 0.0001252616095960045,
+            "flow_RMSE_m_s": 0.0005730088428138324
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 89,
+            "held_command_RMSE_m": 0.0001295725436563536,
+            "recorded_command_RMSE_m": 0.00013014535550814302,
+            "flow_RMSE_m_s": 0.0005785285876201682
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.0003178895805254688,
+            "recorded_command_RMSE_m": 0.00032989837527594716,
+            "flow_RMSE_m_s": 0.0005713284653688064
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 0.00033413109277833806,
+            "recorded_command_RMSE_m": 0.00035117175454509796,
+            "flow_RMSE_m_s": 0.0005745661268843411
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 289,
+            "held_command_RMSE_m": 0.00011900679086972174,
+            "recorded_command_RMSE_m": 0.0001193465135396126,
+            "flow_RMSE_m_s": 0.0005459405935213604
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 89,
+            "held_command_RMSE_m": 0.00012135647238918146,
+            "recorded_command_RMSE_m": 0.0001217446448484802,
+            "flow_RMSE_m_s": 0.000540911011467742
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00029865634004690693,
+            "recorded_command_RMSE_m": 0.0003082239051925102,
+            "flow_RMSE_m_s": 0.0005453702288547923
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 86,
+            "held_command_RMSE_m": 0.000309346790842804,
+            "recorded_command_RMSE_m": 0.00032163923280883837,
+            "flow_RMSE_m_s": 0.0005394087237901001
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_upper_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00012256921388565517,
+            "recorded_command_RMSE_m": 0.00012286390318291558,
+            "flow_RMSE_m_s": 0.0005758758728490534
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 0.00012562066239010043,
+            "recorded_command_RMSE_m": 0.00012574443708359055,
+            "flow_RMSE_m_s": 0.0005872506865827765
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 273,
+            "held_command_RMSE_m": 0.00033627080982874357,
+            "recorded_command_RMSE_m": 0.0003465634666344669,
+            "flow_RMSE_m_s": 0.0005767524815395715
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.0003367358721526544,
+            "recorded_command_RMSE_m": 0.00034624709442862567,
+            "flow_RMSE_m_s": 0.0005856254994361281
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 281,
+            "held_command_RMSE_m": 0.00011850457525946207,
+            "recorded_command_RMSE_m": 0.00011870210408299071,
+            "flow_RMSE_m_s": 0.0005579361490946578
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 0.00012279821433218056,
+            "recorded_command_RMSE_m": 0.00012286330253455114,
+            "flow_RMSE_m_s": 0.0005751025330967402
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 273,
+            "held_command_RMSE_m": 0.00032124869662449485,
+            "recorded_command_RMSE_m": 0.0003304185040745025,
+            "flow_RMSE_m_s": 0.0005586600942748075
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.0003247296184452607,
+            "recorded_command_RMSE_m": 0.0003329920971200285,
+            "flow_RMSE_m_s": 0.0005743144517521936
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_upper_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 292,
+            "held_command_RMSE_m": 0.00011283119119017821,
+            "recorded_command_RMSE_m": 0.00011311705276031742,
+            "flow_RMSE_m_s": 0.0005275456354541936
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.00012008744346812987,
+            "recorded_command_RMSE_m": 0.00012053198980183103,
+            "flow_RMSE_m_s": 0.0005431527351004024
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 284,
+            "held_command_RMSE_m": 0.0002934414748530303,
+            "recorded_command_RMSE_m": 0.0002999791050398778,
+            "flow_RMSE_m_s": 0.0005318120168600462
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 0.0003039205152304099,
+            "recorded_command_RMSE_m": 0.0003138221559337875,
+            "flow_RMSE_m_s": 0.0005497818625268512
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 292,
+            "held_command_RMSE_m": 0.00010852158572411157,
+            "recorded_command_RMSE_m": 0.00010867263001328402,
+            "flow_RMSE_m_s": 0.0005057527253551022
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 84,
+            "held_command_RMSE_m": 0.00011494233359037181,
+            "recorded_command_RMSE_m": 0.00011531617919725342,
+            "flow_RMSE_m_s": 0.0005136016859801047
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 284,
+            "held_command_RMSE_m": 0.0002759218729854233,
+            "recorded_command_RMSE_m": 0.00028122996788472145,
+            "flow_RMSE_m_s": 0.0005093028791780458
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 0.000284298639272307,
+            "recorded_command_RMSE_m": 0.0002926668699378256,
+            "flow_RMSE_m_s": 0.0005196740863808347
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_upper_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "upper",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 349,
+            "held_command_RMSE_m": 0.00011507766779797681,
+            "recorded_command_RMSE_m": 0.0001154125770164592,
+            "flow_RMSE_m_s": 0.0005483590485978026
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00011711653973480386,
+            "recorded_command_RMSE_m": 0.00011738080358955497,
+            "flow_RMSE_m_s": 0.0005746107311984643
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 341,
+            "held_command_RMSE_m": 0.0003220045058253499,
+            "recorded_command_RMSE_m": 0.0003318614221867203,
+            "flow_RMSE_m_s": 0.0005516519279740586
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 102,
+            "held_command_RMSE_m": 0.00031929709115307355,
+            "recorded_command_RMSE_m": 0.00033329872496473423,
+            "flow_RMSE_m_s": 0.0005765157802161881
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 349,
+            "held_command_RMSE_m": 0.00011101232045932727,
+            "recorded_command_RMSE_m": 0.000111229837182017,
+            "flow_RMSE_m_s": 0.0005275977360986367
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.0001108081702328428,
+            "recorded_command_RMSE_m": 0.00011094953650686659,
+            "flow_RMSE_m_s": 0.0005399029462276073
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 341,
+            "held_command_RMSE_m": 0.00030273035453653893,
+            "recorded_command_RMSE_m": 0.0003106758360173092,
+            "flow_RMSE_m_s": 0.0005314760539562426
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 102,
+            "held_command_RMSE_m": 0.0002944284186586054,
+            "recorded_command_RMSE_m": 0.0003044964608137214,
+            "flow_RMSE_m_s": 0.0005439350026822359
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_lower_15_0.5",
+      "config": {
+        "seed": 15,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 292,
+            "held_command_RMSE_m": 0.00012995232130545803,
+            "recorded_command_RMSE_m": 0.00013046783073442927,
+            "flow_RMSE_m_s": 0.0005885121652176565
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 92,
+            "held_command_RMSE_m": 0.00014081646136406093,
+            "recorded_command_RMSE_m": 0.00014202173024270885,
+            "flow_RMSE_m_s": 0.0006403758384834528
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 284,
+            "held_command_RMSE_m": 0.00034193278921767974,
+            "recorded_command_RMSE_m": 0.0003537111923212201,
+            "flow_RMSE_m_s": 0.0005931256141306315
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 90,
+            "held_command_RMSE_m": 0.000351632146699288,
+            "recorded_command_RMSE_m": 0.000372397826139875,
+            "flow_RMSE_m_s": 0.000644677046744425
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 292,
+            "held_command_RMSE_m": 0.000123479665594331,
+            "recorded_command_RMSE_m": 0.00012379678499614883,
+            "flow_RMSE_m_s": 0.0005533189161900318
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 92,
+            "held_command_RMSE_m": 0.00013095057442576532,
+            "recorded_command_RMSE_m": 0.00013177860555963974,
+            "flow_RMSE_m_s": 0.0005788386939118104
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 284,
+            "held_command_RMSE_m": 0.0003210546064623771,
+            "recorded_command_RMSE_m": 0.0003307128302345788,
+            "flow_RMSE_m_s": 0.0005578730534942574
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 90,
+            "held_command_RMSE_m": 0.0003193910430673178,
+            "recorded_command_RMSE_m": 0.00033487586240295254,
+            "flow_RMSE_m_s": 0.00058288697178933
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_lower_16_0.5",
+      "config": {
+        "seed": 16,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 265,
+            "held_command_RMSE_m": 0.00012189331136074259,
+            "recorded_command_RMSE_m": 0.00012299380179205276,
+            "flow_RMSE_m_s": 0.0005809553699378761
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 64,
+            "held_command_RMSE_m": 0.0001309126802634532,
+            "recorded_command_RMSE_m": 0.0001330394212836178,
+            "flow_RMSE_m_s": 0.0006002315022507885
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 257,
+            "held_command_RMSE_m": 0.0003100032578688361,
+            "recorded_command_RMSE_m": 0.0003296232959620184,
+            "flow_RMSE_m_s": 0.0005823895917911777
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 64,
+            "held_command_RMSE_m": 0.00031918250202643057,
+            "recorded_command_RMSE_m": 0.000346676054885582,
+            "flow_RMSE_m_s": 0.0006002315022507885
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 265,
+            "held_command_RMSE_m": 0.00011517908708453277,
+            "recorded_command_RMSE_m": 0.00011595666292089847,
+            "flow_RMSE_m_s": 0.0005398486969568969
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 64,
+            "held_command_RMSE_m": 0.0001208438382342348,
+            "recorded_command_RMSE_m": 0.00012268434959347165,
+            "flow_RMSE_m_s": 0.0005232883709030831
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 257,
+            "held_command_RMSE_m": 0.0002846147722034977,
+            "recorded_command_RMSE_m": 0.00029970469295133566,
+            "flow_RMSE_m_s": 0.0005400656087175005
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 64,
+            "held_command_RMSE_m": 0.0002946315495661689,
+            "recorded_command_RMSE_m": 0.00031239610779293706,
+            "flow_RMSE_m_s": 0.0005232883709030831
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_lower_17_0.5",
+      "config": {
+        "seed": 17,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 296,
+            "held_command_RMSE_m": 0.00011943448771989729,
+            "recorded_command_RMSE_m": 0.00011962662173148366,
+            "flow_RMSE_m_s": 0.0005701936647365555
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 0.00012244094130386615,
+            "recorded_command_RMSE_m": 0.00012248251724953775,
+            "flow_RMSE_m_s": 0.0005737658158840644
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 0.00032171787304215946,
+            "recorded_command_RMSE_m": 0.0003289119385875981,
+            "flow_RMSE_m_s": 0.0005710389298765423
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.0003211150429243111,
+            "recorded_command_RMSE_m": 0.0003292529118280453,
+            "flow_RMSE_m_s": 0.0005785079068292844
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 296,
+            "held_command_RMSE_m": 0.00011618332601264878,
+            "recorded_command_RMSE_m": 0.00011628482018123735,
+            "flow_RMSE_m_s": 0.000554675989880545
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 81,
+            "held_command_RMSE_m": 0.00012048262064035428,
+            "recorded_command_RMSE_m": 0.00012041659194595758,
+            "flow_RMSE_m_s": 0.0005632955396715865
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 288,
+            "held_command_RMSE_m": 0.0003094429108702079,
+            "recorded_command_RMSE_m": 0.0003158486879819814,
+            "flow_RMSE_m_s": 0.000555558881497196
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 79,
+            "held_command_RMSE_m": 0.0003113204879533724,
+            "recorded_command_RMSE_m": 0.0003177804882184553,
+            "flow_RMSE_m_s": 0.0005678192253966788
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_lower_18_0.5",
+      "config": {
+        "seed": 18,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 323,
+            "held_command_RMSE_m": 0.00011152132201922687,
+            "recorded_command_RMSE_m": 0.00011169735407889863,
+            "flow_RMSE_m_s": 0.0005250928382387025
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.0001196021152127482,
+            "recorded_command_RMSE_m": 0.00012057567087901395,
+            "flow_RMSE_m_s": 0.0005424040024326502
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 315,
+            "held_command_RMSE_m": 0.00028580307768634596,
+            "recorded_command_RMSE_m": 0.0002922790789496244,
+            "flow_RMSE_m_s": 0.0005224094325781329
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 101,
+            "held_command_RMSE_m": 0.0002902025910448863,
+            "recorded_command_RMSE_m": 0.00030260984024127534,
+            "flow_RMSE_m_s": 0.0005370509869863682
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 323,
+            "held_command_RMSE_m": 0.00010709180580110636,
+            "recorded_command_RMSE_m": 0.00010713714367706277,
+            "flow_RMSE_m_s": 0.0004990256007486946
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 104,
+            "held_command_RMSE_m": 0.00011307653955430991,
+            "recorded_command_RMSE_m": 0.00011382793899245811,
+            "flow_RMSE_m_s": 0.0004966138996726153
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 315,
+            "held_command_RMSE_m": 0.0002716765659043063,
+            "recorded_command_RMSE_m": 0.0002769765012253798,
+            "flow_RMSE_m_s": 0.0004998378581460974
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 101,
+            "held_command_RMSE_m": 0.0002703056998029918,
+            "recorded_command_RMSE_m": 0.00027963455367552336,
+            "flow_RMSE_m_s": 0.0004975189522862525
+          }
+        ]
+      }
+    },
+    {
+      "source_trace_id": "smooth_1.2_0.3_lower_19_0.5",
+      "config": {
+        "seed": 19,
+        "duration_s": 60,
+        "dt_s": 0.005,
+        "frame_rate_hz": 20.0,
+        "latency_s": 0.05,
+        "noise_sigma_px": 1.0,
+        "calibration_sigma_px": 0.25,
+        "dropout_probability": 0.0,
+        "dropout_intervals": [],
+        "max_measurement_age_s": 0.15,
+        "max_sigma_m": 0.00035,
+        "safety_margin_m": 0.0002,
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0003,
+        "actuation_gain_error": 0.0,
+        "gain_n_per_m": 2e-06,
+        "max_force_n": 3e-09,
+        "start_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "branch": "lower",
+        "control_mode": "gated",
+        "approach_offset_m": 0.0004,
+        "flow_model": "smooth",
+        "flow_transition_length_m": 0.001,
+        "flow_branch_width_m": 0.0003,
+        "flow_correlation_s": 0.25,
+        "prediction_horizon_s": 0.5
+      },
+      "metrics": {
+        "kinematic": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 313,
+            "held_command_RMSE_m": 0.00011754214991262766,
+            "recorded_command_RMSE_m": 0.00011766998432862677,
+            "flow_RMSE_m_s": 0.0005546285824221909
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 0.00011386776965810114,
+            "recorded_command_RMSE_m": 0.00011436976694104401,
+            "flow_RMSE_m_s": 0.0005445323711958585
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 305,
+            "held_command_RMSE_m": 0.00031995785731533006,
+            "recorded_command_RMSE_m": 0.000328118480163433,
+            "flow_RMSE_m_s": 0.0005588361445032759
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.0003261876725674212,
+            "recorded_command_RMSE_m": 0.00033724849948919215,
+            "flow_RMSE_m_s": 0.0005531168642093513
+          }
+        ],
+        "command_aware": [
+          {
+            "horizon_s": 0.1,
+            "subset": "all",
+            "samples": 313,
+            "held_command_RMSE_m": 0.00011417039587010333,
+            "recorded_command_RMSE_m": 0.0001141908651707764,
+            "flow_RMSE_m_s": 0.0005368981043890562
+          },
+          {
+            "horizon_s": 0.1,
+            "subset": "recent_command_change",
+            "samples": 85,
+            "held_command_RMSE_m": 0.00010887228609731959,
+            "recorded_command_RMSE_m": 0.00010923980944438933,
+            "flow_RMSE_m_s": 0.00051624581337972
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "all",
+            "samples": 305,
+            "held_command_RMSE_m": 0.0003075601935772871,
+            "recorded_command_RMSE_m": 0.0003142635481020863,
+            "flow_RMSE_m_s": 0.0005409521015011129
+          },
+          {
+            "horizon_s": 0.5,
+            "subset": "recent_command_change",
+            "samples": 82,
+            "held_command_RMSE_m": 0.0003081166984353417,
+            "recorded_command_RMSE_m": 0.00031557653831291115,
+            "flow_RMSE_m_s": 0.0005235319377478893
+          }
+        ]
+      }
+    }
+  ]
+}

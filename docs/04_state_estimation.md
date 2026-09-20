@@ -16,10 +16,10 @@ $$
 acceleration standard deviation. Position covariance has units m^2,
 velocity covariance m^2/s^2, and cross covariance m^2/s.
 
-The biplane estimator is a constant-velocity model. It does not receive true
+The default biplane estimator is a constant-velocity model. It does not receive true
 flow/force or oracle displacement. Changes of force, flow and branch are
-model mismatch covered only approximately by process noise. A future
-control-input-aware model should use commanded inputs and estimated flow.
+model mismatch covered only approximately by process noise. The optional
+command-aware mode below explicitly accounts for emitted inputs.
 
 ## Update and public state
 
@@ -61,3 +61,25 @@ can make it overconfident. Reconstruction residuals are exposed, but no
 innovation/outlier gate is implemented in this milestone. A `k_sigma=3`
 largest-axis margin is not a claim of 99.7% simultaneous 3D containment or
 a proven collision probability bound.
+
+## Optional command-aware coordinate translation
+
+`CommandAwareEstimator` maintains the integral of emitted force divided by a
+configured nominal Stokes drag. At each image capture timestamp it subtracts
+that displacement from the reconstructed position, then applies the existing
+delayed six-state filter to the residual position and flow velocity. At the
+requested current time it adds the integrated displacement back to position
+and the most recent command velocity back to velocity. This preserves the
+observation-only boundary and avoids attributing known command changes to flow.
+
+The force history uses emitted commands, including zeros during gate stops;
+it does not use the plant's applied force, gain error or true flow. Command
+integration is piecewise constant and uses capture time for delayed images.
+The covariance translation assumes exact known actuation and nominal drag;
+unmodeled input errors are not given an additional covariance term. The same
+process noise and initial priors remain in use. Estimated velocity returned
+before issuing the current command includes the previous command's contribution.
+
+This is optional (`estimator_mode="command_aware"`). Its fixed-trace forecast
+improvement did not yield a net navigation benefit in the first held-out study.
+See [the audit and regression report](12_flow_estimation.md).

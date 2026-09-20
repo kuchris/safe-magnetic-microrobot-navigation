@@ -1,0 +1,41 @@
+[
+  {
+    "case_id": "piecewise_0.6_0.3_lower_20",
+    "baseline": {
+      "closest_target_distance_m": 0.00039955756087656203,
+      "closest_target_time_s": 29.01,
+      "terminal_feature": "none"
+    },
+    "command_aware": {
+      "closest_target_distance_m": 0.00041934378509575953,
+      "closest_target_time_s": 29.175,
+      "terminal_feature": "closed_outlet_cap_proxy"
+    }
+  },
+  {
+    "case_id": "piecewise_0.6_0.3_lower_21",
+    "baseline": {
+      "closest_target_distance_m": 0.00039924362198282817,
+      "closest_target_time_s": 31.965,
+      "terminal_feature": "none"
+    },
+    "command_aware": {
+      "closest_target_distance_m": 0.00040301889119576524,
+      "closest_target_time_s": 31.990000000000002,
+      "terminal_feature": "closed_outlet_cap_proxy"
+    }
+  },
+  {
+    "case_id": "smooth_0.6_0.3_lower_20",
+    "baseline": {
+      "closest_target_distance_m": 0.00039901510979412585,
+      "closest_target_time_s": 29.01,
+      "terminal_feature": "none"
+    },
+    "command_aware": {
+      "closest_target_distance_m": 0.00042633315979120873,
+      "closest_target_time_s": 29.16,
+      "terminal_feature": "closed_outlet_cap_proxy"
+    }
+  }
+]

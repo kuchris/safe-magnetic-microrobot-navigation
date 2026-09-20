@@ -174,3 +174,15 @@ success-to-failure change. Anticipatory correction, infeasible predictions,
 velocity uncertainty, intermediate path checks and original-policy regression
 are covered by tests. All executed trials respected the 3 nN cap and zero-force
 stop invariants. See the [method and replay report](11_predictive_control.md).
+
+## Command-aware estimator and forecast-audit milestone
+
+All 116 tests passed. Replaying 80 fixed histories through both estimators
+reproduced the legacy position estimates within 1e-15 m and reduced mean
+0.5 s recorded-command forecast error by about 6%. On 160 independent
+closed-loop runs (seeds 20-24), the new estimator rescued one pair and regressed
+three, all new failures occurring at the closed outlet cap after missing the
+unchanged target sphere. The original estimator remains the default. All
+executed force bounds and gate-stop invariants held; paired configurations,
+terminal accounting and regression closest approaches were checked. See the
+[forecast audit and regression report](12_flow_estimation.md).

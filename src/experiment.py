@@ -44,6 +44,7 @@ class TrialConfig:
     flow_branch_width_m: float = 0.3e-3
     flow_correlation_s: float = 0.0
     prediction_horizon_s: float = 0.0
+    estimator_mode: str = "kinematic"
 
 
 def run_trial(config=TrialConfig()):
@@ -79,13 +80,14 @@ def run_trial(config=TrialConfig()):
         max_measurement_age_s=config.max_measurement_age_s,
         max_sigma_m=config.max_sigma_m, safety_margin_m=config.safety_margin_m,
         control_mode=config.control_mode, approach_offset_m=config.approach_offset_m,
-        prediction_horizon_s=config.prediction_horizon_s)
+        prediction_horizon_s=config.prediction_horizon_s, estimator_mode=config.estimator_mode)
     target = vessel.upper_target if config.branch == "upper" else vessel.lower_target
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",
         "force_n", "command_force_n", "reason", "measurement_age_s",
         "waypoint_index", "waypoint_m", "flow_velocity_m_s",
-        "predicted_nominal_clearance_m", "predicted_selected_clearance_m", "prediction_adjusted")}
+        "predicted_nominal_clearance_m", "predicted_selected_clearance_m", "prediction_adjusted",
+        "estimated_velocity_m_s")}
     reached = collided = wrong = False
     ticks = int(np.ceil(config.duration_s / config.dt_s))
     for tick in range(ticks + 1):
@@ -114,7 +116,8 @@ def run_trial(config=TrialConfig()):
             true_clearance, output.estimated_clearance_m, output.robust_clearance_m,
             applied, output.force_n, output.reason, output.measurement_age_s,
             navigation.planner.index, navigation.planner.waypoints[navigation.planner.index].copy(), flow,
-            output.predicted_nominal_clearance_m, output.predicted_selected_clearance_m, output.prediction_adjusted)
+            output.predicted_nominal_clearance_m, output.predicted_selected_clearance_m, output.prediction_adjusted,
+            np.full(3, np.nan) if estimate is None else estimate.estimated_velocity)
         for key, value in zip(history, values):
             history[key].append(value)
         if finished:

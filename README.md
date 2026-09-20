@@ -230,7 +230,7 @@ That run enters the upper branch and eventually violates the artificial
 rounded outlet boundary at 38.24 s, with zero active force throughout.
 
 The free-space example ends at [2, 1, 0] mm. The baseline suite had eight tests;
-the expanded suite passes 109 tests covering imaging, uncertainty, timing,
+the expanded suite passes 116 tests covering imaging, uncertainty, timing,
 safety, both branches, policy ablations, benchmark statistics, replay diagnostics,
 pre-junction route guidance, continuous flow and correlated disturbances.
 See [inspection and verification record](docs/06_validation.md) for measured
@@ -311,6 +311,27 @@ success counts were unchanged, with no success regressions in either field.
 This limited result does not establish a reliable general improvement.
 See [the method, paired results and failure replays](docs/11_predictive_control.md).
 
+### Command-aware flow estimation and forecast audit
+
+`TrialConfig(estimator_mode="command_aware", prediction_horizon_s=0.5)` enables
+an experimental estimator that removes known commanded displacement before
+filtering image positions. The default remains `estimator_mode="kinematic"`.
+On 80 identical archived trajectories, the new estimator reduced mean per-trial
+0.5 s forecast error by about 6% after accounting for recorded future commands.
+However, 160 new closed-loop trials rescued one success and regressed three.
+The estimator is therefore not promoted to the default navigation policy.
+
+```bash
+# Reproduce experiment 13 first if its ignored trace files are absent.
+python -m simulations.15_estimation_audit --model piecewise
+python -m simulations.15_estimation_audit --model smooth
+python -m simulations.16_flow_estimator_comparison --model piecewise
+python -m simulations.16_flow_estimator_comparison --model smooth
+python -m simulations.17_estimation_figures
+```
+
+See [the forecast audit, method and regression analysis](docs/12_flow_estimation.md).
+
 ## Repository structure
 
 ```text
@@ -321,6 +342,8 @@ src/
   flow_sensitivity.py   Trial summaries and flow-holding demand diagnostics
   imaging.py            Orthographic projections and delayed/dropout frames
   localization.py       Legacy sensor/filter, triangulation, six-state filter
+  flow_estimation.py    Delayed estimation after commanded-motion subtraction
+  prediction_audit.py   Offline held/recorded-command forecast errors
   planner.py            Selected Y-branch waypoints and branch evaluation
   controller.py         Proportional control and force cap
   prediction.py         Optional sampled short-horizon force correction
@@ -347,6 +370,9 @@ simulations/
   12_flow_sensitivity_figures.py
   13_predictive_control.py
   14_predictive_figures.py
+  15_estimation_audit.py
+  16_flow_estimator_comparison.py
+  17_estimation_figures.py
 docs/                    Physics, imaging, estimation, safety, verification
 tests/                   Deterministic physics, numerical and integration tests
 ```
@@ -370,7 +396,8 @@ tests/                   Deterministic physics, numerical and integration tests
 - [ ] Rotation/scale calibration estimation and variable-latency replay
 - [ ] Abstract coil matrix A(x), bounded current allocation, unreachable-force diagnostics
 - [x] Paired-seed policy benchmark, trial distributions and conditional outcome-rate intervals
-- [ ] Control-input-aware estimation and flow disturbance estimation
+- [x] Experimental control-input-aware estimation with matched forecast audit
+- [ ] Calibrated flow uncertainty and validated closed-loop benefit
 - [ ] Formal predictive safety constraints, MPC / Control Barrier Functions
 - [ ] Synthetic/public mesh import and improved fluid/near-wall physics
 
