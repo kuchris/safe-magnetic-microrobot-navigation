@@ -33,9 +33,36 @@ the lower branch otherwise. It has no radial velocity profile. In particular,
 it is not a Poiseuille solver and does not enforce mass conservation at the
 bifurcation. It is discontinuous at branch selection boundaries.
 
-Optional flow disturbance in `TrialConfig` is a per-physics-tick independent
-Gaussian velocity perturbation, in m/s. It is not a turbulence or Brownian
-model; its effective integrated noise depends on the chosen timestep.
+`flow_model="smooth"` optionally replaces the switches with a continuous
+direction blend. Define `a = (1 + tanh((x - junction_x) / L)) / 2` and
+`b = tanh(y / W)`, then normalize `[1, 0.6*a*b, 0.3*a*b]` and multiply by
+the prescribed speed. Defaults are `L = 1 mm` and `W = 0.3 mm`. At y = 0 the
+field remains straight; there is no upper-branch tie-break. It can point
+through the gap between outlet capsules. This is a sensitivity model, not a
+wall-conforming, incompressible, flux-conserving or CFD solution. Smoothing
+changes the upstream transition and lateral selection rule simultaneously.
+
+Optional flow disturbance in `TrialConfig` has per-axis velocity standard
+deviation `flow_disturbance_m_s`. With the default `flow_correlation_s=0`, it
+preserves the original independent Gaussian draw per physics tick. Its
+effective integrated noise therefore depends on the timestep.
+
+For positive correlation time tau, the first disturbance is drawn from its
+stationary Gaussian distribution and subsequent values use
+`w_next = rho*w_previous + sqrt(1-rho^2)*epsilon`, where
+`rho = exp(-elapsed_time/tau)` and `epsilon ~ N(0, sigma^2 I)`. This exactly
+samples the stationary Ornstein-Uhlenbeck process at the requested timestamps;
+the simulator holds each sampled velocity over the next integration interval.
+It models persistent synthetic velocity uncertainty, not turbulence, Brownian
+motion or a measured physiological disturbance. The Gaussian perturbation is
+unbounded and may reverse a velocity component.
+
+The optional fields are plant configuration and never enter the observation-only
+navigation interface as ground truth. Histories now record the actual
+`flow_velocity_m_s` used over each next integration interval, with NaN at the
+terminal sample because no next interval is integrated. Replay diagnostics
+use the selected model for the nominal field and exclude disturbance from
+the explicitly named nominal net velocity.
 
 The plant accepts a bounded ideal desired-force vector. A fixed scalar gain
 error can perturb that force and a final magnitude cap is enforced. This is

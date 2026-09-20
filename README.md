@@ -186,6 +186,26 @@ Each comparison saves complete per-route trial records and confidence intervals,
 plus matched-seed success changes and terminal sidewall/outlet proxy counts.
 See [the approach guidance evaluation](docs/09_approach_guidance.md).
 
+### Flow-model and disturbance sensitivity
+
+```bash
+python -m simulations.11_flow_sensitivity --model piecewise
+python -m simulations.11_flow_sensitivity --model smooth
+python -m simulations.12_flow_sensitivity_figures
+```
+
+This study compares both routes with the gate enabled across three flow speeds
+(0.3, 0.6 and 1.2 mm/s), three disturbance standard deviations per velocity axis
+(0, 0.1 and 0.3 mm/s), both target branches and seeds 10-14: 360 trials total.
+The common horizon is 60 seconds; disturbance correlation time is 0.25 seconds.
+The smooth field uses continuous direction transitions, but does not enforce
+vessel-wall boundaries or conserve flux. Maps show measured trial rates rather
+than certified operating limits. See [the sensitivity report](docs/10_flow_sensitivity.md).
+
+Use `TrialConfig(flow_model="smooth", flow_correlation_s=0.25,
+flow_disturbance_m_s=0.1e-3)` programmatically. Original piecewise flow and
+independent per-tick disturbances remain the defaults for older experiments.
+
 ## Current numerical example
 
 Measured seed-7 results for the implemented toy model:
@@ -207,9 +227,9 @@ That run enters the upper branch and eventually violates the artificial
 rounded outlet boundary at 38.24 s, with zero active force throughout.
 
 The free-space example ends at [2, 1, 0] mm. The baseline suite had eight tests;
-the expanded suite passes 82 tests covering imaging, uncertainty, timing,
-safety, both branches, policy ablations, benchmark statistics, replay diagnostics
-and pre-junction route guidance.
+the expanded suite passes 95 tests covering imaging, uncertainty, timing,
+safety, both branches, policy ablations, benchmark statistics, replay diagnostics,
+pre-junction route guidance, continuous flow and correlated disturbances.
 See [inspection and verification record](docs/06_validation.md) for measured
 results and known limitations. The seed-7 examples above are deterministic
 scenarios; the separate paired-seed benchmark reports conditional trial rates.
@@ -274,7 +294,8 @@ Legacy demos retain their original toy parameter choices.
 src/
   particle.py           Overdamped Stokes dynamics
   vessel.py             Capsule Y geometry and clearance proxy
-  flow.py               Prescribed piecewise flow
+  flow.py               Piecewise/smooth flow and correlated disturbances
+  flow_sensitivity.py   Trial summaries and flow-holding demand diagnostics
   imaging.py            Orthographic projections and delayed/dropout frames
   localization.py       Legacy sensor/filter, triangulation, six-state filter
   planner.py            Selected Y-branch waypoints and branch evaluation
@@ -298,6 +319,8 @@ simulations/
   08_failure_replay.py
   09_approach_guidance.py
   10_guidance_figures.py
+  11_flow_sensitivity.py
+  12_flow_sensitivity_figures.py
 docs/                    Physics, imaging, estimation, safety, verification
 tests/                   Deterministic physics, numerical and integration tests
 ```

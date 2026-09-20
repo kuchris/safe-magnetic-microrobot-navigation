@@ -150,3 +150,15 @@ Stale-data gated failures persisted, and nominal minimum clearance decreased
 as expected from the lateral displacement. All 82 tests passed. See
 [approach guidance](09_approach_guidance.md) for grouped rates, uncertainty,
 clearance tradeoffs, recorded configurations and the before/after animation.
+
+## Subsequent flow-sensitivity milestone
+
+An optional continuous prescribed field and temporally correlated Gaussian
+velocity disturbance were added while retaining the original defaults and
+archived-trial reproduction. A 360-trial study covers two fields, three mean
+speeds, three disturbance amplitudes, two routes, both branches and seeds
+10-14. Early guidance rescued 11 piecewise and seven continuous-field cases,
+with no success regressions; substantial strong-disturbance failures remain.
+All 95 tests passed, including process statistics and interval-aligned flow
+logging. See [flow sensitivity](10_flow_sensitivity.md) for conditional rates,
+holding-capacity diagnostics, raw records and model limitations.

@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from src.flow import centerline_flow
+from src.flow import prescribed_flow
 from src.particle import Particle
 from src.planner import wrong_branch
 from src.vessel import YVessel
@@ -44,7 +44,8 @@ def analyze_trial(result):
             return None
         i = indices[0]
         estimate = h["estimated_position_m"][i]
-        flow = centerline_flow(p[i], speed_m_s=config["flow_speed_m_s"])
+        flow = prescribed_flow(p[i], config["flow_speed_m_s"], config.get("flow_model", "piecewise"),
+            config.get("flow_transition_length_m", 1e-3), config.get("flow_branch_width_m", 0.3e-3))
         return {"time_s": float(time[i]), "position_m": p[i].tolist(),
                 "estimated_position_m": estimate.tolist() if np.isfinite(estimate).all() else None,
                 "waypoint_index": int(h["waypoint_index"][i]),

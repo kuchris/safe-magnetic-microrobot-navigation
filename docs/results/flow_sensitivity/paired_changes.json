@@ -1,0 +1,120 @@
+{
+  "piecewise": {
+    "rescued": [
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0,
+        "branch": "lower",
+        "seed": 13
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 11
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 13
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 14
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "lower",
+        "seed": 10
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "branch": "upper",
+        "seed": 11
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "branch": "upper",
+        "seed": 14
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0,
+        "branch": "lower",
+        "seed": 13
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 11
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 13
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "lower",
+        "seed": 10
+      }
+    ],
+    "regressed": []
+  },
+  "smooth": {
+    "rescued": [
+      {
+        "flow_speed_m_s": 0.0003,
+        "flow_disturbance_m_s": 0.0003,
+        "branch": "upper",
+        "seed": 13
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 13
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "branch": "upper",
+        "seed": 11
+      },
+      {
+        "flow_speed_m_s": 0.0006,
+        "flow_disturbance_m_s": 0.0003,
+        "branch": "lower",
+        "seed": 10
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "upper",
+        "seed": 11
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "lower",
+        "seed": 10
+      },
+      {
+        "flow_speed_m_s": 0.0012,
+        "flow_disturbance_m_s": 0.0001,
+        "branch": "lower",
+        "seed": 14
+      }
+    ],
+    "regressed": []
+  }
+}

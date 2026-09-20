@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from src.controller import limit_force
-from src.flow import centerline_flow
+from src.flow import FlowDisturbance, prescribed_flow
 from src.imaging import BiplaneImager
 from src.navigation import BiplaneNavigation
 from src.particle import Particle
@@ -39,14 +39,22 @@ class TrialConfig:
     branch: str = "upper"
     control_mode: str = "gated"
     approach_offset_m: float = 0.0
+    flow_model: str = "piecewise"
+    flow_transition_length_m: float = 1e-3
+    flow_branch_width_m: float = 0.3e-3
+    flow_correlation_s: float = 0.0
 
 
 def run_trial(config=TrialConfig()):
     for name in ("duration_s", "dt_s", "frame_rate_hz", "noise_sigma_px"):
         nonnegative(getattr(config, name), name, positive=True)
     for name in ("flow_speed_m_s", "flow_disturbance_m_s", "calibration_sigma_px",
-                 "gain_n_per_m", "max_force_n"):
+                 "gain_n_per_m", "max_force_n", "flow_correlation_s"):
         nonnegative(getattr(config, name), name)
+    for name in ("flow_transition_length_m", "flow_branch_width_m"):
+        nonnegative(getattr(config, name), name, positive=True)
+    if config.flow_model not in ("piecewise", "smooth"):
+        raise ValueError("flow model must be piecewise or smooth")
     if not np.isfinite(config.actuation_gain_error) or config.actuation_gain_error < -1:
         raise ValueError("actuation gain error must be finite and >= -1")
     if config.dt_s > 1 / config.frame_rate_hz:
@@ -56,6 +64,7 @@ def run_trial(config=TrialConfig()):
     sensor_rng = np.random.default_rng(sensor_seed)
     calibration_rng = np.random.default_rng(calibration_seed)
     flow_rng = np.random.default_rng(flow_seed)
+    disturbance = FlowDisturbance(config.flow_disturbance_m_s, config.flow_correlation_s, flow_rng)
     vessel = YVessel()
     particle = Particle(0.1e-3, 3.5e-3, vector(config.start_m))
     bias = calibration_rng.normal(0, config.calibration_sigma_px, (2, 2))
@@ -73,7 +82,7 @@ def run_trial(config=TrialConfig()):
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",
         "force_n", "command_force_n", "reason", "measurement_age_s",
-        "waypoint_index", "waypoint_m")}
+        "waypoint_index", "waypoint_m", "flow_velocity_m_s")}
     reached = collided = wrong = False
     ticks = int(np.ceil(config.duration_s / config.dt_s))
     for tick in range(ticks + 1):
@@ -87,20 +96,25 @@ def run_trial(config=TrialConfig()):
         collided |= true_clearance <= 0
         wrong |= wrong_branch(particle.position_m, vessel, config.branch)
         reached = np.linalg.norm(particle.position_m - target) <= 0.4e-3 and not collided and not wrong
+        finished = reached or collided or now >= config.duration_s
+        # Log the actual velocity used over the next integration interval.
+        # The terminal sample has no next interval and therefore records NaN.
+        flow = np.full(3, np.nan)
+        if not finished:
+            flow = prescribed_flow(particle.position_m, config.flow_speed_m_s,
+                config.flow_model, config.flow_transition_length_m, config.flow_branch_width_m)
+            flow += disturbance.sample(now)
         estimate = output.estimate
         values = (now, particle.position_m.copy(),
             np.full(3, np.nan) if estimate is None else estimate.estimated_position,
             np.nan if estimate is None else estimate.position_uncertainty,
             true_clearance, output.estimated_clearance_m, output.robust_clearance_m,
             applied, output.force_n, output.reason, output.measurement_age_s,
-            navigation.planner.index, navigation.planner.waypoints[navigation.planner.index].copy())
+            navigation.planner.index, navigation.planner.waypoints[navigation.planner.index].copy(), flow)
         for key, value in zip(history, values):
             history[key].append(value)
-        if reached or collided or now >= config.duration_s:
+        if finished:
             break
-        # Piecewise synthetic flow; disturbance is independent per physics tick.
-        flow = centerline_flow(particle.position_m, speed_m_s=config.flow_speed_m_s)
-        flow += flow_rng.normal(0, config.flow_disturbance_m_s, 3)
         particle.step(min(config.dt_s, config.duration_s - now), flow, applied)
     history = {k: np.asarray(v) for k, v in history.items()}
     valid = np.all(np.isfinite(history["estimated_position_m"]), axis=1)
