@@ -1,0 +1,1388 @@
+{
+  "nominal_lower_0_gated": {
+    "config": {
+      "seed": 0,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "gated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.375,
+        "position_m": [
+          0.01000112517994191,
+          -6.095861731935826e-07,
+          -2.346585475475575e-05
+        ],
+        "estimated_position_m": [
+          0.01000089192319217,
+          -1.948501337393544e-05,
+          2.4129891998064254e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.982161536156593e-10,
+          -4.4102997325212913e-10,
+          -2.882597839961285e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013775925026455749,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          -0.00029896372747346386,
+          -0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006192633996021843,
+          -0.0003658133468018093,
+          -0.00019317516803919467
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 11.965,
+        "position_m": [
+          0.009682533789978834,
+          2.484974140261099e-05,
+          -8.557143573689888e-06
+        ],
+        "estimated_position_m": [
+          0.009712561964666218,
+          -8.378892798471078e-05,
+          -1.3886070786587068e-06
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3748760706675627e-09,
+          -3.1242214403057843e-10,
+          -2.372227858426826e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013737181744561497,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008083984026528615,
+          -4.735574147984251e-05,
+          -3.595731331513621e-05
+        ]
+      },
+      "wrong_branch_confirmed": null,
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": null,
+      "terminal_wall_feature": "none",
+      "persistent_stop_from_s": null,
+      "target_success": true,
+      "elapsed_time_s": 27.6
+    }
+  },
+  "dropout_burst_lower_0_ungated": {
+    "config": {
+      "seed": 0,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [
+        [
+          8.0,
+          8.75
+        ]
+      ],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "ungated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.39,
+        "position_m": [
+          0.010002530544214705,
+          -1.0166269639145739e-05,
+          -3.08812146105988e-05
+        ],
+        "estimated_position_m": [
+          0.010015474437020454,
+          -5.8988908340415856e-05,
+          -2.3040113550809817e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.690511259590901e-10,
+          -3.620221833191683e-10,
+          -1.9391977289838035e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013709730252818568,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          -0.00029896372747346386,
+          -0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006148426773955608,
+          -0.0003538376512679076,
+          -0.0001788754736605748
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 11.97,
+        "position_m": [
+          0.009678871864568218,
+          1.9383069224641085e-05,
+          -2.0183855256945373e-05
+        ],
+        "estimated_position_m": [
+          0.009707339907255984,
+          2.5750502688959844e-05,
+          -3.403542817990974e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.38532018548803e-09,
+          -5.315010053779196e-10,
+          -1.719291436401805e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.001372016229960912,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008099814812241917,
+          -8.056286882305519e-05,
+          -2.6060355306563073e-05
+        ]
+      },
+      "wrong_branch_confirmed": null,
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": null,
+      "terminal_wall_feature": "none",
+      "persistent_stop_from_s": null,
+      "target_success": true,
+      "elapsed_time_s": 27.595
+    }
+  },
+  "dropout_burst_lower_0_gated": {
+    "config": {
+      "seed": 0,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [
+        [
+          8.0,
+          8.75
+        ]
+      ],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "gated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.56,
+        "position_m": [
+          0.010000731760344404,
+          1.556415564569694e-07,
+          -2.0735911627442487e-05
+        ],
+        "estimated_position_m": [
+          0.010023375704313938,
+          -0.00010150744663340724,
+          -1.0765107497358192e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.532485913721228e-10,
+          -2.7698510673318554e-10,
+          -2.184697850052836e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013800477849689775,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006124473902594689,
+          0.0002569793951882994,
+          0.00011636705783214668
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.200000000000001,
+        "position_m": [
+          0.009725816114020226,
+          2.2944889824579115e-05,
+          -7.905110224394538e-06
+        ],
+        "estimated_position_m": [
+          0.009715795374337538,
+          3.0645874929240144e-05,
+          -3.7178595364968075e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3684092513249235e-09,
+          -5.412917498584803e-10,
+          -1.6564280927006384e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013757315279277432,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008074181871628964,
+          -8.204691204270368e-05,
+          -2.510749703138922e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.325,
+        "position_m": [
+          0.01196353852417121,
+          0.0003498598298929036,
+          0.00015684034291852547
+        ],
+        "estimated_position_m": [
+          0.011976231636766418,
+          0.00031664754503501775,
+          0.00016720581591961954
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.5524632735328356e-09,
+          -2.073295090070036e-09,
+          -1.054411631839239e-09
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0006240898334552765,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00026295649440684365,
+          -1.529833164349095e-05,
+          -1.034177746403624e-05
+        ]
+      },
+      "first_wall_stop_after_junction": {
+        "time_s": 18.5,
+        "position_m": [
+          0.012355550639571106,
+          0.000263495465911802,
+          0.00010954397616689357
+        ],
+        "estimated_position_m": [
+          0.012349095125953653,
+          0.00021597856020106666,
+          0.00012699432935019185
+        ],
+        "waypoint_index": 23,
+        "waypoint_m": [
+          0.011600000000000001,
+          -0.00096,
+          -0.00048
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": 0.00032397552682585963,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_violation": {
+        "time_s": 36.595,
+        "position_m": [
+          0.02129974106403734,
+          0.005540566377540359,
+          0.002746853254038397
+        ],
+        "estimated_position_m": [
+          0.021296709035589383,
+          0.0054729216229790515,
+          0.0027824396288746024
+        ],
+        "waypoint_index": 29,
+        "waypoint_m": [
+          0.014,
+          -0.0024000000000000002,
+          -0.0012000000000000001
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": -1.6024265041239723e-06,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "persistent_stop_from_s": 29.925,
+      "target_success": false,
+      "elapsed_time_s": 36.595
+    }
+  },
+  "dropout_burst_lower_2_ungated": {
+    "config": {
+      "seed": 2,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [
+        [
+          8.0,
+          8.75
+        ]
+      ],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "ungated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.435,
+        "position_m": [
+          0.010000082483388,
+          2.846218095968816e-07,
+          -1.475397207181014e-05
+        ],
+        "estimated_position_m": [
+          0.010052995244604448,
+          -1.4291482261536989e-05,
+          1.8692646460860737e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          6.940095107911028e-10,
+          -4.5141703547692603e-10,
+          -2.7738529292172147e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013856895145960548,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.000603468159308337,
+          0.00023053967738580458,
+          0.00010743687277531736
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.030000000000001,
+        "position_m": [
+          0.009694325708851736,
+          2.6796608811543523e-05,
+          -4.314923754399293e-08
+        ],
+        "estimated_position_m": [
+          0.009702957435528717,
+          -3.48593218602357e-06,
+          -1.437587506412377e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3940851289425647e-09,
+          -4.730281356279529e-10,
+          -2.1124824987175248e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013732033564479505,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008113100374877251,
+          -7.169977714926874e-05,
+          -3.202019351104881e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.26,
+        "position_m": [
+          0.011964936719635786,
+          0.000336823255902446,
+          0.00017156239915655026
+        ],
+        "estimated_position_m": [
+          0.011938743103539968,
+          0.0003003735026381281,
+          0.0002240842247246667
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.4774862070799365e-09,
+          -2.040747005276256e-09,
+          -1.1681684494493335e-09
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0006192588570174139,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00027432122844923257,
+          -1.036481870720122e-05,
+          -2.7584596352654987e-05
+        ]
+      },
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": {
+        "time_s": 19.88,
+        "position_m": [
+          0.012784013120679682,
+          0.00016521619632401885,
+          7.562460504986361e-05
+        ],
+        "estimated_position_m": [
+          0.012794744773826491,
+          0.00013186050234532292,
+          7.465369983138762e-05
+        ],
+        "waypoint_index": 24,
+        "waypoint_m": [
+          0.012,
+          -0.0012000000000000001,
+          -0.0006000000000000001
+        ],
+        "force_n": [
+          -1.4096722370761178e-09,
+          -2.3623769990645424e-09,
+          -1.1966616473789155e-09
+        ],
+        "reason": "actuation_limit",
+        "clearance_m": -1.4292348581284448e-07,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0002846002080080833,
+          -5.9116250476745364e-05,
+          -3.19034852050252e-05
+        ]
+      },
+      "terminal_wall_feature": "capsule_sidewall_proxy",
+      "persistent_stop_from_s": null,
+      "target_success": false,
+      "elapsed_time_s": 19.88
+    }
+  },
+  "dropout_burst_lower_2_gated": {
+    "config": {
+      "seed": 2,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [
+        [
+          8.0,
+          8.75
+        ]
+      ],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "gated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.565,
+        "position_m": [
+          0.01000158512739072,
+          -1.1409425749328586e-05,
+          -1.2072589281443792e-05
+        ],
+        "estimated_position_m": [
+          0.01000611348813169,
+          5.694135799060809e-06,
+          -2.671357902872889e-06
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.877730237366188e-10,
+          -4.913882715981216e-10,
+          -2.346572841942542e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013866488639317374,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          -0.00029896372747346386,
+          -0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006176804703244701,
+          -0.0003734464630946294,
+          -0.00018505030822438454
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.120000000000001,
+        "position_m": [
+          0.009663417608180883,
+          1.7366390232279385e-05,
+          6.017409857559593e-06
+        ],
+        "estimated_position_m": [
+          0.009703416987371004,
+          -3.201275288116182e-05,
+          -1.8973588835879564e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3931660252579913e-09,
+          -4.1597449423767637e-10,
+          -2.0205282232824088e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.001381620643887947,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008111707233023787,
+          -6.305180662674031e-05,
+          -3.0626386132579064e-05
+        ]
+      },
+      "wrong_branch_confirmed": null,
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": null,
+      "terminal_wall_feature": "none",
+      "persistent_stop_from_s": null,
+      "target_success": true,
+      "elapsed_time_s": 27.805
+    }
+  },
+  "stale_imaging_lower_1_ungated": {
+    "config": {
+      "seed": 1,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.25,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "ungated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.435,
+        "position_m": [
+          0.01000320771130844,
+          -5.628099290732533e-05,
+          -2.1791488941752187e-05
+        ],
+        "estimated_position_m": [
+          0.010004797176519385,
+          -1.4664563284002535e-05,
+          1.363705046111716e-06
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.904056469612286e-10,
+          -4.506708734319949e-10,
+          -2.427274100922234e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013515553593243705,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          -0.00029896372747346386,
+          -0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006180795131811322,
+          -0.0003672746772013152,
+          -0.00018627354672727569
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 11.96,
+        "position_m": [
+          0.009644277439532863,
+          -2.4268937172189288e-05,
+          -9.807230412383426e-07
+        ],
+        "estimated_position_m": [
+          0.009712588508428786,
+          -5.764743581013052e-05,
+          -3.94679410416537e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3748229831424263e-09,
+          -3.6470512837973893e-10,
+          -1.6106411791669262e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.001375711255093124,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008083903558509167,
+          -5.528059424057117e-05,
+          -2.4413476686835744e-05
+        ]
+      },
+      "wrong_branch_confirmed": null,
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": null,
+      "terminal_wall_feature": "none",
+      "persistent_stop_from_s": null,
+      "target_success": true,
+      "elapsed_time_s": 27.625
+    }
+  },
+  "stale_imaging_lower_1_gated": {
+    "config": {
+      "seed": 1,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.25,
+      "noise_sigma_px": 1.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "gated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 15.835,
+        "position_m": [
+          0.010001000000000137,
+          0.0,
+          0.0
+        ],
+        "estimated_position_m": [
+          0.010008350900499606,
+          2.754842981426541e-05,
+          7.984819616812521e-05
+        ],
+        "waypoint_index": 0,
+        "waypoint_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "tracking_lost",
+        "clearance_m": 0.001399442913985393,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "branch_waypoint_selected": null,
+      "wrong_branch_confirmed": {
+        "time_s": 19.17,
+        "position_m": [
+          0.011662740051873968,
+          0.0009970440311239978,
+          0.0004985220155619989
+        ],
+        "estimated_position_m": [
+          0.01165421237268538,
+          0.0010264098129768213,
+          0.0005191346741958876
+        ],
+        "waypoint_index": 0,
+        "waypoint_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "tracking_lost",
+        "clearance_m": 0.0013994429139851132,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": {
+        "time_s": 38.24,
+        "position_m": [
+          0.021164803856737868,
+          0.0066982823140433285,
+          0.0033491411570216643
+        ],
+        "estimated_position_m": [
+          0.021193705158634606,
+          0.006706526086872816,
+          0.0033090402017651277
+        ],
+        "waypoint_index": 0,
+        "waypoint_m": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "tracking_lost",
+        "clearance_m": -2.2359866668454024e-06,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "persistent_stop_from_s": 0.0,
+      "target_success": false,
+      "elapsed_time_s": 38.24
+    }
+  },
+  "high_noise_lower_0_ungated": {
+    "config": {
+      "seed": 0,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 12.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "ungated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 13.185,
+        "position_m": [
+          0.01000243059020679,
+          3.880287744784747e-05,
+          5.189792788215722e-07
+        ],
+        "estimated_position_m": [
+          0.010169633110172474,
+          0.0002466498803610367,
+          -5.871279559562036e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          4.607337796550502e-10,
+          -9.732997607220734e-10,
+          -1.2257440880875926e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.001367590820539614,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0005681091252953096,
+          0.0001514347103029144,
+          0.0001309025084429407
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.75,
+        "position_m": [
+          0.00969673742060572,
+          7.868820978879638e-05,
+          3.796620833388485e-05
+        ],
+        "estimated_position_m": [
+          0.009900198576175426,
+          -0.00015377281604716343,
+          0.00018619529898772914
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          9.996028476491476e-10,
+          -1.7245436790567315e-10,
+          -6.123905979754583e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013126314282191956,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0007515159374591395,
+          -2.6139966771405896e-05,
+          -9.282380073409124e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.75,
+        "position_m": [
+          0.011975327591607325,
+          0.0002644493005955545,
+          0.00017156796489825146
+        ],
+        "estimated_position_m": [
+          0.011825602278032145,
+          0.000134657125042214,
+          0.0003107112643336472
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.2512045560642906e-09,
+          -1.709314250084428e-09,
+          -1.3414225286672944e-09
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0005589828517687265,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00030862012682079,
+          3.987247776074686e-05,
+          -5.3845780274915274e-05
+        ]
+      },
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": {
+        "time_s": 20.165,
+        "position_m": [
+          0.012732117345439194,
+          0.00014333846274878454,
+          4.028788892463235e-05
+        ],
+        "estimated_position_m": [
+          0.012552688601376573,
+          -1.107556075169142e-05,
+          0.00021154253143871175
+        ],
+        "waypoint_index": 24,
+        "waypoint_m": [
+          0.012,
+          -0.0012000000000000001,
+          -0.0006000000000000001
+        ],
+        "force_n": [
+          -1.0753050872383545e-09,
+          -2.3131587926392605e-09,
+          -1.578928551073478e-09
+        ],
+        "reason": "actuation_limit",
+        "clearance_m": -8.739005192578801e-07,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00033528228867877707,
+          -5.1655944912268336e-05,
+          -8.984602549399963e-05
+        ]
+      },
+      "terminal_wall_feature": "capsule_sidewall_proxy",
+      "persistent_stop_from_s": null,
+      "target_success": false,
+      "elapsed_time_s": 20.165
+    }
+  },
+  "high_noise_lower_0_gated": {
+    "config": {
+      "seed": 0,
+      "duration_s": 40.0,
+      "dt_s": 0.005,
+      "frame_rate_hz": 20.0,
+      "latency_s": 0.05,
+      "noise_sigma_px": 12.0,
+      "calibration_sigma_px": 0.25,
+      "dropout_probability": 0.0,
+      "dropout_intervals": [],
+      "max_measurement_age_s": 0.15,
+      "max_sigma_m": 0.00035,
+      "safety_margin_m": 0.0002,
+      "flow_speed_m_s": 0.0006,
+      "flow_disturbance_m_s": 0.0,
+      "actuation_gain_error": 0.0,
+      "gain_n_per_m": 2e-06,
+      "max_force_n": 3e-09,
+      "start_m": [
+        0.0005,
+        0.0,
+        0.0
+      ],
+      "branch": "lower",
+      "control_mode": "gated"
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 13.200000000000001,
+        "position_m": [
+          0.010001290807506965,
+          3.922910881834507e-05,
+          -2.052861839606071e-06
+        ],
+        "estimated_position_m": [
+          0.010186212575930258,
+          0.0002670010783311013,
+          -0.00012021075232801122
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          4.2757484813948226e-10,
+          -1.0140021566622027e-09,
+          4.215046560224439e-13
+        ],
+        "reason": "safe",
+        "clearance_m": 0.001366228721315242,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0005630830225730732,
+          0.00014526519838905245,
+          0.000149545753783915
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.75,
+        "position_m": [
+          0.009683844975514623,
+          8.172762668400822e-05,
+          3.513543006212011e-05
+        ],
+        "estimated_position_m": [
+          0.0098863468426546,
+          -0.00015070007549534414,
+          0.00018204999773863896
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.0273063146907997e-09,
+          -1.7859984900931172e-10,
+          -6.040999954772779e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013110398774222362,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.000755715121954818,
+          -2.707147505266486e-05,
+          -9.156714324000037e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.29,
+        "position_m": [
+          0.01192250817748087,
+          0.0004892989409972393,
+          0.00026654681348357417
+        ],
+        "estimated_position_m": [
+          0.011923004046691391,
+          0.0004640979229357632,
+          8.691471209953181e-05
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": 0.0007911176314045583,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_stop_after_junction": {
+        "time_s": 16.67,
+        "position_m": [
+          0.011613578992424866,
+          0.00030394142996369297,
+          0.00017386805796680097
+        ],
+        "estimated_position_m": [
+          0.011751929774224117,
+          0.0005029204859113572,
+          0.00010732185332109464
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": 0.0007911176314046107,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_violation": {
+        "time_s": 36.79,
+        "position_m": [
+          0.021396994311406955,
+          0.0058892384555586375,
+          0.0029561860362524433
+        ],
+        "estimated_position_m": [
+          0.021597775454010974,
+          0.005642392925249905,
+          0.0027241252101704873
+        ],
+        "waypoint_index": 30,
+        "waypoint_m": [
+          0.0144,
+          -0.00264,
+          -0.00132
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": -2.063083191943633e-06,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "persistent_stop_from_s": 34.300000000000004,
+      "target_success": false,
+      "elapsed_time_s": 36.79
+    }
+  }
+}

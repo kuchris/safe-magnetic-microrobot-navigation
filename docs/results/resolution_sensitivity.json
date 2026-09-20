@@ -1,0 +1,1178 @@
+[
+  {
+    "seed": 0,
+    "control_mode": "gated",
+    "dt_s": 0.005,
+    "summary": {
+      "seed": 0,
+      "target_success": false,
+      "wall_collision": true,
+      "wrong_branch": true,
+      "minimum_wall_clearance_m": -1.6024265041239723e-06,
+      "navigation_time_s": null,
+      "elapsed_time_s": 36.595,
+      "safety_stop_rate": 0.5064207650273224,
+      "safety_stop_events": 12,
+      "localization_RMSE_m": 6.172144343579808e-05,
+      "localized_sample_count": 7310,
+      "sample_count": 7320,
+      "position_3sigma_coverage": 0.9939808481532147,
+      "localization_availability": 0.9986338797814208,
+      "maximum_force_n": 3e-09,
+      "reason_counts": {
+        "tracking_lost": 160,
+        "safe": 3418,
+        "actuation_limit": 195,
+        "wall_margin_low": 3547
+      }
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.56,
+        "position_m": [
+          0.010000731760344404,
+          1.556415564569694e-07,
+          -2.0735911627442487e-05
+        ],
+        "estimated_position_m": [
+          0.010023375704313938,
+          -0.00010150744663340724,
+          -1.0765107497358192e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.532485913721228e-10,
+          -2.7698510673318554e-10,
+          -2.184697850052836e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013800477849689775,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006124473902594689,
+          0.0002569793951882994,
+          0.00011636705783214668
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.200000000000001,
+        "position_m": [
+          0.009725816114020226,
+          2.2944889824579115e-05,
+          -7.905110224394538e-06
+        ],
+        "estimated_position_m": [
+          0.009715795374337538,
+          3.0645874929240144e-05,
+          -3.7178595364968075e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3684092513249235e-09,
+          -5.412917498584803e-10,
+          -1.6564280927006384e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013757315279277432,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008074181871628964,
+          -8.204691204270368e-05,
+          -2.510749703138922e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.325,
+        "position_m": [
+          0.01196353852417121,
+          0.0003498598298929036,
+          0.00015684034291852547
+        ],
+        "estimated_position_m": [
+          0.011976231636766418,
+          0.00031664754503501775,
+          0.00016720581591961954
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.5524632735328356e-09,
+          -2.073295090070036e-09,
+          -1.054411631839239e-09
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0006240898334552765,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00026295649440684365,
+          -1.529833164349095e-05,
+          -1.034177746403624e-05
+        ]
+      },
+      "first_wall_stop_after_junction": {
+        "time_s": 18.5,
+        "position_m": [
+          0.012355550639571106,
+          0.000263495465911802,
+          0.00010954397616689357
+        ],
+        "estimated_position_m": [
+          0.012349095125953653,
+          0.00021597856020106666,
+          0.00012699432935019185
+        ],
+        "waypoint_index": 23,
+        "waypoint_m": [
+          0.011600000000000001,
+          -0.00096,
+          -0.00048
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": 0.00032397552682585963,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_violation": {
+        "time_s": 36.595,
+        "position_m": [
+          0.02129974106403734,
+          0.005540566377540359,
+          0.002746853254038397
+        ],
+        "estimated_position_m": [
+          0.021296709035589383,
+          0.0054729216229790515,
+          0.0027824396288746024
+        ],
+        "waypoint_index": 29,
+        "waypoint_m": [
+          0.014,
+          -0.0024000000000000002,
+          -0.0012000000000000001
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": -1.6024265041239723e-06,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "persistent_stop_from_s": 29.925,
+      "target_success": false,
+      "elapsed_time_s": 36.595
+    }
+  },
+  {
+    "seed": 0,
+    "control_mode": "gated",
+    "dt_s": 0.0025,
+    "summary": {
+      "seed": 0,
+      "target_success": false,
+      "wall_collision": true,
+      "wrong_branch": true,
+      "minimum_wall_clearance_m": -7.847045304831997e-07,
+      "navigation_time_s": null,
+      "elapsed_time_s": 36.595,
+      "safety_stop_rate": 0.5063870482956486,
+      "safety_stop_events": 12,
+      "localization_RMSE_m": 6.185713527319899e-05,
+      "localized_sample_count": 14619,
+      "sample_count": 14639,
+      "position_3sigma_coverage": 0.9941856488131883,
+      "localization_availability": 0.9986337864608238,
+      "maximum_force_n": 3e-09,
+      "reason_counts": {
+        "tracking_lost": 320,
+        "safe": 6837,
+        "actuation_limit": 389,
+        "wall_margin_low": 7093
+      }
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.5625,
+        "position_m": [
+          0.010001327572010584,
+          5.8462117819980275e-08,
+          -2.081317181718537e-05
+        ],
+        "estimated_position_m": [
+          0.010024294299908951,
+          -0.00010208402522520476,
+          -1.0732960299278342e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.514114001820962e-10,
+          -2.7583194954959046e-10,
+          -2.185340794014433e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013801057059366231,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006121689159172807,
+          0.00025715418629870996,
+          0.00011635731233599246
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.200000000000001,
+        "position_m": [
+          0.00972459963524962,
+          2.2938523058229206e-05,
+          -7.8890885537704e-06
+        ],
+        "estimated_position_m": [
+          0.009714577731947751,
+          3.0636916033642965e-05,
+          -3.716262313389692e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.370844536104497e-09,
+          -5.412738320672859e-10,
+          -1.6567475373220617e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.001375742762764442,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008077873182205208,
+          -8.20441961331438e-05,
+          -2.5112339049536235e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.3275,
+        "position_m": [
+          0.011963391549556075,
+          0.0003497146042185551,
+          0.0001567673545743389
+        ],
+        "estimated_position_m": [
+          0.011976305484168434,
+          0.00031630292307412015,
+          0.00016723380617606541
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.5526109683368684e-09,
+          -2.0726058461482404e-09,
+          -1.054467612352131e-09
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0006240367373867003,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00026293410739909996,
+          -1.5193858712872065e-05,
+          -1.0350262773887266e-05
+        ]
+      },
+      "first_wall_stop_after_junction": {
+        "time_s": 18.5,
+        "position_m": [
+          0.012354646011160108,
+          0.00026355395671593025,
+          0.00010956140206540554
+        ],
+        "estimated_position_m": [
+          0.01234819490222296,
+          0.00021603420262745218,
+          0.0001270133159064324
+        ],
+        "waypoint_index": 23,
+        "waypoint_m": [
+          0.011600000000000001,
+          -0.00096,
+          -0.00048
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": 0.00032452911069511393,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_violation": {
+        "time_s": 36.595,
+        "position_m": [
+          0.021298872103757607,
+          0.0055405882869256195,
+          0.002746879624650827
+        ],
+        "estimated_position_m": [
+          0.02129584007530965,
+          0.0054729435323643124,
+          0.0027824659994870327
+        ],
+        "waypoint_index": 29,
+        "waypoint_m": [
+          0.014,
+          -0.0024000000000000002,
+          -0.0012000000000000001
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": -7.847045304831997e-07,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "persistent_stop_from_s": 29.925,
+      "target_success": false,
+      "elapsed_time_s": 36.595
+    }
+  },
+  {
+    "seed": 0,
+    "control_mode": "gated",
+    "dt_s": 0.001,
+    "summary": {
+      "seed": 0,
+      "target_success": false,
+      "wall_collision": true,
+      "wrong_branch": true,
+      "minimum_wall_clearance_m": -8.72649718664572e-08,
+      "navigation_time_s": null,
+      "elapsed_time_s": 36.593,
+      "safety_stop_rate": 0.5063944909001475,
+      "safety_stop_events": 12,
+      "localization_RMSE_m": 6.194442097671478e-05,
+      "localized_sample_count": 36544,
+      "sample_count": 36594,
+      "position_3sigma_coverage": 0.9942261383537653,
+      "localization_availability": 0.9986336557905667,
+      "maximum_force_n": 3e-09,
+      "reason_counts": {
+        "tracking_lost": 800,
+        "safe": 17092,
+        "actuation_limit": 971,
+        "wall_margin_low": 17731
+      }
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.562,
+        "position_m": [
+          0.010000484373614166,
+          8.419439609811781e-08,
+          -2.079330217267043e-05
+        ],
+        "estimated_position_m": [
+          0.010023390080983654,
+          -0.0001019701019731219,
+          -1.0733465304837326e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          7.532198380326912e-10,
+          -2.7605979605375623e-10,
+          -2.1853306939032534e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013799524534866812,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006124430319393728,
+          0.00025711965020594403,
+          0.00011635746542957532
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.200000000000001,
+        "position_m": [
+          0.0097241241837649,
+          2.293470483354513e-05,
+          -7.879477949249104e-06
+        ],
+        "estimated_position_m": [
+          0.009714090314250023,
+          3.063154207100957e-05,
+          -3.715304122677167e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.371819371499952e-09,
+          -5.412630841420192e-10,
+          -1.6569391754645666e-10
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0013757494977669627,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008079350800032709,
+          -8.204256700415886e-05,
+          -2.511524382645667e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.328,
+        "position_m": [
+          0.011963125026358724,
+          0.0003497367774028933,
+          0.00015678083749257017
+        ],
+        "estimated_position_m": [
+          0.011976083463205512,
+          0.00031628506114896043,
+          0.00016726745250527093
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.5521669264110248e-09,
+          -2.072570122297921e-09,
+          -1.054534905010542e-09
+        ],
+        "reason": "safe",
+        "clearance_m": 0.0006242066987301233,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0002630014135585648,
+          -1.5188443829667697e-05,
+          -1.0360462735049065e-05
+        ]
+      },
+      "first_wall_stop_after_junction": {
+        "time_s": 18.5,
+        "position_m": [
+          0.012354253018871329,
+          0.0002636155600035745,
+          0.00010958527166406956
+        ],
+        "estimated_position_m": [
+          0.012347802411339634,
+          0.00021609513619313717,
+          0.000127038562554944
+        ],
+        "waypoint_index": 23,
+        "waypoint_m": [
+          0.011600000000000001,
+          -0.00096,
+          -0.00048
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": 0.000324802502616297,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "first_wall_violation": {
+        "time_s": 36.593,
+        "position_m": [
+          0.021298152588312375,
+          0.0055406793111431865,
+          0.002746882020033373
+        ],
+        "estimated_position_m": [
+          0.02129508646897118,
+          0.005473173391915253,
+          0.0027822909957395717
+        ],
+        "waypoint_index": 29,
+        "waypoint_m": [
+          0.014,
+          -0.0024000000000000002,
+          -0.0012000000000000001
+        ],
+        "force_n": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reason": "wall_margin_low",
+        "clearance_m": -8.72649718664572e-08,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ]
+      },
+      "terminal_wall_feature": "closed_outlet_cap_proxy",
+      "persistent_stop_from_s": 29.923000000000002,
+      "target_success": false,
+      "elapsed_time_s": 36.593
+    }
+  },
+  {
+    "seed": 2,
+    "control_mode": "ungated",
+    "dt_s": 0.005,
+    "summary": {
+      "seed": 2,
+      "target_success": false,
+      "wall_collision": true,
+      "wrong_branch": true,
+      "minimum_wall_clearance_m": -1.4292348581284448e-07,
+      "navigation_time_s": null,
+      "elapsed_time_s": 19.88,
+      "safety_stop_rate": 0.002514458134272064,
+      "safety_stop_events": 1,
+      "localization_RMSE_m": 6.221392245631204e-05,
+      "localized_sample_count": 3967,
+      "sample_count": 3977,
+      "position_3sigma_coverage": 0.9974792034282833,
+      "localization_availability": 0.9974855418657279,
+      "maximum_force_n": 3e-09,
+      "reason_counts": {
+        "tracking_lost": 10,
+        "ungated": 3564,
+        "actuation_limit": 403
+      }
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.435,
+        "position_m": [
+          0.010000082483388,
+          2.846218095968816e-07,
+          -1.475397207181014e-05
+        ],
+        "estimated_position_m": [
+          0.010052995244604448,
+          -1.4291482261536989e-05,
+          1.8692646460860737e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          6.940095107911028e-10,
+          -4.5141703547692603e-10,
+          -2.7738529292172147e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013856895145960548,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.000603468159308337,
+          0.00023053967738580458,
+          0.00010743687277531736
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.030000000000001,
+        "position_m": [
+          0.009694325708851736,
+          2.6796608811543523e-05,
+          -4.314923754399293e-08
+        ],
+        "estimated_position_m": [
+          0.009702957435528717,
+          -3.48593218602357e-06,
+          -1.437587506412377e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.3940851289425647e-09,
+          -4.730281356279529e-10,
+          -2.1124824987175248e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013732033564479505,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008113100374877251,
+          -7.169977714926874e-05,
+          -3.202019351104881e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.26,
+        "position_m": [
+          0.011964936719635786,
+          0.000336823255902446,
+          0.00017156239915655026
+        ],
+        "estimated_position_m": [
+          0.011938743103539968,
+          0.0003003735026381281,
+          0.0002240842247246667
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.4774862070799365e-09,
+          -2.040747005276256e-09,
+          -1.1681684494493335e-09
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0006192588570174139,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00027432122844923257,
+          -1.036481870720122e-05,
+          -2.7584596352654987e-05
+        ]
+      },
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": {
+        "time_s": 19.88,
+        "position_m": [
+          0.012784013120679682,
+          0.00016521619632401885,
+          7.562460504986361e-05
+        ],
+        "estimated_position_m": [
+          0.012794744773826491,
+          0.00013186050234532292,
+          7.465369983138762e-05
+        ],
+        "waypoint_index": 24,
+        "waypoint_m": [
+          0.012,
+          -0.0012000000000000001,
+          -0.0006000000000000001
+        ],
+        "force_n": [
+          -1.4096722370761178e-09,
+          -2.3623769990645424e-09,
+          -1.1966616473789155e-09
+        ],
+        "reason": "actuation_limit",
+        "clearance_m": -1.4292348581284448e-07,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0002846002080080833,
+          -5.9116250476745364e-05,
+          -3.19034852050252e-05
+        ]
+      },
+      "terminal_wall_feature": "capsule_sidewall_proxy",
+      "persistent_stop_from_s": null,
+      "target_success": false,
+      "elapsed_time_s": 19.88
+    }
+  },
+  {
+    "seed": 2,
+    "control_mode": "ungated",
+    "dt_s": 0.0025,
+    "summary": {
+      "seed": 2,
+      "target_success": false,
+      "wall_collision": true,
+      "wrong_branch": true,
+      "minimum_wall_clearance_m": -4.808241627286998e-07,
+      "navigation_time_s": null,
+      "elapsed_time_s": 19.8825,
+      "safety_stop_rate": 0.002514458134272064,
+      "safety_stop_events": 1,
+      "localization_RMSE_m": 6.236885241367426e-05,
+      "localized_sample_count": 7934,
+      "sample_count": 7954,
+      "position_3sigma_coverage": 0.9974792034282833,
+      "localization_availability": 0.9974855418657279,
+      "maximum_force_n": 3e-09,
+      "reason_counts": {
+        "tracking_lost": 20,
+        "ungated": 7132,
+        "actuation_limit": 802
+      }
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.435,
+        "position_m": [
+          0.010000063418219973,
+          1.4068829449001656e-07,
+          -1.4843976905389177e-05
+        ],
+        "estimated_position_m": [
+          0.010053086459164189,
+          -1.4501302256125252e-05,
+          1.8579212654759646e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          6.938270816716219e-10,
+          -4.509973954877495e-10,
+          -2.7715842530951927e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013856187755790202,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006034405074072615,
+          0.00023060328479399168,
+          0.00010747126049142158
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.0275,
+        "position_m": [
+          0.00969240844282205,
+          2.6801018666441005e-05,
+          -5.2904654048721784e-08
+        ],
+        "estimated_position_m": [
+          0.009700820870969342,
+          -3.249842562731965e-06,
+          -1.4459995507803169e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.398358258061314e-09,
+          -4.735003148745361e-10,
+          -2.1108000898439367e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.001373198929117266,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008119577418893621,
+          -7.177134825509647e-05,
+          -3.199469220737898e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.26,
+        "position_m": [
+          0.011964555625225427,
+          0.0003367424250700492,
+          0.00017151414824630393
+        ],
+        "estimated_position_m": [
+          0.011938357293864582,
+          0.00030029058386258576,
+          0.00022404011040884114
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.4767145877291644e-09,
+          -2.0405811677251715e-09,
+          -1.1680802208176824e-09
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.000619393224204822,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0002744381875291,
+          -1.0339681691958033e-05,
+          -2.757122299756022e-05
+        ]
+      },
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": {
+        "time_s": 19.8825,
+        "position_m": [
+          0.012784318432193496,
+          0.00016504046167456563,
+          7.552434043302502e-05
+        ],
+        "estimated_position_m": [
+          0.012795105708705389,
+          0.00013161302386095915,
+          7.446643308598865e-05
+        ],
+        "waypoint_index": 24,
+        "waypoint_m": [
+          0.012,
+          -0.0012000000000000001,
+          -0.0006000000000000001
+        ],
+        "force_n": [
+          -1.4103957595794992e-09,
+          -2.36207757244292e-09,
+          -1.1964001601146365e-09
+        ],
+        "reason": "actuation_limit",
+        "clearance_m": -4.808241627286998e-07,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0002844905392625106,
+          -5.907086454634108e-05,
+          -3.18638499758199e-05
+        ]
+      },
+      "terminal_wall_feature": "capsule_sidewall_proxy",
+      "persistent_stop_from_s": null,
+      "target_success": false,
+      "elapsed_time_s": 19.8825
+    }
+  },
+  {
+    "seed": 2,
+    "control_mode": "ungated",
+    "dt_s": 0.001,
+    "summary": {
+      "seed": 2,
+      "target_success": false,
+      "wall_collision": true,
+      "wrong_branch": true,
+      "minimum_wall_clearance_m": -4.5554148681101886e-08,
+      "navigation_time_s": null,
+      "elapsed_time_s": 19.881,
+      "safety_stop_rate": 0.0025148375414948193,
+      "safety_stop_events": 1,
+      "localization_RMSE_m": 6.246505735420687e-05,
+      "localized_sample_count": 19832,
+      "sample_count": 19882,
+      "position_3sigma_coverage": 0.9974788221056877,
+      "localization_availability": 0.9974851624585052,
+      "maximum_force_n": 3e-09,
+      "reason_counts": {
+        "tracking_lost": 50,
+        "ungated": 17835,
+        "actuation_limit": 1997
+      }
+    },
+    "analysis": {
+      "junction_crossing": {
+        "time_s": 12.436,
+        "position_m": [
+          0.010000209481483995,
+          1.1734169204400077e-07,
+          -1.4874308237092031e-05
+        ],
+        "estimated_position_m": [
+          0.010053315124840504,
+          -1.4449216000506483e-05,
+          1.8669219294891284e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          6.933697503189902e-10,
+          -4.5110156799898706e-10,
+          -2.7733843858978255e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0013856229033992063,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0006033711868878308,
+          0.00023058749472723193,
+          0.00010744397477392055
+        ]
+      },
+      "branch_waypoint_selected": {
+        "time_s": 12.028,
+        "position_m": [
+          0.009692265778875678,
+          2.680558558078534e-05,
+          -4.997074070774259e-08
+        ],
+        "estimated_position_m": [
+          0.009700720063662589,
+          -3.2944932006341213e-06,
+          -1.4443276114228053e-05
+        ],
+        "waypoint_index": 20,
+        "waypoint_m": [
+          0.0104,
+          -0.00024,
+          -0.00012
+        ],
+        "force_n": [
+          1.398559872674822e-09,
+          -4.734110135987317e-10,
+          -2.111134477715439e-10
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.001373194367841744,
+        "prescribed_flow_m_s": [
+          0.0006,
+          0.0,
+          0.0
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0008119883018534948,
+          -7.175781231274536e-05,
+          -3.199976072953703e-05
+        ]
+      },
+      "wrong_branch_confirmed": {
+        "time_s": 17.26,
+        "position_m": [
+          0.01196422391603579,
+          0.0003366547938312583,
+          0.00017146562950249095
+        ],
+        "estimated_position_m": [
+          0.011938023096885336,
+          0.0003002018757333614,
+          0.0002239941621305022
+        ],
+        "waypoint_index": 22,
+        "waypoint_m": [
+          0.0112,
+          -0.00072,
+          -0.00036
+        ],
+        "force_n": [
+          -1.4760461937706713e-09,
+          -2.040403751466723e-09,
+          -1.1679883242610044e-09
+        ],
+        "reason": "ungated",
+        "clearance_m": 0.0006194949189761594,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.0002745395001028399,
+          -1.0312789620989477e-05,
+          -2.7557293672561713e-05
+        ]
+      },
+      "first_wall_stop_after_junction": null,
+      "first_wall_violation": {
+        "time_s": 19.881,
+        "position_m": [
+          0.01278358644120732,
+          0.00016507033256436268,
+          7.55386311963348e-05
+        ],
+        "estimated_position_m": [
+          0.012794337876101366,
+          0.00013169017125770865,
+          7.452643319011946e-05
+        ],
+        "waypoint_index": 24,
+        "waypoint_m": [
+          0.012,
+          -0.0012000000000000001,
+          -0.0006000000000000001
+        ],
+        "force_n": [
+          -1.4092638564693177e-09,
+          -2.362600201793018e-09,
+          -1.1967019968800991e-09
+        ],
+        "reason": "actuation_limit",
+        "clearance_m": -4.5554148681101886e-08,
+        "prescribed_flow_m_s": [
+          0.0004982728791224398,
+          0.00029896372747346386,
+          0.00014948186373673193
+        ],
+        "nominal_net_velocity_m_s": [
+          0.00028466210876259293,
+          -5.915008268393441e-05,
+          -3.190960122651537e-05
+        ]
+      },
+      "terminal_wall_feature": "capsule_sidewall_proxy",
+      "persistent_stop_from_s": null,
+      "target_success": false,
+      "elapsed_time_s": 19.881
+    }
+  }
+]

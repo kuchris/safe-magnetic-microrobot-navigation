@@ -99,6 +99,7 @@ python -m simulations.02_y_vessel
 python -m simulations.03_noisy_closed_loop
 python -m simulations.04_biplane_localization
 python -m simulations.05_latency_safety
+python -m simulations.06_benchmark
 ```
 
 The older 02/03 demos display a plot. For headless runs, prefix with
@@ -117,6 +118,73 @@ python -m simulations.05_latency_safety --output outputs/stress
 The plots include both trajectories, centerlines, target, stop locations,
 localization error, uncertainty, clearance and force components/magnitude.
 Generated outputs are ignored by Git and can be reproduced with the commands above.
+
+### Paired-seed policy benchmark
+
+06 compares passive drift, bounded steering without the safety gate, and the
+existing gated controller. All policies use the same estimator, sensor settings
+and force limit. Ungated steering starts only after the first valid estimate;
+it then ignores tracking freshness, uncertainty and wall-margin stops.
+The default gated behavior of experiments 04/05 is unchanged.
+
+```bash
+# Default: 10 seeds x 4 scenarios x 2 branches x 3 policies = 240 trials.
+python -m simulations.06_benchmark
+# Smaller pilot: 120 trials, with the same 40-second time limit per trial.
+python -m simulations.06_benchmark --seeds 0 1 2 3 4 --output outputs/06_benchmark_pilot
+# Restrict a run to selected scenarios.
+python -m simulations.06_benchmark --seeds 7 8 --scenarios nominal stale_imaging
+# Plot the saved pilot results without rerunning simulations.
+python -m simulations.07_plot_benchmark
+```
+
+Outputs are `benchmark.json` (every trial's configuration and summary plus
+aggregates), `trials.csv` (one row per trial) and `report.md` (English comparison).
+Scenarios are nominal imaging, a tracking-loss burst, stale imaging and high
+detector noise. Both branches are reported separately. Trials stop at target
+success, a wall-proxy violation, or the configured time limit.
+
+Success, wrong-branch and wall-proxy violation rates have per-group 95% Wilson
+intervals across seeds. Continuous metrics report trial-level means and
+5th/50th/95th percentiles; arrival time is conditional on success. Position
+coverage measures error inside a largest-axis 3-sigma ball, not a calibrated
+3D confidence ellipsoid. Correlated time samples are not treated as independent
+trials. See the [executed pilot report](docs/07_benchmark.md).
+
+![Benchmark success rates with 95% Wilson intervals](docs/figures/benchmark_success_rates.png)
+
+### Failure replay and animation
+
+```bash
+python -m simulations.08_failure_replay
+```
+
+Replays nine selected pilot trials, verifies their original summaries, records
+waypoint/event evidence, checks two cases at finer physics/control timesteps,
+and exports four diagnostic figures plus a success/failure GIF. The analysis
+distinguishes capsule sidewall proxy events from artificial closed-outlet caps
+without changing control behavior or benchmark counts. See the
+[failure analysis and animation](docs/08_failure_analysis.md).
+
+### Earlier branch guidance
+
+The experimental route in 09 adds a 0.4 mm lateral offset near the junction,
+starting 3 mm upstream and rejoining the selected branch centerline downstream.
+The safety gate and 3 nN force cap are unchanged. Set
+`TrialConfig(approach_offset_m=0.4e-3)` to use this route programmatically;
+the default offset remains zero for reproduction of the original experiments.
+
+```bash
+# Each comparison runs both routes: 240 trials per seed set.
+python -m simulations.09_approach_guidance
+python -m simulations.09_approach_guidance --seeds 5 6 7 8 9 --output outputs/09_approach_guidance/heldout
+# Generate comparisons and a before/after animation from both completed sets.
+python -m simulations.10_guidance_figures
+```
+
+Each comparison saves complete per-route trial records and confidence intervals,
+plus matched-seed success changes and terminal sidewall/outlet proxy counts.
+See [the approach guidance evaluation](docs/09_approach_guidance.md).
 
 ## Current numerical example
 
@@ -139,11 +207,12 @@ That run enters the upper branch and eventually violates the artificial
 rounded outlet boundary at 38.24 s, with zero active force throughout.
 
 The free-space example ends at [2, 1, 0] mm. The baseline suite had eight tests;
-the expanded suite passes 57 tests covering imaging, uncertainty, timing,
-safety and both branches.
+the expanded suite passes 82 tests covering imaging, uncertainty, timing,
+safety, both branches, policy ablations, benchmark statistics, replay diagnostics
+and pre-junction route guidance.
 See [inspection and verification record](docs/06_validation.md) for measured
-results and known limitations. These deterministic runs are not a Monte Carlo
-success/collision-rate estimate.
+results and known limitations. The seed-7 examples above are deterministic
+scenarios; the separate paired-seed benchmark reports conditional trial rates.
 
 ![Seed-7 biplane navigation diagnostics](docs/figures/biplane_diagnostics.png)
 
@@ -213,6 +282,9 @@ src/
   safety.py             Uncertainty, freshness and wall-margin gate
   navigation.py         Observation-only feedback boundary
   experiment.py         Seeded trial, histories and metrics
+  benchmark.py          Policy comparison, trial statistics and report export
+  failure_analysis.py   Replay event states and terminal capsule features
+  replay_plotting.py    Paired diagnostics and trajectory animation
   plotting.py           Reproducible diagnostic figure
   validation.py         Numerical input validation
 simulations/
@@ -221,6 +293,11 @@ simulations/
   03_noisy_closed_loop.py
   04_biplane_localization.py
   05_latency_safety.py
+  06_benchmark.py
+  07_plot_benchmark.py
+  08_failure_replay.py
+  09_approach_guidance.py
+  10_guidance_figures.py
 docs/                    Physics, imaging, estimation, safety, verification
 tests/                   Deterministic physics, numerical and integration tests
 ```
@@ -236,16 +313,18 @@ tests/                   Deterministic physics, numerical and integration tests
 - [x] Explicit upper/lower Y branch and centerline waypoint following
 - [x] Logged stop reasons, wrong-branch flag, seeded trials and diagnostic plots
 - [x] Deterministic latency/dropout/noise stress scenarios and regression tests
+- [x] Optional pre-junction lateral guidance with matched original/new-seed evaluation
 - [ ] General vascular graph routing and branch-crossing surfaces
 - [ ] Exact union/mesh wall distance and swept collision checking
 - [ ] Perspective/raster imaging, segmentation, outliers and single-view handling
 - [ ] Rotation/scale calibration estimation and variable-latency replay
 - [ ] Abstract coil matrix A(x), bounded current allocation, unreachable-force diagnostics
-- [ ] Monte Carlo distributions, aggregate safety rates and confidence intervals
+- [x] Paired-seed policy benchmark, trial distributions and conditional outcome-rate intervals
 - [ ] Control-input-aware estimation and flow disturbance estimation
 - [ ] Predictive safety constraints, then MPC / Control Barrier Functions
 - [ ] Synthetic/public mesh import and improved fluid/near-wall physics
 
-No RL, coil-current solver, general vascular graph, mesh loader or Monte Carlo
-study is claimed complete. The current supervisor is a reactive gate, not a
+No RL, coil-current solver, general vascular graph or mesh loader is claimed
+complete. Benchmark rates describe only the configured toy scenarios, not
+general safety. The current supervisor is a reactive gate, not a
 formal safety guarantee. There is no full cerebral hemodynamics model.

@@ -5,7 +5,8 @@ from src.validation import nonnegative, vector
 
 
 class YWaypointPlanner:
-    def __init__(self, vessel, branch="upper", spacing_m=0.5e-3, tolerance_m=0.3e-3):
+    def __init__(self, vessel, branch="upper", spacing_m=0.5e-3, tolerance_m=0.3e-3,
+                 approach_offset_m=0.0):
         if branch not in ("upper", "lower"):
             raise ValueError("branch must be upper or lower")
         nonnegative(spacing_m, "spacing_m", positive=True)
@@ -16,6 +17,20 @@ class YWaypointPlanner:
             np.linspace(s.start_m, s.end_m,
                         int(np.ceil(np.linalg.norm(s.end_m - s.start_m) / spacing_m)) + 1)[1:]
             for s in segments])
+        offset = nonnegative(approach_offset_m, "approach_offset_m")
+        if offset >= min(s.radius_m for s in segments):
+            raise ValueError("approach_offset_m must be smaller than the vessel radius")
+        if offset > 0:
+            # Build lateral margin before the junction, then rejoin the branch
+            # centerline. Geometry only: no true state or flow enters planning.
+            inlet = segments[0].end_m - segments[0].start_m
+            inlet /= np.linalg.norm(inlet)
+            lateral = segments[1].end_m - segments[1].start_m
+            lateral -= np.dot(lateral, inlet) * inlet
+            lateral /= np.linalg.norm(lateral)
+            distance = np.linalg.norm(self.waypoints - segments[0].end_m, axis=1)
+            weight = np.maximum(0, 1 - distance / (2 * segments[0].radius_m))
+            self.waypoints += offset * weight[:, None] * lateral
         self.index = 0
 
     def target(self, estimated_position_m):

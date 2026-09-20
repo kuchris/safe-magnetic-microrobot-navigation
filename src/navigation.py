@@ -29,13 +29,17 @@ class BiplaneNavigation:
                  noise_sigma_px=1.0, calibration_sigma_px=0.25,
                  gain_n_per_m=2e-6, max_force_n=3e-9,
                  max_measurement_age_s=0.15, max_sigma_m=0.35e-3,
-                 safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7):
+                 safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7,
+                 control_mode="gated", approach_offset_m=0.0):
+        if control_mode not in ("passive", "ungated", "gated"):
+            raise ValueError("control_mode must be passive, ungated, or gated")
+        self.control_mode = control_mode
         self.vessel = vessel
         self.particle_radius_m = particle_radius_m
         self.triangulator = BiplaneTriangulator(views, noise_sigma_px, calibration_sigma_px)
         self.estimator = DelayedStateEstimator(
             acceleration_spectral_density=acceleration_spectral_density)
-        self.planner = YWaypointPlanner(vessel, branch)
+        self.planner = YWaypointPlanner(vessel, branch, approach_offset_m=approach_offset_m)
         self.supervisor = SafetySupervisor(max_sigma_m, safety_margin_m,
             max_measurement_age_s=max_measurement_age_s, max_force_n=max_force_n)
         self.gain = gain_n_per_m
@@ -68,13 +72,20 @@ class BiplaneNavigation:
                     self.estimator.observe(reconstruction, frame.captured_at_s, now_s)
         estimate = self.estimator.estimate(now_s)
         if estimate is None:
-            return ControlOutput(np.zeros(3), None, "tracking_lost", np.nan, np.nan, np.inf, False)
+            reason = "passive" if self.control_mode == "passive" else "tracking_lost"
+            return ControlOutput(np.zeros(3), None, reason, np.nan, np.nan, np.inf, False)
         age = now_s - self.estimator.last_capture_s
         allowed, reason, _ = self.supervisor.evaluate(
             estimate.estimated_position, estimate.position_uncertainty,
             self.vessel, self.particle_radius_m, self.tracking_valid, age)
         clearance = self.vessel.clearance(estimate.estimated_position, self.particle_radius_m)
         robust = clearance - self.supervisor.k_sigma * estimate.position_uncertainty
+        # Benchmark ablations keep the same observations, estimator and force cap.
+        # Ungated control requires an initial estimate, then ignores the gate.
+        if self.control_mode == "passive":
+            allowed, reason = False, "passive"
+        elif self.control_mode == "ungated":
+            allowed, reason = True, "ungated"
         force = np.zeros(3)
         limited = False
         if allowed:

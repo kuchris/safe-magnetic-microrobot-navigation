@@ -37,6 +37,8 @@ class TrialConfig:
     max_force_n: float = 3e-9
     start_m: tuple = (0.5e-3, 0.0, 0.0)
     branch: str = "upper"
+    control_mode: str = "gated"
+    approach_offset_m: float = 0.0
 
 
 def run_trial(config=TrialConfig()):
@@ -65,11 +67,13 @@ def run_trial(config=TrialConfig()):
         noise_sigma_px=config.noise_sigma_px, calibration_sigma_px=config.calibration_sigma_px,
         gain_n_per_m=config.gain_n_per_m, max_force_n=config.max_force_n,
         max_measurement_age_s=config.max_measurement_age_s,
-        max_sigma_m=config.max_sigma_m, safety_margin_m=config.safety_margin_m)
+        max_sigma_m=config.max_sigma_m, safety_margin_m=config.safety_margin_m,
+        control_mode=config.control_mode, approach_offset_m=config.approach_offset_m)
     target = vessel.upper_target if config.branch == "upper" else vessel.lower_target
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",
-        "force_n", "command_force_n", "reason", "measurement_age_s")}
+        "force_n", "command_force_n", "reason", "measurement_age_s",
+        "waypoint_index", "waypoint_m")}
     reached = collided = wrong = False
     ticks = int(np.ceil(config.duration_s / config.dt_s))
     for tick in range(ticks + 1):
@@ -88,7 +92,8 @@ def run_trial(config=TrialConfig()):
             np.full(3, np.nan) if estimate is None else estimate.estimated_position,
             np.nan if estimate is None else estimate.position_uncertainty,
             true_clearance, output.estimated_clearance_m, output.robust_clearance_m,
-            applied, output.force_n, output.reason, output.measurement_age_s)
+            applied, output.force_n, output.reason, output.measurement_age_s,
+            navigation.planner.index, navigation.planner.waypoints[navigation.planner.index].copy())
         for key, value in zip(history, values):
             history[key].append(value)
         if reached or collided or now >= config.duration_s:
@@ -112,6 +117,11 @@ def run_trial(config=TrialConfig()):
         "safety_stop_events": int(np.count_nonzero(stopped & ~np.r_[False, stopped[:-1]])),
         "localization_RMSE_m": float(np.sqrt(np.mean(np.sum(errors**2, axis=1)))) if len(errors) else None,
         "localized_sample_count": int(valid.sum()), "sample_count": len(valid),
+        # Descriptive coverage of a largest-axis 3-sigma ball, not a calibrated
+        # 3D confidence ellipsoid or a collision-probability guarantee.
+        "position_3sigma_coverage": float(np.mean(
+            np.linalg.norm(errors, axis=1) <= 3 * history["sigma_m"][valid])) if len(errors) else None,
+        "localization_availability": float(valid.mean()),
         "maximum_force_n": float(np.linalg.norm(history["force_n"], axis=1).max()),
         "reason_counts": dict(reasons),
     }

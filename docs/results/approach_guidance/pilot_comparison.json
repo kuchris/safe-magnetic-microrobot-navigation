@@ -1,0 +1,697 @@
+[
+  {
+    "scenario": "nominal",
+    "branch": "upper",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "nominal",
+    "branch": "upper",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013443494762649753,
+      "maximum_force_n": 1.6668271037305015e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011613680516414475,
+      "maximum_force_n": 1.6738424375937266e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "nominal",
+    "branch": "upper",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013443494762649753,
+      "maximum_force_n": 1.6668271037305015e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011613680516414475,
+      "maximum_force_n": 1.6738424375937266e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "nominal",
+    "branch": "lower",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "nominal",
+    "branch": "lower",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013455922482382267,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011559005751648373,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "nominal",
+    "branch": "lower",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013455922482382267,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011559005751648373,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "dropout_burst",
+    "branch": "upper",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "dropout_burst",
+    "branch": "upper",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013427623044144899,
+      "maximum_force_n": 1.6769528210690648e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.001153674068877588,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "dropout_burst",
+    "branch": "upper",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013473448881265579,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011618055123076324,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "dropout_burst",
+    "branch": "lower",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "dropout_burst",
+    "branch": "lower",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 4,
+      "wrong_branches": 1,
+      "wall_proxy_violations": 1,
+      "terminal_features": {
+        "none": 4,
+        "capsule_sidewall_proxy": 1
+      },
+      "minimum_clearance_m": -1.4292348581284448e-07,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011562136394603513,
+      "maximum_force_n": 1.6615617928340253e-09
+    },
+    "rescued_seeds": [
+      2
+    ],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "dropout_burst",
+    "branch": "lower",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 4,
+      "wrong_branches": 1,
+      "wall_proxy_violations": 1,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 1,
+        "none": 4
+      },
+      "minimum_clearance_m": -1.6024265041239723e-06,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011614239910176186,
+      "maximum_force_n": 1.650694250307787e-09
+    },
+    "rescued_seeds": [
+      0
+    ],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "stale_imaging",
+    "branch": "upper",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "stale_imaging",
+    "branch": "upper",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013438478100006304,
+      "maximum_force_n": 1.9203164714425236e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011597769138137338,
+      "maximum_force_n": 1.9203164714425236e-09
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "stale_imaging",
+    "branch": "upper",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "stale_imaging",
+    "branch": "lower",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "stale_imaging",
+    "branch": "lower",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 4,
+      "wrong_branches": 1,
+      "wall_proxy_violations": 1,
+      "terminal_features": {
+        "capsule_sidewall_proxy": 1,
+        "none": 4
+      },
+      "minimum_clearance_m": -1.0093654720958953e-06,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0011526301988813064,
+      "maximum_force_n": 1.9203164714425236e-09
+    },
+    "rescued_seeds": [
+      0
+    ],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "stale_imaging",
+    "branch": "lower",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "high_noise",
+    "branch": "upper",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0013994429139846008,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "high_noise",
+    "branch": "upper",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 4,
+      "wrong_branches": 1,
+      "wall_proxy_violations": 1,
+      "terminal_features": {
+        "none": 4,
+        "capsule_sidewall_proxy": 1
+      },
+      "minimum_clearance_m": -5.349153280140729e-07,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0010620203471349097,
+      "maximum_force_n": 2.9999999999999996e-09
+    },
+    "rescued_seeds": [
+      1
+    ],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "high_noise",
+    "branch": "upper",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 4,
+      "wrong_branches": 1,
+      "wall_proxy_violations": 1,
+      "terminal_features": {
+        "none": 4,
+        "closed_outlet_cap_proxy": 1
+      },
+      "minimum_clearance_m": -2.1439821399852482e-06,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.001066302124593801,
+      "maximum_force_n": 1.9584783288004668e-09
+    },
+    "rescued_seeds": [
+      1
+    ],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "high_noise",
+    "branch": "lower",
+    "control_mode": "passive",
+    "trials": 5,
+    "baseline": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "guided": {
+      "successes": 0,
+      "wrong_branches": 5,
+      "wall_proxy_violations": 5,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 5
+      },
+      "minimum_clearance_m": -2.2359866668454024e-06,
+      "maximum_force_n": 0.0
+    },
+    "rescued_seeds": [],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "high_noise",
+    "branch": "lower",
+    "control_mode": "ungated",
+    "trials": 5,
+    "baseline": {
+      "successes": 3,
+      "wrong_branches": 2,
+      "wall_proxy_violations": 2,
+      "terminal_features": {
+        "capsule_sidewall_proxy": 2,
+        "none": 3
+      },
+      "minimum_clearance_m": -1.056863408539473e-06,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0010192334790759536,
+      "maximum_force_n": 2.9999999999999996e-09
+    },
+    "rescued_seeds": [
+      0,
+      4
+    ],
+    "regressed_seeds": []
+  },
+  {
+    "scenario": "high_noise",
+    "branch": "lower",
+    "control_mode": "gated",
+    "trials": 5,
+    "baseline": {
+      "successes": 3,
+      "wrong_branches": 2,
+      "wall_proxy_violations": 2,
+      "terminal_features": {
+        "closed_outlet_cap_proxy": 2,
+        "none": 3
+      },
+      "minimum_clearance_m": -2.063083191943633e-06,
+      "maximum_force_n": 3e-09
+    },
+    "guided": {
+      "successes": 5,
+      "wrong_branches": 0,
+      "wall_proxy_violations": 0,
+      "terminal_features": {
+        "none": 5
+      },
+      "minimum_clearance_m": 0.0010565395923799105,
+      "maximum_force_n": 2.011114509535524e-09
+    },
+    "rescued_seeds": [
+      0,
+      4
+    ],
+    "regressed_seeds": []
+  }
+]

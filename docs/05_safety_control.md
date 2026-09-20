@@ -19,6 +19,17 @@ generates centerline waypoints along the inlet and requested branch. It
 advances using only estimated position and a tolerance/passage check. This
 is deterministic Y route following, not general graph path planning.
 
+An optional `approach_offset_m` displaces waypoints toward the chosen branch
+before the junction. The offset ramps linearly from zero at a distance of two
+inlet radii to its configured maximum at the junction, then returns to zero
+over the same centerline distance downstream. Its direction is the outgoing
+branch component perpendicular to the inlet. The target endpoint is unchanged.
+With the toy 1.5 mm vessel radius, experiment 09 uses a 3 mm approach span and
+0.4 mm maximum offset. Zero remains the default to reproduce the original
+route and recorded benchmarks. The planner still receives geometry and
+estimated position only; it does not estimate flow or predict future safety.
+See [the approach guidance evaluation](09_approach_guidance.md).
+
 The proportional controller requests `F = gain * (waypoint - estimated_p)`
 and caps its Euclidean magnitude. The supervisor re-enforces the force cap.
 The toy plant can apply a scalar actuation gain error, then caps the actual
@@ -77,8 +88,8 @@ The wrong-branch detector is a Y-specific nearest-centerline heuristic with
 an ambiguity region, not a topological vessel-segment classifier. A graph
 representation and branch-crossing surfaces remain future work.
 
-For future Monte Carlo work, report `target_success_rate`,
-`wall_collision_rate`, and `wrong_branch_rate` as fractions of independent
-trials, with confidence intervals. These are not inferred from a single run
-or from the deterministic scenarios. General Monte Carlo aggregation and
-parameter distributions are not implemented in this milestone.
+The paired-seed benchmark reports success, wall-proxy and wrong-branch rates
+with conditional Wilson intervals. Experiment 09 additionally compares
+matched route outcomes and terminal capsule feature counts. These estimates
+describe the configured toy scenarios, not broad physical parameter
+distributions or a calibrated safety guarantee.

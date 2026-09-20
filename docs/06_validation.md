@@ -113,3 +113,40 @@ loader, coil allocation solver, MPC, CBF or RL is claimed implemented.
 
 All numerical defaults are toy. Favorable results are reproducible software
 examples, not medically realistic navigation or evidence of clinical validity.
+
+## Subsequent paired-seed benchmark milestone
+
+The original verification record above describes the biplane milestone.
+The benchmark extension adds passive and ungated policy ablations while
+preserving gated control as the default, plus trial-level position coverage,
+outcome-rate intervals and English report/CSV/JSON export. The suite now passes
+68 tests, including force-cap retention during ablations, startup without
+observations, stale/dropout behavior, known Wilson intervals, paired-seed
+reproducibility, missing-metric handling and export validation.
+
+The completed 120-trial pilot and its environment, measured failures and full
+statistics are recorded in [the benchmark report](07_benchmark.md). This adds
+conditional Monte Carlo results across detector-noise/calibration seeds;
+the geometry, physics, predictive-control and clinical limitations above remain.
+
+## Subsequent failure replay milestone
+
+Nine selected pilot trial summaries were reproduced exactly after adding
+read-only waypoint history fields. Offline event classification distinguishes
+capsule sidewall and closed-outlet cap proxies. Four extra runs checked two
+failures at 2.5 ms and 1 ms physics/control resolution; both failures persisted.
+The expanded suite passes 72 tests. Four diagnostic figures and a 140-frame
+paired GIF were generated and inspected. See
+[failure analysis](08_failure_analysis.md) for evidence and remaining limits.
+
+## Subsequent approach-guidance milestone
+
+An optional geometry-only approach offset was evaluated with the original
+pilot seeds and a separate validation seed set: 480 original/guided executions
+covering 240 matched cases. All 120 rerun original pilot summaries matched
+their archived values. Sixteen failures became successes and no successes
+regressed; terminal capsule sidewall proxy violations fell from nine to zero.
+Stale-data gated failures persisted, and nominal minimum clearance decreased
+as expected from the lateral displacement. All 82 tests passed. See
+[approach guidance](09_approach_guidance.md) for grouped rates, uncertainty,
+clearance tradeoffs, recorded configurations and the before/after animation.
