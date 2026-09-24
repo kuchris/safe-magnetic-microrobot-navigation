@@ -53,6 +53,9 @@ class TrialConfig:
     max_gradient_t_m: float = 0.0
     magnetization_a_m: float = 1.0e6       # NdFeB, Br ~ 1.26 T (textbook, assumed)
     magnetic_volume_fraction: float = 1.0  # pure magnet (assumed)
+    # Poiseuille only: shrink dt so one step moves at most this fraction of the
+    # vessel radius. 0.02 is a chosen accuracy target (assumed), not a sourced value.
+    max_step_radius_fraction: float = 0.02
 
 
 def particle_material(config):
@@ -74,10 +77,11 @@ def run_trial(config=TrialConfig()):
     for name in ("flow_speed_m_s", "flow_disturbance_m_s", "calibration_sigma_px",
                  "gain_n_per_m", "max_force_n", "flow_correlation_s", "max_gradient_t_m"):
         nonnegative(getattr(config, name), name)
-    for name in ("flow_transition_length_m", "flow_branch_width_m", "particle_radius_m"):
+    for name in ("flow_transition_length_m", "flow_branch_width_m", "particle_radius_m",
+                 "max_step_radius_fraction"):
         nonnegative(getattr(config, name), name, positive=True)
-    if config.flow_model not in ("piecewise", "smooth"):
-        raise ValueError("flow model must be piecewise or smooth")
+    if config.flow_model not in ("piecewise", "smooth", "poiseuille"):
+        raise ValueError("flow model must be piecewise, smooth or poiseuille")
     if not np.isfinite(config.actuation_gain_error) or config.actuation_gain_error < -1:
         raise ValueError("actuation gain error must be finite and >= -1")
     if config.dt_s > 1 / config.frame_rate_hz:
@@ -94,6 +98,16 @@ def run_trial(config=TrialConfig()):
     particle = Particle(config.particle_radius_m, 3.5e-3, vector(config.start_m))
     if particle.radius_m >= min(s.radius_m for s in vessel.segments):
         raise ValueError("particle_radius_m must be smaller than the vessel radius")
+    vessel_radius = min(s.radius_m for s in vessel.segments)
+    dt_s = config.dt_s
+    if config.flow_model == "poiseuille":
+        # Bound |v| by centerline flow, capped drift and a 3-sigma disturbance norm.
+        # White disturbance (correlation 0) is redrawn per tick, so its effect
+        # shrinks with dt; use flow_correlation_s > 0 for a dt-consistent process.
+        speed_bound = (2 * config.flow_speed_m_s + max_force_n / particle.drag_coefficient
+                       + 3 * np.sqrt(3) * config.flow_disturbance_m_s)
+        if speed_bound > 0:
+            dt_s = min(dt_s, config.max_step_radius_fraction * vessel_radius / speed_bound)
     bias = calibration_rng.normal(0, config.calibration_sigma_px, (2, 2))
     imager = BiplaneImager(noise_sigma_px=config.noise_sigma_px,
         frame_rate_hz=config.frame_rate_hz, latency_s=config.latency_s,
@@ -116,9 +130,9 @@ def run_trial(config=TrialConfig()):
         "estimated_velocity_m_s", "terminal_active", "terminal_adjusted",
         "baseline_target_miss_m", "selected_target_miss_m")}
     reached = collided = wrong = False
-    ticks = int(np.ceil(config.duration_s / config.dt_s))
+    ticks = int(np.ceil(config.duration_s / dt_s))
     for tick in range(ticks + 1):
-        now = min(tick * config.dt_s, config.duration_s)
+        now = min(tick * dt_s, config.duration_s)
         # The sensor is part of the simulated plant. Only delivered frames cross
         # the control boundary. Ground truth below is physics/evaluation only.
         frames = imager.advance(now, particle.position_m)
@@ -151,7 +165,7 @@ def run_trial(config=TrialConfig()):
             history[key].append(value)
         if finished:
             break
-        particle.step(min(config.dt_s, config.duration_s - now), flow, applied)
+        particle.step(min(dt_s, config.duration_s - now), flow, applied)
     history = {k: np.asarray(v) for k, v in history.items()}
     valid = np.all(np.isfinite(history["estimated_position_m"]), axis=1)
     errors = history["true_position_m"][valid] - history["estimated_position_m"][valid]
@@ -175,14 +189,25 @@ def run_trial(config=TrialConfig()):
         "maximum_force_n": float(np.linalg.norm(history["force_n"], axis=1).max()),
         "reason_counts": dict(reasons),
     }
+    # Present only when a physics option is enabled so archived summaries keep their keys.
+    physics = {}
     if config.max_gradient_t_m > 0:
-        # Present only for gradient-capped trials so archived summaries keep their keys.
         force_per_gradient = magnetic_force_cap(particle.radius_m, 1.0, material)
-        summary["physics"] = {
+        physics.update({
             "force_cap_n": float(max_force_n),
             "max_gradient_t_m": float(config.max_gradient_t_m),
             "maximum_gradient_t_m": summary["maximum_force_n"] / force_per_gradient,
-        }
+        })
+    if config.flow_model == "poiseuille":
+        speeds = np.linalg.norm(history["flow_velocity_m_s"][:-1]
+                                + history["force_n"][:-1] / particle.drag_coefficient, axis=1)
+        steps = speeds * np.diff(history["time_s"])
+        physics.update({
+            "dt_s": float(dt_s),
+            "maximum_step_radius_fraction": float(steps.max() / vessel_radius) if len(steps) else None,
+        })
+    if physics:
+        summary["physics"] = physics
     return {"config": asdict(config), "summary": summary, "history": history}
 
 

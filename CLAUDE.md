@@ -23,7 +23,10 @@ At 0.3 m/s the 10 mm approach is ~33 ms (< 1 imaging frame): show closed-loop fa
 honestly, do not tune the controller to hide it.
 - [x] 2a Gradient cap T/m + material (`max_gradient_t_m`, `particle_radius_m`,
       `magnetization_a_m`, `magnetic_volume_fraction`); `gain_n_per_m` not yet rescaled
-- [ ] 2b Poiseuille profile (`flow_model="poiseuille"`, U = cross-sectional mean) + auto dt (u·dt ≤ 0.02R)
+- [x] 2b Poiseuille profile (`flow_model="poiseuille"`, U = cross-sectional mean) + auto dt
+      (`max_step_radius_fraction=0.02`, assumed). Controller runs every physics tick, so the
+      control rate rises as dt shrinks: add an actuation update period (ZOH) in 2f.
+      First real-scale run: collides at 23 ms, before the first frame arrives (50 ms latency).
 - [ ] 2c Inertial particle (reduced Maxey–Riley, added mass, Schiller–Naumann, exponential
       integrator; no Basset/lift); must reduce exactly to overdamped as τ→0
 - [ ] 2d Quasi-steady pulsatility; report Womersley α (~2.1–2.3 at M1)

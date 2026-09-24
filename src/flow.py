@@ -5,6 +5,7 @@ This is deliberately not a patient-specific blood-flow model.
 
 import numpy as np
 from src.validation import nonnegative, vector
+from src.vessel import YVessel
 
 
 def centerline_flow(position_m, junction_x_m=10e-3, speed_m_s=1e-3):
@@ -38,15 +39,37 @@ def smooth_junction_flow(position_m, junction_x_m=10e-3, speed_m_s=1e-3,
     return speed_m_s * direction / np.linalg.norm(direction)
 
 
-def prescribed_flow(position_m, speed_m_s, model="piecewise",
+def poiseuille_flow(position_m, mean_speed_m_s, vessel=None,
                     transition_length_m=1e-3, branch_width_m=0.3e-3):
+    """Parabolic speed 2U(1 - rho^2/R^2) along the smooth junction direction.
+
+    U is the cross-sectional mean of a straight segment; the centerline carries
+    2U. rho is taken per capsule and the largest profile value is kept, so the
+    field is continuous across the junction and zero on and outside the wall.
+    Quasi-analytic, not CFD: no flux split, secondary flow or entrance length,
+    and the particle samples the fluid at its center (no Faxen correction).
+    The direction blend assumes the default YVessel junction at x = 10 mm.
+    """
+    p = vector(position_m)
+    nonnegative(mean_speed_m_s, "mean_speed_m_s")
+    vessel = YVessel() if vessel is None else vessel
+    profile = max(1 - ((s.radius_m - s.wall_clearance(p)) / s.radius_m) ** 2 for s in vessel.segments)
+    direction = smooth_junction_flow(p, speed_m_s=1.0, transition_length_m=transition_length_m,
+                                     branch_width_m=branch_width_m)
+    return 2 * mean_speed_m_s * max(profile, 0.0) * direction
+
+
+def prescribed_flow(position_m, speed_m_s, model="piecewise",
+                    transition_length_m=1e-3, branch_width_m=0.3e-3, vessel=None):
+    if model == "poiseuille":
+        return poiseuille_flow(position_m, speed_m_s, vessel, transition_length_m, branch_width_m)
     if model == "piecewise":
         return centerline_flow(position_m, speed_m_s=speed_m_s)
     if model == "smooth":
         return smooth_junction_flow(position_m, speed_m_s=speed_m_s,
                                     transition_length_m=transition_length_m,
                                     branch_width_m=branch_width_m)
-    raise ValueError("flow model must be piecewise or smooth")
+    raise ValueError("flow model must be piecewise, smooth or poiseuille")
 
 
 class FlowDisturbance:
