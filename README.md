@@ -1,452 +1,299 @@
 # Safe Magnetic Microrobot Navigation
 
-**Safe Real-Time Closed-Loop Magnetic Navigation of Microrobots in 3D Vascular Networks**
+**Closed-loop magnetic steering of a microrobot through a 3D vessel bifurcation,
+under delayed, noisy and intermittent imaging.**
 
-A simulation-first platform for studying navigation with uncertain, delayed
-localization. The current working milestone is a **toy Y-vessel with biplane
-2D observations, 3D reconstruction, six-state estimation and uncertainty-aware
-actuation stopping**.
+A simulation-first research platform. A magnetized sphere must reach a selected
+branch of a Y-shaped vessel while keeping clear of the wall, using only biplane
+2D observations that arrive late, carry noise and sometimes drop out.
 
-> Computational research/education only. No human/animal experimental protocol,
-> clinical device design, or clinical validity is provided. All runnable
-> numerical defaults are **toy parameters**, not medically realistic values.
+> **Computational research and education only.** There is no clinical device
+> design, no animal or human protocol, and no claim of clinical validity or
+> efficacy. Every parameter is either sourced or explicitly marked *assumed*.
 
-## Motivation and research question
+## Where the project stands
 
-Can feedback steer a magnetically actuated particle toward a selected vascular
-branch while reducing vessel-wall risk under flow, localization error,
-calibration error, imaging delay and lost tracking?
+The first phase (experiments **01–20**) built the full navigation stack on a
+deliberately slow **toy plant**: 0.6 mm/s flow and a 3 nN force cap. The
+analytical feasibility study ([docs/14](docs/14_feasibility.md)) then asked
+what changes at **real cerebral scale** (M1 artery, ~0.3 m/s mean flow):
 
-Reaching a target alone is insufficient evidence. This project prioritizes
-wall clearance, wall violations, wrong-branch events and uncertainty-triggered
-stopping over speed. The present experiments test software/model behavior;
-they do not establish safety in real vasculature.
+- With a ~1 T/m clinical electromagnetic system, worst-case steering needs a
+  particle radius of about 80 µm or more. That is exactly where the overdamped
+  Stokes model used so far stops being valid (Stokes number > 0.1).
+- Pure NdFeB needs 0.063 T/m just to hold against gravity. Clinical MRI
+  imaging gradients (0.02–0.04 T/m) cannot do that.
+- Reducing proximal flow widens the feasible window far more than a stronger
+  gradient does.
 
-## Implemented architecture
+**Step 2, now in progress**, moves the simulator itself to physiological
+scale. Real-scale physics is added as opt-in options. The toy defaults stay
+unchanged so experiments 01–20 remain exactly reproducible.
 
-```mermaid
-flowchart TD
-    G["Toy 3D vessel geometry"] --> P["Selected-branch waypoints"]
-    G --> S["Uncertainty-aware safety gate"]
-    P --> C["Bounded proportional controller"]
-    I["Two simulated 2D projections"] --> L["Triangulation and covariance"]
-    L --> E["Six-state estimator at current time"]
-    E --> C
-    E --> S
-    C --> H["Optional short-horizon force correction"]
-    E --> H
-    G --> H
-    H --> S
-    S --> A["Bounded ideal force and optional gain error"]
-    A --> D["Overdamped particle and prescribed flow"]
-    D --> I
-    D --> M["Ground-truth evaluation"]
-```
+| Stage | Content | Status |
+|---|---|---|
+| 2a | Force cap in T/m from gradient × magnetization × volume; configurable radius and material | ✅ |
+| 2b | Poiseuille velocity profile; timestep shrinks automatically with speed | ✅ |
+| 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | planned |
+| 2d | Pulsatile flow, Womersley number reported | planned |
+| 2e | Gravity and a sedimentation check in the safety gate | planned |
+| 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 21 | planned |
 
-The software control boundary is `BiplaneNavigation.step(now_s, frames)`.
-It accepts only delivered observations and time. True position stays in the
-simulated plant/imaging boundary and evaluation. No filter uses truth for
-initialization. The older Y demo uses an explicitly ideal observation sensor.
+First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
+wall **23 ms** after release. With 50 ms imaging latency, the first frame
+never arrives. The simulator is meant to show that kind of closed-loop failure
+honestly, not tune it away.
 
-## Physics and assumptions
+## Quick start
 
-For a fixed magnetic dipole:
-
-$$
-\tau=m\times B,\qquad F_m=\nabla(m\cdot B).
-$$
-
-For the initial overdamped spherical-particle approximation:
-
-$$
-\gamma=6\pi\eta r,\qquad F_{drag}=\gamma(u-v),\qquad
-v\approx u+F_m/\gamma,\qquad p_{k+1}=p_k+\Delta t\,v_k.
-$$
-
-SI units: position/radius [m], time [s], velocity [m/s], force [N],
-viscosity [Pa s], magnetic moment [A m²], magnetic field [T].
-
-Implemented dynamics use an ideal force-vector abstraction. Torque, dipole
-orientation, field gradients and coils are conceptual equations only.
-Stokes/overdamped behavior assumes small particle Reynolds number and short
-inertial relaxation time; those assumptions are not experimentally validated
-for the toy defaults. The prescribed branch-aligned flow is not a hemodynamics
-solver and has no radial profile or conserved bifurcation flux.
-
-The geometry is a **union of capsules** with rounded ends. Clearance is
-`max_e(radius_e - particle_radius - distance_to_segment_e)`. It is exact for
-one capsule and a conservative interior bound at overlaps, **not the exact
-union signed-distance field**. Reported collisions mean sampled violations
-of this proxy. See [physics and geometry assumptions](docs/02_low_reynolds_flow.md).
-
-## Installation and execution
-
-Python **3.10+** is required. Tested here with Python 3.12, NumPy 2.3.5,
-Matplotlib 3.10.8 and pytest 9.1.1.
+Python 3.10+ is required (tested with 3.12).
 
 ```bash
 git clone https://github.com/kuchris/safe-magnetic-microrobot-navigation.git
 cd safe-magnetic-microrobot-navigation
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
 python -m pytest -q
 ```
 
-On Windows, activate with `.venv\Scripts\activate`. Run simulations **as
-modules from the repository root**, so `src` imports resolve:
-
-```bash
-python -m simulations.01_free_space
-python -m simulations.02_y_vessel
-python -m simulations.03_noisy_closed_loop
-python -m simulations.04_biplane_localization
-python -m simulations.05_latency_safety
-python -m simulations.06_benchmark
-```
-
-The older 02/03 demos display a plot. For headless runs, prefix with
-`MPLBACKEND=Agg` on Unix. The newer 04/05 experiments always save plots without
-a display. Direct `python simulations/...` execution is not supported.
+Run experiments **as modules from the repository root**, so that `src`
+imports resolve. `python simulations/...` is not supported.
 
 ```bash
 python -m simulations.04_biplane_localization --branch lower --seed 7
-python -m simulations.04_biplane_localization --latency 0.10 --noise 2 --dropout 0.05
-python -m simulations.04_biplane_localization --output outputs/my_trial
-python -m simulations.05_latency_safety --output outputs/stress
-```
-
-04 saves `summary.json` (configuration and metrics), `history.npz` and
-`diagnostics.png`. 05 saves the same per scenario plus `comparison.json`.
-The plots include both trajectories, centerlines, target, stop locations,
-localization error, uncertainty, clearance and force components/magnitude.
-Generated outputs are ignored by Git and can be reproduced with the commands above.
-
-### Paired-seed policy benchmark
-
-06 compares passive drift, bounded steering without the safety gate, and the
-existing gated controller. All policies use the same estimator, sensor settings
-and force limit. Ungated steering starts only after the first valid estimate;
-it then ignores tracking freshness, uncertainty and wall-margin stops.
-The default gated behavior of experiments 04/05 is unchanged.
-
-```bash
-# Default: 10 seeds x 4 scenarios x 2 branches x 3 policies = 240 trials.
-python -m simulations.06_benchmark
-# Smaller pilot: 120 trials, with the same 40-second time limit per trial.
 python -m simulations.06_benchmark --seeds 0 1 2 3 4 --output outputs/06_benchmark_pilot
-# Restrict a run to selected scenarios.
-python -m simulations.06_benchmark --seeds 7 8 --scenarios nominal stale_imaging
-# Plot the saved pilot results without rerunning simulations.
-python -m simulations.07_plot_benchmark
-```
-
-Outputs are `benchmark.json` (every trial's configuration and summary plus
-aggregates), `trials.csv` (one row per trial) and `report.md` (English comparison).
-Scenarios are nominal imaging, a tracking-loss burst, stale imaging and high
-detector noise. Both branches are reported separately. Trials stop at target
-success, a wall-proxy violation, or the configured time limit.
-
-Success, wrong-branch and wall-proxy violation rates have per-group 95% Wilson
-intervals across seeds. Continuous metrics report trial-level means and
-5th/50th/95th percentiles; arrival time is conditional on success. Position
-coverage measures error inside a largest-axis 3-sigma ball, not a calibrated
-3D confidence ellipsoid. Correlated time samples are not treated as independent
-trials. See the [executed pilot report](docs/07_benchmark.md).
-
-![Benchmark success rates with 95% Wilson intervals](docs/figures/benchmark_success_rates.png)
-
-### Failure replay and animation
-
-```bash
-python -m simulations.08_failure_replay
-```
-
-Replays nine selected pilot trials, verifies their original summaries, records
-waypoint/event evidence, checks two cases at finer physics/control timesteps,
-and exports four diagnostic figures plus a success/failure GIF. The analysis
-distinguishes capsule sidewall proxy events from artificial closed-outlet caps
-without changing control behavior or benchmark counts. See the
-[failure analysis and animation](docs/08_failure_analysis.md).
-
-### Earlier branch guidance
-
-The experimental route in 09 adds a 0.4 mm lateral offset near the junction,
-starting 3 mm upstream and rejoining the selected branch centerline downstream.
-The safety gate and 3 nN force cap are unchanged. Set
-`TrialConfig(approach_offset_m=0.4e-3)` to use this route programmatically;
-the default offset remains zero for reproduction of the original experiments.
-
-```bash
-# Each comparison runs both routes: 240 trials per seed set.
-python -m simulations.09_approach_guidance
-python -m simulations.09_approach_guidance --seeds 5 6 7 8 9 --output outputs/09_approach_guidance/heldout
-# Generate comparisons and a before/after animation from both completed sets.
-python -m simulations.10_guidance_figures
-```
-
-Each comparison saves complete per-route trial records and confidence intervals,
-plus matched-seed success changes and terminal sidewall/outlet proxy counts.
-See [the approach guidance evaluation](docs/09_approach_guidance.md).
-
-### Flow-model and disturbance sensitivity
-
-```bash
-python -m simulations.11_flow_sensitivity --model piecewise
-python -m simulations.11_flow_sensitivity --model smooth
-python -m simulations.12_flow_sensitivity_figures
-```
-
-This study compares both routes with the gate enabled across three flow speeds
-(0.3, 0.6 and 1.2 mm/s), three disturbance standard deviations per velocity axis
-(0, 0.1 and 0.3 mm/s), both target branches and seeds 10-14: 360 trials total.
-The common horizon is 60 seconds; disturbance correlation time is 0.25 seconds.
-The smooth field uses continuous direction transitions, but does not enforce
-vessel-wall boundaries or conserve flux. Maps show measured trial rates rather
-than certified operating limits. See [the sensitivity report](docs/10_flow_sensitivity.md).
-
-Use `TrialConfig(flow_model="smooth", flow_correlation_s=0.25,
-flow_disturbance_m_s=0.1e-3)` programmatically. Original piecewise flow and
-independent per-tick disturbances remain the defaults for older experiments.
-
-## Current numerical example
-
-Measured seed-7 results for the implemented toy model:
-
-| Scenario | Success | Wall violation | Wrong branch | Min. clearance proxy [mm] | RMSE [mm] | Stop samples [%] | Time to target [s] |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Nominal, 50 ms latency | Yes | No | No | 1.3732 | 0.06010 | 0.181 | 27.660 |
-| Tracking-loss burst, 8.00–8.75 s | Yes | No | No | 1.3691 | 0.07708 | 2.874 | 27.835 |
-| Stale imaging, 250 ms latency | Yes | No | No | 1.3994 | 0.08475 | 100.000 | 35.240 |
-| Stale imaging, lower target | No | Yes | Yes | -0.00224 | 0.08431 | 100.000 | — |
-| High detector noise, 12 px sigma | Yes | No | No | 1.2406 | 0.32706 | 3.940 | 28.295 |
-
-**The stale-imaging result is passive advection:** active force is zero
-throughout. The toy flow chooses the upper branch when y = 0, so this scenario
-can reach the upper target without navigation. It is not evidence of controller
-effectiveness. 05 also runs `stale_lower_target` to expose this branch-selection
-failure when the intended target is the other branch.
-That run enters the upper branch and eventually violates the artificial
-rounded outlet boundary at 38.24 s, with zero active force throughout.
-
-The free-space example ends at [2, 1, 0] mm. The baseline suite had eight tests;
-the expanded suite passes 129 tests covering imaging, uncertainty, timing,
-safety, both branches, policy ablations, benchmark statistics, replay diagnostics,
-pre-junction route guidance, continuous flow and correlated disturbances.
-See [inspection and verification record](docs/06_validation.md) for measured
-results and known limitations. The seed-7 examples above are deterministic
-scenarios; the separate paired-seed benchmark reports conditional trial rates.
-
-![Seed-7 biplane navigation diagnostics](docs/figures/biplane_diagnostics.png)
-
-## Imaging, estimation and safety
-
-- Two configurable orthographic views produce noisy 2D detector coordinates.
-  This does not render medical images or model segmentation.
-- SVD-based reconstruction supports arbitrary view orientations, origins,
-  pixel sizes and offsets. Singular geometry is rejected. Random detector
-  covariance is propagated into full 3D covariance.
-- A fixed detector-offset calibration error is sampled once per trial.
-  Its uncertainty is retained as a floor that repeated frames cannot remove.
-- Configurable frame rate, fixed latency, stochastic pair dropout and dropout
-  bursts are supported. Frames carry capture and delivery timestamps.
-- The Kalman state is `[px,py,pz,vx,vy,vz]`. Prediction and update are separate.
-  Updates occur at capture time, with a predicted copy exposed at control time.
-- Safety requires
-  `estimated_clearance - k_sigma * position_uncertainty > safety_margin`.
-  Large uncertainty, lost tracking, stale images or low robust clearance
-  produce zero active force. This does **not** stop flow-driven motion.
-- Logged reasons are `tracking_lost`, `localization_uncertain`,
-  `wall_margin_low`, `actuation_limit`, `prediction_adjustment` and `safe`. Saturation is distinct
-  from stopping. A three-sigma margin is not a proven 3D collision-risk bound.
-
-See [biplane imaging](docs/03_biplane_localization.md),
-[state estimation](docs/04_state_estimation.md) and
-[safety/control](docs/05_safety_control.md).
-
-## Parameter provenance
-
-**Every numerical default below is toy, none is experimentally validated.**
-Equations are textbook idealizations; no empirical physiological calibration
-or literature-derived parameter set is claimed.
-
-| Parameter | Biplane default |
-|---|---|
-| Vessel radius / particle radius | 1.5 mm / 0.1 mm |
-| Viscosity / prescribed flow speed | 3.5e-3 Pa s / 0.6 mm/s |
-| Physics timestep / time limit | 5 ms / 40 s |
-| Frame rate / fixed latency | 20 Hz / 50 ms |
-| Detector pixel size / independent noise sigma | 50 µm/px / 1 px |
-| Fixed calibration-offset prior sigma | 0.25 px per detector coordinate |
-| Pair dropout / flow disturbance / actuation gain error | 0 / 0 / 0 |
-| Force limit / proportional gain | 3 nN / 2e-6 N/m |
-| Safety margin / largest-axis sigma limit | 0.20 mm / 0.35 mm |
-| Sigma multiplier / maximum capture age | 3 / 150 ms |
-| Initial velocity mean / sigma | 0 / 1 mm/s per axis |
-| Acceleration spectral density | 1e-7 m²/s³ |
-| Waypoint spacing / advance tolerance | 0.5 mm / 0.3 mm |
-| Target tolerance / wrong-branch exclusion radius | 0.4 mm / 2 mm |
-
-Programmatic experiment configuration lives in `TrialConfig`; view geometry
-and filter options can also be configured through their component APIs.
-Legacy demos retain their original toy parameter choices.
-
-### Optional short-horizon correction
-
-An experimental correction predicts motion for 0.5 s using estimated position,
-velocity, covariance and previous commanded force. It can redirect force before
-the current wall-margin gate stops actuation. The existing gate and 3 nN cap
-still apply; prediction is disabled by default (`prediction_horizon_s=0`).
-
-```bash
-python -m simulations.13_predictive_control --model piecewise
-python -m simulations.13_predictive_control --model smooth
-python -m simulations.14_predictive_figures
-```
-
-The fixed 160-trial comparison uses new seeds 15-19, both fields and branches,
-0.6/1.2 mm/s flow and 0/0.3 mm/s per-axis disturbance. Both controllers use early
-guidance. One failure became a success in the piecewise field; continuous-field
-success counts were unchanged, with no success regressions in either field.
-This limited result does not establish a reliable general improvement.
-See [the method, paired results and failure replays](docs/11_predictive_control.md).
-
-### Command-aware flow estimation and forecast audit
-
-`TrialConfig(estimator_mode="command_aware", prediction_horizon_s=0.5)` enables
-an experimental estimator that removes known commanded displacement before
-filtering image positions. The default remains `estimator_mode="kinematic"`.
-On 80 identical archived trajectories, the new estimator reduced mean per-trial
-0.5 s forecast error by about 6% after accounting for recorded future commands.
-However, 160 new closed-loop trials rescued one success and regressed three.
-The estimator is therefore not promoted to the default navigation policy.
-
-```bash
-# Reproduce experiment 13 first if its ignored trace files are absent.
-python -m simulations.15_estimation_audit --model piecewise
-python -m simulations.15_estimation_audit --model smooth
-python -m simulations.16_flow_estimator_comparison --model piecewise
-python -m simulations.16_flow_estimator_comparison --model smooth
-python -m simulations.17_estimation_figures
-```
-
-See [the forecast audit, method and regression analysis](docs/12_flow_estimation.md).
-
-### Optional terminal target guidance
-
-`TrialConfig(prediction_horizon_s=0.5, terminal_guidance_distance_m=0.002)` adds
-target-intercept candidates when the estimated particle position is within
-2 mm of the selected target.
-Selection prioritizes the existing sampled wall margin, then predicted closest
-target approach. The 0.4 mm success radius, current safety gates and 3 nN cap
-remain unchanged. A zero terminal-guidance distance disables the option.
-
-```bash
-python -m simulations.18_terminal_guidance --model piecewise
-python -m simulations.18_terminal_guidance --model smooth
-python -m simulations.19_terminal_figures
-```
-
-This fixed 320-run comparison uses seeds 25-29 with both estimator baselines.
-Terminal guidance rescued 21 matched failures, with no success regressions,
-new wall violations or reductions in per-trial minimum true clearance. The
-17 remaining guided failures all had wrong-branch events. The option remains
-disabled by default pending broader validation.
-See [the method, held-out outcomes and known-regression replays](docs/13_terminal_guidance.md).
-
-### Physiological-scale feasibility (analytical)
-
-```bash
 python -m simulations.20_feasibility
 ```
 
-Before adding realism, this estimates the gradient needed to steer a
-magnetized sphere across streamlines into an occluded branch at M1-like
-flow (~0.3 m/s mean), with sourced vessel and hardware parameters. The
-requirement scales as `6 eta U R / (M r^2 L)`. With a ~1 T/m clinical
-electromagnetic system the worst case needs a radius of about 80 µm, which
-is where the simulator's overdamped Stokes model stops being valid. Pure
-NdFeB cannot be held against gravity by clinical MRI imaging gradients.
-Hypothetical proximal flow reduction widens the window far more than a
-stronger gradient. See [the feasibility note](docs/14_feasibility.md).
+Demos 02 and 03 open a plot window; prefix `MPLBACKEND=Agg` to run them
+headless. Everything else saves to `outputs/`, which Git ignores.
 
-## Repository structure
+### A trial in code
+
+```python
+from src.experiment import TrialConfig, run_trial
+
+# Toy plant (legacy defaults, as in experiments 01-20)
+toy = run_trial(TrialConfig(seed=7, branch="upper"))
+
+# Real-scale options (Step 2, opt-in)
+real = run_trial(TrialConfig(
+    flow_model="poiseuille", flow_speed_m_s=0.3,     # M1 cross-sectional mean
+    particle_radius_m=100e-6, max_gradient_t_m=1.0,  # NdFeB sphere, ~1 T/m eMNS
+    duration_s=0.2))
+print(real["summary"]["physics"])  # force cap, dt, step/radius fraction, ...
+```
+
+## Architecture
+
+```mermaid
+flowchart TD
+    G["3D Y-vessel (capsule union)"] --> P["Selected-branch waypoints"]
+    G --> S["Uncertainty-aware safety gate"]
+    P --> C["Bounded proportional controller"]
+    I["Biplane 2D projections<br/>(latency, noise, dropout)"] --> L["Triangulation + covariance"]
+    L --> E["Six-state estimator"]
+    E --> C
+    E --> S
+    C --> H["Optional short-horizon correction"]
+    E --> H
+    H --> S
+    S --> A["Force cap: nN (toy) or T/m (physiological)"]
+    A --> D["Particle + flow<br/>(piecewise, smooth or Poiseuille)"]
+    D --> I
+    D --> M["Ground-truth evaluation"]
+```
+
+The control boundary is `BiplaneNavigation.step(now_s, frames)`. It receives
+only time and delivered frames. True position, velocity and flow never cross
+it; they stay in the simulated plant and in evaluation.
+
+## Physics model
+
+For a magnetic dipole, `τ = m × B` and `F = ∇(m·B)`. The implemented dynamics
+use an ideal force vector with a magnitude cap. There is no coil or torque
+model yet.
+
+**Particle (current).** Overdamped Stokes sphere:
+
+$$
+\gamma = 6\pi\eta r,\qquad v = u + F/\gamma,\qquad p_{k+1} = p_k + \Delta t\,v_k .
+$$
+
+This is valid only for small Stokes and particle Reynolds numbers. At real
+scale that holds only below r ≈ 80 µm, so stage 2c adds inertia.
+
+**Force cap.** Two modes are available:
+- `max_force_n` (toy default, 3 nN).
+- `max_gradient_t_m > 0`, which gives a cap of `V · M_eff · |∇B|`. This is a
+  best-case upper bound: it assumes a saturated moment aligned with the
+  gradient and ignores gradient decay with depth.
+
+**Flow models** (`flow_model`):
+
+| Model | Description | Default for |
+|---|---|---|
+| `piecewise` | Uniform speed along inlet or branch direction; discontinuous at the junction | 01–20 |
+| `smooth` | Continuous tanh blend of directions; uniform speed | 11–19 option |
+| `poiseuille` | Smooth direction × `2U(1 − ρ²/R²)`; U is the cross-sectional mean | Step 2 |
+
+None of these is a hemodynamics solver: there is no flux conservation at the
+split, no secondary flow and no Faxén correction. In `poiseuille` mode the
+timestep shrinks so that one step moves at most `max_step_radius_fraction`
+(0.02, assumed) of the vessel radius. The realized value is reported.
+
+**Geometry.** The vessel is a union of three capsules. The clearance proxy is
+`max_e(R_e − r − distance_e)`: exact for one capsule, conservative where
+capsules overlap, and **not** the exact union signed distance. A "collision"
+is a sampled violation of this proxy. See [docs/02](docs/02_low_reynolds_flow.md).
+
+## Imaging, estimation and safety
+
+- **Imaging:** two configurable orthographic views give noisy 2D detector
+  coordinates. There is no image rendering or segmentation. Frame rate,
+  latency, random dropout, dropout bursts and a fixed per-trial calibration
+  offset are configurable.
+- **Reconstruction:** SVD triangulation for arbitrary view geometry,
+  propagating detector noise into a full 3D covariance. The calibration
+  uncertainty is kept as a floor that repeated frames cannot remove.
+- **Estimation:** a Kalman filter on `[p, v]`, updated at capture time and
+  predicted forward to control time.
+- **Safety gate:** force is allowed only if
+  `clearance − k_σ·σ > margin` and tracking is fresh. Otherwise commanded
+  force is zero. **Zero force does not stop the particle**: flow, and from
+  stage 2e gravity, still move it.
+
+Logged reasons: `tracking_lost`, `localization_uncertain`, `wall_margin_low`,
+`actuation_limit`, `prediction_adjustment`, `safe`. See
+[docs/03](docs/03_biplane_localization.md), [docs/04](docs/04_state_estimation.md)
+and [docs/05](docs/05_safety_control.md).
+
+## Experiments 01–20 (toy plant)
+
+Experiments 01–19 run the toy plant; 20 is analytical. Archived results live in
+`docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
+change that alters the legacy defaults fails the suite.
+
+| # | Script | What it does | Report |
+|---|---|---|---|
+| 01 | `01_free_space` | Flow plus magnetic drift in free space | [01](docs/01_magnetic_actuation.md) |
+| 02 | `02_y_vessel` | Y-vessel navigation with an ideal sensor | [02](docs/02_low_reynolds_flow.md) |
+| 03 | `03_noisy_closed_loop` | Noisy localization with fail-safe stopping | [06](docs/06_validation.md) |
+| 04 | `04_biplane_localization` | One biplane trial: summary, history, diagnostics | [03](docs/03_biplane_localization.md) |
+| 05 | `05_latency_safety` | Latency, dropout and noise stress scenarios | [06](docs/06_validation.md) |
+| 06–07 | `06_benchmark`, `07_plot_benchmark` | Paired-seed passive / ungated / gated comparison with Wilson intervals | [07](docs/07_benchmark.md) |
+| 08 | `08_failure_replay` | Replays nine failures, with event evidence and GIF | [08](docs/08_failure_analysis.md) |
+| 09–10 | `09_approach_guidance`, `10_guidance_figures` | Pre-junction lateral offset; pilot and held-out seeds | [09](docs/09_approach_guidance.md) |
+| 11–12 | `11_flow_sensitivity`, `12_…_figures` | 360 trials across flow speed, disturbance and flow model | [10](docs/10_flow_sensitivity.md) |
+| 13–14 | `13_predictive_control`, `14_…_figures` | Optional 0.5 s short-horizon correction | [11](docs/11_predictive_control.md) |
+| 15–17 | `15_estimation_audit` … `17_…_figures` | Command-aware estimator and forecast audit | [12](docs/12_flow_estimation.md) |
+| 18–19 | `18_terminal_guidance`, `19_…_figures` | Optional terminal target intercept | [13](docs/13_terminal_guidance.md) |
+| 20 | `20_feasibility` | Analytical real-scale gradient and size requirements | [14](docs/14_feasibility.md) |
+
+Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
+trace files written by 13.
+
+### Key findings
+
+- **The safety gate trades progress for clearance.** Under stale imaging the
+  gate inhibits force for the whole trial. An upper-branch "success" is then
+  pure passive advection: toy flow picks the upper branch at y = 0. The same
+  setting aimed at the lower branch ends in a wrong-branch wall violation.
+- **Zero force is not a hold state.** Cancelling 0.6 mm/s of toy flow takes
+  about 3.96 nN, above the 3 nN cap. At real scale, flow and gravity make this
+  much worse (docs/14).
+- **Terminal guidance helped; other add-ons did not clearly help.**
+  - Terminal target guidance rescued 21 matched failures with no regressions
+    (320 runs). All 17 remaining failures involved a wrong-branch event.
+  - Short-horizon correction rescued 1 failure in 160 trials.
+  - The command-aware estimator cut forecast error by ~6% but regressed 3
+    closed-loop trials against 1 rescue.
+  - All three stay off by default.
+
+![Benchmark success rates with 95% Wilson intervals](docs/figures/benchmark_success_rates.png)
+
+![Feasibility map](docs/figures/feasibility_map.png)
+
+## Parameters
+
+**Toy defaults (experiments 01–20).** These are chosen for a controllable test
+bed. They are *not* physiological and *not* validated.
+
+| Parameter | Value |
+|---|---|
+| Vessel / particle radius | 1.5 mm / 0.1 mm |
+| Viscosity / flow speed | 3.5 mPa·s / 0.6 mm/s |
+| Timestep / time limit | 5 ms / 40 s |
+| Frame rate / latency | 20 Hz / 50 ms |
+| Pixel size / detector noise / calibration σ | 50 µm/px / 1 px / 0.25 px |
+| Force cap / proportional gain | 3 nN / 2×10⁻⁶ N/m |
+| Safety margin / σ limit / k_σ / max capture age | 0.20 mm / 0.35 mm / 3 / 150 ms |
+| Target tolerance / wrong-branch exclusion | 0.4 mm / 2 mm |
+
+**Physiological options (Step 2).** Sources are listed in
+[docs/14](docs/14_feasibility.md#parameters-and-provenance).
+
+| Parameter | Value | Status |
+|---|---|---|
+| M1 lumen radius | 1.5 mm | MRI measurements |
+| Cross-sectional mean flow | 0.30 m/s | TCD mean velocity, halved for Poiseuille; cross-checked with volumetric flow |
+| Gradient references | 0.04 / 0.4 / 1 / 2.9 T/m | Clinical MRI / research MRI / eMNS / permanent magnets (best case) |
+| NdFeB magnetization / density | 1.0×10⁶ A/m / 7500 kg/m³ | Textbook, **assumed** |
+| Blood viscosity / density | 3.5 mPa·s / 1060 kg/m³ | **Assumed** |
+| Max step / vessel radius | 0.02 | Numerical accuracy target, **assumed** |
+
+The control gain is still the toy value and has not yet been rescaled for
+T/m-scale forces.
+
+## Repository layout
 
 ```text
 src/
-  particle.py           Overdamped Stokes dynamics
+  experiment.py         TrialConfig, seeded trial loop, histories, summary metrics
+  particle.py           Overdamped Stokes particle
+  flow.py               Piecewise / smooth / Poiseuille flow, OU disturbances
   vessel.py             Capsule Y geometry and clearance proxy
-  flow.py               Piecewise/smooth flow and correlated disturbances
-  flow_sensitivity.py   Trial summaries and flow-holding demand diagnostics
-  imaging.py            Orthographic projections and delayed/dropout frames
-  localization.py       Legacy sensor/filter, triangulation, six-state filter
-  flow_estimation.py    Delayed estimation after commanded-motion subtraction
-  prediction_audit.py   Offline held/recorded-command forecast errors
-  planner.py            Selected Y-branch waypoints and branch evaluation
-  controller.py         Proportional control and force cap
-  prediction.py         Optional sampled short-horizon force correction
+  feasibility.py        Analytical real-scale estimates, gradient → force cap
+  imaging.py            Orthographic views, latency, dropout
+  localization.py       Triangulation and six-state filter (plus legacy sensor)
+  flow_estimation.py    Command-aware estimator
+  navigation.py         Observation-only control boundary
+  planner.py            Branch waypoints and wrong-branch test
+  controller.py         Proportional control and force limit
+  prediction.py         Optional short-horizon and terminal correction
   safety.py             Uncertainty, freshness and wall-margin gate
-  navigation.py         Observation-only feedback boundary
-  experiment.py         Seeded trial, histories and metrics
-  benchmark.py          Policy comparison, trial statistics and report export
-  failure_analysis.py   Replay event states and terminal capsule features
-  replay_plotting.py    Paired diagnostics and trajectory animation
-  plotting.py           Reproducible diagnostic figure
-  validation.py         Numerical input validation
-  feasibility.py        Analytical physiological-scale steering estimates
-simulations/
-  01_free_space.py
-  02_y_vessel.py
-  03_noisy_closed_loop.py
-  04_biplane_localization.py
-  05_latency_safety.py
-  06_benchmark.py
-  07_plot_benchmark.py
-  08_failure_replay.py
-  09_approach_guidance.py
-  10_guidance_figures.py
-  11_flow_sensitivity.py
-  12_flow_sensitivity_figures.py
-  13_predictive_control.py
-  14_predictive_figures.py
-  15_estimation_audit.py
-  16_flow_estimator_comparison.py
-  17_estimation_figures.py
-  18_terminal_guidance.py
-  19_terminal_figures.py
-  20_feasibility.py
-docs/                    Physics, imaging, estimation, safety, verification
-tests/                   Deterministic physics, numerical and integration tests
+  benchmark.py          Policy comparison, Wilson intervals, reports
+  flow_sensitivity.py   Sensitivity summaries and flow-holding diagnostics
+  failure_analysis.py   Replay events and terminal wall features
+  prediction_audit.py   Offline forecast-error audit
+  plotting.py, replay_plotting.py   Figures and animation
+  validation.py         Input validation
+simulations/            Experiments 01–20 (run with python -m)
+tests/                  Unit, integration and archived-result regression tests
+docs/                   Method notes, results (docs/results) and figures
 ```
 
-## Progress and roadmap
+## Roadmap
 
-- [x] Overdamped particle integration, prescribed flow and capsule Y-vessel
-- [x] Bounded proportional control and direct noisy-observation baseline
-- [x] Biplane coordinate projection and covariance-aware reconstruction
-- [x] Configurable frame rate, fixed latency, dropout and fixed-offset calibration error
-- [x] Six-state filter with separate prediction/update and capture-time handling
-- [x] Observation-only navigation and robust-clearance stop gate
-- [x] Explicit upper/lower Y branch and centerline waypoint following
-- [x] Logged stop reasons, wrong-branch flag, seeded trials and diagnostic plots
-- [x] Deterministic latency/dropout/noise stress scenarios and regression tests
-- [x] Optional pre-junction lateral guidance with matched original/new-seed evaluation
-- [x] Optional short-horizon correction with unchanged gates and held-out comparison
-- [x] Optional terminal target-intercept selection with paired estimator baselines
-- [ ] General vascular graph routing and branch-crossing surfaces
-- [ ] Exact union/mesh wall distance and swept collision checking
-- [ ] Perspective/raster imaging, segmentation, outliers and single-view handling
-- [ ] Rotation/scale calibration estimation and variable-latency replay
-- [ ] Abstract coil matrix A(x), bounded current allocation, unreachable-force diagnostics
-- [x] Paired-seed policy benchmark, trial distributions and conditional outcome-rate intervals
-- [x] Experimental control-input-aware estimation with matched forecast audit
-- [ ] Calibrated flow uncertainty and validated closed-loop benefit
-- [ ] Formal predictive safety constraints, MPC / Control Barrier Functions
-- [ ] Synthetic/public mesh import and improved fluid/near-wall physics
-- [x] Analytical physiological-scale feasibility map with sourced parameters
-- [ ] Gradient cap in T/m, Poiseuille/pulsatile profile, gravity and finite-Re drag
+- [x] Biplane imaging, covariance-aware triangulation, six-state estimation
+- [x] Observation-only navigation with an uncertainty-aware stop gate
+- [x] Paired-seed benchmark, failure replay, flow-sensitivity study
+- [x] Optional approach guidance, short-horizon correction, command-aware
+      estimation, terminal guidance
+- [x] Analytical physiological-scale feasibility map
+- [x] Gradient cap in T/m with material parameters (2a)
+- [x] Poiseuille profile with speed-bounded timestep (2b)
+- [ ] Particle inertia and finite-Re drag (2c)
+- [ ] Pulsatility (2d)
+- [ ] Gravity and sedimentation-aware safety gate (2e)
+- [ ] Physiological preset, flow reduction, occluded branch, actuation update
+      rate, imaging-rate sweep (2f)
+- [ ] Coil model A(x) with current allocation; gradient decay with depth
+- [ ] Mesh geometry, exact wall distance, swept collision checks
+- [ ] Perspective imaging, segmentation, outliers
+- [ ] Formal predictive safety (MPC / control barrier functions)
 
-No RL, coil-current solver, general vascular graph or mesh loader is claimed
-complete. Benchmark rates describe only the configured toy scenarios, not
-general safety. The current supervisor is a reactive gate, not a
-formal safety guarantee. There is no full cerebral hemodynamics model.
+The supervisor is a reactive gate, not a formal safety guarantee. Benchmark
+rates describe only the configured scenarios. There is no cerebral
+hemodynamics model, and no result here says anything about clinical use.
