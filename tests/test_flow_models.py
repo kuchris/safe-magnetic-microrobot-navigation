@@ -11,6 +11,16 @@ from src.flow import FlowDisturbance, centerline_flow, smooth_junction_flow
 from src.particle import Particle
 
 
+def assert_summary_matches(actual, expected):
+    """Exact on keys and non-float fields; floats allow cross-platform round-off."""
+    assert actual.keys() == expected.keys()
+    for key, value in expected.items():
+        if isinstance(value, float):
+            assert actual[key] == pytest.approx(value, rel=1e-8, abs=1e-15), key
+        else:
+            assert actual[key] == value, key
+
+
 def test_smooth_flow_is_continuous_across_both_old_switches():
     for axis, point in ((0, [0.01, 0.0002, 0]), (1, [0.011, 0, 0])):
         a, b = np.array(point), np.array(point)
@@ -69,7 +79,7 @@ def test_default_flow_preserves_archived_dropout_trial():
     reference = next(r for r in pilot["trials"] if r["scenario"] == "dropout_burst"
                      and r["config"]["branch"] == "lower" and r["config"]["control_mode"] == "gated"
                      and r["config"]["seed"] == 0)
-    assert run_trial(TrialConfig(**reference["config"]))["summary"] == reference["summary"]
+    assert_summary_matches(run_trial(TrialConfig(**reference["config"]))["summary"], reference["summary"])
 
 
 @pytest.mark.parametrize("options", [{"flow_model": "unknown"}, {"flow_correlation_s": -1},

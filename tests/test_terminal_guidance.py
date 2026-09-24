@@ -13,6 +13,16 @@ from src.prediction import ShortHorizonCorrection
 from src.vessel import YVessel
 
 
+def assert_summary_matches(actual, expected):
+    """Exact on keys and non-float fields; floats allow cross-platform round-off."""
+    assert actual.keys() == expected.keys()
+    for key, value in expected.items():
+        if isinstance(value, float):
+            assert actual[key] == pytest.approx(value, rel=1e-8, abs=1e-15), key
+        else:
+            assert actual[key] == value, key
+
+
 def predictor(distance):
     return ShortHorizonCorrection(YVessel(), 0.1e-3, "upper", 0.5,
                                   6 * np.pi * 3.5e-3 * 0.1e-3, 3e-9, 0.2e-3,
@@ -92,7 +102,7 @@ def test_disabled_terminal_guidance_reproduces_archived_predictive_trial():
     path = Path(__file__).parents[1] / "docs/results/flow_estimation/closed_loop_piecewise.json"
     records = json.loads(path.read_text())["trials"]
     reference = next(r for r in records if r["trace_id"] == "piecewise_0.6_0.3_lower_20_command_aware")
-    assert run_trial(TrialConfig(**reference["config"]))["summary"] == reference["summary"]
+    assert_summary_matches(run_trial(TrialConfig(**reference["config"]))["summary"], reference["summary"])
 
 
 def test_terminal_guidance_replay_is_deterministic():
