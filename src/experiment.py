@@ -8,7 +8,8 @@ import numpy as np
 
 from src.controller import limit_force
 from src.feasibility import Material, magnetic_force_cap, schiller_naumann_factor
-from src.flow import FlowDisturbance, prescribed_flow
+from src.flow import (FlowDisturbance, material_acceleration, prescribed_flow, pulsatile_speed,
+                      womersley_number)
 from src.imaging import BiplaneImager
 from src.navigation import BiplaneNavigation
 from src.particle import InertialParticle, Particle
@@ -61,6 +62,14 @@ class TrialConfig:
     particle_inertia: bool = False
     particle_density_kg_m3: float = 7500.0  # sintered NdFeB (textbook, assumed)
     fluid_density_kg_m3: float = 1060.0     # whole blood (assumed)
+    # Quasi-steady pulsation U(t) = U (1 + A sin(2 pi t / T)); A = 0 is steady flow.
+    # PI = 2A for a sinusoid. T = 1 s is 60 bpm (assumed).
+    flow_pulsatility: float = 0.0
+    cardiac_period_s: float = 1.0
+    cardiac_phase: float = 0.0  # release phase as a fraction of the period, in [0, 1)
+    # Inertial particles only: add the (3/2) m_f Du/Dt fluid-acceleration force,
+    # from the deterministic field (the random disturbance is not differentiated).
+    fluid_acceleration_force: bool = False
 
 
 def particle_material(config):
@@ -84,8 +93,15 @@ def run_trial(config=TrialConfig()):
                  "gain_n_per_m", "max_force_n", "flow_correlation_s", "max_gradient_t_m"):
         nonnegative(getattr(config, name), name)
     for name in ("flow_transition_length_m", "flow_branch_width_m", "particle_radius_m",
-                 "max_step_radius_fraction", "particle_density_kg_m3", "fluid_density_kg_m3"):
+                 "max_step_radius_fraction", "particle_density_kg_m3", "fluid_density_kg_m3",
+                 "cardiac_period_s"):
         nonnegative(getattr(config, name), name, positive=True)
+    if not 0 <= config.cardiac_phase < 1:
+        raise ValueError("cardiac_phase must be in [0, 1)")
+    if not 0 <= config.flow_pulsatility <= 1:
+        raise ValueError("flow_pulsatility must be in [0, 1]; flow reversal is not modeled")
+    if config.fluid_acceleration_force and not config.particle_inertia:
+        raise ValueError("fluid_acceleration_force requires particle_inertia")
     if config.flow_model not in ("piecewise", "smooth", "poiseuille"):
         raise ValueError("flow model must be piecewise, smooth or poiseuille")
     if not np.isfinite(config.actuation_gain_error) or config.actuation_gain_error < -1:
@@ -101,10 +117,15 @@ def run_trial(config=TrialConfig()):
     flow_rng = np.random.default_rng(flow_seed)
     disturbance = FlowDisturbance(config.flow_disturbance_m_s, config.flow_correlation_s, flow_rng)
     vessel = YVessel()
+    def deterministic_flow(position_m, time_s):
+        speed = pulsatile_speed(config.flow_speed_m_s, time_s + config.cardiac_phase * config.cardiac_period_s,
+                                config.flow_pulsatility, config.cardiac_period_s)
+        return prescribed_flow(position_m, speed, config.flow_model,
+                               config.flow_transition_length_m, config.flow_branch_width_m)
+
     if config.particle_inertia:
         # Deterministic release velocity; no disturbance draw, so RNG streams are unchanged.
-        release = prescribed_flow(vector(config.start_m), config.flow_speed_m_s, config.flow_model,
-                                  config.flow_transition_length_m, config.flow_branch_width_m)
+        release = deterministic_flow(vector(config.start_m), 0.0)
         particle = InertialParticle(config.particle_radius_m, 3.5e-3, config.particle_density_kg_m3,
                                     config.fluid_density_kg_m3, vector(config.start_m), release)
     else:
@@ -117,7 +138,8 @@ def run_trial(config=TrialConfig()):
         # Bound |v| by centerline flow, capped drift and a 3-sigma disturbance norm.
         # White disturbance (correlation 0) is redrawn per tick, so its effect
         # shrinks with dt; use flow_correlation_s > 0 for a dt-consistent process.
-        speed_bound = (2 * config.flow_speed_m_s + max_force_n / particle.drag_coefficient
+        speed_bound = (2 * config.flow_speed_m_s * (1 + config.flow_pulsatility)
+                       + max_force_n / particle.drag_coefficient
                        + 3 * np.sqrt(3) * config.flow_disturbance_m_s)
         if speed_bound > 0:
             dt_s = min(dt_s, config.max_step_radius_fraction * vessel_radius / speed_bound)
@@ -144,6 +166,7 @@ def run_trial(config=TrialConfig()):
         "baseline_target_miss_m", "selected_target_miss_m")}
     reached = collided = wrong = False
     particle_velocities = []
+    peak_fluid_acceleration = 0.0
     ticks = int(np.ceil(config.duration_s / dt_s))
     for tick in range(ticks + 1):
         now = min(tick * dt_s, config.duration_s)
@@ -161,8 +184,10 @@ def run_trial(config=TrialConfig()):
         # The terminal sample has no next interval and therefore records NaN.
         flow = np.full(3, np.nan)
         if not finished:
-            flow = prescribed_flow(particle.position_m, config.flow_speed_m_s,
-                config.flow_model, config.flow_transition_length_m, config.flow_branch_width_m)
+            flow = deterministic_flow(particle.position_m, now)
+            if config.fluid_acceleration_force:
+                fluid_acceleration = material_acceleration(deterministic_flow, particle.position_m, now)
+                peak_fluid_acceleration = max(peak_fluid_acceleration, float(np.linalg.norm(fluid_acceleration)))
             flow += disturbance.sample(now)
         estimate = output.estimate
         values = (now, particle.position_m.copy(),
@@ -181,7 +206,10 @@ def run_trial(config=TrialConfig()):
             particle_velocities.append(particle.velocity_m_s.copy())
         if finished:
             break
-        particle.step(min(dt_s, config.duration_s - now), flow, applied)
+        if config.fluid_acceleration_force:
+            particle.step(min(dt_s, config.duration_s - now), flow, applied, fluid_acceleration)
+        else:
+            particle.step(min(dt_s, config.duration_s - now), flow, applied)
     history = {k: np.asarray(v) for k, v in history.items()}
     if config.particle_inertia:
         history["particle_velocity_m_s"] = np.asarray(particle_velocities)
@@ -235,6 +263,11 @@ def run_trial(config=TrialConfig()):
             "maximum_slip_reynolds": float(reynolds.max()) if len(slip) else None,
             "maximum_drag_factor": schiller_naumann_factor(reynolds.max()) if len(slip) else None,
         })
+    if config.flow_pulsatility > 0:
+        physics["womersley_number"] = float(womersley_number(
+            vessel_radius, config.cardiac_period_s, particle.viscosity_pa_s, config.fluid_density_kg_m3))
+    if config.fluid_acceleration_force:
+        physics["maximum_fluid_acceleration_m_s2"] = peak_fluid_acceleration
     if physics:
         summary["physics"] = physics
     return {"config": asdict(config), "summary": summary, "history": history}

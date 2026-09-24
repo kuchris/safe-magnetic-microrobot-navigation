@@ -100,3 +100,40 @@ class FlowDisturbance:
                 -2 * (now_s - self.last_time_s) / self.correlation_s)) * noise
         self.last_time_s = now_s
         return self.value.copy()
+
+
+def pulsatile_speed(mean_speed_m_s, time_s, amplitude=0.0, period_s=1.0):
+    """Quasi-steady pulsation U(t) = U (1 + A sin(2 pi t / T)), with 0 <= A <= 1.
+
+    The whole profile is scaled in phase, which is valid only for a small
+    Womersley number; see womersley_number. For a sinusoid, Gosling's
+    pulsatility index PI = (V_max - V_min) / V_mean equals 2A.
+    """
+    nonnegative(mean_speed_m_s, "mean_speed_m_s")
+    if not 0 <= amplitude <= 1:
+        raise ValueError("pulsation amplitude must be in [0, 1]; flow reversal is not modeled")
+    nonnegative(period_s, "period_s", positive=True)
+    return mean_speed_m_s * (1.0 + amplitude * np.sin(2 * np.pi * time_s / period_s))
+
+
+def womersley_number(vessel_radius_m, period_s, viscosity_pa_s=3.5e-3, density_kg_m3=1060.0):
+    """alpha = R sqrt(omega rho / eta); alpha >~ 1 means the profile is not quasi-steady."""
+    omega = 2 * np.pi / nonnegative(period_s, "period_s", positive=True)
+    return vessel_radius_m * np.sqrt(omega * density_kg_m3 / viscosity_pa_s)
+
+
+def material_acceleration(velocity_field, position_m, time_s, step_m=1e-6, step_s=1e-4):
+    """Du/Dt = du/dt + (u . grad) u by central differences of velocity_field(p, t).
+
+    The convective term differentiates along the local flow direction only,
+    which is all (u . grad) u needs.
+    """
+    p = vector(position_m)
+    u = velocity_field(p, time_s)
+    local = (velocity_field(p, time_s + step_s) - velocity_field(p, time_s - step_s)) / (2 * step_s)
+    speed = np.linalg.norm(u)
+    if speed == 0:
+        return local
+    along = u / speed * step_m
+    convective = speed * (velocity_field(p + along, time_s) - velocity_field(p - along, time_s)) / (2 * step_m)
+    return local + convective

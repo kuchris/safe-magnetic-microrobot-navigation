@@ -25,6 +25,11 @@ def main():
     parser.add_argument("--duration", type=float, default=0.2, help="time limit [s]")
     parser.add_argument("--branch", choices=["upper", "lower"], default="upper")
     parser.add_argument("--inertia", action="store_true", help="reduced Maxey-Riley particle (stage 2c)")
+    parser.add_argument("--fluid-acceleration", action="store_true",
+                        help="add the (3/2) m_f Du/Dt force; requires --inertia (stage 2d)")
+    parser.add_argument("--pulsatility", type=float, default=0.0, help="amplitude A, PI = 2A (stage 2d)")
+    parser.add_argument("--period", type=float, default=1.0, help="cardiac period [s] (assumed 60 bpm)")
+    parser.add_argument("--phase", type=float, default=0.0, help="release phase in [0, 1); 0.25 = peak")
     parser.add_argument("--start-mm", type=float, nargs=3, default=(0.5, 0.0, 0.0), help="release point [mm]")
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--output", default="outputs/21_physiological_trial")
@@ -34,6 +39,8 @@ def main():
         flow_model="poiseuille", flow_speed_m_s=args.speed,
         particle_radius_m=args.radius_um * 1e-6, max_gradient_t_m=args.gradient,
         frame_rate_hz=args.frame_rate, latency_s=args.latency, particle_inertia=args.inertia,
+        fluid_acceleration_force=args.fluid_acceleration, flow_pulsatility=args.pulsatility,
+        cardiac_period_s=args.period, cardiac_phase=args.phase,
         start_m=tuple(v * 1e-3 for v in args.start_mm)))
     path = Path(args.output)
     path.mkdir(parents=True, exist_ok=True)

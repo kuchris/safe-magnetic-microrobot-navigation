@@ -35,7 +35,7 @@ unchanged so experiments 01–20 remain exactly reproducible.
 | 2a | Force cap in T/m from gradient × magnetization × volume; configurable radius and material | ✅ |
 | 2b | Poiseuille velocity profile; timestep shrinks automatically with speed | ✅ |
 | 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | ✅ |
-| 2d | Pulsatile flow, Womersley number reported | planned |
+| 2d | Pulsatile flow with release phase, Womersley number, optional fluid-acceleration force | ✅ |
 | 2e | Gravity and a sedimentation check in the safety gate | planned |
 | 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 22 | planned |
 
@@ -65,6 +65,18 @@ closer to the branch centerline than the overdamped one. In this run the
 inertial particle passes within the 0.4 mm target tolerance and the overdamped
 one hits the closed outlet cap. **Neither run applies any force**, since no
 frame arrives before 50 ms, so this is passive transport, not steering.
+
+Pulsation and fluid acceleration (2d), for the same release:
+- **Pulsation changes timing more than path.** The transit takes about 40 ms,
+  roughly 4% of a 1 s cardiac cycle, so pulsation mainly sets the speed of that
+  transit through the release phase. Released at peak systole, the trial ends
+  at 30 ms; at diastole it ends at 70 ms.
+- **The binary outcome is brittle.** In the two phases the closest approach to
+  the target is 0.407 mm and 0.398 mm. That 9 µm difference straddles the
+  0.4 mm success tolerance, which flips "closed-outlet collision" to "target
+  reached". Release phase does not decide steering outcomes here.
+- **The junction dominates fluid acceleration.** Turning the stream at the
+  junction gives about 90 m/s², against about 1–2 m/s² from pulsation itself.
 
 ## Quick start
 
@@ -155,9 +167,11 @@ $$
 
 Each step holds u, F and f fixed and integrates exactly, so it is stable for
 any dt and reduces to the overdamped model as the relaxation time goes to
-zero. The particle is released at the local flow velocity (assumed). The model
-omits the fluid-acceleration term (zero in straight Poiseuille flow, nonzero at
-the junction), the Basset history force and shear lift. Densities: NdFeB
+zero. The particle is released at the local flow velocity (assumed).
+`fluid_acceleration_force=True` adds the `(3/2)·m_f·Du/Dt` term (pressure
+gradient plus added mass). It is computed by finite differences of the
+deterministic flow field; the random disturbance is not differentiated. The
+model still omits the Basset history force and shear lift. Densities: NdFeB
 7500 kg/m³ and blood 1060 kg/m³, both assumed. The summary reports τ, the
 Stokes number τU/L and the peak slip Reynolds number.
 
@@ -174,6 +188,14 @@ Stokes number τU/L and the peak slip Reynolds number.
 | `piecewise` | Uniform speed along inlet or branch direction; discontinuous at the junction | 01–20 |
 | `smooth` | Continuous tanh blend of directions; uniform speed | 11–19 option |
 | `poiseuille` | Smooth direction × `2U(1 − ρ²/R²)`; U is the cross-sectional mean | Step 2 |
+
+**Pulsation** (`flow_pulsatility` A, `cardiac_period_s` T, `cardiac_phase`) scales
+any model by `1 + A·sin(2π(t/T + phase))`. For a sinusoid the Gosling
+pulsatility index is 2A. A has no sourced default yet (0 disables it), and
+T = 1 s (60 bpm) is assumed. The scaling is quasi-steady: the whole profile
+moves in phase. At M1 the Womersley number is α ≈ 2.1, which is above 1, so
+this approximation is not strictly valid. α is reported for every pulsatile
+run.
 
 None of these is a hemodynamics solver: there is no flux conservation at the
 split, no secondary flow and no Faxén correction. In `poiseuille` mode the
@@ -324,7 +346,7 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Gradient cap in T/m with material parameters (2a)
 - [x] Poiseuille profile with speed-bounded timestep (2b)
 - [x] Particle inertia and finite-Re drag (2c)
-- [ ] Pulsatility (2d)
+- [x] Pulsatility and fluid-acceleration force (2d)
 - [ ] Gravity and sedimentation-aware safety gate (2e)
 - [ ] Physiological preset, flow reduction, occluded branch, actuation update
       rate, imaging-rate sweep (2f)

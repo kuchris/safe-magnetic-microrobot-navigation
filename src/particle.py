@@ -45,10 +45,10 @@ class Particle:
 class InertialParticle:
     """Sphere with inertia: reduced Maxey-Riley, added mass, Schiller-Naumann drag.
 
-    (m_p + m_f/2) dv/dt = F + gamma f(Re) (u - v), with Re from the slip |u - v|.
-    Omitted: the fluid-acceleration (pressure-gradient) term, Basset history
-    force and lift. The first vanishes in straight Poiseuille flow but not at
-    the junction or under pulsation; shear lift is not small at r >~ 80 um.
+    (m_p + m_f/2) dv/dt = F + gamma f(Re) (u - v) + (3/2) m_f Du/Dt, with Re from
+    the slip |u - v|. The last (pressure-gradient plus added-mass) term is used
+    only when a fluid acceleration is passed to step. Omitted: Basset history
+    force and lift; shear lift is not small at r >~ 80 um.
     Each step holds u, F and the drag factor (from the slip at step start)
     constant and integrates exactly, so it is stable for any dt and tends to
     the overdamped model as the relaxation time goes to zero at low Re.
@@ -87,9 +87,11 @@ class InertialParticle:
         slip = np.linalg.norm(vector(flow_velocity_m_s) - self.velocity_m_s)
         return self.fluid_density_kg_m3 * 2.0 * self.radius_m * slip / self.viscosity_pa_s
 
-    def step(self, dt_s, flow_velocity_m_s, magnetic_force_n):
+    def step(self, dt_s, flow_velocity_m_s, magnetic_force_n, fluid_acceleration_m_s2=None):
         nonnegative(dt_s, "dt_s", positive=True)
         u, force = vector(flow_velocity_m_s), vector(magnetic_force_n)
+        if fluid_acceleration_m_s2 is not None:
+            force = force + 1.5 * self.fluid_density_kg_m3 * volume(self.radius_m) * vector(fluid_acceleration_m_s2)
         gamma = self.drag_coefficient * schiller_naumann_factor(self.slip_reynolds(u))
         terminal = u + force / gamma
         tau = self.effective_mass_kg / gamma

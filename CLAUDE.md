@@ -31,7 +31,11 @@ honestly, do not tune the controller to hide it.
       reduced Maxey–Riley, exact-per-step exponential integrator, released at local flow.
       Omits fluid-acceleration term, Basset, lift. Off-axis 100 µm at 0.3 m/s: St 0.15,
       Re_slip ~10, cross-stream shift 0.2–0.5 mm vs overdamped (both passive).
-- [ ] 2d Quasi-steady pulsatility; report Womersley α (~2.1–2.3 at M1)
+- [x] 2d Quasi-steady pulsatility (`flow_pulsatility`, `cardiac_period_s`, `cardiac_phase`),
+      α reported; `fluid_acceleration_force` ((3/2) m_f Du/Dt, inertial only). PI/A still unsourced.
+      Finding: transit ~40 ms ≈ 4% of a cycle; success vs outlet-cap collision flipped on 9 µm
+      around the 0.4 mm tolerance → 2f should report closest approach as a continuous metric.
+      Toy replay helpers (failure_analysis, flow_sensitivity) ignore pulsation.
 - [ ] 2e Gravity + sedimentation gate: diagnostic by default, opt-in gravity compensation
 - [x] Viz A: `plot_physics_trial` + `simulations/21_physiological_trial.py` (single trial).
       At 99% flow reduction frames arrive but peak force is ~0.06% of cap: gain needs rescaling.

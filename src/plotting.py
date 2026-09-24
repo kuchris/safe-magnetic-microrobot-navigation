@@ -163,8 +163,12 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
     parent = vessel.segments[0]
     rho = np.linspace(-parent.radius_m, parent.radius_m, 301)
     x_mid = 0.5 * (parent.start_m[0] + parent.end_m[0])
-    profile = [np.linalg.norm(flow_at([x_mid, r, 0])) for r in rho]
-    ax.plot(rho * 1e3, profile, color="tab:blue")
+    profile = np.array([np.linalg.norm(flow_at([x_mid, r, 0])) for r in rho])
+    amplitude = c.get("flow_pulsatility", 0.0)
+    ax.plot(rho * 1e3, profile, color="tab:blue", label="Time mean" if amplitude > 0 else None)
+    if amplitude > 0:
+        ax.fill_between(rho * 1e3, profile * (1 - amplitude), profile * (1 + amplitude), color="tab:blue",
+                        alpha=0.15, label=f"Cardiac range (A = {amplitude:g})")
     reach = parent.radius_m - radius
     ax.axvspan(-reach * 1e3, reach * 1e3, color="tab:blue", alpha=0.08,
                label=f"Reachable by center (r = {radius * 1e6:.0f} µm)")
@@ -212,12 +216,21 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
         details.append(f"dt = {physics['dt_s'] * 1e6:.1f} µs")
     if physics.get("maximum_step_radius_fraction") is not None:
         details.append(f"max step/R = {physics['maximum_step_radius_fraction']:.2g}")
+    if c.get("flow_pulsatility", 0.0) > 0:
+        details.append(f"pulsatile A = {c['flow_pulsatility']:g}, T = {c['cardiac_period_s']:g} s, "
+                       f"phase {c.get('cardiac_phase', 0.0):g}, α = {physics['womersley_number']:.2g}")
     if "stokes_number" in physics:
         details.append(f"inertial: St = {physics['stokes_number']:.2g}, "
-                       f"max Re_slip = {physics['maximum_slip_reynolds']:.2g}")
+                       f"max Re_slip = {physics['maximum_slip_reynolds']:.2g}"
+                       + (", +Du/Dt" if c.get("fluid_acceleration_force") else ""))
     else:
         details.append("overdamped")
+    lines = [""]
+    for item in details:
+        lines[-1] = f"{lines[-1]} · {item}" if lines[-1] else item
+        if len(lines[-1]) > 95:
+            lines.append("")
     fig.suptitle(f"Seed {c['seed']} | {c['branch']} target | {outcome} at {frames['end_s'] * 1e3:.1f} ms"
-                 f" | simulation only, no clinical validation\n" + " · ".join(details), fontsize=11)
+                 f" | simulation only, no clinical validation\n" + "\n".join(l for l in lines if l), fontsize=11)
     fig.savefig(output_path, dpi=150)
     plt.close(fig)
