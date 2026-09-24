@@ -34,7 +34,7 @@ def wall_feature(position_m, vessel, particle_radius_m=0.1e-3):
 def analyze_trial(result):
     h, config = result["history"], result["config"]
     vessel = YVessel()
-    particle = Particle(0.1e-3, 3.5e-3)
+    particle = Particle(config.get("particle_radius_m", 0.1e-3), 3.5e-3)
     p, time = h["true_position_m"], h["time_s"]
     junction_x = vessel.segments[0].end_m[0]
 
@@ -65,7 +65,7 @@ def analyze_trial(result):
         "wrong_branch_confirmed": snapshot(wrong),
         "first_wall_stop_after_junction": snapshot((p[:, 0] >= junction_x) & (h["reason"] == "wall_margin_low")),
         "first_wall_violation": snapshot(h["true_clearance_m"] <= 0),
-        "terminal_wall_feature": wall_feature(p[-1], vessel),
+        "terminal_wall_feature": wall_feature(p[-1], vessel, particle.radius_m),
         "persistent_stop_from_s": persistent_stop,
         "target_success": result["summary"]["target_success"],
         "elapsed_time_s": float(time[-1]),

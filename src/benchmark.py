@@ -84,7 +84,8 @@ def run_benchmark(seeds=range(10), scenarios=tuple(SCENARIOS), base_config=Trial
                     records.append({"scenario": scenario, "config": result["config"],
                                     "summary": result["summary"],
                                     "terminal_wall_feature": wall_feature(
-                                        result["history"]["true_position_m"][-1], YVessel())})
+                                        result["history"]["true_position_m"][-1], YVessel(),
+                                        result["config"]["particle_radius_m"])})
                     if progress is not None:
                         progress(len(records), total)
     return {"seeds": seeds, "scenarios": scenarios, "trials": records,

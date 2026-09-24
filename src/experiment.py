@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from src.controller import limit_force
+from src.feasibility import Material, magnetic_force_cap
 from src.flow import FlowDisturbance, prescribed_flow
 from src.imaging import BiplaneImager
 from src.navigation import BiplaneNavigation
@@ -46,15 +47,34 @@ class TrialConfig:
     prediction_horizon_s: float = 0.0
     estimator_mode: str = "kinematic"
     terminal_guidance_distance_m: float = 0.0
+    particle_radius_m: float = 0.1e-3
+    # Gradient cap [T/m]. Zero keeps the legacy max_force_n cap; positive values
+    # replace it with V * M_eff * |grad B| from the material below.
+    max_gradient_t_m: float = 0.0
+    magnetization_a_m: float = 1.0e6       # NdFeB, Br ~ 1.26 T (textbook, assumed)
+    magnetic_volume_fraction: float = 1.0  # pure magnet (assumed)
+
+
+def particle_material(config):
+    return Material(name="configured", magnetization_a_m=config.magnetization_a_m,
+                    magnetic_volume_fraction=config.magnetic_volume_fraction)
+
+
+def effective_max_force_n(config):
+    """Force cap [N] actually enforced for this trial."""
+    if config.max_gradient_t_m > 0:
+        return magnetic_force_cap(config.particle_radius_m, config.max_gradient_t_m,
+                                  particle_material(config))
+    return config.max_force_n
 
 
 def run_trial(config=TrialConfig()):
     for name in ("duration_s", "dt_s", "frame_rate_hz", "noise_sigma_px"):
         nonnegative(getattr(config, name), name, positive=True)
     for name in ("flow_speed_m_s", "flow_disturbance_m_s", "calibration_sigma_px",
-                 "gain_n_per_m", "max_force_n", "flow_correlation_s"):
+                 "gain_n_per_m", "max_force_n", "flow_correlation_s", "max_gradient_t_m"):
         nonnegative(getattr(config, name), name)
-    for name in ("flow_transition_length_m", "flow_branch_width_m"):
+    for name in ("flow_transition_length_m", "flow_branch_width_m", "particle_radius_m"):
         nonnegative(getattr(config, name), name, positive=True)
     if config.flow_model not in ("piecewise", "smooth"):
         raise ValueError("flow model must be piecewise or smooth")
@@ -62,6 +82,8 @@ def run_trial(config=TrialConfig()):
         raise ValueError("actuation gain error must be finite and >= -1")
     if config.dt_s > 1 / config.frame_rate_hz:
         raise ValueError("physics timestep must not exceed the imaging period")
+    material = particle_material(config)
+    max_force_n = effective_max_force_n(config)
     # Independent streams keep sensor and flow draws reproducible when toggling noise.
     sensor_seed, calibration_seed, flow_seed = np.random.SeedSequence(config.seed).spawn(3)
     sensor_rng = np.random.default_rng(sensor_seed)
@@ -69,7 +91,9 @@ def run_trial(config=TrialConfig()):
     flow_rng = np.random.default_rng(flow_seed)
     disturbance = FlowDisturbance(config.flow_disturbance_m_s, config.flow_correlation_s, flow_rng)
     vessel = YVessel()
-    particle = Particle(0.1e-3, 3.5e-3, vector(config.start_m))
+    particle = Particle(config.particle_radius_m, 3.5e-3, vector(config.start_m))
+    if particle.radius_m >= min(s.radius_m for s in vessel.segments):
+        raise ValueError("particle_radius_m must be smaller than the vessel radius")
     bias = calibration_rng.normal(0, config.calibration_sigma_px, (2, 2))
     imager = BiplaneImager(noise_sigma_px=config.noise_sigma_px,
         frame_rate_hz=config.frame_rate_hz, latency_s=config.latency_s,
@@ -77,7 +101,7 @@ def run_trial(config=TrialConfig()):
         dropout_intervals=config.dropout_intervals, calibration_bias_px=bias, rng=sensor_rng)
     navigation = BiplaneNavigation(vessel, particle.radius_m, branch=config.branch,
         noise_sigma_px=config.noise_sigma_px, calibration_sigma_px=config.calibration_sigma_px,
-        gain_n_per_m=config.gain_n_per_m, max_force_n=config.max_force_n,
+        gain_n_per_m=config.gain_n_per_m, max_force_n=max_force_n,
         max_measurement_age_s=config.max_measurement_age_s,
         max_sigma_m=config.max_sigma_m, safety_margin_m=config.safety_margin_m,
         control_mode=config.control_mode, approach_offset_m=config.approach_offset_m,
@@ -99,7 +123,7 @@ def run_trial(config=TrialConfig()):
         # the control boundary. Ground truth below is physics/evaluation only.
         frames = imager.advance(now, particle.position_m)
         output = navigation.step(now, frames)
-        applied = limit_force(output.force_n * (1 + config.actuation_gain_error), config.max_force_n)
+        applied = limit_force(output.force_n * (1 + config.actuation_gain_error), max_force_n)
         true_clearance = vessel.clearance(particle.position_m, particle.radius_m)
         collided |= true_clearance <= 0
         wrong |= wrong_branch(particle.position_m, vessel, config.branch)
@@ -151,6 +175,14 @@ def run_trial(config=TrialConfig()):
         "maximum_force_n": float(np.linalg.norm(history["force_n"], axis=1).max()),
         "reason_counts": dict(reasons),
     }
+    if config.max_gradient_t_m > 0:
+        # Present only for gradient-capped trials so archived summaries keep their keys.
+        force_per_gradient = magnetic_force_cap(particle.radius_m, 1.0, material)
+        summary["physics"] = {
+            "force_cap_n": float(max_force_n),
+            "max_gradient_t_m": float(config.max_gradient_t_m),
+            "maximum_gradient_t_m": summary["maximum_force_n"] / force_per_gradient,
+        }
     return {"config": asdict(config), "summary": summary, "history": history}
 
 

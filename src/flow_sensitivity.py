@@ -13,16 +13,18 @@ from src.vessel import YVessel
 def trial_record(result):
     h, c, s = result["history"], result["config"], result["summary"]
     weights = np.diff(h["time_s"])
-    gamma = Particle(0.1e-3, 3.5e-3).drag_coefficient
+    radius = c.get("particle_radius_m", 0.1e-3)
+    gamma = Particle(radius, 3.5e-3).drag_coefficient
+    cap = s["physics"]["force_cap_n"] if "physics" in s else c["max_force_n"]
     demand = gamma * np.linalg.norm(h["flow_velocity_m_s"][:-1], axis=1)
     force = np.linalg.norm(h["force_n"][:-1], axis=1)
     return {"config": c, "summary": s,
             "timeout": not s["target_success"] and not s["wall_collision"],
-            "terminal_wall_feature": wall_feature(h["true_position_m"][-1], YVessel()),
+            "terminal_wall_feature": wall_feature(h["true_position_m"][-1], YVessel(), radius),
             "flow_holding_limit_exceeded_fraction": float(np.average(
-                demand > c["max_force_n"], weights=weights)) if len(weights) else None,
+                demand > cap, weights=weights)) if len(weights) else None,
             "force_saturation_fraction": float(np.average(
-                (force > 0) & (force >= c["max_force_n"] * (1 - 1e-12)), weights=weights)) if len(weights) else None}
+                (force > 0) & (force >= cap * (1 - 1e-12)), weights=weights)) if len(weights) else None}
 
 
 def aggregate_records(records):

@@ -64,6 +64,18 @@ def volume(radius_m):
     return 4.0 / 3.0 * np.pi * radius_m ** 3
 
 
+def magnetic_force_cap(radius_m, gradient_t_m, material=Material()):
+    """Upper bound |F| = V M_eff |grad B| [N] on the gradient force on a sphere.
+
+    Assumes a saturated moment aligned with the gradient direction. Real systems
+    couple field, gradient and torque, and the deliverable gradient decays with
+    depth, so this is a best-case cap, not a hardware model.
+    """
+    nonnegative(radius_m, "radius_m", positive=True)
+    nonnegative(gradient_t_m, "gradient_t_m")
+    return volume(radius_m) * material.effective_magnetization_a_m * gradient_t_m
+
+
 def stokes_drag_coefficient(radius_m, fluid):
     nonnegative(radius_m, "radius_m", positive=True)
     return 6.0 * np.pi * fluid.viscosity_pa_s * radius_m
