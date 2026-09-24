@@ -1,0 +1,7514 @@
+[
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010002800890064084,
+   "min": 0.009970688514750416
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02170524565319229,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010972253692376166,
+   "min": 0.010931099878561733
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.037533282956164885,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009912334219488683,
+   "min": 0.00974814109416132
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.02093159669838381,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.0,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010326916007459348,
+   "min": 0.01008125905474666
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.03867879464116934,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 3,
+   "capsule_sidewall_proxy": 3
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010436519688956054,
+   "min": 0.008415049892882533
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.014503147165214211,
+  "median_elapsed_time_s": 0.19841122892724591,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 4,
+    "rate": 0.6666666666666666,
+    "wilson_95": [
+     0.2999933151383921,
+     0.9032285888942194
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010005794838999363,
+   "min": 0.0009743000473760501
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.06809662934064538,
+  "median_elapsed_time_s": 0.4096977289496043,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 4,
+   "capsule_sidewall_proxy": 2
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.008660845578818039,
+   "min": 0.006247567434663617
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.3151301112441606,
+  "median_elapsed_time_s": 0.24694109690113136,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010119117045098783,
+   "min": 0.009785824571913418
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.20699474299065423,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011130129615332877,
+   "min": 0.010657110376679673
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.014503147165214211,
+  "median_elapsed_time_s": 0.26716187522358364,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011105634657671198,
+   "min": 0.010994883311172696
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.06809662934064538,
+  "median_elapsed_time_s": 0.3086763711264142,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010678704532529403,
+   "min": 0.010469979259289712
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.3151301112441606,
+  "median_elapsed_time_s": 0.2766532609667755,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 4,
+   "closed_outlet_cap_proxy": 2
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011150165283927108,
+   "min": 0.010665454643766203
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.26575880080937264,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010239428156303625,
+   "min": 0.0058580098204155506
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.02912887500894672,
+  "median_elapsed_time_s": 0.28820799143674825,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.005575686824011642,
+   "min": 0.0008093726146100413
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.08379344702914279,
+  "median_elapsed_time_s": 0.4245538109824264,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009903389471846043,
+   "min": 0.0005501354761316042
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.41566303772323804,
+  "median_elapsed_time_s": 0.29695657307829904,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 4,
+   "capsule_sidewall_proxy": 2
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010119117045098783,
+   "min": 0.009785824571913418
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.20699474299065423,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011120608378367725,
+   "min": 0.010688279228597372
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.02912887506713311,
+  "median_elapsed_time_s": 0.28829052522581944,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011080509911979786,
+   "min": 0.010988115075898754
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.08379344660010699,
+  "median_elapsed_time_s": 0.3060352898761347,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010498430401848401,
+   "min": 0.010188135806695633
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.4401667794206511,
+  "median_elapsed_time_s": 0.314948939095828,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 5,
+   "capsule_sidewall_proxy": 1
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011150165283927108,
+   "min": 0.010665454643766203
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.26575880080937264,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009988482464824769,
+   "min": 0.0029782494992643765
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.05981884657245723,
+  "median_elapsed_time_s": 0.23026927150874216,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 5,
+    "rate": 0.8333333333333334,
+    "wilson_95": [
+     0.4364971778135298,
+     0.9699466302516933
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 1,
+    "rate": 0.16666666666666666,
+    "wilson_95": [
+     0.030053369748306635,
+     0.5635028221864701
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.005663147026524202,
+   "min": 0.000679873251727667
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.10265353903629039,
+  "median_elapsed_time_s": 0.34655938031011047,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 1,
+   "closed_outlet_cap_proxy": 4,
+   "none": 1
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 2,
+    "rate": 0.3333333333333333,
+    "wilson_95": [
+     0.09677141110578052,
+     0.7000066848616078
+    ]
+   },
+   "wall_collision": {
+    "count": 4,
+    "rate": 0.6666666666666666,
+    "wilson_95": [
+     0.2999933151383921,
+     0.9032285888942194
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.005187962363737914,
+   "min": 0.0003971362733851845
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.7000984774836463,
+  "median_elapsed_time_s": 0.28820799143674825,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 1,
+   "closed_outlet_cap_proxy": 3,
+   "none": 2
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.18761630648265054,
+     0.8123836935173494
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010119117045098783,
+   "min": 0.009785824571913418
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.20699474299065423,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011073804339865406,
+   "min": 0.010658734152795129
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.05983498468079667,
+  "median_elapsed_time_s": 0.3076859656575594,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011048439835442236,
+   "min": 0.01095863166721445
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.10268559247576722,
+  "median_elapsed_time_s": 0.30479728304006626,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.010175341685599238,
+   "min": 0.009803114567575526
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.7045579583605517,
+  "median_elapsed_time_s": 0.33863613655927205,
+  "terminal_features": {
+   "closed_outlet_cap_proxy": 4,
+   "capsule_sidewall_proxy": 2
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.011150165283927108,
+   "min": 0.010665454643766203
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.26575880080937264,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712050097115,
+   "min": 0.018233158229596078
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.9,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018460712105960723,
+   "min": 0.018233158241301593
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047123966027701684,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01916089972394941,
+   "min": 0.018886001005973607
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.029180802524756813,
+  "median_elapsed_time_s": 0.2749320388230333,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wall_collision": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.0003986011347870515,
+   "min": 0.00039780770217977436
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0830573980207017,
+  "median_elapsed_time_s": 3.119231586034952,
+  "terminal_features": {
+   "none": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.016223314675967826,
+   "min": 0.012193833266010484
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.5734108628129859,
+  "median_elapsed_time_s": 0.26246149275827546,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01937246983917383,
+   "min": 0.019155589375566287
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.2575312768722084,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.019160899738884053,
+   "min": 0.018886001004819908
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.029180802527695615,
+  "median_elapsed_time_s": 0.2749320388230333,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 2,
+    "rate": 0.3333333333333333,
+    "wilson_95": [
+     0.09677141110578052,
+     0.7000066848616078
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009922931915792174,
+   "min": 0.009740984521922515
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.12069586657871728,
+  "median_elapsed_time_s": 5.0,
+  "terminal_features": {
+   "none": 4,
+   "capsule_sidewall_proxy": 2
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.016223318749839864,
+   "min": 0.012190659198524396
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.5733701493818297,
+  "median_elapsed_time_s": 0.26246149275827546,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01937246984844846,
+   "min": 0.019155589375480772
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.2575312768722084,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 7.5,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018906906073561734,
+   "min": 0.018621134259718345
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.049800172173429344,
+  "median_elapsed_time_s": 0.3004531563509098,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wall_collision": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.0003996364722277176,
+   "min": 0.0003992848143745769
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0902154417656885,
+  "median_elapsed_time_s": 2.7854269692782943,
+  "terminal_features": {
+   "none": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.016208407274134865,
+   "min": 0.013207649407698412
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.538227709177375,
+  "median_elapsed_time_s": 0.2320101593443319,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01937246983917383,
+   "min": 0.019155589375566287
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.2575312768722084,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018906906098374098,
+   "min": 0.018621134257992694
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.049800172171380025,
+  "median_elapsed_time_s": 0.3004531563509098,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 4,
+    "rate": 0.6666666666666666,
+    "wilson_95": [
+     0.2999933151383921,
+     0.9032285888942194
+    ]
+   },
+   "wrong_branch": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.009766815337203805,
+   "min": 0.009754309678160057
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.20581716494548052,
+  "median_elapsed_time_s": 2.8664855186992204,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 4,
+   "none": 2
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.016208408875640644,
+   "min": 0.013206946046239905
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.5382277113131071,
+  "median_elapsed_time_s": 0.2320101593443319,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01937246984844846,
+   "min": 0.019155589375480772
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.2575312768722084,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 15.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018333450473066983,
+   "min": 0.017775099764472158
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.07500934099389678,
+  "median_elapsed_time_s": 0.3584556961869928,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wall_collision": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.0003990085503783819,
+   "min": 0.0003974138521965775
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.10099779663662489,
+  "median_elapsed_time_s": 2.4535074350663097,
+  "terminal_features": {
+   "none": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01452476549147923,
+   "min": 0.013887519506017796
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.5636264352234166,
+  "median_elapsed_time_s": 0.3024832452451727,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01937246983917383,
+   "min": 0.019155589375566287
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.2575312768722084,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.018333450627028815,
+   "min": 0.017775099771032043
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.07500934105045873,
+  "median_elapsed_time_s": 0.3584556961869928,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 1,
+    "rate": 0.16666666666666666,
+    "wilson_95": [
+     0.030053369748306635,
+     0.5635028221864701
+    ]
+   },
+   "wrong_branch": {
+    "count": 1,
+    "rate": 0.16666666666666666,
+    "wilson_95": [
+     0.030053369748306635,
+     0.5635028221864701
+    ]
+   },
+   "timeout": {
+    "count": 5,
+    "rate": 0.8333333333333334,
+    "wilson_95": [
+     0.4364971778135298,
+     0.9699466302516933
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.0006528846270016008,
+   "min": 0.0006073275023511265
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.12107185476229096,
+  "median_elapsed_time_s": 5.0,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 1,
+   "none": 5
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.014524934481975324,
+   "min": 0.013883320386866215
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.5636264348624769,
+  "median_elapsed_time_s": 0.3024832452451727,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "composite",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.01937246984844846,
+   "min": 0.019155589375480772
+  },
+  "any_frame_used_fraction": 1.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.2575312768722084,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "patent",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902691527,
+   "min": 0.020240468804536015
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_delay_gain_hold",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "gated_toy_gain",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ },
+ {
+  "flow_reduction": 0.99,
+  "frame_rate_hz": 30.0,
+  "material": "ndfeb",
+  "occlusion": "target_occluded",
+  "policy": "passive",
+  "trials": 6,
+  "outcomes": {
+   "target_success": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "wall_collision": {
+    "count": 6,
+    "rate": 1.0,
+    "wilson_95": [
+     0.6096657120978348,
+     1.0
+    ]
+   },
+   "wrong_branch": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   },
+   "timeout": {
+    "count": 0,
+    "rate": 0.0,
+    "wilson_95": [
+     0.0,
+     0.3903342879021652
+    ]
+   }
+  },
+  "closest_target_approach_m": {
+   "median": 0.020415761902913658,
+   "min": 0.020240468804815972
+  },
+  "any_frame_used_fraction": 0.0,
+  "median_peak_force_fraction": 0.0,
+  "median_elapsed_time_s": 0.047079806280910505,
+  "terminal_features": {
+   "capsule_sidewall_proxy": 6
+  }
+ }
+]

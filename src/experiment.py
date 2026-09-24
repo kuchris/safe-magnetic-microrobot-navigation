@@ -81,6 +81,14 @@ class TrialConfig:
     sedimentation_horizon_s: float = 0.1
     # Opt-in: command -W (within the cap) while tracking is valid, even when stopped.
     gravity_compensation: bool = False
+    # Dead-end branch ("upper" or "lower"); requires flow_model="poiseuille". "" = both patent.
+    occluded_branch: str = ""
+    # Actuation update period with zero-order hold. 0 updates the command every
+    # physics tick (legacy); frames that arrive between updates are queued.
+    actuation_period_s: float = 0.0
+    # > 0 sets the proportional gain to force_cap / distance, so the command
+    # saturates at the same position error whatever the cap. 0 keeps gain_n_per_m.
+    gain_saturation_distance_m: float = 0.0
 
 
 def particle_material(config):
@@ -118,6 +126,12 @@ def run_trial(config=TrialConfig()):
     gravity_axis = vector(config.gravity_direction)
     if np.linalg.norm(gravity_axis) == 0:
         raise ValueError("gravity_direction must be nonzero")
+    if config.occluded_branch not in ("", "upper", "lower"):
+        raise ValueError("occluded_branch must be '', 'upper' or 'lower'")
+    if config.occluded_branch and config.flow_model != "poiseuille":
+        raise ValueError("occluded_branch requires flow_model='poiseuille'")
+    nonnegative(config.actuation_period_s, "actuation_period_s")
+    nonnegative(config.gain_saturation_distance_m, "gain_saturation_distance_m")
     if (config.sedimentation_check or config.gravity_compensation) and config.gravity_m_s2 == 0:
         raise ValueError("sedimentation_check and gravity_compensation require gravity_m_s2 > 0")
     if config.flow_model not in ("piecewise", "smooth", "poiseuille"):
@@ -128,6 +142,8 @@ def run_trial(config=TrialConfig()):
         raise ValueError("physics timestep must not exceed the imaging period")
     material = particle_material(config)
     max_force_n = effective_max_force_n(config)
+    gain_n_per_m = (max_force_n / config.gain_saturation_distance_m if config.gain_saturation_distance_m > 0
+                    else config.gain_n_per_m)
     # Independent streams keep sensor and flow draws reproducible when toggling noise.
     sensor_seed, calibration_seed, flow_seed = np.random.SeedSequence(config.seed).spawn(3)
     sensor_rng = np.random.default_rng(sensor_seed)
@@ -139,7 +155,8 @@ def run_trial(config=TrialConfig()):
         speed = pulsatile_speed(config.flow_speed_m_s, time_s + config.cardiac_phase * config.cardiac_period_s,
                                 config.flow_pulsatility, config.cardiac_period_s)
         return prescribed_flow(position_m, speed, config.flow_model,
-                               config.flow_transition_length_m, config.flow_branch_width_m)
+                               config.flow_transition_length_m, config.flow_branch_width_m,
+                               occluded_branch=config.occluded_branch or None)
 
     if config.particle_inertia:
         # Deterministic release velocity; no disturbance draw, so RNG streams are unchanged.
@@ -173,7 +190,7 @@ def run_trial(config=TrialConfig()):
         dropout_intervals=config.dropout_intervals, calibration_bias_px=bias, rng=sensor_rng)
     navigation = BiplaneNavigation(vessel, particle.radius_m, branch=config.branch,
         noise_sigma_px=config.noise_sigma_px, calibration_sigma_px=config.calibration_sigma_px,
-        gain_n_per_m=config.gain_n_per_m, max_force_n=max_force_n,
+        gain_n_per_m=gain_n_per_m, max_force_n=max_force_n,
         max_measurement_age_s=config.max_measurement_age_s,
         max_sigma_m=config.max_sigma_m, safety_margin_m=config.safety_margin_m,
         control_mode=config.control_mode, approach_offset_m=config.approach_offset_m,
@@ -194,13 +211,22 @@ def run_trial(config=TrialConfig()):
     particle_velocities = []
     sedimentation = {"sedimentation_margin_m": [], "sedimentation_risk": []}
     peak_fluid_acceleration = 0.0
+    output, queued_frames, next_update_s, last_update_s = None, [], 0.0, 0.0
     ticks = int(np.ceil(config.duration_s / dt_s))
     for tick in range(ticks + 1):
         now = min(tick * dt_s, config.duration_s)
         # The sensor is part of the simulated plant. Only delivered frames cross
         # the control boundary. Ground truth below is physics/evaluation only.
         frames = imager.advance(now, particle.position_m)
-        output = navigation.step(now, frames)
+        if config.actuation_period_s > 0:
+            queued_frames.extend(frames)
+            if output is None or now >= next_update_s - 1e-12:
+                output, last_update_s = navigation.step(now, queued_frames), now
+                queued_frames = []
+                while next_update_s <= now + 1e-12:
+                    next_update_s += config.actuation_period_s
+        else:
+            output, last_update_s = navigation.step(now, frames), now
         applied = limit_force(output.force_n * (1 + config.actuation_gain_error), max_force_n)
         true_clearance = vessel.clearance(particle.position_m, particle.radius_m)
         collided |= true_clearance <= 0
@@ -221,7 +247,8 @@ def run_trial(config=TrialConfig()):
             np.full(3, np.nan) if estimate is None else estimate.estimated_position,
             np.nan if estimate is None else estimate.position_uncertainty,
             true_clearance, output.estimated_clearance_m, output.robust_clearance_m,
-            applied, output.force_n, output.reason, output.measurement_age_s,
+            # Under a hold, age keeps growing so capture = time - age stays exact.
+            applied, output.force_n, output.reason, output.measurement_age_s + (now - last_update_s),
             navigation.planner.index, navigation.planner.waypoints[navigation.planner.index].copy(), flow,
             output.predicted_nominal_clearance_m, output.predicted_selected_clearance_m, output.prediction_adjusted,
             np.full(3, np.nan) if estimate is None else estimate.estimated_velocity,
@@ -315,7 +342,16 @@ def run_trial(config=TrialConfig()):
             "sedimentation_risk_fraction": float(risk.mean()),
             "first_sedimentation_risk_s": float(history["time_s"][risk][0]) if risk.any() else None,
         })
+    if config.gain_saturation_distance_m > 0:
+        physics["gain_n_per_m"] = float(gain_n_per_m)
+    if config.actuation_period_s > 0:
+        physics["actuation_period_s"] = float(config.actuation_period_s)
+    if config.occluded_branch:
+        physics["occluded_branch"] = config.occluded_branch
     if physics:
+        # Continuous companion to the binary target-success flag (0.4 mm tolerance).
+        physics["closest_target_approach_m"] = float(np.min(np.linalg.norm(
+            history["true_position_m"] - target, axis=1)))
         summary["physics"] = physics
     return {"config": asdict(config), "summary": summary, "history": history}
 

@@ -26,8 +26,8 @@ what changes at **real cerebral scale** (M1 artery, ~0.3 m/s mean flow):
 - Reducing proximal flow widens the feasible window far more than a stronger
   gradient does.
 
-**Step 2, now in progress**, moves the simulator itself to physiological
-scale. Real-scale physics is added as opt-in options. The toy defaults stay
+**Step 2 (complete)** moved the simulator itself to physiological scale.
+Real-scale physics is added as opt-in options. The toy defaults stay
 unchanged so experiments 01–20 remain exactly reproducible.
 
 | Stage | Content | Status |
@@ -37,7 +37,25 @@ unchanged so experiments 01–20 remain exactly reproducible.
 | 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | ✅ |
 | 2d | Pulsatile flow with release phase, Womersley number, optional fluid-acceleration force | ✅ |
 | 2e | Gravity on the plant, diagnostic sedimentation check, opt-in gravity compensation | ✅ |
-| 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 22 | planned |
+| 2f | `physiological` preset, occluded branch, zero-order-hold actuation, gain from force cap, closest-approach metric, sweep experiment 22 | ✅ |
+
+**Headline result** ([docs/15](docs/15_physiological_sweep.md), 864 trials):
+
+- **Pure NdFeB never reaches a frame.** A 100 µm pure NdFeB sphere settles to
+  the wall within 47 ms, before the first frame arrives: 0/432.
+- **Without flow reduction nothing succeeds.** At full M1 flow every trial ends
+  against the wall within ~44 ms.
+- **One combination works.** A light composite particle at 99% proximal flow
+  reduction, with a delay-limited gain and gravity hold, reaches a patent
+  target in 18/18 trials at 7.5–30 fps. The same combination fails every time
+  without the hold, or with the toy-equivalent gain, which overshoots on stale
+  estimates.
+- **An occluded target is never reached:** 0/432.
+
+In this controller, the feedback authority is limited by imaging delay, so
+flow reduction matters more than gradient strength.
+
+![Experiment 22, patent target](docs/figures/physiological_sweep_patent.png)
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
 wall **23 ms** after release. With 50 ms imaging latency, the first frame
@@ -258,7 +276,7 @@ and [docs/05](docs/05_safety_control.md).
 
 ## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical; 21 is the first real-scale script. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21–22 run at physiological scale. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -278,6 +296,7 @@ change that alters the legacy defaults fails the suite.
 | 18–19 | `18_terminal_guidance`, `19_…_figures` | Optional terminal target intercept | [13](docs/13_terminal_guidance.md) |
 | 20 | `20_feasibility` | Analytical real-scale gradient and size requirements | [14](docs/14_feasibility.md) |
 | 21 | `21_physiological_trial` | One real-scale trial (Step 2 options) with physics diagnostics | this README |
+| 22 | `22_physiological_sweep` | 864-trial sweep: flow reduction × fps × material × occlusion × policy | [15](docs/15_physiological_sweep.md) |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -320,7 +339,9 @@ bed. They are *not* physiological and *not* validated.
 | Target tolerance / wrong-branch exclusion | 0.4 mm / 2 mm |
 
 **Physiological options (Step 2).** Sources are listed in
-[docs/14](docs/14_feasibility.md#parameters-and-provenance).
+[docs/14](docs/14_feasibility.md#parameters-and-provenance). The full preset,
+with the provenance of every value, is `src/presets.py` and is tabulated in
+[docs/15](docs/15_physiological_sweep.md#preset-srcpresetspy).
 
 | Parameter | Value | Status |
 |---|---|---|
@@ -330,9 +351,13 @@ bed. They are *not* physiological and *not* validated.
 | NdFeB magnetization / density | 1.0×10⁶ A/m / 7500 kg/m³ | Textbook, **assumed** |
 | Blood viscosity / density | 3.5 mPa·s / 1060 kg/m³ | **Assumed** |
 | Max step / vessel radius | 0.02 | Numerical accuracy target, **assumed** |
+| Pulsation A (PI = 2A) | 0.45 | Midpoint of a reported normal MCA PI of 0.6–1.2; sinusoid **assumed** |
+| Frame rate / actuation update | 7.5–30 fps / 100 Hz | **Assumed** |
 
-The control gain is still the toy value and has not yet been rescaled for
-T/m-scale forces.
+The toy gain (2×10⁻⁶ N/m) is far too weak at T/m-scale caps. Step 2 offers two
+replacements. `gain_saturation_distance_m` keeps the toy saturation distance.
+A delay-limited gain, `0.5·γ/(latency + 1/fps)`, is set in experiment 22; the
+0.5 is **assumed**.
 
 ## Repository layout
 
@@ -343,6 +368,8 @@ src/
   flow.py               Piecewise / smooth / Poiseuille flow, OU disturbances
   vessel.py             Capsule Y geometry and clearance proxy
   feasibility.py        Analytical real-scale estimates, gradient → force cap
+  presets.py            Physiological preset with per-value provenance
+  physiological_sweep.py  Experiment 22 cells, parallel runner, aggregates, report
   imaging.py            Orthographic views, latency, dropout
   localization.py       Triangulation and six-state filter (plus legacy sensor)
   flow_estimation.py    Command-aware estimator
@@ -358,7 +385,7 @@ src/
   plotting.py           Toy diagnostics and physiological-scale diagnostics
   replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–21 (run with python -m)
+simulations/            Experiments 01–22 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```
@@ -376,8 +403,10 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Particle inertia and finite-Re drag (2c)
 - [x] Pulsatility and fluid-acceleration force (2d)
 - [x] Gravity, sedimentation diagnostic and opt-in gravity hold (2e)
-- [ ] Physiological preset, flow reduction, occluded branch, actuation update
-      rate, imaging-rate sweep (2f)
+- [x] Physiological preset, flow reduction, occluded branch, actuation update
+      rate, imaging-rate sweep (2f, experiment 22)
+- [ ] Delay-aware control (prediction/feedforward) at physiological scale
+- [ ] Open-loop gravity hold from release; strategies for occluded targets
 - [ ] Coil model A(x) with current allocation; gradient decay with depth
 - [ ] Mesh geometry, exact wall distance, swept collision checks
 - [ ] Perspective imaging, segmentation, outliers

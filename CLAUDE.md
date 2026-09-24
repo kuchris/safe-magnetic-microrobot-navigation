@@ -44,7 +44,21 @@ honestly, do not tune the controller to hide it.
       Open question for the user: open-loop hold from release (gravity direction known a priori).
 - [x] Viz A: `plot_physics_trial` + `simulations/21_physiological_trial.py` (single trial).
       At 99% flow reduction frames arrive but peak force is ~0.06% of cap: gain needs rescaling.
-- [ ] 2f `physiological` preset, flow-reduction factor, `occluded_branch` option,
-      imaging sweep 7.5–30 fps (assumed), sweep experiment = 22 (21 is the single-trial viz), docs/15
-- Later: viz B (slowed GIF), viz C (interactive page from the 2f sweep data)
+- [x] 2f `src/presets.py` (`physiological_config`, per-value provenance; PI 0.6–1.2 from a search
+      summary of Sci Rep 2020, full text unverified), `occluded_branch` (poiseuille only),
+      `actuation_period_s` (ZOH), `gain_saturation_distance_m`, `closest_target_approach_m`.
+      Experiment 22 = `src/physiological_sweep.py` + `simulations/22_*` (864 trials, ~75 s on 8 cores),
+      archived in docs/results/physiological_sweep, write-up docs/15.
+      Deviation: flow reduction lives in the physiological sweep, not the toy benchmark (toy
+      scenario timings are seconds; real transits are tens of ms).
+      Findings: pure NdFeB 0/432 (sediments before first frame); no success at 0% reduction;
+      composite + 99% + delay-limited gain (0.5·γ/τ_d, assumed) + gravity hold 18/18 patent;
+      toy-equivalent gain overshoots (delay·cap/γ = 5–11 R); occluded target 0/432.
+- Later: viz B (slowed GIF), viz C (interactive page from the sweep data)
 One commit per stage; full suite green at each.
+
+## Open questions for the user (Step 3 candidates)
+- Delay-aware control at physiological scale (existing prediction module, feedforward, MPC).
+- Open-loop gravity hold from release (gravity direction known a priori) for pure NdFeB.
+- Any strategy for occluded targets (currently 0/432); needs better flow model at the stump.
+- Note: `poiseuille_flow` was vectorized in 2f (profile values unchanged up to round-off).
