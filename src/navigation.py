@@ -7,13 +7,13 @@ this module. Geometry and robot radius are configured model information.
 from dataclasses import dataclass
 import numpy as np
 
-from src.controller import bounded_target_force
+from src.controller import bounded_target_force, limit_force
 from src.flow_estimation import CommandAwareEstimator
 from src.localization import BiplaneTriangulator, DelayedStateEstimator
 from src.planner import YWaypointPlanner
 from src.prediction import ShortHorizonCorrection
 from src.safety import SafetySupervisor
-from src.validation import nonnegative
+from src.validation import nonnegative, vector
 
 
 @dataclass(frozen=True)
@@ -32,6 +32,8 @@ class ControlOutput:
     terminal_adjusted: bool = False
     baseline_target_miss_m: float = np.nan
     selected_target_miss_m: float = np.nan
+    sedimentation_margin_m: float = np.nan
+    sedimentation_risk: bool = False
 
 
 class BiplaneNavigation:
@@ -42,7 +44,9 @@ class BiplaneNavigation:
                  safety_margin_m=0.20e-3, acceleration_spectral_density=1e-7,
                  control_mode="gated", approach_offset_m=0.0,
                  prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3,
-                 estimator_mode="kinematic", terminal_guidance_distance_m=0.0):
+                 estimator_mode="kinematic", terminal_guidance_distance_m=0.0,
+                 settling_velocity_m_s=None, sedimentation_horizon_s=0.0,
+                 gravity_compensation_n=None):
         if control_mode not in ("passive", "ungated", "gated"):
             raise ValueError("control_mode must be passive, ungated, or gated")
         self.control_mode = control_mode
@@ -72,6 +76,14 @@ class BiplaneNavigation:
             prediction_horizon_s, model_drag,
             max_force_n, safety_margin_m, self.supervisor.k_sigma,
             acceleration_spectral_density, terminal_guidance_distance_m) if prediction_horizon_s > 0 else None
+        # Model information, not truth: the settling velocity is the Stokes estimate
+        # from configured densities and gravity; compensation cancels the net weight.
+        self.settling_velocity = None if settling_velocity_m_s is None else vector(settling_velocity_m_s)
+        if self.settling_velocity is not None:
+            nonnegative(sedimentation_horizon_s, "sedimentation_horizon_s", positive=True)
+        self.sedimentation_horizon_s = sedimentation_horizon_s
+        self.model_drag = model_drag
+        self.gravity_compensation = None if gravity_compensation_n is None else vector(gravity_compensation_n)
         self.previous_force_n = np.zeros(3)
         self.tracking_valid = False
         self.last_frame_s = -np.inf
@@ -133,6 +145,23 @@ class BiplaneNavigation:
                 if prediction.adjusted:
                     reason = "prediction_adjustment"
         self.previous_force_n = self.supervisor.filter_force(force, allowed)
+        if (self.gravity_compensation is not None and self.control_mode != "passive"
+                and self.tracking_valid):
+            # Opt-in: hold against the net weight while tracking is valid, including
+            # when the gate stops steering. The cap still applies to the sum.
+            self.previous_force_n = limit_force(self.previous_force_n + self.gravity_compensation,
+                                                self.max_force_n)
+            if not allowed:
+                reason = "gravity_hold"
+        sedimentation_margin, sedimentation_risk = np.nan, False
+        if self.settling_velocity is not None and not allowed:
+            # Diagnostic only: where settling plus the held command would take the
+            # estimate within the horizon. Flow drift is left to the prediction module.
+            drift = self.settling_velocity + self.previous_force_n / self.model_drag
+            predicted = estimate.estimated_position + self.sedimentation_horizon_s * drift
+            sedimentation_margin = (self.vessel.clearance(predicted, self.particle_radius_m)
+                                    - self.supervisor.k_sigma * estimate.position_uncertainty)
+            sedimentation_risk = bool(sedimentation_margin <= 0)
         if isinstance(self.estimator, CommandAwareEstimator):
             self.estimator.command(now_s, self.previous_force_n)
         return ControlOutput(self.previous_force_n.copy(), estimate,
@@ -143,4 +172,5 @@ class BiplaneNavigation:
                              prediction is not None and prediction.terminal_active,
                              prediction is not None and prediction.terminal_adjusted,
                              np.nan if prediction is None else prediction.baseline_target_miss_m,
-                             np.nan if prediction is None else prediction.selected_target_miss_m)
+                             np.nan if prediction is None else prediction.selected_target_miss_m,
+                             sedimentation_margin, sedimentation_risk)

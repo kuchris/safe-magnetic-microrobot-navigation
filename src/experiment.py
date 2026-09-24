@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from src.controller import limit_force
-from src.feasibility import Material, magnetic_force_cap, schiller_naumann_factor
+from src.feasibility import Material, magnetic_force_cap, schiller_naumann_factor, volume
 from src.flow import (FlowDisturbance, material_acceleration, prescribed_flow, pulsatile_speed,
                       womersley_number)
 from src.imaging import BiplaneImager
@@ -70,6 +70,17 @@ class TrialConfig:
     # Inertial particles only: add the (3/2) m_f Du/Dt fluid-acceleration force,
     # from the deterministic field (the random disturbance is not differentiated).
     fluid_acceleration_force: bool = False
+    # Gravity on the plant: net weight (rho_p - rho_f) V g along gravity_direction.
+    # 0 disables it; 9.81 m/s^2 is standard gravity. The direction in the vessel
+    # frame depends on patient orientation (assumed).
+    gravity_m_s2: float = 0.0
+    gravity_direction: tuple = (0.0, 0.0, -1.0)
+    # Diagnostic only: flag stops where Stokes settling would reach the wall within
+    # the horizon. 0.1 s = one 20 Hz frame period + 50 ms latency (assumed).
+    sedimentation_check: bool = False
+    sedimentation_horizon_s: float = 0.1
+    # Opt-in: command -W (within the cap) while tracking is valid, even when stopped.
+    gravity_compensation: bool = False
 
 
 def particle_material(config):
@@ -102,6 +113,13 @@ def run_trial(config=TrialConfig()):
         raise ValueError("flow_pulsatility must be in [0, 1]; flow reversal is not modeled")
     if config.fluid_acceleration_force and not config.particle_inertia:
         raise ValueError("fluid_acceleration_force requires particle_inertia")
+    nonnegative(config.gravity_m_s2, "gravity_m_s2")
+    nonnegative(config.sedimentation_horizon_s, "sedimentation_horizon_s", positive=True)
+    gravity_axis = vector(config.gravity_direction)
+    if np.linalg.norm(gravity_axis) == 0:
+        raise ValueError("gravity_direction must be nonzero")
+    if (config.sedimentation_check or config.gravity_compensation) and config.gravity_m_s2 == 0:
+        raise ValueError("sedimentation_check and gravity_compensation require gravity_m_s2 > 0")
     if config.flow_model not in ("piecewise", "smooth", "poiseuille"):
         raise ValueError("flow model must be piecewise, smooth or poiseuille")
     if not np.isfinite(config.actuation_gain_error) or config.actuation_gain_error < -1:
@@ -133,14 +151,19 @@ def run_trial(config=TrialConfig()):
     if particle.radius_m >= min(s.radius_m for s in vessel.segments):
         raise ValueError("particle_radius_m must be smaller than the vessel radius")
     vessel_radius = min(s.radius_m for s in vessel.segments)
+    weight = ((config.particle_density_kg_m3 - config.fluid_density_kg_m3) * volume(particle.radius_m)
+              * config.gravity_m_s2 * gravity_axis / np.linalg.norm(gravity_axis))
+    settling_velocity = weight / particle.drag_coefficient  # Stokes estimate given to the controller
     dt_s = config.dt_s
     if config.flow_model == "poiseuille":
-        # Bound |v| by centerline flow, capped drift and a 3-sigma disturbance norm.
+        # Bound |v| by centerline flow, capped drift, a 3-sigma disturbance norm and settling.
         # White disturbance (correlation 0) is redrawn per tick, so its effect
         # shrinks with dt; use flow_correlation_s > 0 for a dt-consistent process.
         speed_bound = (2 * config.flow_speed_m_s * (1 + config.flow_pulsatility)
                        + max_force_n / particle.drag_coefficient
                        + 3 * np.sqrt(3) * config.flow_disturbance_m_s)
+        if config.gravity_m_s2 > 0:
+            speed_bound += np.linalg.norm(settling_velocity)
         if speed_bound > 0:
             dt_s = min(dt_s, config.max_step_radius_fraction * vessel_radius / speed_bound)
     bias = calibration_rng.normal(0, config.calibration_sigma_px, (2, 2))
@@ -155,7 +178,10 @@ def run_trial(config=TrialConfig()):
         max_sigma_m=config.max_sigma_m, safety_margin_m=config.safety_margin_m,
         control_mode=config.control_mode, approach_offset_m=config.approach_offset_m,
         prediction_horizon_s=config.prediction_horizon_s, estimator_mode=config.estimator_mode,
-        terminal_guidance_distance_m=config.terminal_guidance_distance_m)
+        terminal_guidance_distance_m=config.terminal_guidance_distance_m,
+        settling_velocity_m_s=settling_velocity if config.sedimentation_check else None,
+        sedimentation_horizon_s=config.sedimentation_horizon_s,
+        gravity_compensation_n=-weight if config.gravity_compensation else None)
     target = vessel.upper_target if config.branch == "upper" else vessel.lower_target
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",
@@ -166,6 +192,7 @@ def run_trial(config=TrialConfig()):
         "baseline_target_miss_m", "selected_target_miss_m")}
     reached = collided = wrong = False
     particle_velocities = []
+    sedimentation = {"sedimentation_margin_m": [], "sedimentation_risk": []}
     peak_fluid_acceleration = 0.0
     ticks = int(np.ceil(config.duration_s / dt_s))
     for tick in range(ticks + 1):
@@ -204,15 +231,21 @@ def run_trial(config=TrialConfig()):
             history[key].append(value)
         if config.particle_inertia:
             particle_velocities.append(particle.velocity_m_s.copy())
+        if config.sedimentation_check:
+            sedimentation["sedimentation_margin_m"].append(output.sedimentation_margin_m)
+            sedimentation["sedimentation_risk"].append(output.sedimentation_risk)
         if finished:
             break
+        plant_force = applied + weight if config.gravity_m_s2 > 0 else applied
         if config.fluid_acceleration_force:
-            particle.step(min(dt_s, config.duration_s - now), flow, applied, fluid_acceleration)
+            particle.step(min(dt_s, config.duration_s - now), flow, plant_force, fluid_acceleration)
         else:
-            particle.step(min(dt_s, config.duration_s - now), flow, applied)
+            particle.step(min(dt_s, config.duration_s - now), flow, plant_force)
     history = {k: np.asarray(v) for k, v in history.items()}
     if config.particle_inertia:
         history["particle_velocity_m_s"] = np.asarray(particle_velocities)
+    if config.sedimentation_check:
+        history.update({k: np.asarray(v) for k, v in sedimentation.items()})
     valid = np.all(np.isfinite(history["estimated_position_m"]), axis=1)
     errors = history["true_position_m"][valid] - history["estimated_position_m"][valid]
     reasons = Counter(history["reason"].tolist())
@@ -268,6 +301,20 @@ def run_trial(config=TrialConfig()):
             vessel_radius, config.cardiac_period_s, particle.viscosity_pa_s, config.fluid_density_kg_m3))
     if config.fluid_acceleration_force:
         physics["maximum_fluid_acceleration_m_s2"] = peak_fluid_acceleration
+    if config.gravity_m_s2 > 0:
+        net_weight = float(np.linalg.norm(weight))
+        physics.update({
+            "net_weight_n": net_weight,
+            "stokes_settling_speed_m_s": net_weight / particle.drag_coefficient,
+            "gravity_hold_gradient_t_m": net_weight / magnetic_force_cap(particle.radius_m, 1.0, material),
+            "can_hold_against_gravity": bool(max_force_n >= net_weight),
+        })
+    if config.sedimentation_check:
+        risk = history["sedimentation_risk"]
+        physics.update({
+            "sedimentation_risk_fraction": float(risk.mean()),
+            "first_sedimentation_risk_s": float(history["time_s"][risk][0]) if risk.any() else None,
+        })
     if physics:
         summary["physics"] = physics
     return {"config": asdict(config), "summary": summary, "history": history}

@@ -36,7 +36,7 @@ unchanged so experiments 01–20 remain exactly reproducible.
 | 2b | Poiseuille velocity profile; timestep shrinks automatically with speed | ✅ |
 | 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | ✅ |
 | 2d | Pulsatile flow with release phase, Womersley number, optional fluid-acceleration force | ✅ |
-| 2e | Gravity and a sedimentation check in the safety gate | planned |
+| 2e | Gravity on the plant, diagnostic sedimentation check, opt-in gravity compensation | ✅ |
 | 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 22 | planned |
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
@@ -77,6 +77,19 @@ Pulsation and fluid acceleration (2d), for the same release:
   reached". Release phase does not decide steering outcomes here.
 - **The junction dominates fluid acceleration.** Turning the stream at the
   junction gives about 90 m/s², against about 1–2 m/s² from pulsation itself.
+
+Gravity (2e), at 99% flow reduction (0.003 m/s):
+- **Pure NdFeB (r = 100 µm) sinks at ~40 mm/s** and reaches the wall at 47 ms,
+  before the first frame at 50 ms. Gravity compensation needs valid tracking,
+  so it never engages. A 1 T/m cap could hold this particle (hold gradient
+  0.063 T/m), but the imaging loop never gets the chance.
+- **A light composite** (14% NdFeB by volume, 2000 kg/m³, both assumed) sinks
+  slowly enough for frames to arrive.
+  - Without compensation, the gate stops steering at 200 ms (`wall_margin_low`),
+    the diagnostic flags sedimentation risk at the same time, and the particle
+    still reaches the wall at 260 ms. Zero force is not a hold.
+  - With compensation, there is no wall contact in 3 s. The target is still not
+    reached, because the control gain has not been rescaled.
 
 ## Quick start
 
@@ -201,6 +214,21 @@ None of these is a hemodynamics solver: there is no flux conservation at the
 split, no secondary flow and no Faxén correction. In `poiseuille` mode the
 timestep shrinks so that one step moves at most `max_step_radius_fraction`
 (0.02, assumed) of the vessel radius. The realized value is reported.
+
+**Gravity** (`gravity_m_s2`, `gravity_direction`). The net weight
+`(ρ_p − ρ_f)·V·g` acts on the plant along a configured direction in the vessel
+frame; that direction depends on patient orientation and is assumed. Two
+options build on it:
+- `sedimentation_check` is diagnostic only. Whenever steering is stopped, it
+  flags the samples where Stokes settling plus the held command would bring the
+  estimate to the wall within `sedimentation_horizon_s` (0.1 s, assumed), after
+  a k_σ·σ margin. Actions are unchanged.
+- `gravity_compensation` is opt-in. It commands −W, within the force cap,
+  whenever tracking is valid, including when the gate stops steering. The
+  logged reason is then `gravity_hold`.
+
+The summary reports the net weight, the Stokes settling speed, the gradient
+needed to hold against gravity, and whether the cap can hold.
 
 **Geometry.** The vessel is a union of three capsules. The clearance proxy is
 `max_e(R_e − r − distance_e)`: exact for one capsule, conservative where
@@ -347,7 +375,7 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Poiseuille profile with speed-bounded timestep (2b)
 - [x] Particle inertia and finite-Re drag (2c)
 - [x] Pulsatility and fluid-acceleration force (2d)
-- [ ] Gravity and sedimentation-aware safety gate (2e)
+- [x] Gravity, sedimentation diagnostic and opt-in gravity hold (2e)
 - [ ] Physiological preset, flow reduction, occluded branch, actuation update
       rate, imaging-rate sweep (2f)
 - [ ] Coil model A(x) with current allocation; gradient decay with depth

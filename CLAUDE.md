@@ -36,7 +36,12 @@ honestly, do not tune the controller to hide it.
       Finding: transit ~40 ms ≈ 4% of a cycle; success vs outlet-cap collision flipped on 9 µm
       around the 0.4 mm tolerance → 2f should report closest approach as a continuous metric.
       Toy replay helpers (failure_analysis, flow_sensitivity) ignore pulsation.
-- [ ] 2e Gravity + sedimentation gate: diagnostic by default, opt-in gravity compensation
+- [x] 2e Gravity (`gravity_m_s2`, `gravity_direction`), `sedimentation_check` (diagnostic,
+      horizon 0.1 s assumed), `gravity_compensation` (−W within cap, only while tracking valid).
+      Finding: pure NdFeB at 99% flow reduction hits the wall at 47 ms, before the first frame,
+      so tracking-gated compensation never engages. Composite (2000 kg/m³, 14% NdFeB, assumed):
+      unheld → wall at 260 ms after a gate stop; held → no contact in 3 s.
+      Open question for the user: open-loop hold from release (gravity direction known a priori).
 - [x] Viz A: `plot_physics_trial` + `simulations/21_physiological_trial.py` (single trial).
       At 99% flow reduction frames arrive but peak force is ~0.06% of cap: gain needs rescaling.
 - [ ] 2f `physiological` preset, flow-reduction factor, `occluded_branch` option,

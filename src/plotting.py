@@ -186,6 +186,10 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
             ax.plot(t_ms, h[key] * 1e3, label=label)
     ax.axhline(c["safety_margin_m"] * 1e3, color="tab:red", linestyle="--", label="Margin")
     ax.axhline(0, color="black", linewidth=0.7)
+    if "sedimentation_risk" in h and h["sedimentation_risk"].any():
+        risk = h["sedimentation_risk"]
+        ax.scatter(t_ms[risk], h["true_clearance_m"][risk] * 1e3, s=10, color="tab:purple", zorder=3,
+                   label="Sedimentation risk (diagnostic)")
     ax.set(xlabel="Time [ms]", ylabel="Clearance [mm]", title="Wall clearance")
     ax.legend(fontsize=8)
 
@@ -219,6 +223,10 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
     if c.get("flow_pulsatility", 0.0) > 0:
         details.append(f"pulsatile A = {c['flow_pulsatility']:g}, T = {c['cardiac_period_s']:g} s, "
                        f"phase {c.get('cardiac_phase', 0.0):g}, α = {physics['womersley_number']:.2g}")
+    if "net_weight_n" in physics:
+        details.append(f"gravity: |W| = {physics['net_weight_n'] * scale:.3g} {unit} "
+                       f"({100 * physics['net_weight_n'] / cap:.2g}% of cap)"
+                       + (", compensated" if c.get("gravity_compensation") else ""))
     if "stokes_number" in physics:
         details.append(f"inertial: St = {physics['stokes_number']:.2g}, "
                        f"max Re_slip = {physics['maximum_slip_reynolds']:.2g}"
