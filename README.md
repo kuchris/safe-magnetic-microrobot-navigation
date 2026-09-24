@@ -34,7 +34,7 @@ unchanged so experiments 01–20 remain exactly reproducible.
 |---|---|---|
 | 2a | Force cap in T/m from gradient × magnetization × volume; configurable radius and material | ✅ |
 | 2b | Poiseuille velocity profile; timestep shrinks automatically with speed | ✅ |
-| 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | planned |
+| 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | ✅ |
 | 2d | Pulsatile flow, Womersley number reported | planned |
 | 2e | Gravity and a sedimentation check in the safety gate | planned |
 | 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 22 | planned |
@@ -47,6 +47,7 @@ honestly, not tune it away.
 ```bash
 python -m simulations.21_physiological_trial                             # 0.3 m/s: collision at 23 ms
 python -m simulations.21_physiological_trial --speed 0.003 --duration 3  # 99% flow reduction
+python -m simulations.21_physiological_trial --start-mm 0.5 0.6 0.3 --inertia  # off-axis, inertial
 ```
 
 ![Physiological-scale trial diagnostics](docs/figures/physiological_trial.png)
@@ -56,6 +57,14 @@ distance travelled, the velocity profile, wall clearance, and force in physical
 units with the equivalent gradient. With 99% flow reduction every frame arrives
 in time, but the peak force is only ~0.06% of the 4.2 µN cap: the control gain
 is still the toy value and has not been rescaled yet.
+
+Inertia matters at this scale (2c). For a 100 µm particle released 0.67 mm off
+axis at 0.3 m/s, St = 0.15 and the slip Reynolds number peaks near 10. At the
+bend, the inertial particle cuts across the streamlines, running 0.2–0.5 mm
+closer to the branch centerline than the overdamped one. In this run the
+inertial particle passes within the 0.4 mm target tolerance and the overdamped
+one hits the closed outlet cap. **Neither run applies any force**, since no
+frame arrives before 50 ms, so this is passive transport, not steering.
 
 ## Quick start
 
@@ -128,14 +137,29 @@ For a magnetic dipole, `τ = m × B` and `F = ∇(m·B)`. The implemented dynami
 use an ideal force vector with a magnitude cap. There is no coil or torque
 model yet.
 
-**Particle (current).** Overdamped Stokes sphere:
+**Particle, overdamped (default).** Stokes sphere:
 
 $$
 \gamma = 6\pi\eta r,\qquad v = u + F/\gamma,\qquad p_{k+1} = p_k + \Delta t\,v_k .
 $$
 
 This is valid only for small Stokes and particle Reynolds numbers. At real
-scale that holds only below r ≈ 80 µm, so stage 2c adds inertia.
+scale that holds only below r ≈ 80 µm.
+
+**Particle, inertial (`particle_inertia=True`).** Reduced Maxey–Riley with
+added mass and Schiller–Naumann drag:
+
+$$
+(m_p + \tfrac{1}{2}m_f)\,\dot v = F + \gamma\,f(Re)\,(u - v),\qquad f = 1 + 0.15\,Re^{0.687}.
+$$
+
+Each step holds u, F and f fixed and integrates exactly, so it is stable for
+any dt and reduces to the overdamped model as the relaxation time goes to
+zero. The particle is released at the local flow velocity (assumed). The model
+omits the fluid-acceleration term (zero in straight Poiseuille flow, nonzero at
+the junction), the Basset history force and shear lift. Densities: NdFeB
+7500 kg/m³ and blood 1060 kg/m³, both assumed. The summary reports τ, the
+Stokes number τU/L and the peak slip Reynolds number.
 
 **Force cap.** Two modes are available:
 - `max_force_n` (toy default, 3 nN).
@@ -299,7 +323,7 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Analytical physiological-scale feasibility map
 - [x] Gradient cap in T/m with material parameters (2a)
 - [x] Poiseuille profile with speed-bounded timestep (2b)
-- [ ] Particle inertia and finite-Re drag (2c)
+- [x] Particle inertia and finite-Re drag (2c)
 - [ ] Pulsatility (2d)
 - [ ] Gravity and sedimentation-aware safety gate (2e)
 - [ ] Physiological preset, flow reduction, occluded branch, actuation update

@@ -150,6 +150,8 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
         note = "no frame reached the controller"
     outcome = ("target reached" if s["target_success"] else "wall collision" if s["wall_collision"]
                else "wrong branch" if s["wrong_branch"] else "time limit")
+    if s["maximum_force_n"] == 0:
+        outcome += " (no actuation)"
     ax.axvline(frames["end_s"] * 1e3, color="tab:red", linewidth=2, label=f"End: {outcome}")
     right = max(frames["end_s"], frames["nominal_delivery_s"][0]) * 1e3 * 1.08
     ax.set(xlabel="Time [ms]", ylabel="Distance [mm]", xlim=(0, right),
@@ -210,6 +212,11 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
         details.append(f"dt = {physics['dt_s'] * 1e6:.1f} µs")
     if physics.get("maximum_step_radius_fraction") is not None:
         details.append(f"max step/R = {physics['maximum_step_radius_fraction']:.2g}")
+    if "stokes_number" in physics:
+        details.append(f"inertial: St = {physics['stokes_number']:.2g}, "
+                       f"max Re_slip = {physics['maximum_slip_reynolds']:.2g}")
+    else:
+        details.append("overdamped")
     fig.suptitle(f"Seed {c['seed']} | {c['branch']} target | {outcome} at {frames['end_s'] * 1e3:.1f} ms"
                  f" | simulation only, no clinical validation\n" + " · ".join(details), fontsize=11)
     fig.savefig(output_path, dpi=150)

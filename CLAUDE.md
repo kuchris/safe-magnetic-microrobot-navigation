@@ -27,8 +27,10 @@ honestly, do not tune the controller to hide it.
       (`max_step_radius_fraction=0.02`, assumed). Controller runs every physics tick, so the
       control rate rises as dt shrinks: add an actuation update period (ZOH) in 2f.
       First real-scale run: collides at 23 ms, before the first frame arrives (50 ms latency).
-- [ ] 2c Inertial particle (reduced Maxey–Riley, added mass, Schiller–Naumann, exponential
-      integrator; no Basset/lift); must reduce exactly to overdamped as τ→0
+- [x] 2c Inertial particle (`particle_inertia`, `particle_density_kg_m3`, `fluid_density_kg_m3`):
+      reduced Maxey–Riley, exact-per-step exponential integrator, released at local flow.
+      Omits fluid-acceleration term, Basset, lift. Off-axis 100 µm at 0.3 m/s: St 0.15,
+      Re_slip ~10, cross-stream shift 0.2–0.5 mm vs overdamped (both passive).
 - [ ] 2d Quasi-steady pulsatility; report Womersley α (~2.1–2.3 at M1)
 - [ ] 2e Gravity + sedimentation gate: diagnostic by default, opt-in gravity compensation
 - [x] Viz A: `plot_physics_trial` + `simulations/21_physiological_trial.py` (single trial).

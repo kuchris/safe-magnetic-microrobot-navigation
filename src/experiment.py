@@ -7,11 +7,11 @@ from pathlib import Path
 import numpy as np
 
 from src.controller import limit_force
-from src.feasibility import Material, magnetic_force_cap
+from src.feasibility import Material, magnetic_force_cap, schiller_naumann_factor
 from src.flow import FlowDisturbance, prescribed_flow
 from src.imaging import BiplaneImager
 from src.navigation import BiplaneNavigation
-from src.particle import Particle
+from src.particle import InertialParticle, Particle
 from src.planner import wrong_branch
 from src.validation import nonnegative, vector
 from src.vessel import YVessel
@@ -56,10 +56,16 @@ class TrialConfig:
     # Poiseuille only: shrink dt so one step moves at most this fraction of the
     # vessel radius. 0.02 is a chosen accuracy target (assumed), not a sourced value.
     max_step_radius_fraction: float = 0.02
+    # Particle inertia (reduced Maxey-Riley, see InertialParticle). Off keeps
+    # the overdamped model. The particle is released at the local flow velocity.
+    particle_inertia: bool = False
+    particle_density_kg_m3: float = 7500.0  # sintered NdFeB (textbook, assumed)
+    fluid_density_kg_m3: float = 1060.0     # whole blood (assumed)
 
 
 def particle_material(config):
     return Material(name="configured", magnetization_a_m=config.magnetization_a_m,
+                    density_kg_m3=config.particle_density_kg_m3,
                     magnetic_volume_fraction=config.magnetic_volume_fraction)
 
 
@@ -78,7 +84,7 @@ def run_trial(config=TrialConfig()):
                  "gain_n_per_m", "max_force_n", "flow_correlation_s", "max_gradient_t_m"):
         nonnegative(getattr(config, name), name)
     for name in ("flow_transition_length_m", "flow_branch_width_m", "particle_radius_m",
-                 "max_step_radius_fraction"):
+                 "max_step_radius_fraction", "particle_density_kg_m3", "fluid_density_kg_m3"):
         nonnegative(getattr(config, name), name, positive=True)
     if config.flow_model not in ("piecewise", "smooth", "poiseuille"):
         raise ValueError("flow model must be piecewise, smooth or poiseuille")
@@ -95,7 +101,14 @@ def run_trial(config=TrialConfig()):
     flow_rng = np.random.default_rng(flow_seed)
     disturbance = FlowDisturbance(config.flow_disturbance_m_s, config.flow_correlation_s, flow_rng)
     vessel = YVessel()
-    particle = Particle(config.particle_radius_m, 3.5e-3, vector(config.start_m))
+    if config.particle_inertia:
+        # Deterministic release velocity; no disturbance draw, so RNG streams are unchanged.
+        release = prescribed_flow(vector(config.start_m), config.flow_speed_m_s, config.flow_model,
+                                  config.flow_transition_length_m, config.flow_branch_width_m)
+        particle = InertialParticle(config.particle_radius_m, 3.5e-3, config.particle_density_kg_m3,
+                                    config.fluid_density_kg_m3, vector(config.start_m), release)
+    else:
+        particle = Particle(config.particle_radius_m, 3.5e-3, vector(config.start_m))
     if particle.radius_m >= min(s.radius_m for s in vessel.segments):
         raise ValueError("particle_radius_m must be smaller than the vessel radius")
     vessel_radius = min(s.radius_m for s in vessel.segments)
@@ -130,6 +143,7 @@ def run_trial(config=TrialConfig()):
         "estimated_velocity_m_s", "terminal_active", "terminal_adjusted",
         "baseline_target_miss_m", "selected_target_miss_m")}
     reached = collided = wrong = False
+    particle_velocities = []
     ticks = int(np.ceil(config.duration_s / dt_s))
     for tick in range(ticks + 1):
         now = min(tick * dt_s, config.duration_s)
@@ -163,10 +177,14 @@ def run_trial(config=TrialConfig()):
             output.baseline_target_miss_m, output.selected_target_miss_m)
         for key, value in zip(history, values):
             history[key].append(value)
+        if config.particle_inertia:
+            particle_velocities.append(particle.velocity_m_s.copy())
         if finished:
             break
         particle.step(min(dt_s, config.duration_s - now), flow, applied)
     history = {k: np.asarray(v) for k, v in history.items()}
+    if config.particle_inertia:
+        history["particle_velocity_m_s"] = np.asarray(particle_velocities)
     valid = np.all(np.isfinite(history["estimated_position_m"]), axis=1)
     errors = history["true_position_m"][valid] - history["estimated_position_m"][valid]
     reasons = Counter(history["reason"].tolist())
@@ -199,12 +217,23 @@ def run_trial(config=TrialConfig()):
             "maximum_gradient_t_m": summary["maximum_force_n"] / force_per_gradient,
         })
     if config.flow_model == "poiseuille":
-        speeds = np.linalg.norm(history["flow_velocity_m_s"][:-1]
-                                + history["force_n"][:-1] / particle.drag_coefficient, axis=1)
-        steps = speeds * np.diff(history["time_s"])
+        steps = np.linalg.norm(np.diff(history["true_position_m"], axis=0), axis=1)
         physics.update({
             "dt_s": float(dt_s),
             "maximum_step_radius_fraction": float(steps.max() / vessel_radius) if len(steps) else None,
+        })
+    if config.particle_inertia:
+        slip = np.linalg.norm(history["particle_velocity_m_s"][:-1] - history["flow_velocity_m_s"][:-1], axis=1)
+        reynolds = config.fluid_density_kg_m3 * 2 * particle.radius_m * slip / particle.viscosity_pa_s
+        parent = vessel.segments[0]
+        # St = tau U / L as in docs/14, with L the parent-segment length.
+        physics.update({
+            "relaxation_time_s": particle.relaxation_time_s,
+            "stokes_number": particle.relaxation_time_s * config.flow_speed_m_s
+                             / float(np.linalg.norm(parent.end_m - parent.start_m)),
+            "maximum_slip_m_s": float(slip.max()) if len(slip) else None,
+            "maximum_slip_reynolds": float(reynolds.max()) if len(slip) else None,
+            "maximum_drag_factor": schiller_naumann_factor(reynolds.max()) if len(slip) else None,
         })
     if physics:
         summary["physics"] = physics

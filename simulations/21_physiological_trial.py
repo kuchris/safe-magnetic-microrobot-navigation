@@ -24,6 +24,8 @@ def main():
     parser.add_argument("--latency", type=float, default=0.05, help="imaging latency [s]")
     parser.add_argument("--duration", type=float, default=0.2, help="time limit [s]")
     parser.add_argument("--branch", choices=["upper", "lower"], default="upper")
+    parser.add_argument("--inertia", action="store_true", help="reduced Maxey-Riley particle (stage 2c)")
+    parser.add_argument("--start-mm", type=float, nargs=3, default=(0.5, 0.0, 0.0), help="release point [mm]")
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--output", default="outputs/21_physiological_trial")
     args = parser.parse_args()
@@ -31,7 +33,8 @@ def main():
         seed=args.seed, branch=args.branch, duration_s=args.duration,
         flow_model="poiseuille", flow_speed_m_s=args.speed,
         particle_radius_m=args.radius_um * 1e-6, max_gradient_t_m=args.gradient,
-        frame_rate_hz=args.frame_rate, latency_s=args.latency))
+        frame_rate_hz=args.frame_rate, latency_s=args.latency, particle_inertia=args.inertia,
+        start_m=tuple(v * 1e-3 for v in args.start_mm)))
     path = Path(args.output)
     path.mkdir(parents=True, exist_ok=True)
     (path / "summary.json").write_text(json.dumps(
