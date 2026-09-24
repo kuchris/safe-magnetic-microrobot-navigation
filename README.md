@@ -37,12 +37,25 @@ unchanged so experiments 01–20 remain exactly reproducible.
 | 2c | Particle inertia (reduced Maxey–Riley, added mass, finite-Re drag) | planned |
 | 2d | Pulsatile flow, Womersley number reported | planned |
 | 2e | Gravity and a sedimentation check in the safety gate | planned |
-| 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 21 | planned |
+| 2f | `physiological` preset, flow-reduction factor, occluded branch, imaging-rate sweep, experiment 22 | planned |
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
 wall **23 ms** after release. With 50 ms imaging latency, the first frame
 never arrives. The simulator is meant to show that kind of closed-loop failure
 honestly, not tune it away.
+
+```bash
+python -m simulations.21_physiological_trial                             # 0.3 m/s: collision at 23 ms
+python -m simulations.21_physiological_trial --speed 0.003 --duration 3  # 99% flow reduction
+```
+
+![Physiological-scale trial diagnostics](docs/figures/physiological_trial.png)
+
+The figure shows the flow map with the path, the imaging timeline against
+distance travelled, the velocity profile, wall clearance, and force in physical
+units with the equivalent gradient. With 99% flow reduction every frame arrives
+in time, but the peak force is only ~0.06% of the 4.2 µN cap: the control gain
+is still the toy value and has not been rescaled yet.
 
 ## Quick start
 
@@ -169,9 +182,9 @@ Logged reasons: `tracking_lost`, `localization_uncertain`, `wall_margin_low`,
 [docs/03](docs/03_biplane_localization.md), [docs/04](docs/04_state_estimation.md)
 and [docs/05](docs/05_safety_control.md).
 
-## Experiments 01–20 (toy plant)
+## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21 is the first real-scale script. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -190,6 +203,7 @@ change that alters the legacy defaults fails the suite.
 | 15–17 | `15_estimation_audit` … `17_…_figures` | Command-aware estimator and forecast audit | [12](docs/12_flow_estimation.md) |
 | 18–19 | `18_terminal_guidance`, `19_…_figures` | Optional terminal target intercept | [13](docs/13_terminal_guidance.md) |
 | 20 | `20_feasibility` | Analytical real-scale gradient and size requirements | [14](docs/14_feasibility.md) |
+| 21 | `21_physiological_trial` | One real-scale trial (Step 2 options) with physics diagnostics | this README |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -267,9 +281,10 @@ src/
   flow_sensitivity.py   Sensitivity summaries and flow-holding diagnostics
   failure_analysis.py   Replay events and terminal wall features
   prediction_audit.py   Offline forecast-error audit
-  plotting.py, replay_plotting.py   Figures and animation
+  plotting.py           Toy diagnostics and physiological-scale diagnostics
+  replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–20 (run with python -m)
+simulations/            Experiments 01–21 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```

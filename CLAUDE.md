@@ -31,6 +31,9 @@ honestly, do not tune the controller to hide it.
       integrator; no Basset/lift); must reduce exactly to overdamped as τ→0
 - [ ] 2d Quasi-steady pulsatility; report Womersley α (~2.1–2.3 at M1)
 - [ ] 2e Gravity + sedimentation gate: diagnostic by default, opt-in gravity compensation
+- [x] Viz A: `plot_physics_trial` + `simulations/21_physiological_trial.py` (single trial).
+      At 99% flow reduction frames arrive but peak force is ~0.06% of cap: gain needs rescaling.
 - [ ] 2f `physiological` preset, flow-reduction factor, `occluded_branch` option,
-      imaging sweep 7.5–30 fps (assumed), experiment 21, docs/15
+      imaging sweep 7.5–30 fps (assumed), sweep experiment = 22 (21 is the single-trial viz), docs/15
+- Later: viz B (slowed GIF), viz C (interactive page from the 2f sweep data)
 One commit per stage; full suite green at each.
