@@ -354,6 +354,22 @@ new wall violations or reductions in per-trial minimum true clearance. The
 disabled by default pending broader validation.
 See [the method, held-out outcomes and known-regression replays](docs/13_terminal_guidance.md).
 
+### Physiological-scale feasibility (analytical)
+
+```bash
+python -m simulations.20_feasibility
+```
+
+Before adding realism, this estimates the gradient needed to steer a
+magnetized sphere across streamlines into an occluded branch at M1-like
+flow (~0.3 m/s mean), with sourced vessel and hardware parameters. The
+requirement scales as `6 eta U R / (M r^2 L)`. With a ~1 T/m clinical
+electromagnetic system the worst case needs a radius of about 80 µm, which
+is where the simulator's overdamped Stokes model stops being valid. Pure
+NdFeB cannot be held against gravity by clinical MRI imaging gradients.
+Hypothetical proximal flow reduction widens the window far more than a
+stronger gradient. See [the feasibility note](docs/14_feasibility.md).
+
 ## Repository structure
 
 ```text
@@ -377,6 +393,7 @@ src/
   replay_plotting.py    Paired diagnostics and trajectory animation
   plotting.py           Reproducible diagnostic figure
   validation.py         Numerical input validation
+  feasibility.py        Analytical physiological-scale steering estimates
 simulations/
   01_free_space.py
   02_y_vessel.py
@@ -397,6 +414,7 @@ simulations/
   17_estimation_figures.py
   18_terminal_guidance.py
   19_terminal_figures.py
+  20_feasibility.py
 docs/                    Physics, imaging, estimation, safety, verification
 tests/                   Deterministic physics, numerical and integration tests
 ```
@@ -425,6 +443,8 @@ tests/                   Deterministic physics, numerical and integration tests
 - [ ] Calibrated flow uncertainty and validated closed-loop benefit
 - [ ] Formal predictive safety constraints, MPC / Control Barrier Functions
 - [ ] Synthetic/public mesh import and improved fluid/near-wall physics
+- [x] Analytical physiological-scale feasibility map with sourced parameters
+- [ ] Gradient cap in T/m, Poiseuille/pulsatile profile, gravity and finite-Re drag
 
 No RL, coil-current solver, general vascular graph or mesh loader is claimed
 complete. Benchmark rates describe only the configured toy scenarios, not
