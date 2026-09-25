@@ -49,6 +49,11 @@ class CommandAwareEstimator:
                              reconstruction.position_m - self.displacement(captured_at_s))
         self.residual.observe(translated, captured_at_s, now_s)
 
+    def flow_estimate(self, now_s):
+        """Residual (uncommanded) velocity at now_s: flow plus any other drift such as settling."""
+        estimate = self.residual.estimate(now_s)
+        return None if estimate is None else estimate.estimated_velocity
+
     def estimate(self, now_s):
         estimate = self.residual.estimate(now_s)
         if estimate is None:

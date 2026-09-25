@@ -46,7 +46,7 @@ class BiplaneNavigation:
                  prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3,
                  estimator_mode="kinematic", terminal_guidance_distance_m=0.0,
                  settling_velocity_m_s=None, sedimentation_horizon_s=0.0,
-                 gravity_compensation_n=None):
+                 gravity_compensation_n=None, flow_feedforward=False):
         if control_mode not in ("passive", "ungated", "gated"):
             raise ValueError("control_mode must be passive, ungated, or gated")
         self.control_mode = control_mode
@@ -84,6 +84,9 @@ class BiplaneNavigation:
         self.sedimentation_horizon_s = sedimentation_horizon_s
         self.model_drag = model_drag
         self.gravity_compensation = None if gravity_compensation_n is None else vector(gravity_compensation_n)
+        if flow_feedforward and estimator_mode != "command_aware":
+            raise ValueError("flow feedforward requires the command_aware estimator")
+        self.flow_feedforward = flow_feedforward
         self.previous_force_n = np.zeros(3)
         self.tracking_valid = False
         self.last_frame_s = -np.inf
@@ -139,6 +142,14 @@ class BiplaneNavigation:
             force = bounded_target_force(estimate.estimated_position, target, self.gain, self.max_force_n)
             if limited:
                 reason = "actuation_limit"
+            if self.flow_feedforward:
+                # Cancel the estimated uncommanded drift. With a gravity hold the known
+                # weight is held separately, so remove it from the drift being cancelled.
+                drift = self.estimator.flow_estimate(now_s)
+                feedforward = -self.model_drag * drift
+                if self.gravity_compensation is not None:
+                    feedforward = feedforward - self.gravity_compensation
+                force = limit_force(force + feedforward, self.max_force_n)
             if self.predictor is not None:
                 prediction = self.predictor.select(estimate, force, self.previous_force_n)
                 force = prediction.force_n

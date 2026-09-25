@@ -96,7 +96,7 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
 
     def flow_at(point):
         return prescribed_flow(point, speed, c["flow_model"], c["flow_transition_length_m"],
-                               c["flow_branch_width_m"])
+                               c["flow_branch_width_m"], occluded_branch=c.get("occluded_branch") or None)
 
     fig = plt.figure(figsize=(14, 11), layout="constrained")
     grid = fig.add_gridspec(3, 2)
@@ -126,7 +126,8 @@ def plot_physics_trial(result, output_path, grid_step_m=0.1e-3):
     ax.scatter(*target[:2] * 1e3, marker="*", s=180, color="gold", edgecolor="black", zorder=3,
                label="Target")
     ax.set(xlabel="x [mm]", ylabel="y [mm]", xlim=(0, 22), ylim=(-8, 8),
-           title="Flow speed, centerline plane z = y/2 (projected)")
+           title="Flow speed, centerline plane z = y/2 (projected)"
+                 + (f", {c['occluded_branch']} branch occluded" if c.get("occluded_branch") else ""))
     ax.set_aspect("equal")
     ax.legend(loc="lower left", fontsize=8, ncol=2)
 

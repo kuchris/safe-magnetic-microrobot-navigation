@@ -89,6 +89,12 @@ class TrialConfig:
     # > 0 sets the proportional gain to force_cap / distance, so the command
     # saturates at the same position error whatever the cap. 0 keeps gain_n_per_m.
     gain_saturation_distance_m: float = 0.0
+    # Delay-aware control options. flow_feedforward cancels the command-aware
+    # estimator's residual drift (requires estimator_mode="command_aware").
+    # model_drag_error scales the controller's drag model (estimator, predictor,
+    # feedforward) relative to the plant: 0.2 means the model drag is 20% high.
+    flow_feedforward: bool = False
+    model_drag_error: float = 0.0
 
 
 def particle_material(config):
@@ -131,6 +137,8 @@ def run_trial(config=TrialConfig()):
     if config.occluded_branch and config.flow_model != "poiseuille":
         raise ValueError("occluded_branch requires flow_model='poiseuille'")
     nonnegative(config.actuation_period_s, "actuation_period_s")
+    if not np.isfinite(config.model_drag_error) or config.model_drag_error <= -1:
+        raise ValueError("model_drag_error must be finite and > -1")
     nonnegative(config.gain_saturation_distance_m, "gain_saturation_distance_m")
     if (config.sedimentation_check or config.gravity_compensation) and config.gravity_m_s2 == 0:
         raise ValueError("sedimentation_check and gravity_compensation require gravity_m_s2 > 0")
@@ -198,7 +206,9 @@ def run_trial(config=TrialConfig()):
         terminal_guidance_distance_m=config.terminal_guidance_distance_m,
         settling_velocity_m_s=settling_velocity if config.sedimentation_check else None,
         sedimentation_horizon_s=config.sedimentation_horizon_s,
-        gravity_compensation_n=-weight if config.gravity_compensation else None)
+        gravity_compensation_n=-weight if config.gravity_compensation else None,
+        flow_feedforward=config.flow_feedforward,
+        model_viscosity_pa_s=3.5e-3 * (1 + config.model_drag_error))
     target = vessel.upper_target if config.branch == "upper" else vessel.lower_target
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",
@@ -348,6 +358,8 @@ def run_trial(config=TrialConfig()):
         physics["actuation_period_s"] = float(config.actuation_period_s)
     if config.occluded_branch:
         physics["occluded_branch"] = config.occluded_branch
+    if config.model_drag_error:
+        physics["model_drag_error"] = float(config.model_drag_error)
     if physics:
         # Continuous companion to the binary target-success flag (0.4 mm tolerance).
         physics["closest_target_approach_m"] = float(np.min(np.linalg.norm(

@@ -57,8 +57,17 @@ honestly, do not tune the controller to hide it.
 - Later: viz B (slowed GIF), viz C (interactive page from the sweep data)
 One commit per stage; full suite green at each.
 
+## Step 3.1: delay-aware control (experiment 23, docs/16)
+- New opt-in options: `flow_feedforward` (needs command_aware; subtracts known weight when a
+  hold is on), `model_drag_error` (controller drag scale). Study: `src/delay_aware_study.py`,
+  P0 = exp-22 policy (archives match), pilot seeds 0–2, held-out 3–5, ±20% drag on held-out.
+- Held-out: P2 (command-aware + gain 0.5·γ/T_a, T_a = 10 ms) reaches occluded targets at 99%
+  in 18/18 (P0 1/18), robust to ±20% drag; patent median 0.79 s vs 2.78 s. 90% still ≤ 5/18.
+  H1 partly, H2 and H3 not supported. Wall prediction (P4/P5) regresses at 7.5 fps
+  (horizon τ_d = 183 ms over-constrains; ends at closed-outlet-cap proxy or times out).
+
 ## Open questions for the user (Step 3 candidates)
-- Delay-aware control at physiological scale (existing prediction module, feedforward, MPC).
+- Frame-rate-aware wall prediction; handling the observed-flow delay at 90% reduction.
 - Open-loop gravity hold from release (gravity direction known a priori) for pure NdFeB.
 - Any strategy for occluded targets (currently 0/432); needs better flow model at the stump.
 - Note: `poiseuille_flow` was vectorized in 2f (profile values unchanged up to round-off).

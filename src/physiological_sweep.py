@@ -63,7 +63,11 @@ def all_cells(seeds=(0, 1, 2)):
 def trial_record(cell):
     """Run one cell and keep scalar metrics only (histories are dropped)."""
     config = cell_config(**cell)
-    result = run_trial(config)
+    return summarize_trial(cell, config, run_trial(config))
+
+
+def summarize_trial(cell, config, result):
+    """Scalar metrics of a physiological-scale trial, keyed by its factor cell."""
     s, physics = result["summary"], result["summary"]["physics"]
     frames = frame_timeline(result)
     timeout = not (s["target_success"] or s["wall_collision"] or s["wrong_branch"])
