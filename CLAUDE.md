@@ -55,7 +55,8 @@ honestly, do not tune the controller to hide it.
       composite + 99% + delay-limited gain (0.5·γ/τ_d, assumed) + gravity hold 18/18 patent;
       toy-equivalent gain overshoots (delay·cap/γ = 5–11 R); occluded target 0/432.
 - Viz C done: private artifact "Microrobot Steering Atlas" (https://claude.ai/artifact/FpUbV7Yhc51w2Nz1Avgumo),
-  built from docs/results of experiments 22–28 (v2 flow-model errors, v3 measured map, v4 robustness).
+  built from docs/results of experiments 22–30 (v2 flow-model errors, v3 measured map, v4 robustness,
+  v5 combined bundles and disturbance rejection).
 - Viz B done: `simulations/27_steering_animation.py` (P0 vs P2, occluded cell, ~2× slow-motion GIF,
   docs/figures/steering_occluded_p0_vs_p2.gif).
 One commit per stage; full suite green at each.
@@ -161,6 +162,8 @@ One commit per stage; full suite green at each.
   H25 supported (PSD 1e-3: nominal 72→13, gate holds 97% of samples). Mechanism: detection time
   (latency + 2 frames ≈ 0.15 s) ≥ time to wall for an 8 mm/s bias drift. A 5% bias is cancelled.
   Conclusion: reduce hold bias before release; keep the default estimator.
+
+- Synthesis of experiments 22–30: docs/23_physiological_scale_summary.md (what works, limits, open problems).
 
 ## Open questions for the user (Step 3 candidates)
 - Make the open-loop hold the default for physiological runs? (changes the preset; would need

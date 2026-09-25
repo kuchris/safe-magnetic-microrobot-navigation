@@ -26,6 +26,10 @@ what changes at **real cerebral scale** (M1 artery, ~0.3 m/s mean flow):
 - Reducing proximal flow widens the feasible window far more than a stronger
   gradient does.
 
+**Summary of the physiological-scale work:** [docs/23](docs/23_physiological_scale_summary.md)
+covers what works in this model, where it breaks and what remains open
+(experiments 22–30).
+
 **Step 2 (complete)** moved the simulator itself to physiological scale.
 Real-scale physics is added as opt-in options. The toy defaults stay
 unchanged so experiments 01–20 remain exactly reproducible.
