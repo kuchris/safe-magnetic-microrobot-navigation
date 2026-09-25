@@ -1,0 +1,5592 @@
+{
+ "pooled": [
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.012561985113586686,
+    "min": 0.0006912805852637443
+   },
+   "median_peak_force_fraction": 1.0
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.012744444167027226,
+    "min": 0.0008906755017797194
+   },
+   "median_peak_force_fraction": 0.15855198555679886
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.013074025726912141,
+    "min": 0.009917545729993621
+   },
+   "median_peak_force_fraction": 0.9977127604958278
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.012944903172701146,
+    "min": 0.010920975001578128
+   },
+   "median_peak_force_fraction": 0.18451908164769248
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039634188784471824,
+    "min": 0.00039185035883299
+   },
+   "median_peak_force_fraction": 0.40639410888852506
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039964258301469194,
+    "min": 0.0003989695130621379
+   },
+   "median_peak_force_fraction": 0.08783469239525796
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003977950790724766,
+    "min": 0.00039533180032723695
+   },
+   "median_peak_force_fraction": 0.43685894209314313
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003996846697707524,
+    "min": 0.00039919374779304786
+   },
+   "median_peak_force_fraction": 0.08966643179094567
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "wall_collision": {
+     "count": 11,
+     "rate": 0.6111111111111112,
+     "wilson_95": [
+      0.38619041602237913,
+      0.7969475342783637
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.003395131264479165,
+    "min": 0.00039846702387865443
+   },
+   "median_peak_force_fraction": 0.7886167058379123
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "wall_collision": {
+     "count": 12,
+     "rate": 0.6666666666666666,
+     "wilson_95": [
+      0.4374946729594511,
+      0.837212252491663
+     ]
+    },
+    "wrong_branch": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.003225236868441562,
+    "min": 0.0003994224304734738
+   },
+   "median_peak_force_fraction": 0.12948184290193668
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "wall_collision": {
+     "count": 10,
+     "rate": 0.5555555555555556,
+     "wilson_95": [
+      0.33716415642042785,
+      0.7544048187299436
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009504590352248685,
+    "min": 0.0003986457837389279
+   },
+   "median_peak_force_fraction": 0.8932763886400064
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 11,
+     "rate": 0.6111111111111112,
+     "wilson_95": [
+      0.38619041602237913,
+      0.7969475342783637
+     ]
+    },
+    "wall_collision": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039997101257134994,
+    "min": 0.0003997050708019063
+   },
+   "median_peak_force_fraction": 0.14818082977778582
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.000396943252649476,
+    "min": 0.00039230066353017335
+   },
+   "median_peak_force_fraction": 0.3797847459719711
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039946402590649904,
+    "min": 0.0003987591626992762
+   },
+   "median_peak_force_fraction": 0.08583090399438395
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003974258163485948,
+    "min": 0.00039584534400175105
+   },
+   "median_peak_force_fraction": 0.4284103601013537
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039967773776952226,
+    "min": 0.0003992516951075056
+   },
+   "median_peak_force_fraction": 0.08955761285946087
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 2,
+     "rate": 0.1111111111111111,
+     "wilson_95": [
+      0.03101952264561242,
+      0.32799765130178793
+     ]
+    },
+    "wall_collision": {
+     "count": 16,
+     "rate": 0.8888888888888888,
+     "wilson_95": [
+      0.6720023486982121,
+      0.9689804773543875
+     ]
+    },
+    "wrong_branch": {
+     "count": 11,
+     "rate": 0.6111111111111112,
+     "wilson_95": [
+      0.38619041602237913,
+      0.7969475342783637
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.011598813340949778,
+    "min": 0.00039869482759295543
+   },
+   "median_peak_force_fraction": 0.7810837531783179
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 1,
+     "rate": 0.05555555555555555,
+     "wilson_95": [
+      0.009875190978303083,
+      0.25757300781872583
+     ]
+    },
+    "wall_collision": {
+     "count": 17,
+     "rate": 0.9444444444444444,
+     "wilson_95": [
+      0.7424269921812743,
+      0.990124809021697
+     ]
+    },
+    "wrong_branch": {
+     "count": 14,
+     "rate": 0.7777777777777778,
+     "wilson_95": [
+      0.5478541568378739,
+      0.9099907189139831
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.011518437725695538,
+    "min": 0.000399944967295425
+   },
+   "median_peak_force_fraction": 0.1306228352640028
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 10,
+     "rate": 0.5555555555555556,
+     "wilson_95": [
+      0.33716415642042785,
+      0.7544048187299436
+     ]
+    },
+    "wall_collision": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 1,
+     "rate": 0.05555555555555555,
+     "wilson_95": [
+      0.009875190978303083,
+      0.25757300781872583
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039989961818423877,
+    "min": 0.0003987125680797338
+   },
+   "median_peak_force_fraction": 0.9005067372569477
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 12,
+     "rate": 0.6666666666666666,
+     "wilson_95": [
+      0.4374946729594511,
+      0.837212252491663
+     ]
+    },
+    "wall_collision": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003999404887095108,
+    "min": 0.00039975786676192546
+   },
+   "median_peak_force_fraction": 0.15106170453539164
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039730154159423574,
+    "min": 0.00039379776837473546
+   },
+   "median_peak_force_fraction": 0.3803639098723594
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003995028438223383,
+    "min": 0.00039886889478498897
+   },
+   "median_peak_force_fraction": 0.08608631186195326
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003982902950290972,
+    "min": 0.0003958066485248497
+   },
+   "median_peak_force_fraction": 0.4292589633467062
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039941721962999247,
+    "min": 0.0003991521854220662
+   },
+   "median_peak_force_fraction": 0.0896897002762787
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 11,
+     "rate": 0.6111111111111112,
+     "wilson_95": [
+      0.38619041602237913,
+      0.7969475342783637
+     ]
+    },
+    "wall_collision": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "wrong_branch": {
+     "count": 4,
+     "rate": 0.2222222222222222,
+     "wilson_95": [
+      0.09000928108601702,
+      0.45214584316212614
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039971846291500225,
+    "min": 0.00039455887155993716
+   },
+   "median_peak_force_fraction": 0.7810366649143845
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 10,
+     "rate": 0.5555555555555556,
+     "wilson_95": [
+      0.33716415642042785,
+      0.7544048187299436
+     ]
+    },
+    "wall_collision": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "wrong_branch": {
+     "count": 5,
+     "rate": 0.2777777777777778,
+     "wilson_95": [
+      0.12499753379554004,
+      0.5087265656029746
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039994237128392415,
+    "min": 0.0003991977070523984
+   },
+   "median_peak_force_fraction": 0.13022110959892685
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.011882342703956664,
+    "min": 0.00975114488923625
+   },
+   "median_peak_force_fraction": 0.8842436472546106
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.011668411860970848,
+    "min": 0.010923971472429623
+   },
+   "median_peak_force_fraction": 0.14646009672023133
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003974821945909311,
+    "min": 0.00039169062651366694
+   },
+   "median_peak_force_fraction": 0.37882601400823834
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039948871192833804,
+    "min": 0.0003989975125056596
+   },
+   "median_peak_force_fraction": 0.08576507800990658
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003974972525447284,
+    "min": 0.0003953217183773801
+   },
+   "median_peak_force_fraction": 0.4283737806053673
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039964613526101986,
+    "min": 0.0003991650195978881
+   },
+   "median_peak_force_fraction": 0.08946120116946463
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "wall_collision": {
+     "count": 4,
+     "rate": 0.2222222222222222,
+     "wilson_95": [
+      0.09000928108601702,
+      0.45214584316212614
+     ]
+    },
+    "wrong_branch": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "timeout": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0004169924438273662,
+    "min": 0.0003968316376092533
+   },
+   "median_peak_force_fraction": 0.8499773304899526
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "wall_collision": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 5,
+     "rate": 0.2777777777777778,
+     "wilson_95": [
+      0.12499753379554004,
+      0.5087265656029746
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0005161704570730541,
+    "min": 0.0003996627225630873
+   },
+   "median_peak_force_fraction": 0.14199657896616594
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "wall_collision": {
+     "count": 10,
+     "rate": 0.5555555555555556,
+     "wilson_95": [
+      0.33716415642042785,
+      0.7544048187299436
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009663961969842687,
+    "min": 0.000398471165751557
+   },
+   "median_peak_force_fraction": 0.8698690484666776
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "wall_collision": {
+     "count": 11,
+     "rate": 0.6111111111111112,
+     "wilson_95": [
+      0.38619041602237913,
+      0.7969475342783637
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00987958933076432,
+    "min": 0.000399634378543455
+   },
+   "median_peak_force_fraction": 0.1478650387373424
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003994022602580358,
+    "min": 0.0003950280539615342
+   },
+   "median_peak_force_fraction": 0.3855000697825555
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003999016202292884,
+    "min": 0.00039918968010933066
+   },
+   "median_peak_force_fraction": 0.08805358952963983
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039748554519411354,
+    "min": 0.000395328553562378
+   },
+   "median_peak_force_fraction": 0.4250343229923324
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039970900807581166,
+    "min": 0.00039907606707288023
+   },
+   "median_peak_force_fraction": 0.09045202428515647
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "wrong_branch": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "timeout": {
+     "count": 12,
+     "rate": 0.6666666666666666,
+     "wilson_95": [
+      0.4374946729594511,
+      0.837212252491663
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0014092689033497448,
+    "min": 0.0005032343995077751
+   },
+   "median_peak_force_fraction": 0.9345382135555027
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 9,
+     "rate": 0.5,
+     "wilson_95": [
+      0.29031021505169974,
+      0.7096897849483003
+     ]
+    },
+    "wrong_branch": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "timeout": {
+     "count": 9,
+     "rate": 0.5,
+     "wilson_95": [
+      0.29031021505169974,
+      0.7096897849483003
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0015946978165601049,
+    "min": 0.0005496488171173358
+   },
+   "median_peak_force_fraction": 0.13072256516514444
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 16,
+     "rate": 0.8888888888888888,
+     "wilson_95": [
+      0.6720023486982121,
+      0.9689804773543875
+     ]
+    },
+    "wrong_branch": {
+     "count": 12,
+     "rate": 0.6666666666666666,
+     "wilson_95": [
+      0.4374946729594511,
+      0.837212252491663
+     ]
+    },
+    "timeout": {
+     "count": 2,
+     "rate": 0.1111111111111111,
+     "wilson_95": [
+      0.03101952264561242,
+      0.32799765130178793
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00983203578488055,
+    "min": 0.00042214736865831833
+   },
+   "median_peak_force_fraction": 0.752700037588359
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 11,
+     "rate": 0.6111111111111112,
+     "wilson_95": [
+      0.38619041602237913,
+      0.7969475342783637
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.004656963363946217,
+    "min": 0.0004018370739259043
+   },
+   "median_peak_force_fraction": 0.12914029025641502
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003990329276903695,
+    "min": 0.0003965875741532373
+   },
+   "median_peak_force_fraction": 0.390168904099356
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003997932684860328,
+    "min": 0.00039895253022352345
+   },
+   "median_peak_force_fraction": 0.08691493666659367
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039793548400127924,
+    "min": 0.0003958189501784205
+   },
+   "median_peak_force_fraction": 0.4324058186858305
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003995719271911115,
+    "min": 0.00039923069658662897
+   },
+   "median_peak_force_fraction": 0.09048602722522125
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0073968752623112585,
+    "min": 0.0005349832574828752
+   },
+   "median_peak_force_fraction": 0.4118399987924851
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.005701103088040883,
+    "min": 0.0008095602229985284
+   },
+   "median_peak_force_fraction": 0.08491765705060822
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.01001225506981224,
+    "min": 0.009743321607996427
+   },
+   "median_peak_force_fraction": 0.5280183095086233
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009779762604693057,
+    "min": 0.009745460004609281
+   },
+   "median_peak_force_fraction": 0.08335395436942983
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003987201990900219,
+    "min": 0.00039480146381681494
+   },
+   "median_peak_force_fraction": 0.4099956870048533
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003997958690228798,
+    "min": 0.0003990146184000161
+   },
+   "median_peak_force_fraction": 0.08889333794145643
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003979638189946967,
+    "min": 0.00039592252087227364
+   },
+   "median_peak_force_fraction": 0.4374404313164484
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003995530887594982,
+    "min": 0.0003993487880989876
+   },
+   "median_peak_force_fraction": 0.09246667176113932
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "wall_collision": {
+     "count": 15,
+     "rate": 0.8333333333333334,
+     "wilson_95": [
+      0.6077796189608429,
+      0.9416342319413855
+     ]
+    },
+    "wrong_branch": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009030152033280066,
+    "min": 0.00039632130665604923
+   },
+   "median_peak_force_fraction": 0.6331934064013942
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 1,
+     "rate": 0.05555555555555555,
+     "wilson_95": [
+      0.009875190978303083,
+      0.25757300781872583
+     ]
+    },
+    "wall_collision": {
+     "count": 17,
+     "rate": 0.9444444444444444,
+     "wilson_95": [
+      0.7424269921812743,
+      0.990124809021697
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.007810084044951746,
+    "min": 0.00039968747331319406
+   },
+   "median_peak_force_fraction": 0.11109845954072423
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009952932461718203,
+    "min": 0.009779805310684137
+   },
+   "median_peak_force_fraction": 0.7519431687882956
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 15,
+     "rate": 0.8333333333333334,
+     "wilson_95": [
+      0.6077796189608429,
+      0.9416342319413855
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00988373846753678,
+    "min": 0.00759921774774042
+   },
+   "median_peak_force_fraction": 0.10675869256161608
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003972534248069376,
+    "min": 0.00039135301056144857
+   },
+   "median_peak_force_fraction": 0.39291037416366964
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039966931882925755,
+    "min": 0.0003987013580478982
+   },
+   "median_peak_force_fraction": 0.08763018722183542
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039810946195219785,
+    "min": 0.0003959703970641681
+   },
+   "median_peak_force_fraction": 0.42502592308421594
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.000399515427546646,
+    "min": 0.0003991845410570642
+   },
+   "median_peak_force_fraction": 0.09108333241107813
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00856595593952022,
+    "min": 0.0005110453306079213
+   },
+   "median_peak_force_fraction": 0.5245344344904252
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.007894608262559033,
+    "min": 0.0007689062096558091
+   },
+   "median_peak_force_fraction": 0.09857941343105467
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009845331427846096,
+    "min": 0.009769834883626215
+   },
+   "median_peak_force_fraction": 0.7167854590279984
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009821879137817499,
+    "min": 0.009748234005581233
+   },
+   "median_peak_force_fraction": 0.10514362971376057
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039785403308016713,
+    "min": 0.00039378578840718525
+   },
+   "median_peak_force_fraction": 0.4035510417027245
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039973896079039295,
+    "min": 0.0003988217249648014
+   },
+   "median_peak_force_fraction": 0.08903394617182253
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003979318395862386,
+    "min": 0.0003954152901296653
+   },
+   "median_peak_force_fraction": 0.4309948399438571
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039962990918910354,
+    "min": 0.00039928578030670395
+   },
+   "median_peak_force_fraction": 0.09166323089461959
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 1,
+     "rate": 0.05555555555555555,
+     "wilson_95": [
+      0.009875190978303083,
+      0.25757300781872583
+     ]
+    },
+    "wall_collision": {
+     "count": 17,
+     "rate": 0.9444444444444444,
+     "wilson_95": [
+      0.7424269921812743,
+      0.990124809021697
+     ]
+    },
+    "wrong_branch": {
+     "count": 4,
+     "rate": 0.2222222222222222,
+     "wilson_95": [
+      0.09000928108601702,
+      0.45214584316212614
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.012153852514906293,
+    "min": 0.00039938233812425287
+   },
+   "median_peak_force_fraction": 0.9647159347867116
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.01223469166837603,
+    "min": 0.00041054875365589675
+   },
+   "median_peak_force_fraction": 0.15412213169118805
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.012627628105756045,
+    "min": 0.009957465083969491
+   },
+   "median_peak_force_fraction": 0.9941225403172995
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 6,
+     "rate": 0.3333333333333333,
+     "wilson_95": [
+      0.16278774750833702,
+      0.5625053270405489
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.01243663094521311,
+    "min": 0.00994997430372573
+   },
+   "median_peak_force_fraction": 0.16747759224084108
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039688299234267514,
+    "min": 0.00039429975732273135
+   },
+   "median_peak_force_fraction": 0.3759399112277523
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039944529352800703,
+    "min": 0.00039905163234338565
+   },
+   "median_peak_force_fraction": 0.08571525133916615
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003968862760427922,
+    "min": 0.00039573768157277213
+   },
+   "median_peak_force_fraction": 0.4354486863475913
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039961351960167635,
+    "min": 0.0003991467482946715
+   },
+   "median_peak_force_fraction": 0.08998205834472336
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "wall_collision": {
+     "count": 15,
+     "rate": 0.8333333333333334,
+     "wilson_95": [
+      0.6077796189608429,
+      0.9416342319413855
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00792607803913671,
+    "min": 0.00039828200097594764
+   },
+   "median_peak_force_fraction": 0.6347695848890844
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "wall_collision": {
+     "count": 15,
+     "rate": 0.8333333333333334,
+     "wilson_95": [
+      0.6077796189608429,
+      0.9416342319413855
+     ]
+    },
+    "wrong_branch": {
+     "count": 7,
+     "rate": 0.3888888888888889,
+     "wilson_95": [
+      0.20305246572163635,
+      0.613809583977621
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.007645849208374325,
+    "min": 0.0003999252894468232
+   },
+   "median_peak_force_fraction": 0.11252596506600247
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 16,
+     "rate": 0.8888888888888888,
+     "wilson_95": [
+      0.6720023486982121,
+      0.9689804773543875
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009993418889547644,
+    "min": 0.007223798228437959
+   },
+   "median_peak_force_fraction": 0.7268167303036233
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 15,
+     "rate": 0.8333333333333334,
+     "wilson_95": [
+      0.6077796189608429,
+      0.9416342319413855
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009963477541847919,
+    "min": 0.007654697640277228
+   },
+   "median_peak_force_fraction": 0.1036110655898443
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039721272909108284,
+    "min": 0.00039081552502484064
+   },
+   "median_peak_force_fraction": 0.3900092808120514
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003994642924498009,
+    "min": 0.00039865007419014476
+   },
+   "median_peak_force_fraction": 0.08744135881349752
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039795251046939557,
+    "min": 0.0003953039790789335
+   },
+   "median_peak_force_fraction": 0.4250486168438171
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003995211947656366,
+    "min": 0.0003991306689463672
+   },
+   "median_peak_force_fraction": 0.09085084150751199
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 3,
+     "rate": 0.16666666666666666,
+     "wilson_95": [
+      0.05836576805861446,
+      0.39222038103915724
+     ]
+    },
+    "wall_collision": {
+     "count": 15,
+     "rate": 0.8333333333333334,
+     "wilson_95": [
+      0.6077796189608429,
+      0.9416342319413855
+     ]
+    },
+    "wrong_branch": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.008061129409738974,
+    "min": 0.00039841305974936986
+   },
+   "median_peak_force_fraction": 0.5643977252576373
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 1,
+     "rate": 0.05555555555555555,
+     "wilson_95": [
+      0.009875190978303083,
+      0.25757300781872583
+     ]
+    },
+    "wall_collision": {
+     "count": 17,
+     "rate": 0.9444444444444444,
+     "wilson_95": [
+      0.7424269921812743,
+      0.990124809021697
+     ]
+    },
+    "wrong_branch": {
+     "count": 8,
+     "rate": 0.4444444444444444,
+     "wilson_95": [
+      0.2455951812700564,
+      0.6628358435795721
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.008121640723277939,
+    "min": 0.00039996724070215123
+   },
+   "median_peak_force_fraction": 0.10552862074421826
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009926548238173674,
+    "min": 0.009810298771929103
+   },
+   "median_peak_force_fraction": 0.6509479439044727
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wall_collision": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wrong_branch": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.009919385592997904,
+    "min": 0.009800057315052785
+   },
+   "median_peak_force_fraction": 0.09539442095824083
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039844103058065436,
+    "min": 0.0003904777822520747
+   },
+   "median_peak_force_fraction": 0.3810145076604839
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039959836502513027,
+    "min": 0.0003987779712621839
+   },
+   "median_peak_force_fraction": 0.08702491977106072
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.00039814713727440935,
+    "min": 0.00039586242063189295
+   },
+   "median_peak_force_fraction": 0.4278693787093383
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "trials": 18,
+   "outcomes": {
+    "target_success": {
+     "count": 18,
+     "rate": 1.0,
+     "wilson_95": [
+      0.8241207763533426,
+      1.0
+     ]
+    },
+    "wall_collision": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "wrong_branch": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    },
+    "timeout": {
+     "count": 0,
+     "rate": 0.0,
+     "wilson_95": [
+      0.0,
+      0.17587922364665756
+     ]
+    }
+   },
+   "closest_target_approach_m": {
+    "median": 0.0003996576893861566,
+    "min": 0.00039932396373081654
+   },
+   "median_peak_force_fraction": 0.0904127279520773
+  }
+ ],
+ "paired": [
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 7,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 6,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 2,
+   "lost": 5,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 1,
+   "lost": 5,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 6,
+   "lost": 2,
+   "gained": 4,
+   "both_fail": 6
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 11,
+   "lost": 0,
+   "gained": 1,
+   "both_fail": 6
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 7,
+   "lost": 0,
+   "gained": 4,
+   "both_fail": 7
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 6,
+   "lost": 0,
+   "gained": 4,
+   "both_fail": 8
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 7,
+   "gained": 6,
+   "both_fail": 5
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 6,
+   "gained": 6,
+   "both_fail": 6
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 6,
+   "lost": 2,
+   "gained": 2,
+   "both_fail": 8
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 7,
+   "lost": 4,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 7,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 6,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 7,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 6,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 3,
+   "lost": 4,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 1,
+   "lost": 5,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 7,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 6,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 7,
+   "gained": 1,
+   "both_fail": 10
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 6,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 3,
+   "lost": 4,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 3,
+   "lost": 3,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 3,
+   "lost": 4,
+   "gained": 0,
+   "both_fail": 11
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 1,
+   "lost": 5,
+   "gained": 0,
+   "both_fail": 12
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 0,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 10
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 0,
+   "lost": 11,
+   "gained": 0,
+   "both_fail": 7
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "C_P2_modelff",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "arm": "N_P2_modelff_hold",
+   "kept": 18,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  }
+ ],
+ "route_error_m_s": [
+  {
+   "condition": "exact",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.0
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.0
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0
+  },
+  {
+   "condition": "exact",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.011022988505747126
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.005843320247078676
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0011022988505747131
+  },
+  {
+   "condition": "scale_-20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0005843320247078678
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.011022988505747122
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.005843320247078674
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0011022988505747131
+  },
+  {
+   "condition": "scale_+20%",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0005843320247078678
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.009677913098933025
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.005130291620188014
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0009677913098933036
+  },
+  {
+   "condition": "phase_+0.1",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.000513029162018802
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.02242148789723406
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.011885699974306304
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0022421487897234093
+  },
+  {
+   "condition": "phase_+0.25",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0011885699974306318
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.03131838466848292
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.016601972427325952
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0031318384668482958
+  },
+  {
+   "condition": "phase_+0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0016601972427325968
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.015659192334241463
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.008300986213662976
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.001565919233424148
+  },
+  {
+   "condition": "steady_model",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0008300986213662984
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.015659192334241463
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.008300986213662976
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0015659192334241479
+  },
+  {
+   "condition": "double_pulsation",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0008300986213662984
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.010493361606553037
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.0053112533474385226
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0010493361606553054
+  },
+  {
+   "condition": "profile_n4",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0005311253347438529
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.018449382752174934
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.009501205481026209
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.0018449382752174955
+  },
+  {
+   "condition": "profile_n9",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 0.0009501205481026221
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.0005233620032740199
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.00041881183674789656
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 5.2336200327402055e-05
+  },
+  {
+   "condition": "junction_x0.5",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 4.188118367478971e-05
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "patent",
+   "error": 0.001014088032828306
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.9,
+   "occlusion": "target_occluded",
+   "error": 0.0007417943702783509
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "patent",
+   "error": 0.00010140880328283072
+  },
+  {
+   "condition": "junction_x2",
+   "flow_reduction": 0.99,
+   "occlusion": "target_occluded",
+   "error": 7.417943702783518e-05
+  }
+ ]
+}

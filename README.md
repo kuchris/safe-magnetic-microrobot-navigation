@@ -81,6 +81,16 @@ experiment 24, held-out seeds):
   regression but adds nothing. The command-aware estimator had been treating a
   held weight as motion; the fix is opt-in (`estimator_knows_weight`).
 
+**Flow-model errors** ([docs/18](docs/18_flow_model_errors.md), experiment 25,
+held-out seeds). At 90% reduction, the 90% result is fragile:
+
+- Cardiac timing errors up to 0.1 period are tolerable (27/72 against 32/72 exact).
+- A 20–25% bias in speed or profile, a wrong pulsation amplitude, or a phase
+  error of 0.25 period or more removes most or all of the benefit.
+- Errors in where the flow turns at the split are tiny on average but can swing
+  occluded-target success from 19/36 to 0/36 or 22/36, depending on their direction.
+- At 99% reduction every condition stays at 72/72.
+
 ![Experiment 22, patent target](docs/figures/physiological_sweep_patent.png)
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
@@ -302,7 +312,7 @@ and [docs/05](docs/05_safety_control.md).
 
 ## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical; 21–24 run at physiological scale. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21–25 run at physiological scale. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -325,6 +335,7 @@ change that alters the legacy defaults fails the suite.
 | 22 | `22_physiological_sweep` | 864-trial sweep: flow reduction × fps × material × occlusion × policy | [15](docs/15_physiological_sweep.md) |
 | 23 | `23_delay_aware_control` | Delay-aware policies: pilot, held-out, ±20% drag-model error (1728 trials) | [16](docs/16_delay_aware_control.md) |
 | 24 | `24_feedforward_and_hold` | Model flow feedforward, release hold, 50 ms wall horizon; ±20% flow-model error (1440 trials) | [17](docs/17_feedforward_and_hold.md) |
+| 25 | `25_flow_model_errors` | Flow-model scale, phase, pulsation, profile and junction errors (1728 trials) | [18](docs/18_flow_model_errors.md) |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -400,6 +411,7 @@ src/
   physiological_sweep.py  Experiment 22 cells, parallel runner, aggregates, report
   delay_aware_study.py  Experiment 23 policies, gains, paired comparison
   feedforward_hold_study.py  Experiment 24 arms and per-material pairing
+  flow_model_error_study.py  Experiment 25 error conditions and route error
   imaging.py            Orthographic views, latency, dropout
   localization.py       Triangulation and six-state filter (plus legacy sensor)
   flow_estimation.py    Command-aware estimator
@@ -415,7 +427,7 @@ src/
   plotting.py           Toy diagnostics and physiological-scale diagnostics
   replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–24 (run with python -m)
+simulations/            Experiments 01–25 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```
@@ -437,7 +449,8 @@ docs/                   Method notes, results (docs/results) and figures
       rate, imaging-rate sweep (2f, experiment 22)
 - [x] Delay-aware control at physiological scale (experiment 23)
 - [x] Model flow feedforward, release-time gravity hold, 50 ms wall horizon (experiment 24)
-- [ ] Flow-model robustness at 90% (shape/phase errors, online flow measurement)
+- [x] Flow-model shape, phase, pulsation and junction errors (experiment 25)
+- [ ] Local flow measurement at the split; combined model errors
 - [ ] Open-loop gravity hold from release; strategies for occluded targets
 - [ ] Coil model A(x) with current allocation; gradient decay with depth
 - [ ] Mesh geometry, exact wall distance, swept collision checks

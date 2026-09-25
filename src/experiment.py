@@ -102,6 +102,14 @@ class TrialConfig:
     # The random disturbance is never modeled.
     model_flow_feedforward: bool = False
     flow_model_error: float = 0.0
+    # Further controller flow-model errors (plant unchanged): cardiac phase offset as a
+    # fraction of the period, the assumed pulsation amplitude (None = same as the plant),
+    # the assumed profile exponent (2 = Poiseuille, flux-equivalent), and a scale on the
+    # junction transition length and branch width.
+    flow_model_phase_error: float = 0.0
+    flow_model_pulsatility: float = None
+    flow_model_profile_exponent: float = 2.0
+    flow_model_junction_scale: float = 1.0
     # With gravity_compensation: hold against the known weight from release, before
     # and without tracking (open loop). Off keeps the tracking-gated hold.
     gravity_hold_from_release: bool = False
@@ -123,6 +131,34 @@ def effective_max_force_n(config):
         return magnetic_force_cap(config.particle_radius_m, config.max_gradient_t_m,
                                   particle_material(config))
     return config.max_force_n
+
+
+def plant_flow_function(config):
+    """Deterministic plant flow u(position, time): prescribed field with pulsation."""
+    def flow(position_m, time_s):
+        speed = pulsatile_speed(config.flow_speed_m_s, time_s + config.cardiac_phase * config.cardiac_period_s,
+                                config.flow_pulsatility, config.cardiac_period_s)
+        return prescribed_flow(position_m, speed, config.flow_model,
+                               config.flow_transition_length_m, config.flow_branch_width_m,
+                               occluded_branch=config.occluded_branch or None)
+    return flow
+
+
+def controller_flow_function(config):
+    """The controller's own flow model, with the configured model errors (plant unchanged)."""
+    model_pulsatility = (config.flow_pulsatility if config.flow_model_pulsatility is None
+                         else config.flow_model_pulsatility)
+
+    def flow(position_m, time_s):
+        phase = config.cardiac_phase + config.flow_model_phase_error
+        speed = pulsatile_speed(config.flow_speed_m_s * (1 + config.flow_model_error),
+                                time_s + phase * config.cardiac_period_s,
+                                model_pulsatility, config.cardiac_period_s)
+        scale = config.flow_model_junction_scale
+        return prescribed_flow(position_m, speed, config.flow_model, config.flow_transition_length_m * scale,
+                               config.flow_branch_width_m * scale, occluded_branch=config.occluded_branch or None,
+                               profile_exponent=config.flow_model_profile_exponent)
+    return flow
 
 
 def run_trial(config=TrialConfig()):
@@ -155,6 +191,12 @@ def run_trial(config=TrialConfig()):
         raise ValueError("model_drag_error must be finite and > -1")
     if not np.isfinite(config.flow_model_error) or config.flow_model_error <= -1:
         raise ValueError("flow_model_error must be finite and > -1")
+    if not np.isfinite(config.flow_model_phase_error):
+        raise ValueError("flow_model_phase_error must be finite")
+    if config.flow_model_pulsatility is not None and not 0 <= config.flow_model_pulsatility <= 1:
+        raise ValueError("flow_model_pulsatility must be None or in [0, 1]")
+    nonnegative(config.flow_model_profile_exponent, "flow_model_profile_exponent", positive=True)
+    nonnegative(config.flow_model_junction_scale, "flow_model_junction_scale", positive=True)
     if config.estimator_knows_weight and (config.gravity_m_s2 == 0 or config.estimator_mode != "command_aware"):
         raise ValueError("estimator_knows_weight requires gravity and the command_aware estimator")
     if config.gravity_hold_from_release and not config.gravity_compensation:
@@ -179,19 +221,10 @@ def run_trial(config=TrialConfig()):
     flow_rng = np.random.default_rng(flow_seed)
     disturbance = FlowDisturbance(config.flow_disturbance_m_s, config.flow_correlation_s, flow_rng)
     vessel = YVessel()
-    def deterministic_flow(position_m, time_s):
-        speed = pulsatile_speed(config.flow_speed_m_s, time_s + config.cardiac_phase * config.cardiac_period_s,
-                                config.flow_pulsatility, config.cardiac_period_s)
-        return prescribed_flow(position_m, speed, config.flow_model,
-                               config.flow_transition_length_m, config.flow_branch_width_m,
-                               occluded_branch=config.occluded_branch or None)
-
-    def controller_flow_model(position_m, time_s):
-        speed = pulsatile_speed(config.flow_speed_m_s * (1 + config.flow_model_error),
-                                time_s + config.cardiac_phase * config.cardiac_period_s,
-                                config.flow_pulsatility, config.cardiac_period_s)
-        return prescribed_flow(position_m, speed, config.flow_model, config.flow_transition_length_m,
-                               config.flow_branch_width_m, occluded_branch=config.occluded_branch or None)
+    deterministic_flow = plant_flow_function(config)
+    controller_flow_model = controller_flow_function(config)
+    model_pulsatility = (config.flow_pulsatility if config.flow_model_pulsatility is None
+                         else config.flow_model_pulsatility)
 
     if config.particle_inertia:
         # Deterministic release velocity; no disturbance draw, so RNG streams are unchanged.
@@ -392,6 +425,10 @@ def run_trial(config=TrialConfig()):
         physics["model_drag_error"] = float(config.model_drag_error)
     if config.model_flow_feedforward:
         physics["flow_model_error"] = float(config.flow_model_error)
+        physics["flow_model_errors"] = {
+            "phase": float(config.flow_model_phase_error), "pulsatility": float(model_pulsatility),
+            "profile_exponent": float(config.flow_model_profile_exponent),
+            "junction_scale": float(config.flow_model_junction_scale)}
     if physics:
         # Continuous companion to the binary target-success flag (0.4 mm tolerance).
         physics["closest_target_approach_m"] = float(np.min(np.linalg.norm(

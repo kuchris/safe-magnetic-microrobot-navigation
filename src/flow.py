@@ -57,7 +57,8 @@ OCCLUDED_SEGMENT = {"upper": 1, "lower": 2}
 
 
 def poiseuille_flow(position_m, mean_speed_m_s, vessel=None,
-                    transition_length_m=1e-3, branch_width_m=0.3e-3, occluded_branch=None):
+                    transition_length_m=1e-3, branch_width_m=0.3e-3, occluded_branch=None,
+                    profile_exponent=2.0):
     """Parabolic speed 2U(1 - rho^2/R^2) along the smooth junction direction.
 
     U is the cross-sectional mean of a straight segment; the centerline carries
@@ -71,6 +72,10 @@ def poiseuille_flow(position_m, mean_speed_m_s, vessel=None,
     streamline turns into the patent branch and the occluded capsule carries no
     profile of its own, so its flow decays within about one radius of the
     junction. No recirculation or flux conservation is modeled.
+
+    profile_exponent n generalizes the profile to u_max (1 - (rho/R)^n) with
+    u_max = U (n + 2) / n, which keeps the straight-segment mean at U. n = 2 is
+    Poiseuille; larger n is blunter (n -> infinity is plug flow).
     """
     p = vector(position_m)
     nonnegative(mean_speed_m_s, "mean_speed_m_s")
@@ -79,7 +84,9 @@ def poiseuille_flow(position_m, mean_speed_m_s, vessel=None,
     starts, axes, lengths, radii = _segment_arrays(_default_vessel() if vessel is None else vessel)
     fraction = np.clip(np.einsum("ij,ij->i", p - starts, axes) / lengths, 0.0, 1.0)
     rho = np.linalg.norm(p - starts - fraction[:, None] * axes, axis=1)
-    profile = 1 - (rho / radii) ** 2
+    if not np.isfinite(profile_exponent) or profile_exponent <= 0:
+        raise ValueError("profile_exponent must be finite and positive")
+    profile = 1 - (rho / radii) ** profile_exponent
     if occluded_branch is not None:
         if occluded_branch not in OCCLUDED_SEGMENT:
             raise ValueError("occluded_branch must be None, 'upper' or 'lower'")
@@ -89,16 +96,18 @@ def poiseuille_flow(position_m, mean_speed_m_s, vessel=None,
         selection = np.tanh(p[1] / branch_width_m)
     activation = 0.5 * (1 + np.tanh((p[0] - 10e-3) / transition_length_m))
     direction = np.array([1.0, 0.6 * activation * selection, 0.3 * activation * selection])
-    return 2 * mean_speed_m_s * max(profile.max(), 0.0) * direction / np.linalg.norm(direction)
+    peak = (profile_exponent + 2) / profile_exponent
+    return peak * mean_speed_m_s * max(profile.max(), 0.0) * direction / np.linalg.norm(direction)
 
 
 def prescribed_flow(position_m, speed_m_s, model="piecewise",
-                    transition_length_m=1e-3, branch_width_m=0.3e-3, vessel=None, occluded_branch=None):
-    if occluded_branch is not None and model != "poiseuille":
-        raise ValueError("occluded_branch requires the poiseuille flow model")
+                    transition_length_m=1e-3, branch_width_m=0.3e-3, vessel=None, occluded_branch=None,
+                    profile_exponent=2.0):
+    if (occluded_branch is not None or profile_exponent != 2.0) and model != "poiseuille":
+        raise ValueError("occluded_branch and profile_exponent require the poiseuille flow model")
     if model == "poiseuille":
         return poiseuille_flow(position_m, speed_m_s, vessel, transition_length_m, branch_width_m,
-                               occluded_branch)
+                               occluded_branch, profile_exponent)
     if model == "piecewise":
         return centerline_flow(position_m, speed_m_s=speed_m_s)
     if model == "smooth":

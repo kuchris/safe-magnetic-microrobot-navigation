@@ -84,8 +84,22 @@ One commit per stage; full suite green at each.
   read a held weight as commanded motion. Model FF also feeds u_model to the estimator.
   Limitation noted: Stokes command model vs Re_slip ~10 for NdFeB commands.
 
+## Step 3.3 (user request): flow-model shape and phase errors, experiment 25
+- Plant unchanged; only the controller's flow model is wrong. Conditions: exact, scale ±20%,
+  phase +0.1/0.25/0.5 period, pulsation A_model 0/0.9, profile exponent n 4/9 (flux-equivalent),
+  junction transition/width ×0.5/×2 (all assumed). Arms C_P2_modelff, N_P2_modelff_hold;
+  90%/99%; held-out seeds 3–5 only (robustness test, no tuning).
+- Pre-registered: H7 phase ≤0.1 keeps ≥ half the exact successes, 0.25/0.5 lose most; H8 blunt
+  profiles (centerline −25%/−39%) lose most; H9 steady model (A=0) keeps < half; H10 success at
+  90% falls with route-averaged model velocity error, > ~10 mm/s loses most; 99% stays 18/18.
+
+- Done (docs/18): exact reproduces exp 24 (32/72 at 90%); 99% is 72/72 under every error.
+  H7, H8, H9 supported; H10 not as a single predictor: junction ×2/×0.5 (route error ≤ 1 mm/s)
+  swing occluded success 19/36 → 0/36 or 22/36; phase +0.1 is gentler than equal-size bias.
+  Reading: the 90% result is a knife edge set by flow shape at the split.
+
 ## Open questions for the user (Step 3 candidates)
-- Flow-model robustness at 90%: shape/phase/pulsation errors; online flow measurement.
+- Local flow measurement at the split (not just mean speed); combined model errors.
 - Open-loop gravity hold from release (gravity direction known a priori) for pure NdFeB.
 - Any strategy for occluded targets (currently 0/432); needs better flow model at the stump.
 - Note: `poiseuille_flow` was vectorized in 2f (profile values unchanged up to round-off).
