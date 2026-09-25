@@ -54,7 +54,8 @@ honestly, do not tune the controller to hide it.
       Findings: pure NdFeB 0/432 (sediments before first frame); no success at 0% reduction;
       composite + 99% + delay-limited gain (0.5·γ/τ_d, assumed) + gravity hold 18/18 patent;
       toy-equivalent gain overshoots (delay·cap/γ = 5–11 R); occluded target 0/432.
-- Later: viz B (slowed GIF), viz C (interactive page from the sweep data)
+- Viz C done: private artifact "Microrobot Steering Atlas" (https://claude.ai/artifact/FpUbV7Yhc51w2Nz1Avgumo),
+  built from docs/results of experiments 22–24. Later: viz B (slowed GIF).
 One commit per stage; full suite green at each.
 
 ## Step 3.1: delay-aware control (experiment 23, docs/16)
