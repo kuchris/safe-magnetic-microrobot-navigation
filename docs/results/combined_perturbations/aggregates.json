@@ -1,0 +1,97 @@
+[
+ {
+  "bundle": "nominal",
+  "trials": 72,
+  "success": 72,
+  "wilson_95": [
+   0.9493488274035422,
+   1.0
+  ],
+  "by_arm_target": {
+   "C_P2|patent": 18,
+   "C_P2|target_occluded": 18,
+   "N_P2_hold|patent": 18,
+   "N_P2_hold|target_occluded": 18
+  },
+  "by_fps": {
+   "7.5": 24,
+   "15.0": 24,
+   "30.0": 24
+  },
+  "outcomes": {
+   "success": 72
+  }
+ },
+ {
+  "bundle": "mild",
+  "trials": 72,
+  "success": 68,
+  "wilson_95": [
+   0.8656798403400209,
+   0.9781857840186833
+  ],
+  "by_arm_target": {
+   "C_P2|patent": 18,
+   "C_P2|target_occluded": 18,
+   "N_P2_hold|patent": 16,
+   "N_P2_hold|target_occluded": 16
+  },
+  "by_fps": {
+   "7.5": 20,
+   "15.0": 24,
+   "30.0": 24
+  },
+  "outcomes": {
+   "success": 68,
+   "wall": 4
+  }
+ },
+ {
+  "bundle": "moderate",
+  "trials": 72,
+  "success": 33,
+  "wilson_95": [
+   0.348286270576262,
+   0.5726013271401094
+  ],
+  "by_arm_target": {
+   "C_P2|patent": 16,
+   "C_P2|target_occluded": 17,
+   "N_P2_hold|patent": 0,
+   "N_P2_hold|target_occluded": 0
+  },
+  "by_fps": {
+   "7.5": 10,
+   "15.0": 11,
+   "30.0": 12
+  },
+  "outcomes": {
+   "success": 33,
+   "wall": 39
+  }
+ },
+ {
+  "bundle": "severe",
+  "trials": 72,
+  "success": 11,
+  "wilson_95": [
+   0.08750708729475692,
+   0.2532228936750054
+  ],
+  "by_arm_target": {
+   "C_P2|patent": 4,
+   "C_P2|target_occluded": 7,
+   "N_P2_hold|patent": 0,
+   "N_P2_hold|target_occluded": 0
+  },
+  "by_fps": {
+   "7.5": 4,
+   "15.0": 4,
+   "30.0": 3
+  },
+  "outcomes": {
+   "wall": 61,
+   "success": 11
+  }
+ }
+]

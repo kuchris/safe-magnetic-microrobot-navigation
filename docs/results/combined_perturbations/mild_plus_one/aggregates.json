@@ -1,0 +1,47 @@
+{
+ "actuation_gain_error": {
+  "success": 12,
+  "trials": 36,
+  "by_fps": {
+   "7.5": 0,
+   "15.0": 0,
+   "30.0": 12
+  }
+ },
+ "gravity_model_tilt_deg": {
+  "success": 20,
+  "trials": 36,
+  "by_fps": {
+   "7.5": 0,
+   "15.0": 8,
+   "30.0": 12
+  }
+ },
+ "calibration_sigma_px": {
+  "success": 28,
+  "trials": 36,
+  "by_fps": {
+   "7.5": 4,
+   "15.0": 12,
+   "30.0": 12
+  }
+ },
+ "noise_sigma_px": {
+  "success": 24,
+  "trials": 36,
+  "by_fps": {
+   "7.5": 0,
+   "15.0": 12,
+   "30.0": 12
+  }
+ },
+ "dropout_intervals": {
+  "success": 4,
+  "trials": 36,
+  "by_fps": {
+   "7.5": 3,
+   "15.0": 1,
+   "30.0": 0
+  }
+ }
+}

@@ -130,6 +130,21 @@ One commit per stage; full suite green at each.
   supported, H17 partly, H18 and H19 not (7.5 fps floor is real). Exploratory follow-up: composite
   with open-loop hold 36/36 nominal, 30/36 under dropout.
 
+## Step 3.6 (goal "keep going"): combined perturbations, experiment 29
+- Both materials with the open-loop hold (composite C_P2 + gravity_hold_from_release; N_P2_hold),
+  matched gate, 99%, held-out seeds 3–5. Bundles (assumed): nominal; mild (latency 0.1, gain −10%,
+  tilt 5°, calib 0.5 px, noise 2 px, 0.5 T/m); moderate (latency 0.1, gain −20%, tilt 10°, calib
+  1 px, noise 3 px, 0.5 T/m, dropout 0.2 s); severe (latency 0.2, gain −20%, tilt 15°, calib 1 px,
+  noise 3 px, 0.25 T/m, dropout 0.3 s).
+- Pre-registered: H20 mild ≥ 90%; H21 moderate ≥ 70%; H22 severe < 50%, failures concentrated at
+  7.5 fps and in pure NdFeB.
+
+- Done (docs/21): nominal 72/72, mild 68 (H20 ok), moderate 33 (composite 33/36, NdFeB 0/36; H21
+  not supported), severe 11 (H22 partly). Exploratory: removing any one moderate ingredient leaves
+  NdFeB 0/36; mild + one raised: dropout 4/36, gain 12, tilt 20, noise 24, calibration 28.
+  Mechanism: hold bias (gain/tilt) is unmodeled force; weight-aware Smith predictor stays
+  confidently wrong until fresh frames reveal it. Next: disturbance-force estimation.
+
 ## Open questions for the user (Step 3 candidates)
 - Make the open-loop hold the default for physiological runs? (changes the preset; would need
   re-running exp 22–28 comparisons or a new preset name).

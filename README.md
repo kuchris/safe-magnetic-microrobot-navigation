@@ -117,6 +117,16 @@ experiment 28, held-out seeds).
 - A gate check confirms that the 7.5 fps floor at 90% reduction is real, not
   a gate setting.
 
+**Combined perturbations** ([docs/21](docs/21_combined_perturbations.md),
+experiment 29, open-loop hold for both materials).
+
+- A mild bundle keeps 68/72.
+- A moderate bundle keeps the composite (33/36) but fails every pure NdFeB
+  trial.
+- Exploratory ablations trace the failure to hold bias from gain or gravity
+  errors. The weight-aware estimator does not model that bias, and dropout or
+  slow frames leave too little feedback to catch it.
+
 ![Experiment 22, patent target](docs/figures/physiological_sweep_patent.png)
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
@@ -338,7 +348,7 @@ and [docs/05](docs/05_safety_control.md).
 
 ## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical; 21–26 and 28 run at physiological scale; 27 animates one of them. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21–26, 28 and 29 run at physiological scale; 27 animates one of them. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -365,6 +375,7 @@ change that alters the legacy defaults fails the suite.
 | 26 | `26_measured_flow_map` | Feedforward from a voxelized, noisy flow map (648 trials) | [19](docs/19_measured_flow_map.md) |
 | 27 | `27_steering_animation` | Animated P0 vs P2 on an occluded target (GIF) | [16](docs/16_delay_aware_control.md) |
 | 28 | `28_operating_point_robustness` | Robustness of the 99% operating point, gate check, open-loop hold follow-up (1152 trials) | [20](docs/20_operating_point_robustness.md) |
+| 29 | `29_combined_perturbations` | Combined imperfection bundles, plus exploratory ablations (720 trials) | [21](docs/21_combined_perturbations.md) |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -444,6 +455,7 @@ src/
   flow_map.py           Voxelized, noisy measured flow map for the controller
   flow_map_study.py     Experiment 26 map conditions
   robustness_study.py   Experiment 28 perturbations, gate check and follow-up
+  combined_study.py     Experiment 29 bundles, ablation and mild-plus-one analysis
   imaging.py            Orthographic views, latency, dropout
   localization.py       Triangulation and six-state filter (plus legacy sensor)
   flow_estimation.py    Command-aware estimator
@@ -459,7 +471,7 @@ src/
   plotting.py           Toy diagnostics and physiological-scale diagnostics
   replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–28 (run with python -m)
+simulations/            Experiments 01–29 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```
@@ -484,7 +496,8 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Flow-model shape, phase, pulsation and junction errors (experiment 25)
 - [x] Feedforward from a measured (voxelized, noisy) flow map (experiment 26)
 - [x] Robustness of the 99% operating point (experiment 28)
-- [ ] Combined perturbations; correlated map noise; flow changes after measurement
+- [x] Combined perturbation bundles (experiment 29)
+- [ ] Force-bias (disturbance) estimation for a biased hold; correlated map noise
 - [ ] Open-loop gravity hold from release; strategies for occluded targets
 - [ ] Coil model A(x) with current allocation; gradient decay with depth
 - [ ] Mesh geometry, exact wall distance, swept collision checks
