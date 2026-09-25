@@ -82,7 +82,7 @@ experiment 24, held-out seeds):
   held weight as motion; the fix is opt-in (`estimator_knows_weight`).
 
 **Flow-model errors** ([docs/18](docs/18_flow_model_errors.md), experiment 25,
-held-out seeds). At 90% reduction, the 90% result is fragile:
+held-out seeds). The 90%-reduction result is fragile:
 
 - Cardiac timing errors up to 0.1 period are tolerable (27/72 against 32/72 exact).
 - A 20–25% bias in speed or profile, a wrong pulsation amplitude, or a phase
