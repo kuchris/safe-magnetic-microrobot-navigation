@@ -102,6 +102,21 @@ held-out seeds). The controller uses a voxelized, noisy map of the flow
 - A 1.0 mm map blurs the split and loses occluded targets entirely (8/72 overall).
 - At 99% even the worst map gives 72/72.
 
+**Robustness of the 99% operating point** ([docs/20](docs/20_operating_point_robustness.md),
+experiment 28, held-out seeds).
+
+- **Unaffected (72/72):** latency up to 0.1 s, gradients down to 0.25 T/m,
+  1 px calibration error and 3 px detector noise.
+- **Losses:**
+  - 0.2 s latency: 59/72.
+  - ±20% actuation gain error and a 15° gravity-direction error: 60–64/72, all
+    pure NdFeB at 7.5 fps.
+  - A 30° gravity error: pure NdFeB 0/36.
+  - A 0.3 s imaging dropout: the composite drops to 0/36 because its gravity
+    hold waited for tracking. An exploratory open-loop hold restores it to 30/36.
+- A gate check confirms that the 7.5 fps floor at 90% reduction is real, not
+  a gate setting.
+
 ![Experiment 22, patent target](docs/figures/physiological_sweep_patent.png)
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
@@ -323,7 +338,7 @@ and [docs/05](docs/05_safety_control.md).
 
 ## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical; 21–26 run at physiological scale; 27 animates one of them. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21–26 and 28 run at physiological scale; 27 animates one of them. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -349,6 +364,7 @@ change that alters the legacy defaults fails the suite.
 | 25 | `25_flow_model_errors` | Flow-model scale, phase, pulsation, profile and junction errors (1728 trials) | [18](docs/18_flow_model_errors.md) |
 | 26 | `26_measured_flow_map` | Feedforward from a voxelized, noisy flow map (648 trials) | [19](docs/19_measured_flow_map.md) |
 | 27 | `27_steering_animation` | Animated P0 vs P2 on an occluded target (GIF) | [16](docs/16_delay_aware_control.md) |
+| 28 | `28_operating_point_robustness` | Robustness of the 99% operating point, gate check, open-loop hold follow-up (1152 trials) | [20](docs/20_operating_point_robustness.md) |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -427,6 +443,7 @@ src/
   flow_model_error_study.py  Experiment 25 error conditions and route error
   flow_map.py           Voxelized, noisy measured flow map for the controller
   flow_map_study.py     Experiment 26 map conditions
+  robustness_study.py   Experiment 28 perturbations, gate check and follow-up
   imaging.py            Orthographic views, latency, dropout
   localization.py       Triangulation and six-state filter (plus legacy sensor)
   flow_estimation.py    Command-aware estimator
@@ -442,7 +459,7 @@ src/
   plotting.py           Toy diagnostics and physiological-scale diagnostics
   replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–27 (run with python -m)
+simulations/            Experiments 01–28 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```
@@ -466,7 +483,8 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Model flow feedforward, release-time gravity hold, 50 ms wall horizon (experiment 24)
 - [x] Flow-model shape, phase, pulsation and junction errors (experiment 25)
 - [x] Feedforward from a measured (voxelized, noisy) flow map (experiment 26)
-- [ ] Combined model errors; correlated map noise; flow changes after measurement
+- [x] Robustness of the 99% operating point (experiment 28)
+- [ ] Combined perturbations; correlated map noise; flow changes after measurement
 - [ ] Open-loop gravity hold from release; strategies for occluded targets
 - [ ] Coil model A(x) with current allocation; gradient decay with depth
 - [ ] Mesh geometry, exact wall distance, swept collision checks

@@ -81,6 +81,10 @@ class TrialConfig:
     sedimentation_horizon_s: float = 0.1
     # Opt-in: command -W (within the cap) while tracking is valid, even when stopped.
     gravity_compensation: bool = False
+    # The controller's assumed gravity direction, rotated about the parent (x) axis
+    # relative to the plant's. It affects the hold, the weight-aware estimator and
+    # the sedimentation diagnostic, never the plant.
+    gravity_model_tilt_deg: float = 0.0
     # Dead-end branch ("upper" or "lower"); requires flow_model="poiseuille". "" = both patent.
     occluded_branch: str = ""
     # Actuation update period with zero-order hold. 0 updates the command every
@@ -183,6 +187,8 @@ def run_trial(config=TrialConfig()):
     if config.fluid_acceleration_force and not config.particle_inertia:
         raise ValueError("fluid_acceleration_force requires particle_inertia")
     nonnegative(config.gravity_m_s2, "gravity_m_s2")
+    if not np.isfinite(config.gravity_model_tilt_deg):
+        raise ValueError("gravity_model_tilt_deg must be finite")
     nonnegative(config.sedimentation_horizon_s, "sedimentation_horizon_s", positive=True)
     gravity_axis = vector(config.gravity_direction)
     if np.linalg.norm(gravity_axis) == 0:
@@ -257,7 +263,10 @@ def run_trial(config=TrialConfig()):
     vessel_radius = min(s.radius_m for s in vessel.segments)
     weight = ((config.particle_density_kg_m3 - config.fluid_density_kg_m3) * volume(particle.radius_m)
               * config.gravity_m_s2 * gravity_axis / np.linalg.norm(gravity_axis))
-    settling_velocity = weight / particle.drag_coefficient  # Stokes estimate given to the controller
+    tilt = np.radians(config.gravity_model_tilt_deg)
+    model_weight = np.array([weight[0], weight[1] * np.cos(tilt) - weight[2] * np.sin(tilt),
+                             weight[1] * np.sin(tilt) + weight[2] * np.cos(tilt)])
+    settling_velocity = model_weight / particle.drag_coefficient  # Stokes estimate given to the controller
     dt_s = config.dt_s
     if config.flow_model == "poiseuille":
         # Bound |v| by centerline flow, capped drift, a 3-sigma disturbance norm and settling.
@@ -285,12 +294,12 @@ def run_trial(config=TrialConfig()):
         terminal_guidance_distance_m=config.terminal_guidance_distance_m,
         settling_velocity_m_s=settling_velocity if config.sedimentation_check else None,
         sedimentation_horizon_s=config.sedimentation_horizon_s,
-        gravity_compensation_n=-weight if config.gravity_compensation else None,
+        gravity_compensation_n=-model_weight if config.gravity_compensation else None,
         flow_feedforward=config.flow_feedforward,
         model_viscosity_pa_s=3.5e-3 * (1 + config.model_drag_error),
         flow_model=controller_flow_model if config.model_flow_feedforward else None,
         hold_without_tracking=config.gravity_hold_from_release,
-        known_weight_n=weight if config.estimator_knows_weight else None)
+        known_weight_n=model_weight if config.estimator_knows_weight else None)
     target = vessel.upper_target if config.branch == "upper" else vessel.lower_target
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",

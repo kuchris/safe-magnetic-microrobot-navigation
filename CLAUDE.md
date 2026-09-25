@@ -112,8 +112,28 @@ One commit per stage; full suite green at each.
   0.25 mm loses none of the exact successes); 5% noise 35, 10% noise 20; 1.0 mm 8 (occluded 0);
   99% worst map 72/72. H11, H13 supported; H12 at 1.0 mm only. 7.5 fps: 0 in every condition.
 
+## Step 3.5 (goal "keep going"): robustness of the operating point, experiment 28
+- Found while designing: the gate's 0.15 s max measurement age is shorter than latency + frame
+  period at 7.5 fps (0.183 s), so 7.5 fps loses tracking ~7% more of the time. The "7.5 fps
+  floor" in docs/17–19 may be partly this gate setting. Exp 28 gate check re-runs the exp-24
+  model-FF arms at 90% with max age = latency + 1/fps + 0.02 s (assumed margin), paired.
+- Robustness at 99% (arms C_P2 and N_P2_hold, matched gate everywhere, plus fixed-gate nominal):
+  latency 0.1/0.2 s, 0.3 s dropout, actuation gain ±20%, gradient 0.5/0.25 T/m, gravity-model
+  tilt 15/30°, calibration 1 px, noise 3 px (all assumed). Held-out seeds 3–5.
+- Pre-registered: H14 latency 0.1 keeps ≥ 80%, 0.2 ≥ 50%; H15 gain ±20% ≥ 80%; H16 0.5 and
+  0.25 T/m ≥ 80%; H17 tilt 15° tolerable, 30° starts failing pure NdFeB; H18 0.3 s dropout ≥ 50%;
+  H19 matched gate gives 7.5 fps successes at 90% (floor partly a gate artifact).
+
+- Done (docs/20): nominal 72/72 either gate; latency 0.1 s, 0.5/0.25 T/m, 1 px calibration, 3 px
+  noise: 72/72. Latency 0.2 s 59 (composite only); gain ±20% 60/64 and tilt 15° 60 (all NdFeB at
+  7.5 fps); tilt 30° NdFeB 0/36; dropout 0.3 s 27 (composite 0/36: tracking-gated hold). H14–H16
+  supported, H17 partly, H18 and H19 not (7.5 fps floor is real). Exploratory follow-up: composite
+  with open-loop hold 36/36 nominal, 30/36 under dropout.
+
 ## Open questions for the user (Step 3 candidates)
-- Combined model errors; spatially correlated map noise; flow changes after measurement.
+- Make the open-loop hold the default for physiological runs? (changes the preset; would need
+  re-running exp 22–28 comparisons or a new preset name).
+- Combined perturbations; spatially correlated map noise; flow changes after measurement.
 - Open-loop gravity hold from release (gravity direction known a priori) for pure NdFeB.
 - Any strategy for occluded targets (currently 0/432); needs better flow model at the stump.
 - Note: `poiseuille_flow` was vectorized in 2f (profile values unchanged up to round-off).

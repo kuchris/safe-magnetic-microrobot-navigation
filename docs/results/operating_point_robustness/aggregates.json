@@ -1,0 +1,3928 @@
+{
+ "robustness": [
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9383360881982323
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7620083670965401
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7514229035764549
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7620083670965401
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.1229291712265663
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8725032054842782
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8709081356387859
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8730832308826391
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9437680272127162
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.765101698064657
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7574013196841353
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.765101698064657
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.1302883035409088
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8656453850103294
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8710202929967334
+  },
+  {
+   "condition": "nominal_fixed_gate",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8710202929967334
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7602682909014575
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7620083670965401
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7514229035764549
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7566431321617024
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8851187578986262
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8725032054842782
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8709081356387859
+  },
+  {
+   "condition": "nominal",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8730832308826391
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7591783300796403
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.765101698064657
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7574013196841353
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7590466996799732
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8763293857833039
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8656453850103294
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8710202929967334
+  },
+  {
+   "condition": "nominal",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8702305105987311
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9081747674834693
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8520573101920589
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8337865101436928
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8520573101920589
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9442813485314308
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9242704722879822
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9142650341662579
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9242704722879822
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9180123456778659
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8489722010525046
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8178196731313057
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8489722010525046
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9453914688086097
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9254933400589425
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9130981440902964
+  },
+  {
+   "condition": "latency_0.1s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9254933400589425
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 2,
+   "wilson_95": [
+    0.09677141110578052,
+    0.7000066848616078
+   ],
+   "wall": 4,
+   "wrong": 2,
+   "timeout": 0,
+   "median_elapsed_s": 4.193873642847979
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 2,
+   "wilson_95": [
+    0.09677141110578052,
+    0.7000066848616078
+   ],
+   "wall": 4,
+   "wrong": 2,
+   "timeout": 0,
+   "median_elapsed_s": 4.193873642847979
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 2.2132319137953362
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 10,
+   "wilson_95": [
+    0.33716415642042785,
+    0.7544048187299436
+   ],
+   "wall": 8,
+   "wrong": 4,
+   "timeout": 0,
+   "median_elapsed_s": 4.193873642847979
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 2,
+   "wilson_95": [
+    0.09677141110578052,
+    0.7000066848616078
+   ],
+   "wall": 0,
+   "wrong": 4,
+   "timeout": 0,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 5,
+   "wilson_95": [
+    0.4364971778135298,
+    0.9699466302516933
+   ],
+   "wall": 0,
+   "wrong": 1,
+   "timeout": 0,
+   "median_elapsed_s": 4.653833783748118
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 2.329817018865863
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 13,
+   "wilson_95": [
+    0.49127343439702553,
+    0.87500246620446
+   ],
+   "wall": 0,
+   "wrong": 5,
+   "timeout": 0,
+   "median_elapsed_s": 4.593076123269821
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.690660853323433
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.6737902237661078
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9545617199854134
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.6658923997860855
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.4944657426197132
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.082199330862551
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.017854003825314
+  },
+  {
+   "condition": "latency_0.2s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.082199330862551
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 6,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 2,
+   "wrong": 0,
+   "timeout": 4,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 5,
+   "wrong": 0,
+   "timeout": 1,
+   "median_elapsed_s": 0.6336777477092065
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.17587922364665756
+   ],
+   "wall": 7,
+   "wrong": 0,
+   "timeout": 11,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 1,
+   "wrong": 0,
+   "timeout": 5,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 2,
+   "wrong": 3,
+   "timeout": 3,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 4,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 0.6481783826682272
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.17587922364665756
+   ],
+   "wall": 7,
+   "wrong": 6,
+   "timeout": 8,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.998526273474204
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9922080142901861
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9994915630717622
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.998526273474204
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.1418717787116082
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 2,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 1.1355754579275348
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 0,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 5.0
+  },
+  {
+   "condition": "dropout_0.3s",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 9,
+   "wilson_95": [
+    0.29031021505169974,
+    0.7096897849483003
+   ],
+   "wall": 2,
+   "wrong": 9,
+   "timeout": 0,
+   "median_elapsed_s": 1.1428370683091664
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9584919707912711
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9435563167834797
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9242704722879822
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9435563167834797
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0515860472281844
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0340402789277694
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0334602535294084
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0398405329113776
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.19573440430488515
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0653725781051147
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0619282493138271
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 12,
+   "wilson_95": [
+    0.4374946729594511,
+    0.837212252491663
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.006840927053172
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.19573440430488515
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.2231316121060596
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.227146339295904
+  },
+  {
+   "condition": "gain_-20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 12,
+   "wilson_95": [
+    0.4374946729594511,
+    0.837212252491663
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.123970044356891
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8813485928092808
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7348921797231713
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.6629690303264284
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7348921797231713
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9450063802793819
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8063803100711435
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7456226495928466
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8063803100711435
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 2,
+   "wilson_95": [
+    0.09677141110578052,
+    0.7000066848616078
+   ],
+   "wall": 4,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.21942787624495194
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.801848517971705
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7330716341456778
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 14,
+   "wilson_95": [
+    0.5478541568378739,
+    0.9099907189139831
+   ],
+   "wall": 4,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7362965789375202
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 2,
+   "wilson_95": [
+    0.09677141110578052,
+    0.7000066848616078
+   ],
+   "wall": 4,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.21942787624495194
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8587567274277543
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8064555819600514
+  },
+  {
+   "condition": "gain_+20%",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 14,
+   "wilson_95": [
+    0.5478541568378739,
+    0.9099907189139831
+   ],
+   "wall": 4,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8446283978634923
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7599242498431513
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7680599393697424
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.761958172224799
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.762466652820211
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.881959592742018
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8697560584521313
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.872044221131485
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.872806942024603
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7543567636119124
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7690179862706021
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7554215451457837
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7576739676212807
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8861849081323655
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8727932326871377
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.871892263696939
+  },
+  {
+   "condition": "gradient_0.5",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8730799046385647
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9923300226676726
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9539909260253538
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9462415341508428
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9588852787882032
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0938878424967933
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.073086843254684
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0730868432546843
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0828755487803825
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7544732162277834
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7685667383241928
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7537504715048906
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7567859993410404
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8778457404255826
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8669322951099016
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8711242145026797
+  },
+  {
+   "condition": "gradient_0.25",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8702569208352084
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7847743639822027
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7828892814375299
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7649084940883442
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7795541353969552
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8929491007764974
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8833786817035437
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8826536499555927
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8887439166383814
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.15988705879556186
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9508321919948473
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9207985224708182
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 12,
+   "wilson_95": [
+    0.4374946729594511,
+    0.837212252491663
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8297322243011725
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.15988705879556186
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0762320860776453
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0329914997870233
+  },
+  {
+   "condition": "gravity_tilt_15deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 12,
+   "wilson_95": [
+    0.4374946729594511,
+    0.837212252491663
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8988381841263674
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8275512371113138
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8008700687867156
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7859344147789242
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8042052148272905
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9412362151900364
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8848287451994458
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8756933451752626
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8952692023699407
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.17587922364665756
+   ],
+   "wall": 18,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "gravity_tilt_30deg",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.17587922364665756
+   ],
+   "wall": 18,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.0833220429892349
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7608483162998184
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7734638687141664
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7551930686658004
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.760558303600638
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8846837388498556
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8739532689801802
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8713431546875565
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8740982753297704
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7554707404890187
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7625129668712052
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7576865188834139
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.758564054881194
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8740697305890197
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8681024858041141
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8705815249978432
+  },
+  {
+   "condition": "calibration_1px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8709764161968443
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.866122926102309
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8374116688834479
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.820010906932623
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8224760148756566
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0294000757408828
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0375204313179343
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.9725575867015213
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "C_P2",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0046039899609571
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8412498842720384
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8186094555293079
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.798250620380806
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.8172712131326929
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.038168962173927
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0367429661775338
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.960002443171651
+  },
+  {
+   "condition": "noise_3px",
+   "arm": "N_P2_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 18,
+   "wilson_95": [
+    0.8241207763533426,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 1.0129178638378002
+  }
+ ],
+ "gate_check": [
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 2,
+   "timeout": 0,
+   "median_elapsed_s": 0.4039203637146179
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 4,
+   "wilson_95": [
+    0.2999933151383921,
+    0.9032285888942194
+   ],
+   "wall": 2,
+   "wrong": 1,
+   "timeout": 0,
+   "median_elapsed_s": 0.777880961996378
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 3,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 0.5088208096241561
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 7,
+   "wilson_95": [
+    0.20305246572163635,
+    0.613809583977621
+   ],
+   "wall": 11,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 0.4156401617627331
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 0.35819664456915445
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 4,
+   "wilson_95": [
+    0.2999933151383921,
+    0.9032285888942194
+   ],
+   "wall": 2,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7367791350389037
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 4,
+   "wilson_95": [
+    0.2999933151383921,
+    0.9032285888942194
+   ],
+   "wall": 2,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.710780991481465
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 8,
+   "wilson_95": [
+    0.2455951812700564,
+    0.6628358435795721
+   ],
+   "wall": 10,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 0.3592695838270805
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 0.49525437980658915
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 3,
+   "wrong": 2,
+   "timeout": 0,
+   "median_elapsed_s": 0.6342051217404012
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 3,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 0.5063759507362681
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 6,
+   "wilson_95": [
+    0.16278774750833702,
+    0.5625053270405489
+   ],
+   "wall": 12,
+   "wrong": 8,
+   "timeout": 0,
+   "median_elapsed_s": 0.5038957419979679
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 0.3971286610730499
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 5,
+   "wilson_95": [
+    0.4364971778135298,
+    0.9699466302516933
+   ],
+   "wall": 1,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7430587274769052
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7088475942454324
+  },
+  {
+   "condition": "fixed_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 11,
+   "wilson_95": [
+    0.38619041602237913,
+    0.7969475342783637
+   ],
+   "wall": 7,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 0.7068201220228538
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 1,
+   "timeout": 0,
+   "median_elapsed_s": 0.41885897953651124
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 4,
+   "wilson_95": [
+    0.2999933151383921,
+    0.9032285888942194
+   ],
+   "wall": 2,
+   "wrong": 1,
+   "timeout": 0,
+   "median_elapsed_s": 0.777880961996378
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 3,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 0.5088208096241561
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 7,
+   "wilson_95": [
+    0.20305246572163635,
+    0.613809583977621
+   ],
+   "wall": 11,
+   "wrong": 5,
+   "timeout": 0,
+   "median_elapsed_s": 0.4208397904742209
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 5,
+   "wrong": 0,
+   "timeout": 1,
+   "median_elapsed_s": 0.40639637738675494
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 4,
+   "wilson_95": [
+    0.2999933151383921,
+    0.9032285888942194
+   ],
+   "wall": 2,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7367791350389037
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 4,
+   "wilson_95": [
+    0.2999933151383921,
+    0.9032285888942194
+   ],
+   "wall": 2,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.710780991481465
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "C_P2_modelff",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 8,
+   "wilson_95": [
+    0.2455951812700564,
+    0.6628358435795721
+   ],
+   "wall": 9,
+   "wrong": 0,
+   "timeout": 1,
+   "median_elapsed_s": 0.5625503063095292
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 6,
+   "wrong": 1,
+   "timeout": 0,
+   "median_elapsed_s": 0.4147460167935148
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 3,
+   "wrong": 2,
+   "timeout": 0,
+   "median_elapsed_s": 0.6342051217404012
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 3,
+   "wilson_95": [
+    0.18761630648265054,
+    0.8123836935173494
+   ],
+   "wall": 3,
+   "wrong": 3,
+   "timeout": 0,
+   "median_elapsed_s": 0.5063759507362681
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "patent",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 6,
+   "wilson_95": [
+    0.16278774750833702,
+    0.5625053270405489
+   ],
+   "wall": 12,
+   "wrong": 6,
+   "timeout": 0,
+   "median_elapsed_s": 0.41702938356845776
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 7.5,
+   "trials": 6,
+   "success": 0,
+   "wilson_95": [
+    0.0,
+    0.3903342879021652
+   ],
+   "wall": 1,
+   "wrong": 1,
+   "timeout": 5,
+   "median_elapsed_s": 1.0
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 15.0,
+   "trials": 6,
+   "success": 5,
+   "wilson_95": [
+    0.4364971778135298,
+    0.9699466302516933
+   ],
+   "wall": 1,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7430587274769052
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": 30.0,
+   "trials": 6,
+   "success": 6,
+   "wilson_95": [
+    0.6096657120978348,
+    1.0
+   ],
+   "wall": 0,
+   "wrong": 0,
+   "timeout": 0,
+   "median_elapsed_s": 0.7088475942454324
+  },
+  {
+   "condition": "matched_gate",
+   "arm": "N_P2_modelff_hold",
+   "occlusion": "target_occluded",
+   "frame_rate_hz": null,
+   "trials": 18,
+   "success": 11,
+   "wilson_95": [
+    0.38619041602237913,
+    0.7969475342783637
+   ],
+   "wall": 2,
+   "wrong": 1,
+   "timeout": 5,
+   "median_elapsed_s": 0.7400470454375407
+  }
+ ],
+ "robustness_paired": {
+  "nominal_fixed_gate": {
+   "kept": 72,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "latency_0.1s": {
+   "kept": 72,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "latency_0.2s": {
+   "kept": 59,
+   "lost": 13,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "dropout_0.3s": {
+   "kept": 27,
+   "lost": 45,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "gain_-20%": {
+   "kept": 60,
+   "lost": 12,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "gain_+20%": {
+   "kept": 64,
+   "lost": 8,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "gradient_0.5": {
+   "kept": 72,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "gradient_0.25": {
+   "kept": 72,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "gravity_tilt_15deg": {
+   "kept": 60,
+   "lost": 12,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "gravity_tilt_30deg": {
+   "kept": 36,
+   "lost": 36,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "calibration_1px": {
+   "kept": 72,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  },
+  "noise_3px": {
+   "kept": 72,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 0
+  }
+ },
+ "gate_paired": {
+  "matched_gate": {
+   "kept": 32,
+   "lost": 0,
+   "gained": 0,
+   "both_fail": 40
+  }
+ }
+}
