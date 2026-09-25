@@ -99,6 +99,10 @@ class TrialConfig:
     # feedforward) relative to the plant: 0.2 means the model drag is 20% high.
     flow_feedforward: bool = False
     model_drag_error: float = 0.0
+    # Acceleration power spectral density of the estimator's constant-velocity model
+    # [m^2/s^3]. Larger values let the command-aware residual (flow plus unmodeled
+    # force drift) adapt faster at the cost of noise. 1e-7 is the long-standing default.
+    estimator_acceleration_psd: float = 1e-7
     # Model-based feedforward: the controller cancels its own copy of the prescribed
     # flow (same model, occlusion and cardiac phase, assumed known) with the mean
     # speed scaled by (1 + flow_model_error). With the command-aware estimator the
@@ -198,6 +202,7 @@ def run_trial(config=TrialConfig()):
     if config.occluded_branch and config.flow_model != "poiseuille":
         raise ValueError("occluded_branch requires flow_model='poiseuille'")
     nonnegative(config.actuation_period_s, "actuation_period_s")
+    nonnegative(config.estimator_acceleration_psd, "estimator_acceleration_psd", positive=True)
     if not np.isfinite(config.model_drag_error) or config.model_drag_error <= -1:
         raise ValueError("model_drag_error must be finite and > -1")
     if not np.isfinite(config.flow_model_error) or config.flow_model_error <= -1:
@@ -296,6 +301,7 @@ def run_trial(config=TrialConfig()):
         sedimentation_horizon_s=config.sedimentation_horizon_s,
         gravity_compensation_n=-model_weight if config.gravity_compensation else None,
         flow_feedforward=config.flow_feedforward,
+        acceleration_spectral_density=config.estimator_acceleration_psd,
         model_viscosity_pa_s=3.5e-3 * (1 + config.model_drag_error),
         flow_model=controller_flow_model if config.model_flow_feedforward else None,
         hold_without_tracking=config.gravity_hold_from_release,

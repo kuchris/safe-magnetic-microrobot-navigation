@@ -145,6 +145,23 @@ One commit per stage; full suite green at each.
   Mechanism: hold bias (gain/tilt) is unmodeled force; weight-aware Smith predictor stays
   confidently wrong until fresh frames reveal it. Next: disturbance-force estimation.
 
+## Step 3.7 (goal "keep going"): disturbance rejection, experiment 30
+- Existing pieces combine into a disturbance canceller: estimated-drift feedforward
+  (`flow_feedforward`) cancels the residual drift, which includes a biased hold, and a larger
+  residual-filter acceleration PSD (new `estimator_acceleration_psd`, default 1e-7) learns it faster.
+- Arms: baseline (1e-7, no FF), drift_ff (1e-7, FF), fast_residual (1e-5), fast_residual_ff
+  (1e-5 + FF), faster_residual_ff (1e-3 + FF). Bundles nominal/mild/moderate from exp 29, both
+  materials, open-loop hold, matched gate, 99%, held-out seeds 3–5.
+- Pre-registered: H23 fast_residual_ff rescues ≥ 18/36 moderate NdFeB and keeps nominal ≥ 70/72,
+  mild ≥ 66/72; H24 drift_ff alone rescues < 9/36; H25 1e-3 no better than 1e-5 on moderate and
+  worse on nominal.
+
+- Done (docs/22): H23 not supported (fast_residual_ff rescues 0/36 moderate NdFeB, loses mild NdFeB
+  32→20 and moderate composite 33→19); H24 supported (drift_ff rescues no NdFeB; composite 33→35);
+  H25 supported (PSD 1e-3: nominal 72→13, gate holds 97% of samples). Mechanism: detection time
+  (latency + 2 frames ≈ 0.15 s) ≥ time to wall for an 8 mm/s bias drift. A 5% bias is cancelled.
+  Conclusion: reduce hold bias before release; keep the default estimator.
+
 ## Open questions for the user (Step 3 candidates)
 - Make the open-loop hold the default for physiological runs? (changes the preset; would need
   re-running exp 22–28 comparisons or a new preset name).
