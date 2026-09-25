@@ -62,6 +62,7 @@ gain be set by the 10 ms actuation period instead of the imaging delay.
 - At 99% flow reduction it reaches **occluded targets in 18/18** trials
   (baseline 1/18). The result holds under ±20% drag-model error.
 - It reaches patent targets in a median 0.79 s instead of 2.78 s.
+  ([Animation of one occluded cell, P0 against P2](docs/figures/steering_occluded_p0_vs_p2.gif))
 - 90% reduction stays mostly out of reach (best 5/18).
 - The existing wall-prediction filter regresses at 7.5 fps.
 - Estimated-flow feedforward adds nothing measurable.
@@ -90,6 +91,16 @@ held-out seeds). The 90%-reduction result is fragile:
 - Errors in where the flow turns at the split are tiny on average but can swing
   occluded-target success from 19/36 to 0/36 or 22/36, depending on their direction.
 - At 99% reduction every condition stays at 72/72.
+
+**Measured flow map** ([docs/19](docs/19_measured_flow_map.md), experiment 26,
+held-out seeds). The controller uses a voxelized, noisy map of the flow
+(4D-flow-MRI-like; resolution and noise assumed) instead of the analytic model.
+
+- A map of 0.25–0.5 mm keeps the full 90% feedforward benefit: 38–41/72 against
+  32/72 for the exact model, with overlapping intervals.
+- 5% noise costs little (35/72) and 10% noise halves it (20/72).
+- A 1.0 mm map blurs the split and loses occluded targets entirely (8/72 overall).
+- At 99% even the worst map gives 72/72.
 
 ![Experiment 22, patent target](docs/figures/physiological_sweep_patent.png)
 
@@ -312,7 +323,7 @@ and [docs/05](docs/05_safety_control.md).
 
 ## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical; 21–25 run at physiological scale. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21–26 run at physiological scale; 27 animates one of them. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -336,6 +347,8 @@ change that alters the legacy defaults fails the suite.
 | 23 | `23_delay_aware_control` | Delay-aware policies: pilot, held-out, ±20% drag-model error (1728 trials) | [16](docs/16_delay_aware_control.md) |
 | 24 | `24_feedforward_and_hold` | Model flow feedforward, release hold, 50 ms wall horizon; ±20% flow-model error (1440 trials) | [17](docs/17_feedforward_and_hold.md) |
 | 25 | `25_flow_model_errors` | Flow-model scale, phase, pulsation, profile and junction errors (1728 trials) | [18](docs/18_flow_model_errors.md) |
+| 26 | `26_measured_flow_map` | Feedforward from a voxelized, noisy flow map (648 trials) | [19](docs/19_measured_flow_map.md) |
+| 27 | `27_steering_animation` | Animated P0 vs P2 on an occluded target (GIF) | [16](docs/16_delay_aware_control.md) |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -412,6 +425,8 @@ src/
   delay_aware_study.py  Experiment 23 policies, gains, paired comparison
   feedforward_hold_study.py  Experiment 24 arms and per-material pairing
   flow_model_error_study.py  Experiment 25 error conditions and route error
+  flow_map.py           Voxelized, noisy measured flow map for the controller
+  flow_map_study.py     Experiment 26 map conditions
   imaging.py            Orthographic views, latency, dropout
   localization.py       Triangulation and six-state filter (plus legacy sensor)
   flow_estimation.py    Command-aware estimator
@@ -427,7 +442,7 @@ src/
   plotting.py           Toy diagnostics and physiological-scale diagnostics
   replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–25 (run with python -m)
+simulations/            Experiments 01–27 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```
@@ -450,7 +465,8 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Delay-aware control at physiological scale (experiment 23)
 - [x] Model flow feedforward, release-time gravity hold, 50 ms wall horizon (experiment 24)
 - [x] Flow-model shape, phase, pulsation and junction errors (experiment 25)
-- [ ] Local flow measurement at the split; combined model errors
+- [x] Feedforward from a measured (voxelized, noisy) flow map (experiment 26)
+- [ ] Combined model errors; correlated map noise; flow changes after measurement
 - [ ] Open-loop gravity hold from release; strategies for occluded targets
 - [ ] Coil model A(x) with current allocation; gradient decay with depth
 - [ ] Mesh geometry, exact wall distance, swept collision checks

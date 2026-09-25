@@ -110,6 +110,11 @@ class TrialConfig:
     flow_model_pulsatility: float = None
     flow_model_profile_exponent: float = 2.0
     flow_model_junction_scale: float = 1.0
+    # Measured flow map instead of the analytic model: the plant's time-mean field on a
+    # voxel grid (> 0 m enables it) with fixed per-voxel noise as a fraction of the
+    # centerline mean speed. Pulsation timing and amplitude are taken as exact.
+    flow_model_voxel_m: float = 0.0
+    flow_model_noise: float = 0.0
     # With gravity_compensation: hold against the known weight from release, before
     # and without tracking (open loop). Off keeps the tracking-gated hold.
     gravity_hold_from_release: bool = False
@@ -197,6 +202,16 @@ def run_trial(config=TrialConfig()):
         raise ValueError("flow_model_pulsatility must be None or in [0, 1]")
     nonnegative(config.flow_model_profile_exponent, "flow_model_profile_exponent", positive=True)
     nonnegative(config.flow_model_junction_scale, "flow_model_junction_scale", positive=True)
+    nonnegative(config.flow_model_voxel_m, "flow_model_voxel_m")
+    nonnegative(config.flow_model_noise, "flow_model_noise")
+    if config.flow_model_noise > 0 and config.flow_model_voxel_m == 0:
+        raise ValueError("flow_model_noise requires a measured map (flow_model_voxel_m > 0)")
+    if config.flow_model_voxel_m > 0:
+        if not config.model_flow_feedforward or config.flow_model != "poiseuille":
+            raise ValueError("a measured flow map requires model_flow_feedforward and the poiseuille model")
+        if (config.flow_model_error or config.flow_model_phase_error or config.flow_model_pulsatility is not None
+                or config.flow_model_profile_exponent != 2.0 or config.flow_model_junction_scale != 1.0):
+            raise ValueError("a measured flow map cannot be combined with analytic flow-model errors")
     if config.estimator_knows_weight and (config.gravity_m_s2 == 0 or config.estimator_mode != "command_aware"):
         raise ValueError("estimator_knows_weight requires gravity and the command_aware estimator")
     if config.gravity_hold_from_release and not config.gravity_compensation:
@@ -222,7 +237,11 @@ def run_trial(config=TrialConfig()):
     disturbance = FlowDisturbance(config.flow_disturbance_m_s, config.flow_correlation_s, flow_rng)
     vessel = YVessel()
     deterministic_flow = plant_flow_function(config)
-    controller_flow_model = controller_flow_function(config)
+    if config.flow_model_voxel_m > 0:
+        from src.flow_map import measured_flow_map
+        controller_flow_model = measured_flow_map(config, config.flow_model_voxel_m, config.flow_model_noise)
+    else:
+        controller_flow_model = controller_flow_function(config)
     model_pulsatility = (config.flow_pulsatility if config.flow_model_pulsatility is None
                          else config.flow_model_pulsatility)
 
@@ -428,7 +447,8 @@ def run_trial(config=TrialConfig()):
         physics["flow_model_errors"] = {
             "phase": float(config.flow_model_phase_error), "pulsatility": float(model_pulsatility),
             "profile_exponent": float(config.flow_model_profile_exponent),
-            "junction_scale": float(config.flow_model_junction_scale)}
+            "junction_scale": float(config.flow_model_junction_scale),
+            "voxel_m": float(config.flow_model_voxel_m), "noise": float(config.flow_model_noise)}
     if physics:
         # Continuous companion to the binary target-success flag (0.4 mm tolerance).
         physics["closest_target_approach_m"] = float(np.min(np.linalg.norm(

@@ -119,3 +119,87 @@ def animate_pair(cases, labels, output_path):
     animation = FuncAnimation(fig, update, frames=np.linspace(0, end, 140), interval=80, blit=False)
     animation.save(output_path, writer=PillowWriter(fps=12), dpi=90)
     plt.close(fig)
+
+
+def animate_physiological_pair(cases, labels, output_path, title, frames=120, fps=12, grid_step_m=0.2e-3):
+    """Side-by-side animation of two physiological-scale trials on the flow-speed map.
+
+    Arrows are scaled to the force cap (full cap = 3 mm). Finished trials freeze.
+    Simulation only.
+    """
+    from src.flow import prescribed_flow
+
+    fig, axes = plt.subplots(1, 2, figsize=(11, 5.4))
+    fig.subplots_adjust(left=0.06, right=0.98, top=0.8, bottom=0.2, wspace=0.18)
+    xs = np.arange(0, 22e-3, grid_step_m)
+    ys = np.arange(-8e-3, 8e-3, grid_step_m)
+    vessel = YVessel()
+    artists = []
+    for ax, case, label in zip(axes, cases, labels):
+        c = case["config"]
+        field = np.full((len(ys), len(xs)), np.nan)
+        for j, y in enumerate(ys):
+            for i, x in enumerate(xs):
+                point = np.array([x, y, y / 2])
+                if vessel.clearance(point) >= 0:
+                    field[j, i] = np.linalg.norm(prescribed_flow(
+                        point, c["flow_speed_m_s"], c["flow_model"], c["flow_transition_length_m"],
+                        c["flow_branch_width_m"], occluded_branch=c.get("occluded_branch") or None))
+        # Shift the scale so stagnant lumen (an occluded branch) still reads as vessel, not background.
+        top = np.nanmax(field) if np.isfinite(field).any() and np.nanmax(field) > 0 else 1.0
+        ax.imshow(field, extent=(0, 22, -8, 8), origin="lower", cmap="Greys", alpha=0.55, aspect="equal",
+                  vmin=-0.3 * top, vmax=top)
+        target = vessel.upper_target if c["branch"] == "upper" else vessel.lower_target
+        ax.scatter(target[0] * 1e3, target[1] * 1e3, marker="*", s=160, color="#E0A800", edgecolor="black", zorder=4)
+        ax.set(xlim=(0, 22), ylim=(-8, 8), xlabel="x [mm]", ylabel="y [mm]")
+        ax.set_title(label, fontsize=11)
+        trail, = ax.plot([], [], color=COLORS[0], linewidth=2)
+        truth, = ax.plot([], [], "o", color=COLORS[0], markersize=7, zorder=5)
+        estimate, = ax.plot([], [], "x", color="#D68A12", markersize=8, zorder=5)
+        frame_mark, = ax.plot([], [], "o", markersize=16, markerfacecolor="none", markeredgecolor="#2F5BD3",
+                              markeredgewidth=2, zorder=6)
+        arrow = FancyArrowPatch((0, 0), (0, 0), arrowstyle="-|>", mutation_scale=14, color="#C54B43", linewidth=2,
+                                zorder=6)
+        ax.add_patch(arrow)
+        status = ax.text(0.02, 0.98, "", transform=ax.transAxes, va="top", fontsize=9,
+                         bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "none"})
+        artists.append((trail, truth, estimate, frame_mark, arrow, status))
+    end = max(case["history"]["time_s"][-1] for case in cases)
+    slowdown = (frames / fps) / end
+    clock = fig.text(0.5, 0.85, "", ha="center", fontsize=12)
+    fig.suptitle(title, fontsize=14, weight="bold")
+    fig.text(0.06, 0.04, "Dot: particle (red = actuation stopped). Orange x: controller's estimate. Blue ring: a new "
+             "frame reached the controller.\nRed arrow: magnetic force (full length 3 mm = force cap). Grey shade: "
+             f"flow speed; XY projection. Played about {slowdown:.1f}× slower than real time. Simulation only.",
+             fontsize=8.5)
+
+    def update(now):
+        clock.set_text(f"t = {now * 1e3:.0f} ms")
+        for case, group in zip(cases, artists):
+            h, s = case["history"], case["summary"]
+            cap = s.get("physics", {}).get("force_cap_n", case["config"]["max_force_n"])
+            i = max(0, np.searchsorted(h["time_s"], now, side="right") - 1)
+            p, e = h["true_position_m"][i] * 1e3, h["estimated_position_m"][i] * 1e3
+            trail_, truth_, estimate_, frame_, arrow_, status_ = group
+            step = max(1, i // 400)
+            trail_.set_data(h["true_position_m"][:i + 1:step, 0] * 1e3, h["true_position_m"][:i + 1:step, 1] * 1e3)
+            truth_.set_data([p[0]], [p[1]])
+            truth_.set_color("#C54B43" if h["reason"][i] in STOP_REASONS else COLORS[0])
+            estimate_.set_data([e[0]], [e[1]])
+            age = h["measurement_age_s"][i]
+            # A frame arrives when its age equals the latency; show the ring for one animation frame.
+            fresh = np.isfinite(age) and age - case["config"]["latency_s"] < end / frames
+            frame_.set_data([p[0]] if fresh else [], [p[1]] if fresh else [])
+            force = h["force_n"][i, :2] / cap * 3.0
+            arrow_.set_positions(p[:2], p[:2] + force)
+            arrow_.set_visible(np.linalg.norm(h["force_n"][i]) > 1e-15)
+            finished = now >= h["time_s"][-1]
+            outcome = ("TARGET REACHED" if s["target_success"] else "WALL CONTACT" if s["wall_collision"]
+                       else "WRONG BRANCH" if s["wrong_branch"] else "TIME LIMIT")
+            status_.set_text(f"{outcome if finished else h['reason'][i]}\n"
+                             f"t = {h['time_s'][i] * 1e3:.0f} ms | |F| = {np.linalg.norm(h['force_n'][i]) * 1e9:.0f} nN")
+        return []
+
+    animation = FuncAnimation(fig, update, frames=np.linspace(0, end, frames), interval=1000 / fps, blit=False)
+    animation.save(output_path, writer=PillowWriter(fps=fps), dpi=80)
+    plt.close(fig)

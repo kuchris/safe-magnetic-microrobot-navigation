@@ -71,6 +71,10 @@ takes about 7.5 min on 8 cores.
 
    ![P0 on an occluded target](figures/delay_aware_occluded_P0.png)
    ![P2 on an occluded target](figures/delay_aware_occluded_P2.png)
+
+   The same cell animated side by side (`python -m simulations.27_steering_animation`):
+
+   ![P0 and P2 animated](figures/steering_occluded_p0_vs_p2.gif)
 2. **It is also faster on patent targets.** At 99% reduction, P0–P3 all
    reach the target in 18/18 trials, but P2's median arrival is **0.79 s**
    against P0's 2.78 s. Neither has a wall contact.

@@ -55,7 +55,9 @@ honestly, do not tune the controller to hide it.
       composite + 99% + delay-limited gain (0.5·γ/τ_d, assumed) + gravity hold 18/18 patent;
       toy-equivalent gain overshoots (delay·cap/γ = 5–11 R); occluded target 0/432.
 - Viz C done: private artifact "Microrobot Steering Atlas" (https://claude.ai/artifact/FpUbV7Yhc51w2Nz1Avgumo),
-  built from docs/results of experiments 22–25 (v2 adds the flow-model error table). Later: viz B (slowed GIF).
+  built from docs/results of experiments 22–25 (v2 adds the flow-model error table).
+- Viz B done: `simulations/27_steering_animation.py` (P0 vs P2, occluded cell, ~2× slow-motion GIF,
+  docs/figures/steering_occluded_p0_vs_p2.gif).
 One commit per stage; full suite green at each.
 
 ## Step 3.1: delay-aware control (experiment 23, docs/16)
@@ -98,8 +100,20 @@ One commit per stage; full suite green at each.
   swing occluded success 19/36 → 0/36 or 22/36; phase +0.1 is gentler than equal-size bias.
   Reading: the 90% result is a knife edge set by flow shape at the split.
 
+## Step 3.4 (goal "keep going", chosen by Claude): measured flow map, experiment 26
+- Controller flow model = voxelized, noisy map of the plant's time-mean field (trilinear
+  interpolation, fixed Gaussian noise per lumen voxel, pulsation waveform ECG-gated and exact).
+  Voxel 0.25/0.5/1.0 mm, noise 5%/10% of centerline mean at 0.5 mm, plus 1.0 mm + 10% (assumed).
+  Arms as exp 25; held-out seeds 3–5; 90% all conditions, 99% worst condition only.
+- Pre-registered: H11 0.25 mm noiseless keeps ≥ 80% of exact successes; H12 success falls with
+  voxel size, 1.0 mm loses most; H13 5% noise costs little, 10% more but keeps some; 99% stays 18/18.
+
+- Done (docs/19): exact reproduces exp 25; 0.25/0.5 mm maps 38/41 of 72 at 90% (exact 32;
+  0.25 mm loses none of the exact successes); 5% noise 35, 10% noise 20; 1.0 mm 8 (occluded 0);
+  99% worst map 72/72. H11, H13 supported; H12 at 1.0 mm only. 7.5 fps: 0 in every condition.
+
 ## Open questions for the user (Step 3 candidates)
-- Local flow measurement at the split (not just mean speed); combined model errors.
+- Combined model errors; spatially correlated map noise; flow changes after measurement.
 - Open-loop gravity hold from release (gravity direction known a priori) for pure NdFeB.
 - Any strategy for occluded targets (currently 0/432); needs better flow model at the stump.
 - Note: `poiseuille_flow` was vectorized in 2f (profile values unchanged up to round-off).

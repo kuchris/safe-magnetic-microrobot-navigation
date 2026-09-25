@@ -45,3 +45,11 @@ def test_physics_figure_handles_legacy_toy_trial(tmp_path):
     path = tmp_path / "toy.png"
     plot_physics_trial(run_trial(TrialConfig(duration_s=0.3)), path, grid_step_m=0.4e-3)
     assert path.stat().st_size > 10_000
+
+
+def test_physiological_animation_is_written(physiological, tmp_path):
+    from src.replay_plotting import animate_physiological_pair
+    path = tmp_path / "pair.gif"
+    animate_physiological_pair([physiological, physiological], ["a", "b"], path, "test", frames=3,
+                               grid_step_m=1e-3)
+    assert path.stat().st_size > 10_000
