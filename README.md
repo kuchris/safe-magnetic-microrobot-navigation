@@ -66,6 +66,21 @@ gain be set by the 10 ms actuation period instead of the imaging delay.
 - The existing wall-prediction filter regresses at 7.5 fps.
 - Estimated-flow feedforward adds nothing measurable.
 
+**Model feedforward and release hold** ([docs/17](docs/17_feedforward_and_hold.md),
+experiment 24, held-out seeds):
+
+- **Pure NdFeB now works at 99% reduction.** Holding against the known weight
+  from release lets it reach patent and occluded targets in 18/18 trials each;
+  in experiment 22 it was 0/432.
+- **Model flow feedforward opens up 90% reduction, but only with an accurate
+  flow model.** With a correct model, the particle reaches occluded targets in
+  8/18 (composite) and 11/18 (pure NdFeB) trials, against a baseline of 0/18.
+  It needs at least 15 fps; every 7.5 fps cell fails. A ±20% error in the flow
+  model removes most of the gain.
+- **Two smaller findings.** A 50 ms wall-prediction horizon removes the 7.5 fps
+  regression but adds nothing. The command-aware estimator had been treating a
+  held weight as motion; the fix is opt-in (`estimator_knows_weight`).
+
 ![Experiment 22, patent target](docs/figures/physiological_sweep_patent.png)
 
 First real-scale result (2b): at 0.3 m/s the particle reaches the bifurcation
@@ -287,7 +302,7 @@ and [docs/05](docs/05_safety_control.md).
 
 ## Experiments
 
-Experiments 01–19 run the toy plant; 20 is analytical; 21–23 run at physiological scale. Archived results live in
+Experiments 01–19 run the toy plant; 20 is analytical; 21–24 run at physiological scale. Archived results live in
 `docs/results/`. Tests replay archived benchmark and flow-estimation trials, so a
 change that alters the legacy defaults fails the suite.
 
@@ -309,6 +324,7 @@ change that alters the legacy defaults fails the suite.
 | 21 | `21_physiological_trial` | One real-scale trial (Step 2 options) with physics diagnostics | this README |
 | 22 | `22_physiological_sweep` | 864-trial sweep: flow reduction × fps × material × occlusion × policy | [15](docs/15_physiological_sweep.md) |
 | 23 | `23_delay_aware_control` | Delay-aware policies: pilot, held-out, ±20% drag-model error (1728 trials) | [16](docs/16_delay_aware_control.md) |
+| 24 | `24_feedforward_and_hold` | Model flow feedforward, release hold, 50 ms wall horizon; ±20% flow-model error (1440 trials) | [17](docs/17_feedforward_and_hold.md) |
 
 Scripts 11, 13, 15, 16 and 18 take `--model piecewise|smooth`. Scripts 15–17 need the
 trace files written by 13.
@@ -383,6 +399,7 @@ src/
   presets.py            Physiological preset with per-value provenance
   physiological_sweep.py  Experiment 22 cells, parallel runner, aggregates, report
   delay_aware_study.py  Experiment 23 policies, gains, paired comparison
+  feedforward_hold_study.py  Experiment 24 arms and per-material pairing
   imaging.py            Orthographic views, latency, dropout
   localization.py       Triangulation and six-state filter (plus legacy sensor)
   flow_estimation.py    Command-aware estimator
@@ -398,7 +415,7 @@ src/
   plotting.py           Toy diagnostics and physiological-scale diagnostics
   replay_plotting.py    Paired replay figures and animation
   validation.py         Input validation
-simulations/            Experiments 01–23 (run with python -m)
+simulations/            Experiments 01–24 (run with python -m)
 tests/                  Unit, integration and archived-result regression tests
 docs/                   Method notes, results (docs/results) and figures
 ```
@@ -419,7 +436,8 @@ docs/                   Method notes, results (docs/results) and figures
 - [x] Physiological preset, flow reduction, occluded branch, actuation update
       rate, imaging-rate sweep (2f, experiment 22)
 - [x] Delay-aware control at physiological scale (experiment 23)
-- [ ] Frame-rate-aware wall prediction; flow-delay handling at 90% reduction
+- [x] Model flow feedforward, release-time gravity hold, 50 ms wall horizon (experiment 24)
+- [ ] Flow-model robustness at 90% (shape/phase errors, online flow measurement)
 - [ ] Open-loop gravity hold from release; strategies for occluded targets
 - [ ] Coil model A(x) with current allocation; gradient decay with depth
 - [ ] Mesh geometry, exact wall distance, swept collision checks

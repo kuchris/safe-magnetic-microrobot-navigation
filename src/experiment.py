@@ -95,6 +95,20 @@ class TrialConfig:
     # feedforward) relative to the plant: 0.2 means the model drag is 20% high.
     flow_feedforward: bool = False
     model_drag_error: float = 0.0
+    # Model-based feedforward: the controller cancels its own copy of the prescribed
+    # flow (same model, occlusion and cardiac phase, assumed known) with the mean
+    # speed scaled by (1 + flow_model_error). With the command-aware estimator the
+    # same modeled flow is a known input, so the estimator tracks only the residual.
+    # The random disturbance is never modeled.
+    model_flow_feedforward: bool = False
+    flow_model_error: float = 0.0
+    # With gravity_compensation: hold against the known weight from release, before
+    # and without tracking (open loop). Off keeps the tracking-gated hold.
+    gravity_hold_from_release: bool = False
+    # Command-aware estimator integrates (command + known net weight) instead of the
+    # command alone. Off reproduces experiment 23, where a held weight appears as
+    # phantom commanded motion.
+    estimator_knows_weight: bool = False
 
 
 def particle_material(config):
@@ -139,6 +153,12 @@ def run_trial(config=TrialConfig()):
     nonnegative(config.actuation_period_s, "actuation_period_s")
     if not np.isfinite(config.model_drag_error) or config.model_drag_error <= -1:
         raise ValueError("model_drag_error must be finite and > -1")
+    if not np.isfinite(config.flow_model_error) or config.flow_model_error <= -1:
+        raise ValueError("flow_model_error must be finite and > -1")
+    if config.estimator_knows_weight and (config.gravity_m_s2 == 0 or config.estimator_mode != "command_aware"):
+        raise ValueError("estimator_knows_weight requires gravity and the command_aware estimator")
+    if config.gravity_hold_from_release and not config.gravity_compensation:
+        raise ValueError("gravity_hold_from_release requires gravity_compensation")
     nonnegative(config.gain_saturation_distance_m, "gain_saturation_distance_m")
     if (config.sedimentation_check or config.gravity_compensation) and config.gravity_m_s2 == 0:
         raise ValueError("sedimentation_check and gravity_compensation require gravity_m_s2 > 0")
@@ -165,6 +185,13 @@ def run_trial(config=TrialConfig()):
         return prescribed_flow(position_m, speed, config.flow_model,
                                config.flow_transition_length_m, config.flow_branch_width_m,
                                occluded_branch=config.occluded_branch or None)
+
+    def controller_flow_model(position_m, time_s):
+        speed = pulsatile_speed(config.flow_speed_m_s * (1 + config.flow_model_error),
+                                time_s + config.cardiac_phase * config.cardiac_period_s,
+                                config.flow_pulsatility, config.cardiac_period_s)
+        return prescribed_flow(position_m, speed, config.flow_model, config.flow_transition_length_m,
+                               config.flow_branch_width_m, occluded_branch=config.occluded_branch or None)
 
     if config.particle_inertia:
         # Deterministic release velocity; no disturbance draw, so RNG streams are unchanged.
@@ -208,7 +235,10 @@ def run_trial(config=TrialConfig()):
         sedimentation_horizon_s=config.sedimentation_horizon_s,
         gravity_compensation_n=-weight if config.gravity_compensation else None,
         flow_feedforward=config.flow_feedforward,
-        model_viscosity_pa_s=3.5e-3 * (1 + config.model_drag_error))
+        model_viscosity_pa_s=3.5e-3 * (1 + config.model_drag_error),
+        flow_model=controller_flow_model if config.model_flow_feedforward else None,
+        hold_without_tracking=config.gravity_hold_from_release,
+        known_weight_n=weight if config.estimator_knows_weight else None)
     target = vessel.upper_target if config.branch == "upper" else vessel.lower_target
     history = {k: [] for k in ("time_s", "true_position_m", "estimated_position_m",
         "sigma_m", "true_clearance_m", "estimated_clearance_m", "robust_clearance_m",
@@ -360,6 +390,8 @@ def run_trial(config=TrialConfig()):
         physics["occluded_branch"] = config.occluded_branch
     if config.model_drag_error:
         physics["model_drag_error"] = float(config.model_drag_error)
+    if config.model_flow_feedforward:
+        physics["flow_model_error"] = float(config.flow_model_error)
     if physics:
         # Continuous companion to the binary target-success flag (0.4 mm tolerance).
         physics["closest_target_approach_m"] = float(np.min(np.linalg.norm(

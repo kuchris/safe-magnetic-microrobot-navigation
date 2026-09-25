@@ -46,7 +46,8 @@ class BiplaneNavigation:
                  prediction_horizon_s=0.0, model_viscosity_pa_s=3.5e-3,
                  estimator_mode="kinematic", terminal_guidance_distance_m=0.0,
                  settling_velocity_m_s=None, sedimentation_horizon_s=0.0,
-                 gravity_compensation_n=None, flow_feedforward=False):
+                 gravity_compensation_n=None, flow_feedforward=False,
+                 flow_model=None, hold_without_tracking=False, known_weight_n=None):
         if control_mode not in ("passive", "ungated", "gated"):
             raise ValueError("control_mode must be passive, ungated, or gated")
         self.control_mode = control_mode
@@ -87,10 +88,29 @@ class BiplaneNavigation:
         if flow_feedforward and estimator_mode != "command_aware":
             raise ValueError("flow feedforward requires the command_aware estimator")
         self.flow_feedforward = flow_feedforward
+        # Model information: flow_model(position, time) is the controller's own flow
+        # model (possibly mis-scaled), never the plant's field or disturbance.
+        if flow_model is not None and flow_feedforward:
+            raise ValueError("choose estimated or model flow feedforward, not both")
+        self.flow_model = flow_model
+        if hold_without_tracking and gravity_compensation_n is None:
+            raise ValueError("hold_without_tracking requires gravity compensation")
+        self.hold_without_tracking = hold_without_tracking
+        # Known body force (net weight). When given, the command-aware estimator
+        # integrates command + weight, so a held weight is not mistaken for motion.
+        self.known_weight = None if known_weight_n is None else vector(known_weight_n)
         self.previous_force_n = np.zeros(3)
         self.tracking_valid = False
         self.last_frame_s = -np.inf
         self.last_step_s = -np.inf
+
+    def _known_input(self, command_n, now_s=None, position_m=None):
+        """Force-equivalent input for the command-aware estimator: command, known
+        weight and, with model feedforward, the modeled flow drag at the estimate."""
+        known = command_n if self.known_weight is None else command_n + self.known_weight
+        if self.flow_model is not None and position_m is not None:
+            known = known + self.model_drag * self.flow_model(position_m, now_s)
+        return known
 
     def step(self, now_s, frames):
         if not np.isfinite(now_s) or now_s < 0 or now_s <= self.last_step_s:
@@ -117,10 +137,14 @@ class BiplaneNavigation:
         estimate = self.estimator.estimate(now_s)
         if estimate is None:
             self.previous_force_n = np.zeros(3)
-            if isinstance(self.estimator, CommandAwareEstimator):
-                self.estimator.command(now_s, self.previous_force_n)
             reason = "passive" if self.control_mode == "passive" else "tracking_lost"
-            return ControlOutput(np.zeros(3), None, reason, np.nan, np.nan, np.inf, False)
+            if self.hold_without_tracking and self.control_mode != "passive":
+                # Open loop: the weight and its direction are known before any frame.
+                self.previous_force_n = limit_force(self.gravity_compensation, self.max_force_n)
+                reason = "gravity_hold"
+            if isinstance(self.estimator, CommandAwareEstimator):
+                self.estimator.command(now_s, self._known_input(self.previous_force_n))
+            return ControlOutput(self.previous_force_n.copy(), None, reason, np.nan, np.nan, np.inf, False)
         age = now_s - self.estimator.last_capture_s
         allowed, reason, _ = self.supervisor.evaluate(
             estimate.estimated_position, estimate.position_uncertainty,
@@ -147,8 +171,13 @@ class BiplaneNavigation:
                 # weight is held separately, so remove it from the drift being cancelled.
                 drift = self.estimator.flow_estimate(now_s)
                 feedforward = -self.model_drag * drift
-                if self.gravity_compensation is not None:
+                if self.gravity_compensation is not None and self.known_weight is None:
+                    # The drift then includes settling, which the hold already cancels.
                     feedforward = feedforward - self.gravity_compensation
+                force = limit_force(force + feedforward, self.max_force_n)
+            if self.flow_model is not None:
+                # Cancel the modeled flow at the estimated position (weight is held separately).
+                feedforward = -self.model_drag * self.flow_model(estimate.estimated_position, now_s)
                 force = limit_force(force + feedforward, self.max_force_n)
             if self.predictor is not None:
                 prediction = self.predictor.select(estimate, force, self.previous_force_n)
@@ -157,7 +186,7 @@ class BiplaneNavigation:
                     reason = "prediction_adjustment"
         self.previous_force_n = self.supervisor.filter_force(force, allowed)
         if (self.gravity_compensation is not None and self.control_mode != "passive"
-                and self.tracking_valid):
+                and (self.tracking_valid or self.hold_without_tracking)):
             # Opt-in: hold against the net weight while tracking is valid, including
             # when the gate stops steering. The cap still applies to the sum.
             self.previous_force_n = limit_force(self.previous_force_n + self.gravity_compensation,
@@ -174,7 +203,8 @@ class BiplaneNavigation:
                                     - self.supervisor.k_sigma * estimate.position_uncertainty)
             sedimentation_risk = bool(sedimentation_margin <= 0)
         if isinstance(self.estimator, CommandAwareEstimator):
-            self.estimator.command(now_s, self.previous_force_n)
+            self.estimator.command(now_s, self._known_input(self.previous_force_n, now_s,
+                                                            estimate.estimated_position))
         return ControlOutput(self.previous_force_n.copy(), estimate,
                              reason, clearance, robust, age, limited,
                              np.nan if prediction is None else prediction.nominal_clearance_m,

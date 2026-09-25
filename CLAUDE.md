@@ -66,8 +66,25 @@ One commit per stage; full suite green at each.
   H1 partly, H2 and H3 not supported. Wall prediction (P4/P5) regresses at 7.5 fps
   (horizon τ_d = 183 ms over-constrains; ends at closed-outlet-cap proxy or times out).
 
+## Step 3.2 (decided by Claude under "you decide everything"): experiment 24
+- Options (opt-in): `model_flow_feedforward` + `flow_model_error` (controller uses the prescribed
+  flow model, nominal U scaled, cardiac phase and occlusion known: assumed), and
+  `gravity_hold_from_release` (open-loop hold before/without tracking; gravity direction known).
+- Arms: composite C_P2 (baseline), +model FF, +wall prediction with 50 ms horizon, both;
+  NdFeB N_P2 + release hold (baseline), + model FF. 90%/99% × 7.5/15/30 fps × patent/occluded.
+- Pre-registered: H4 release hold lets pure NdFeB reach patent targets at 99%; H5 model FF
+  lifts 90% above P2 and survives ±20% flow-model error; H6 50 ms horizon removes the 7.5 fps
+  wall-prediction regression and keeps its 90% benefit. Pilot seeds 0–2, held-out 3–5.
+
+- Done (docs/17, held-out): H4 supported (pure NdFeB + release hold 18/18 patent and occluded
+  at 99%); H5 half (model FF at 90%: composite 7/18 patent, 8/18 occluded; NdFeB 6/18, 11/18;
+  needs ≥15 fps; ±20% flow-model error removes most of it); H6 half (50 ms horizon: no 99%
+  regression, no 90% benefit). Found/fixed (opt-in `estimator_knows_weight`): exp-23 estimator
+  read a held weight as commanded motion. Model FF also feeds u_model to the estimator.
+  Limitation noted: Stokes command model vs Re_slip ~10 for NdFeB commands.
+
 ## Open questions for the user (Step 3 candidates)
-- Frame-rate-aware wall prediction; handling the observed-flow delay at 90% reduction.
+- Flow-model robustness at 90%: shape/phase/pulsation errors; online flow measurement.
 - Open-loop gravity hold from release (gravity direction known a priori) for pure NdFeB.
 - Any strategy for occluded targets (currently 0/432); needs better flow model at the stump.
 - Note: `poiseuille_flow` was vectorized in 2f (profile values unchanged up to round-off).
