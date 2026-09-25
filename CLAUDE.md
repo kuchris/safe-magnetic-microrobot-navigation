@@ -55,7 +55,7 @@ honestly, do not tune the controller to hide it.
       composite + 99% + delay-limited gain (0.5·γ/τ_d, assumed) + gravity hold 18/18 patent;
       toy-equivalent gain overshoots (delay·cap/γ = 5–11 R); occluded target 0/432.
 - Viz C done: private artifact "Microrobot Steering Atlas" (https://claude.ai/artifact/FpUbV7Yhc51w2Nz1Avgumo),
-  built from docs/results of experiments 22–25 (v2 adds the flow-model error table).
+  built from docs/results of experiments 22–26 (v2 flow-model error table, v3 measured-map table).
 - Viz B done: `simulations/27_steering_animation.py` (P0 vs P2, occluded cell, ~2× slow-motion GIF,
   docs/figures/steering_occluded_p0_vs_p2.gif).
 One commit per stage; full suite green at each.
